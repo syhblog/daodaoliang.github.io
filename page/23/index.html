@@ -355,7 +355,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/15/PHP学习-2015-01-15-PHP运算逻辑符号说明/">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/15/PHP学习-2015-01-15-PHP变量说明/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daodaoliang">
@@ -377,8 +377,8 @@
             
               
                 
-                <a class="post-title-link" href="/PHP学习/2015/01/15/PHP学习-2015-01-15-PHP运算逻辑符号说明/" itemprop="url">
-                  php运算符说明
+                <a class="post-title-link" href="/PHP学习/2015/01/15/PHP学习-2015-01-15-PHP变量说明/" itemprop="url">
+                  php变量类型说明
                 </a>
               
             
@@ -460,7 +460,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  491
+                  613
                 </span>
               
 
@@ -476,7 +476,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -497,252 +497,38 @@
         
           
             <a id="more"></a>
-<h2 id="PHP-算数运算符"><a href="#PHP-算数运算符" class="headerlink" title="PHP 算数运算符"></a>PHP 算数运算符</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">运算符</th>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">例子</th>
-<th style="text-align:center">结果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">+</td>
-<td style="text-align:center">加法</td>
-<td style="text-align:center">$x + $y</td>
-<td style="text-align:center">$x 与 $y 求和</td>
-</tr>
-<tr>
-<td style="text-align:center">-</td>
-<td style="text-align:center">减法</td>
-<td style="text-align:center">$x - $y</td>
-<td style="text-align:center">$x 与 $y 的差值</td>
-</tr>
-<tr>
-<td style="text-align:center">*</td>
-<td style="text-align:center">乘法</td>
-<td style="text-align:center">$x * $y</td>
-<td style="text-align:center">$x 与 $y 的乘积</td>
-</tr>
-<tr>
-<td style="text-align:center">/</td>
-<td style="text-align:center">除法</td>
-<td style="text-align:center">$x / $y</td>
-<td style="text-align:center">$x 与 $y 的商数</td>
-</tr>
-<tr>
-<td style="text-align:center">%</td>
-<td style="text-align:center">模数</td>
-<td style="text-align:center">$X % $y</td>
-<td style="text-align:center">$x 与 $y 的模数</td>
-</tr>
-</tbody>
-</table>
-<h2 id="PHP-赋值运算符"><a href="#PHP-赋值运算符" class="headerlink" title="PHP 赋值运算符"></a>PHP 赋值运算符</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">赋值</th>
-<th style="text-align:center">等同于</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">x = y</td>
-<td style="text-align:center">x = y</td>
-<td style="text-align:center">右侧表达式为左侧运算数设置数</td>
-</tr>
-<tr>
-<td style="text-align:center">x += y</td>
-<td style="text-align:center">x = x + y</td>
-<td style="text-align:center">加</td>
-</tr>
-<tr>
-<td style="text-align:center">x -= y</td>
-<td style="text-align:center">x = x - y</td>
-<td style="text-align:center">减</td>
-</tr>
-<tr>
-<td style="text-align:center">x *= y</td>
-<td style="text-align:center">x = x * y</td>
-<td style="text-align:center">乘</td>
-</tr>
-<tr>
-<td style="text-align:center">x /= y</td>
-<td style="text-align:center">x = x / y</td>
-<td style="text-align:center">除</td>
-</tr>
-<tr>
-<td style="text-align:center">x %= y</td>
-<td style="text-align:center">x = x % y</td>
-<td style="text-align:center">模数</td>
-</tr>
-</tbody>
-</table>
-<h2 id="PHP-字符串运算符"><a href="#PHP-字符串运算符" class="headerlink" title="PHP 字符串运算符"></a>PHP 字符串运算符</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">运算符</th>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">例子</th>
-<th style="text-align:center">结果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">.</td>
-<td style="text-align:center">串接</td>
-<td style="text-align:center">$txt1 = “hello”; $txt2 = $txt1.”world”;</td>
-<td style="text-align:center">现在 $txt2 包含 “helloworld”</td>
-</tr>
-<tr>
-<td style="text-align:center">.=</td>
-<td style="text-align:center">串接赋值</td>
-<td style="text-align:center">$txt1 = “hello”; $txt1 .= “world”;</td>
-<td style="text-align:center">现在 $txt1 包含 “helloworld”</td>
-</tr>
-</tbody>
-</table>
-<h2 id="PHP-递增-递减运算符"><a href="#PHP-递增-递减运算符" class="headerlink" title="PHP 递增/递减运算符"></a>PHP 递增/递减运算符</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">运算符</th>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">++$x</td>
-<td style="text-align:center">前递增</td>
-<td style="text-align:center">$x 加一递增,然后返回$x</td>
-</tr>
-<tr>
-<td style="text-align:center">$x++</td>
-<td style="text-align:center">后递增</td>
-<td style="text-align:center">返回$x 然后$x 加一递增</td>
-</tr>
-<tr>
-<td style="text-align:center">–$x</td>
-<td style="text-align:center">前递减</td>
-<td style="text-align:center">$x 减一递减 然后返回$x</td>
-</tr>
-<tr>
-<td style="text-align:center">$x–</td>
-<td style="text-align:center">后递减</td>
-<td style="text-align:center">返回$x 然后$x 减一递减</td>
-</tr>
-</tbody>
-</table>
-<h2 id="PHP比较运算符"><a href="#PHP比较运算符" class="headerlink" title="PHP比较运算符"></a>PHP比较运算符</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">运算符</th>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">例子</th>
-<th style="text-align:center">结果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">==</td>
-<td style="text-align:center">等于</td>
-<td style="text-align:center">$x == $y</td>
-<td style="text-align:center">如果 $x 等于 $y 则返回 true</td>
-</tr>
-<tr>
-<td style="text-align:center">===</td>
-<td style="text-align:center">全等(完全相同)</td>
-<td style="text-align:center">$x === $y</td>
-<td style="text-align:center">如果 $x 等于 $y 且他们类型相同则返回true</td>
-</tr>
-<tr>
-<td style="text-align:center">!=</td>
-<td style="text-align:center">不等于</td>
-<td style="text-align:center">$x != $y</td>
-<td style="text-align:center">如果 $x 不等于 $y 则返回true</td>
-</tr>
-<tr>
-<td style="text-align:center">&lt;&gt;</td>
-<td style="text-align:center">不等于</td>
-<td style="text-align:center">$x != $y</td>
-<td style="text-align:center">如果 $x 不等于 $y 则返回true</td>
-</tr>
-<tr>
-<td style="text-align:center">!==</td>
-<td style="text-align:center">不全等(完全不同)</td>
-<td style="text-align:center">$x !== $y</td>
-<td style="text-align:center">如果$x 不等于 $y 则返回true</td>
-</tr>
-<tr>
-<td style="text-align:center">&gt;</td>
-<td style="text-align:center">大于</td>
-<td style="text-align:center">$x &gt; $y</td>
-<td style="text-align:center">如果 $x 大于 $y 则返回true</td>
-</tr>
-<tr>
-<td style="text-align:center">&lt;</td>
-<td style="text-align:center">小于</td>
-<td style="text-align:center">$x &lt; $y</td>
-<td style="text-align:center">如果 $x 小于 $y 则返回true</td>
-</tr>
-<tr>
-<td style="text-align:center">&gt;=</td>
-<td style="text-align:center">大于等于</td>
-<td style="text-align:center">$x &gt;= $y</td>
-<td style="text-align:center">如果 $x 大于等于 $y 则返回true</td>
-</tr>
-<tr>
-<td style="text-align:center">&lt;=</td>
-<td style="text-align:center">小于或等</td>
-<td style="text-align:center">$x &lt;= $y</td>
-<td style="text-align:center">如果 $x 小于等于 $y 则返回true</td>
-</tr>
-</tbody>
-</table>
-<h2 id="PHP-逻辑运算符"><a href="#PHP-逻辑运算符" class="headerlink" title="PHP 逻辑运算符"></a>PHP 逻辑运算符</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">运算符</th>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">例子</th>
-<th style="text-align:center">结果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">and</td>
-<td style="text-align:center">与</td>
-<td style="text-align:center">$x and $y</td>
-<td style="text-align:center">如果 $x 和 $y 都为true 则返回true</td>
-</tr>
-<tr>
-<td style="text-align:center">or</td>
-<td style="text-align:center">或</td>
-<td style="text-align:center">$x or $y</td>
-<td style="text-align:center">如果 $x 或者 $y 有一个为true 则返回 true</td>
-</tr>
-<tr>
-<td style="text-align:center">xor</td>
-<td style="text-align:center">异或</td>
-<td style="text-align:center">$x xor $y</td>
-<td style="text-align:center">如果$x和$y仅有一个为true则返回true</td>
-</tr>
-<tr>
-<td style="text-align:center">&amp;&amp;</td>
-<td style="text-align:center">与</td>
-<td style="text-align:center">$x &amp;&amp; $y</td>
-<td style="text-align:center">如果$x 和 $y 都为true 则返回true</td>
-</tr>
-<tr>
-<td style="text-align:center">!</td>
-<td style="text-align:center">非</td>
-<td style="text-align:center">!$x</td>
-<td style="text-align:center">如果$x不为true则返回true</td>
-</tr>
-</tbody>
-</table>
+<h2 id="PHP-变量"><a href="#PHP-变量" class="headerlink" title="PHP 变量"></a><strong>PHP 变量</strong></h2><p><strong>1.变量的相关规则</strong></p>
+<ul>
+<li><p>变量以<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">* 变量名称必须以字母或者下划线开头,不能已数字开头</div><div class="line">* 变量名称只能包含字母数字字符和下划线(A-z,0-9以及_)</div><div class="line">* 变量名称对大小写敏感($x与$y是两个不同的变量)</div><div class="line"></div><div class="line">**注意** PHP变量对大小写敏感,PHP保留字对大小写不敏感,PHP变量时一门弱类型的语言;</div><div class="line"></div><div class="line">**2.PHP变量作用域**</div><div class="line"></div><div class="line"> 在PHP中,可以在脚本的任意位置对变量进行声明,变量的作用域指的是变量能够被引用的那部分脚本,PHP有三种不容的变量作用域:</div><div class="line"></div><div class="line">* ```local```(局部)</div><div class="line">* ```global```(全局)</div><div class="line">* ```static```(静态)</div><div class="line"></div><div class="line">**注意** </div><div class="line"></div><div class="line">* 默认创建的变量都是```local</div></pre></td></tr></table></figure></p>
+</li>
+<li><p>若是需要在函数内部访问全局的变量,则需要在函数内部声明<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">* 函数在执行完后会删除变量,若是想要不删除变量则需要定义```static```关键字</div><div class="line"></div><div class="line">**3.PHP数据类型**</div><div class="line"></div><div class="line">* 字符串</div><div class="line">* 整数</div><div class="line">* 浮点数</div><div class="line">* 逻辑</div><div class="line">* 数组</div><div class="line">* 对象</div><div class="line">* NULL</div><div class="line"></div><div class="line">**3.1字符串**</div><div class="line"></div><div class="line">字符串是字符序列,比如&quot;hello,world&quot;,字符串可以是引号内的任何文本,您可以使用单引号或双引号.</div><div class="line"></div><div class="line">```php</div><div class="line">&lt;?php</div><div class="line">$x = &quot;hello world!&quot;;</div><div class="line">echo $x;</div><div class="line">echo &quot;&lt;br&gt;&quot;;</div><div class="line">$x = &apos;hello world&apos;;</div><div class="line">echo $x;</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+</li>
+</ul>
+<p><strong>3.2 整数</strong></p>
+<p>可以用三种格式规定整数:十进制,十六进制(前缀是0x)或八进制(前缀0)</p>
+<p>例如下(PHP中用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">```php</div><div class="line">&lt;?php</div><div class="line">$x = 1234;</div><div class="line">var_dump($x);</div><div class="line">echo &quot;&lt;br&gt;&quot;;</div><div class="line"></div><div class="line">$x = -1234;</div><div class="line">var_dump($x);</div><div class="line">echo &quot;&lt;br&gt;&quot;;</div><div class="line"></div><div class="line">$x = 0x1234c;</div><div class="line">var_dump($x);</div><div class="line">echo &quot;&lt;br&gt;&quot;;</div><div class="line"></div><div class="line">$x = 01234;</div><div class="line">var_dump($x);</div><div class="line">echo &quot;br&quot;;</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>3.3 浮点数</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$x = <span class="number">10.123</span>;</div><div class="line">var_dump($x);</div><div class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</div><div class="line"></div><div class="line">$x = <span class="number">2.4e3</span>;</div><div class="line">var_dump($x);</div><div class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</div><div class="line"></div><div class="line">$x = <span class="number">8E-5</span>;</div><div class="line">var_dump($x);</div><div class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>3.4 逻辑符</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$x = <span class="keyword">true</span>;</div><div class="line">$y = <span class="keyword">false</span>;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>3.4 PHP 数组</strong></p>
+<p>实例:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$car = <span class="keyword">array</span>(<span class="string">"liujian"</span> , <span class="string">"shi"</span>,<span class="string">"shabi"</span>);</div><div class="line">var_dump($car);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>3.5PHP对象</strong></p>
+<p>对象是存储数据和数据处理的方法,类比其他语言的类.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">var</span> $color;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">car</span><span class="params">($color = <span class="string">"green"</span>)</span></span>&#123;</div><div class="line">		<span class="keyword">$this</span>-&gt;color = $color;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">what_color</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">$this</span>-&gt;color;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>3.6 NULL值</strong></p>
+<p>用于初始化或者清空变量</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$x = <span class="string">"hello world"</span>;</div><div class="line">$x = <span class="keyword">null</span>;</div><div class="line">var_dump($x);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="PHP-常量"><a href="#PHP-常量" class="headerlink" title="PHP 常量"></a>PHP 常量</h2><p>与变量不同,常量贯穿整个脚本时自动全局的,定义常量的方法如下:</p>
+<p><strong><em>define()</em></strong></p>
+<ul>
+<li>1.首个参数定义常量的名称</li>
+<li>2.第二个参数定义常量的值</li>
+<li>3.可选的第三个参数规定常量名是否对大小写敏感,默认时false</li>
+</ul>
+<p>实例:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">drfine(<span class="string">"test"</span>,<span class="string">"IamTestData"</span>,<span class="keyword">true</span>);</div><div class="line"><span class="keyword">echo</span> test;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 
           
         
