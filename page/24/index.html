@@ -1151,7 +1151,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/数据库学习/2014/11/07/数据库学习-mysql专题-2014-11-07-Mysql给用户赋予最高权限/">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/环境搭建/2014/11/07/环境搭建-2014-12-16-CentOS6-5升级Python版本/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daodaoliang">
@@ -1173,8 +1173,8 @@
             
               
                 
-                <a class="post-title-link" href="/数据库学习/2014/11/07/数据库学习-mysql专题-2014-11-07-Mysql给用户赋予最高权限/" itemprop="url">
-                  mysql给用户赋予最高权限
+                <a class="post-title-link" href="/环境搭建/2014/11/07/环境搭建-2014-12-16-CentOS6-5升级Python版本/" itemprop="url">
+                  CentOS6.5升级Python版本
                 </a>
               
             
@@ -1225,8 +1225,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据库学习/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库学习</span>
+                  <a href="/categories/环境搭建/" itemprop="url" rel="index">
+                    <span itemprop="name">环境搭建</span>
                   </a>
                 </span>
 
@@ -1256,7 +1256,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  54
+                  253
                 </span>
               
 
@@ -1294,10 +1294,33 @@
           
             <a id="more"></a>
 <hr>
-<h3 id="给予Root用户最高权限"><a href="#给予Root用户最高权限" class="headerlink" title="给予Root用户最高权限"></a>给予Root用户最高权限</h3><blockquote>
-<p>mysql 1449 ： The user specified as a definer (‘root’@’%’) does not exist 解决方法</p>
-</blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mysql&gt; grant all privileges on *.* to root@"%" identified by ".";</div><div class="line"> Query OK, 0 rows affected (0.00 sec)</div><div class="line"></div><div class="line">mysql&gt; flush privileges;</div><div class="line"> Query OK, 0 rows affected (0.00 sec)</div></pre></td></tr></table></figure>
+<p><strong>查看服务器端的python 版本</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python  -V</div></pre></td></tr></table></figure>
+<p>显示：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python 2.6.6</div></pre></td></tr></table></figure>
+<p><strong>下载Python-2.7.9</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tgz    --no-check-certificate</div></pre></td></tr></table></figure>
+<p><strong>解压更改工作目录</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tar zxvf Python-2.7.9.tgz</div><div class="line"><span class="built_in">cd</span> Python-2.7.9</div></pre></td></tr></table></figure>
+<p><strong>安装</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">./configure</div><div class="line">make all</div><div class="line">make install</div><div class="line">make clean</div><div class="line">make distclean</div></pre></td></tr></table></figure>
+<p><strong>查看版本信息</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/<span class="built_in">local</span>/bin/python2.7 -V</div></pre></td></tr></table></figure>
+<p><strong>建立软连接，是系统默认的python 指向python2.7</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mv /usr/bin/python /usr/bin/python2.6.6</div><div class="line">ln <span class="_">-s</span> /usr/<span class="built_in">local</span>/bin/python2.7 /usr/bin/python</div></pre></td></tr></table></figure>
+<p><strong>重新检验python 版本</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python -V</div></pre></td></tr></table></figure>
+<p><strong>修改yum和iBUS的python版本</strong></p>
+<p><strong><em>yum配置</em></strong></p>
+<p>系统 Python 软链接指向 Python2.7 版本后，因为yum是不兼容 Python 2.7的，所以yum不能正常工作，我们需要指定 yum 的Python版本</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /usr/bin/yum</div></pre></td></tr></table></figure>
+<p>将文件头部的：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div></pre></td></tr></table></figure>
+<p>改成</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python2.6.6</span></div></pre></td></tr></table></figure>
+<p><strong><em>iBUS配置</em></strong></p>
+<p>分别用 vi 打开下面两个文件，找到 exec python 那一行，把exec python 改为 exec python2.6 保存，重启。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vi /usr/bin/ibus-setup</div><div class="line">vi /usr/libexec/ibus-ui-gtk</div></pre></td></tr></table></figure>
 
           
         

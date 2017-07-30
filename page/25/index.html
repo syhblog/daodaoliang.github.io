@@ -354,7 +354,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/环境搭建/2014/11/07/环境搭建-2014-12-16-CentOS6-5升级Python版本/">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/数据库学习/2014/11/07/数据库学习-mysql专题-2014-11-07-Mysql给用户赋予最高权限/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daodaoliang">
@@ -376,8 +376,8 @@
             
               
                 
-                <a class="post-title-link" href="/环境搭建/2014/11/07/环境搭建-2014-12-16-CentOS6-5升级Python版本/" itemprop="url">
-                  CentOS6.5升级Python版本
+                <a class="post-title-link" href="/数据库学习/2014/11/07/数据库学习-mysql专题-2014-11-07-Mysql给用户赋予最高权限/" itemprop="url">
+                  mysql给用户赋予最高权限
                 </a>
               
             
@@ -428,8 +428,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/环境搭建/" itemprop="url" rel="index">
-                    <span itemprop="name">环境搭建</span>
+                  <a href="/categories/数据库学习/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库学习</span>
                   </a>
                 </span>
 
@@ -459,7 +459,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  253
+                  54
                 </span>
               
 
@@ -497,33 +497,10 @@
           
             <a id="more"></a>
 <hr>
-<p><strong>查看服务器端的python 版本</strong></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python  -V</div></pre></td></tr></table></figure>
-<p>显示：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python 2.6.6</div></pre></td></tr></table></figure>
-<p><strong>下载Python-2.7.9</strong></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tgz    --no-check-certificate</div></pre></td></tr></table></figure>
-<p><strong>解压更改工作目录</strong></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tar zxvf Python-2.7.9.tgz</div><div class="line"><span class="built_in">cd</span> Python-2.7.9</div></pre></td></tr></table></figure>
-<p><strong>安装</strong></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">./configure</div><div class="line">make all</div><div class="line">make install</div><div class="line">make clean</div><div class="line">make distclean</div></pre></td></tr></table></figure>
-<p><strong>查看版本信息</strong></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/<span class="built_in">local</span>/bin/python2.7 -V</div></pre></td></tr></table></figure>
-<p><strong>建立软连接，是系统默认的python 指向python2.7</strong></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mv /usr/bin/python /usr/bin/python2.6.6</div><div class="line">ln <span class="_">-s</span> /usr/<span class="built_in">local</span>/bin/python2.7 /usr/bin/python</div></pre></td></tr></table></figure>
-<p><strong>重新检验python 版本</strong></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python -V</div></pre></td></tr></table></figure>
-<p><strong>修改yum和iBUS的python版本</strong></p>
-<p><strong><em>yum配置</em></strong></p>
-<p>系统 Python 软链接指向 Python2.7 版本后，因为yum是不兼容 Python 2.7的，所以yum不能正常工作，我们需要指定 yum 的Python版本</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /usr/bin/yum</div></pre></td></tr></table></figure>
-<p>将文件头部的：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div></pre></td></tr></table></figure>
-<p>改成</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python2.6.6</span></div></pre></td></tr></table></figure>
-<p><strong><em>iBUS配置</em></strong></p>
-<p>分别用 vi 打开下面两个文件，找到 exec python 那一行，把exec python 改为 exec python2.6 保存，重启。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vi /usr/bin/ibus-setup</div><div class="line">vi /usr/libexec/ibus-ui-gtk</div></pre></td></tr></table></figure>
+<h3 id="给予Root用户最高权限"><a href="#给予Root用户最高权限" class="headerlink" title="给予Root用户最高权限"></a>给予Root用户最高权限</h3><blockquote>
+<p>mysql 1449 ： The user specified as a definer (‘root’@’%’) does not exist 解决方法</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mysql&gt; grant all privileges on *.* to root@"%" identified by ".";</div><div class="line"> Query OK, 0 rows affected (0.00 sec)</div><div class="line"></div><div class="line">mysql&gt; flush privileges;</div><div class="line"> Query OK, 0 rows affected (0.00 sec)</div></pre></td></tr></table></figure>
 
           
         
@@ -1197,7 +1174,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/Qt学习/2014/10/30/Qt学习-2014-10-30-Qt常见皮肤的QSS/">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/私人工具项目/2014/10/30/QDaoDaoLiang-2014-10-30-软件加密模块的概要设计/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daodaoliang">
@@ -1219,8 +1196,8 @@
             
               
                 
-                <a class="post-title-link" href="/Qt学习/2014/10/30/Qt学习-2014-10-30-Qt常见皮肤的QSS/" itemprop="url">
-                  Qt常见皮肤qss代码
+                <a class="post-title-link" href="/私人工具项目/2014/10/30/QDaoDaoLiang-2014-10-30-软件加密模块的概要设计/" itemprop="url">
+                  软件加密模块的需求和设计
                 </a>
               
             
@@ -1271,8 +1248,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Qt学习/" itemprop="url" rel="index">
-                    <span itemprop="name">Qt学习</span>
+                  <a href="/categories/私人工具项目/" itemprop="url" rel="index">
+                    <span itemprop="name">私人工具项目</span>
                   </a>
                 </span>
 
@@ -1302,7 +1279,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  432
+                  985
                 </span>
               
 
@@ -1318,7 +1295,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -1339,68 +1316,124 @@
         
           
             <a id="more"></a>
+<p>&gt;<br>本文档为软件加密注册模块简要的设计文档，主要是为了其他人更好的理解本模块的设计思想和实现流程，也为了自己在以后修改过中能够快速熟悉模块的设计,避繁就简,就没再严格按照概要设计模板来编写.</p>
 <hr>
-<p>##QTabWidget</p>
+<h2 id="1-设计文档背景-需求"><a href="#1-设计文档背景-需求" class="headerlink" title="1. 设计文档背景(需求)"></a>1. 设计文档背景(需求)</h2><hr>
+<p>该文档的设计是依据如下的需求来进行的设计，主要是为了解决需求中的问题，若是超过该需求的问题，可能该模块就有些不在适宜。</p>
+<hr>
+<blockquote>
+<ol>
+<li>软件只能在一台机器上运行一个实例；</li>
+<li>软件的一个分发版本只能在一台机器上运行，拷贝到其他机器是不能运行的；</li>
+<li>软件分发出去的版本默认都是演示版本，有功能限制、时间限制、使用次数限制，超过限制条件则提示用户注册使用；</li>
+<li>用户注册后可以正常使用软件，但是一个注册码只能使这一个软件在这一台机器上使用；</li>
+<li>模块可以在任意Qt开发的软件中简单集成，使其原程序增加软件注册的功能；</li>
+<li>用户的注册过程需要用户把软件产生的一个加密后密钥文件发送给软件分发商，软件分发商通过软件注册机来产生对应的注册码然后分发给对应的用户使用;</li>
+</ol>
+</blockquote>
+<h2 id="2-模块使用场景"><a href="#2-模块使用场景" class="headerlink" title="2. 模块使用场景"></a>2. 模块使用场景</h2><p><img src="/res/img/blog/软件加密模块文档资源/软件加密模块架构设计图.png" alt="软件总体架构图"></p>
+<h2 id="3-模块基础划分"><a href="#3-模块基础划分" class="headerlink" title="3. 模块基础划分"></a>3. 模块基础划分</h2><hr>
 <blockquote>
 <ul>
-<li><strong>淡蓝色效果TabWidget(属性值lightblue)</strong></li>
+<li>用户信息生成子模块</li>
+<li>加解密子模块</li>
+<li>UI提示接口子模块</li>
+<li>注册码的产生和验证子模块</li>
 </ul>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">QTabWidget</span><span class="selector-attr">[lightblue = "true"]</span> <span class="selector-tag">QTabBar</span><span class="selector-pseudo">::tab</span>&#123;    	</div><div class="line">	<span class="attribute">border-top</span>:<span class="number">1px</span> solid <span class="built_in">rgb</span>(249,249,249);</div><div class="line">	<span class="attribute">border-top-left-radius</span>: <span class="number">4px</span>;</div><div class="line">    <span class="attribute">border-top-right-radius</span>: <span class="number">4px</span>;</div><div class="line">	<span class="attribute">max-height</span>:<span class="number">20px</span>;</div><div class="line">	<span class="attribute">min-height</span>:<span class="number">20px</span>;</div><div class="line">	<span class="attribute">min-width</span>:<span class="number">95px</span>;</div><div class="line">	<span class="attribute">font-family</span>:microsoft yahei;</div><div class="line">	<span class="attribute">color</span>:<span class="built_in">rgb</span>(50,50,50);</div><div class="line">	<span class="attribute">font-size</span>:<span class="number">13px</span>;</div><div class="line">	<span class="attribute">padding</span>:<span class="number">0px</span> <span class="number">0px</span> <span class="number">0px</span> <span class="number">0px</span>;</div><div class="line">	<span class="attribute">border-image</span>:<span class="built_in">url</span>();</div><div class="line">	<span class="attribute">margin</span>: <span class="number">0px</span>;</div><div class="line">	<span class="attribute">padding-bottom</span>:<span class="number">15px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">QTabWidget</span><span class="selector-attr">[lightblue = "true"]</span> <span class="selector-tag">QTabBar</span><span class="selector-pseudo">::tab</span><span class="selector-pseudo">:selected</span>&#123;</div><div class="line">	<span class="attribute">border-left</span>:<span class="number">1px</span> solid <span class="built_in">rgb</span>(192,215,250);</div><div class="line">	<span class="attribute">border-right</span>:<span class="number">1px</span> solid <span class="built_in">rgb</span>(192,215,250);</div><div class="line">	<span class="attribute">border-top</span>:<span class="number">1px</span> solid <span class="built_in">rgb</span>(192,215,250);</div><div class="line">	<span class="attribute">color</span>:<span class="built_in">rgb</span>(50,50,50);</div><div class="line">	<span class="attribute">background-color</span>:<span class="built_in">rgb</span>(249,249,249);</div><div class="line">	<span class="attribute">font-size</span>:<span class="number">13px</span>;</div><div class="line">	<span class="attribute">border-image</span>:<span class="built_in">url</span>();</div><div class="line">	<span class="attribute">margin</span>: <span class="number">0px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">QTabWidget</span><span class="selector-attr">[lightblue = "true"]</span><span class="selector-pseudo">::pane</span> &#123; </div><div class="line"> <span class="attribute">border-top</span>: <span class="number">1px</span> solid <span class="built_in">rgb</span>(192,215,250);</div><div class="line"> <span class="attribute">position</span>: absolute;</div><div class="line"> <span class="attribute">top</span>: -<span class="number">1px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>效果如下图所示：<br><img src="/res/img/blog/皮肤模块说明文档的资源文件/QTabWidget.png" alt="QTableWidget"></p>
-<p>##QLabel </p>
-<blockquote>
-<ul>
-<li><strong>蓝色标题Label(属性值blueTitle)</strong></li>
-</ul>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">QLabel</span><span class="selector-attr">[blueTitle="true"]</span></div><div class="line">&#123;</div><div class="line">	<span class="attribute">font-size</span>:<span class="number">18px</span>;</div><div class="line">	<span class="attribute">font-family</span>:Microsoft YaHei;</div><div class="line">	<span class="attribute">color</span>:<span class="built_in">rgb</span>(255,255,255);</div><div class="line">	<span class="attribute">background-color</span>:<span class="built_in">rgb</span>(5 ,112, 183 );</div><div class="line">	<span class="attribute">padding-left</span>:<span class="number">25px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>效果图如下所示：</p>
-<ul>
+<hr>
+<h3 id="3-1-模块间关系"><a href="#3-1-模块间关系" class="headerlink" title="3.1 模块间关系"></a>3.1 模块间关系</h3><ul>
 <li><ul>
-<li><img src="/res/img/blog/皮肤模块说明文档的资源文件/blueTitle.png" alt="blueTitleLabel"></li>
+<li><img src="/res/img/blog/软件加密模块文档资源/软件加密模块模块架构图.png" alt="软件模块架构图"></li>
 </ul>
 </li>
 </ul>
-<blockquote>
-<ul>
-<li><strong>淡灰色标题Label(属性值lightgrayTitle)</strong></li>
-</ul>
+<h3 id="3-2-用户信息生成子模块"><a href="#3-2-用户信息生成子模块" class="headerlink" title="3.2 用户信息生成子模块"></a>3.2 用户信息生成子模块</h3><blockquote>
+<p>用户信息生成子模块用来收集用户的信息确保用户的全球唯一性，最终该文件是做为产生注册码的源文件，关于该模块的说明如下：</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">QLabel</span><span class="selector-attr">[lightgrayTitle="true"]</span></div><div class="line">&#123;</div><div class="line">	<span class="attribute">font-family</span>:Microsoft YaHei;</div><div class="line">	<span class="attribute">font-size</span>:<span class="number">16px</span>;</div><div class="line">	<span class="attribute">background-color</span>: <span class="built_in">rgb</span>(207, 207, 207);</div><div class="line">	<span class="attribute">padding-left</span>: <span class="number">25px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>效果图如下所示：</p>
 <ul>
-<li><ul>
-<li><img src="/res/img/blog/皮肤模块说明文档的资源文件/lightGrayTitle.png" alt="lightGrayTitleLabel"></li>
+<li>用户信息子模块最终产生为一个后缀为.userinfo的文件</li>
+<li>文件内容需要经过加密子模块进行加密</li>
+<li>用户信息主要包括如下内容：<ul>
+<li>用户网卡MAC</li>
+<li>用户CPU信息(CPU个数)</li>
+<li>当前时间(距离1970年的秒数)</li>
+<li>硬盘硬件序列号</li>
+<li>系统版本代号</li>
+<li>用户程序ID(全球唯一标识符)</li>
 </ul>
 </li>
 </ul>
-<p>##QPushbutton</p>
-<blockquote>
-<ul>
-<li><strong>蓝色按钮(属性值blueButton)</strong></li>
-</ul>
+<h3 id="3-3-加解密子模块"><a href="#3-3-加解密子模块" class="headerlink" title="3.3 加解密子模块"></a>3.3 加解密子模块</h3><blockquote>
+<p>负责给予其他模块提供基础的加解密和校验的接口</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">QPushButton</span><span class="selector-attr">[blueButton="true"]</span></div><div class="line">&#123;</div><div class="line">	<span class="attribute">color</span>:<span class="built_in">rgb</span>(255,255,255);</div><div class="line">	<span class="attribute">border-radius</span>:<span class="number">3px</span>;</div><div class="line">	<span class="attribute">background-color</span>:<span class="built_in">rgb</span>(0,109,204);</div><div class="line">	<span class="attribute">font-family</span>:Arial;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">QPushButton</span><span class="selector-attr">[blueButton="true"]</span><span class="selector-pseudo">:hover</span></div><div class="line">&#123;</div><div class="line">	<span class="attribute">background-color</span>:<span class="built_in">rgb</span>(0 ,119, 224 );</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">QPushButton</span><span class="selector-attr">[blueButton="true"]</span><span class="selector-pseudo">:pressed</span></div><div class="line">&#123;</div><div class="line">	<span class="attribute">background-color</span>:<span class="built_in">rgb</span>(0 ,149 ,255  );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>效果图如下所示：</p>
+<h3 id="3-4-UI提示接口子模块"><a href="#3-4-UI提示接口子模块" class="headerlink" title="3.4 UI提示接口子模块"></a>3.4 UI提示接口子模块</h3><p>&gt;<br>负责给其他模块提供交互界面的接口，用来传递内部信息给用户和接受用户的反馈信息</p>
 <ul>
-<li><ul>
-<li><img src="/res/img/blog/皮肤模块说明文档的资源文件/blueButton.png" alt="blueButton"></li>
+<li>消息提示框(通知、警告、错误)</li>
+</ul>
+<h3 id="3-5-注册码的产生和验证子模块"><a href="#3-5-注册码的产生和验证子模块" class="headerlink" title="3.5 注册码的产生和验证子模块"></a>3.5 注册码的产生和验证子模块</h3><p>&gt;<br>负责记录用户的唯一标识和用户权限</p>
+<h4 id="3-5-1-注册码格式说明"><a href="#3-5-1-注册码格式说明" class="headerlink" title="3.5.1 注册码格式说明"></a>3.5.1 注册码格式说明</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">2byte</th>
+<th style="text-align:center">16byte</th>
+<th style="text-align:center">16byte</th>
+<th style="text-align:center">8byte</th>
+<th style="text-align:center">8byte</th>
+<th style="text-align:center">2byte</th>
+<th style="text-align:center">2byte</th>
+<th style="text-align:center">2byte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">用户类型</td>
+<td style="text-align:center">用户唯一识别码</td>
+<td style="text-align:center">软件唯一识别码</td>
+<td style="text-align:center">开始时间</td>
+<td style="text-align:center">结束时间</td>
+<td style="text-align:center">使用次数</td>
+<td style="text-align:center">转换算法代码</td>
+<td style="text-align:center">完整性校验</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>用户类型</strong></p>
+<ul>
+<li><figure class="highlight plain"><figcaption><span>0x01``` 时间限制型用户</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> * ```0x00 0x02``` 次数限制型用户</div><div class="line"> * ```0x00 0x03```-```0xff 0xff```保留类型 </div><div class="line">* **用户唯一识别码**</div><div class="line"> * 原始串 = MAC地址 + 硬盘序列号 + CPU个数 + 系统版本代码</div><div class="line"> * 原始串进行摘要算法得到16字节的```数字指纹</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>软件唯一识别码</strong></p>
+<ul>
+<li>软件 <code>GUID</code> <code>16字节</code></li>
+</ul>
+</li>
+<li><strong>开始时间</strong><ul>
+<li><code>Unix</code>时间，距离<code>1970</code>年的秒数</li>
+</ul>
+</li>
+<li><strong>结束时间</strong><ul>
+<li><code>Unix</code>时间，距离<code>1970</code>年的秒数</li>
+</ul>
+</li>
+<li><strong>使用次数</strong><ul>
+<li>无符号短整型</li>
+</ul>
+</li>
+<li><strong>转换算法代码</strong><ul>
+<li>内部完整性校验前的字节转换算法代号</li>
+</ul>
+</li>
+<li><strong>完整性校验</strong><ul>
+<li>常规的完整性校验</li>
 </ul>
 </li>
 </ul>
-<blockquote>
-<ul>
-<li><strong>蓝框按钮(属性值)</strong></li>
-</ul>
+<h3 id="3-6-校时模块"><a href="#3-6-校时模块" class="headerlink" title="3.6 校时模块"></a>3.6 校时模块</h3><blockquote>
+<p>负责确保时间的相对正确性，时间出现较大偏差时会进行联网纠正，或者离线估算纠正。</p>
 </blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">QPushButton[blueBorderButton = "true"]</div><div class="line">&#123;</div><div class="line">	border:1px solid;</div><div class="line">	border-color:#afafaf;</div><div class="line">	font-family:microsoft yahei;</div><div class="line">	color:#555555</div><div class="line">&#125;</div><div class="line">QPushButton[blueBorderButton = "true"]:hover</div><div class="line">&#123;</div><div class="line">	border:1px solid;</div><div class="line">	border-color:#11a9d6;</div><div class="line">	font-family:microsoft yahei;</div><div class="line">	color:#555555</div><div class="line">&#125;</div><div class="line">QPushButton[blueBorderButton = "true"]:pressed</div><div class="line">&#123;</div><div class="line">	background-color:#11a9d6;</div><div class="line">	border:1px solid;</div><div class="line">	border-color:#afafaf;</div><div class="line">	font-family:microsoft yahei;</div><div class="line">	color:white</div><div class="line">&#125;</div><div class="line">```      </div><div class="line"></div><div class="line">效果图如下所示：</div><div class="line"></div><div class="line">* </div><div class="line"> * </div><div class="line">  ![blueButton](/res/img/blog/皮肤模块说明文档的资源文件/blueBorderButton.png)</div><div class="line">  ![blueBorderButton_normal](/res/img/blog/皮肤模块说明文档的资源文件/blueBorderButton_normal.png)</div><div class="line">  ![blueBorderButton_push](/res/img/blog/皮肤模块说明文档的资源文件/blueBorderButton_push.png)</div><div class="line">  </div><div class="line">## QProgressBar</div><div class="line"></div><div class="line">&gt; * 淡红色进度条</div><div class="line"></div><div class="line">```css</div><div class="line">QProgressBar[redProgressBar = "true"]&#123;  </div><div class="line">    color : solid gray;  </div><div class="line">    border: 2px solid gray;  </div><div class="line">    border-radius: 5px;  </div><div class="line">    background: transparent;  </div><div class="line">    padding: 0px;  </div><div class="line">    text-align : center ;  </div><div class="line">&#125;  </div><div class="line">QProgressBar[redProgressBar = "true"]::chunk&#123;  </div><div class="line">    background: #B22222;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li><ul>
-<li><img src="/res/img/blog/皮肤模块说明文档的资源文件/redProgressBar.png" alt="redProgressBar"> </li>
-</ul>
-</li>
-</ul>
 
           
         
