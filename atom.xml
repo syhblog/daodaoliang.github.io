@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://daodaoliang.com/"/>
-  <updated>2017-07-29T06:20:02.561Z</updated>
+  <updated>2017-07-30T08:04:52.896Z</updated>
   <id>http://daodaoliang.com/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://daodaoliang.com/%E5%BF%83%E4%B8%96%E7%95%8C/2099/04/14/%E6%96%B0%E4%B8%96%E7%95%8C-2015-04-14-%E6%A2%A6%E6%83%B3%E6%B8%85%E5%8D%95/"/>
     <id>http://daodaoliang.com/心世界/2099/04/14/新世界-2015-04-14-梦想清单/</id>
     <published>2099-04-13T16:00:00.000Z</published>
-    <updated>2017-07-29T06:20:02.561Z</updated>
+    <updated>2017-07-30T08:04:52.896Z</updated>
     
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><p><img src="https://source.unsplash.com/random/800x300"></p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=2&id=5267808&auto=1&height=32"></iframe>
 </blockquote>
 <a id="more"></a>
 <div class="note info"><p>target = ‘日日当精进 但求无愧’<br>target = ‘just do it’</p>
@@ -50,6 +51,7 @@
     <summary type="html">
     
       &lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;&lt;img src=&quot;https://source.unsplash.com/random/800x300&quot;&gt;&lt;/p&gt;
+&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;298&quot; height=&quot;52&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=5267808&amp;auto=1&amp;height=32&quot;&gt;&lt;/iframe&gt;
 &lt;/blockquote&gt;
     
     </summary>
@@ -64,7 +66,7 @@
     <link href="http://daodaoliang.com/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/2017/07/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0-mysql%E4%B8%93%E9%A2%98-2014-12-21-Mysql%E7%94%A8%E6%88%B7%E8%B4%A6%E5%8F%B7%E6%93%8D%E4%BD%9C/"/>
     <id>http://daodaoliang.com/数据库学习/2017/07/10/数据库学习-mysql专题-2014-12-21-Mysql用户账号操作/</id>
     <published>2017-07-09T16:00:00.000Z</published>
-    <updated>2017-07-29T06:20:02.561Z</updated>
+    <updated>2017-07-30T08:04:52.895Z</updated>
     
     <content type="html"><![CDATA[<pre><code>作者: daodaoliang
 日期: 2017-07-10
@@ -157,7 +159,7 @@
     <link href="http://daodaoliang.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2017/06/22/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-2017-06-22-CentOS%E4%B8%8B%E6%90%AD%E5%BB%BAipv6%E7%8E%AF%E5%A2%83/"/>
     <id>http://daodaoliang.com/环境搭建/2017/06/22/环境搭建-2017-06-22-CentOS下搭建ipv6环境/</id>
     <published>2017-06-21T16:00:00.000Z</published>
-    <updated>2017-07-29T06:20:02.565Z</updated>
+    <updated>2017-07-30T08:04:52.898Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">作者 : daodaoliang@yeah.net</div><div class="line">日期 : 2017-06-22</div><div class="line">版本 : 0.0.1</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -234,43 +236,11 @@
   </entry>
   
   <entry>
-    <title>CentOS6升级GCC版本</title>
-    <link href="http://daodaoliang.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2017/04/20/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-2017-04-20-CentOS6%E5%8D%87%E7%BA%A7GCC%E7%89%88%E6%9C%AC/"/>
-    <id>http://daodaoliang.com/环境搭建/2017/04/20/环境搭建-2017-04-20-CentOS6升级GCC版本/</id>
-    <published>2017-04-19T16:00:00.000Z</published>
-    <updated>2017-07-29T06:20:02.565Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">作者 : daodaoliang@yeah.net</div><div class="line">日期 : 2017-04-20</div><div class="line">版本 : 0.0.1</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>[TOC]</p>
-<h3 id="1-背景简述"><a href="#1-背景简述" class="headerlink" title="1. 背景简述"></a>1. 背景简述</h3><p><code>CentOS 6</code>系列的服务器,默认的gcc编译器都是 <code>4.4.7</code> 版本,有事后为了开发或者编译其他开源软件，则需要对gcc编译器进行升级;</p>
-<h3 id="2-安装GCC前准备"><a href="#2-安装GCC前准备" class="headerlink" title="2. 安装GCC前准备"></a>2. 安装<code>GCC</code>前准备</h3><h4 id="2-1-下载指定版本"><a href="#2-1-下载指定版本" class="headerlink" title="2.1 下载指定版本"></a>2.1 下载指定版本</h4><p>首先在官网上面下载你需要的<code>GCC</code>版本,<a href="http://ftp.gnu.org/gnu/gcc" target="_blank" rel="external">官网在这里</a>,笔者选择的是<code>GCC 4.8.4</code>版本;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/src</div><div class="line">   wget http://ftp.gnu.org/gnu/gcc/gcc-4.8.4/gcc-4.8.4.tar.gz</div></pre></td></tr></table></figure>
-<h4 id="2-2-解压并进行准备工作"><a href="#2-2-解压并进行准备工作" class="headerlink" title="2.2 解压并进行准备工作"></a>2.2 解压并进行准备工作</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar zxvf gcc-4.8.4.tar.gz</div></pre></td></tr></table></figure>
-<h4 id="2-3-下载供编译需求的依赖项"><a href="#2-3-下载供编译需求的依赖项" class="headerlink" title="2.3 下载供编译需求的依赖项"></a>2.3 下载供编译需求的依赖项</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/src/gcc-4.8.4/contrib/download_prerequisites</div></pre></td></tr></table></figure>
-<h3 id="3-开始安装"><a href="#3-开始安装" class="headerlink" title="3. 开始安装"></a>3. 开始安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/src/gcc-4.8.4</div><div class="line">   mkdir gcc-build</div><div class="line">   cd gcc-build</div><div class="line">   ../configure -enable-checking=release -enable-languages=c,c++ -disable-multilib</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make -j4</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo make install</div></pre></td></tr></table></figure>
-<h3 id="4-配置环境"><a href="#4-配置环境" class="headerlink" title="4. 配置环境"></a>4. 配置环境</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cp /usr/local/lib64/libstdc++* /usr/lib64/</div><div class="line">   ln -s /usr/lib64/libstdc++.so /usr/lib64/libstdc++.so.6.0.19</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;作者 : daodaoliang@yeah.net&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;日期 : 2017-04-20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;版本 : 0.0.1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="环境搭建" scheme="http://daodaoliang.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>CentOS下Nexus搭建Maven私库</title>
     <link href="http://daodaoliang.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2017/04/20/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-2017-04-20-CentOS%E4%B8%8BNexus%E6%90%AD%E5%BB%BAMaven%E7%A7%81%E5%BA%93/"/>
     <id>http://daodaoliang.com/环境搭建/2017/04/20/环境搭建-2017-04-20-CentOS下Nexus搭建Maven私库/</id>
     <published>2017-04-19T16:00:00.000Z</published>
-    <updated>2017-07-29T06:20:02.565Z</updated>
+    <updated>2017-07-30T08:04:52.898Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">作者 : daodaoliang@yeah.net</div><div class="line">日期 : 2017-04-20</div><div class="line">版本 : 0.0.4</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -338,11 +308,43 @@
   </entry>
   
   <entry>
+    <title>CentOS6升级GCC版本</title>
+    <link href="http://daodaoliang.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2017/04/20/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-2017-04-20-CentOS6%E5%8D%87%E7%BA%A7GCC%E7%89%88%E6%9C%AC/"/>
+    <id>http://daodaoliang.com/环境搭建/2017/04/20/环境搭建-2017-04-20-CentOS6升级GCC版本/</id>
+    <published>2017-04-19T16:00:00.000Z</published>
+    <updated>2017-07-30T08:04:52.898Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">作者 : daodaoliang@yeah.net</div><div class="line">日期 : 2017-04-20</div><div class="line">版本 : 0.0.1</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>[TOC]</p>
+<h3 id="1-背景简述"><a href="#1-背景简述" class="headerlink" title="1. 背景简述"></a>1. 背景简述</h3><p><code>CentOS 6</code>系列的服务器,默认的gcc编译器都是 <code>4.4.7</code> 版本,有事后为了开发或者编译其他开源软件，则需要对gcc编译器进行升级;</p>
+<h3 id="2-安装GCC前准备"><a href="#2-安装GCC前准备" class="headerlink" title="2. 安装GCC前准备"></a>2. 安装<code>GCC</code>前准备</h3><h4 id="2-1-下载指定版本"><a href="#2-1-下载指定版本" class="headerlink" title="2.1 下载指定版本"></a>2.1 下载指定版本</h4><p>首先在官网上面下载你需要的<code>GCC</code>版本,<a href="http://ftp.gnu.org/gnu/gcc" target="_blank" rel="external">官网在这里</a>,笔者选择的是<code>GCC 4.8.4</code>版本;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/src</div><div class="line">   wget http://ftp.gnu.org/gnu/gcc/gcc-4.8.4/gcc-4.8.4.tar.gz</div></pre></td></tr></table></figure>
+<h4 id="2-2-解压并进行准备工作"><a href="#2-2-解压并进行准备工作" class="headerlink" title="2.2 解压并进行准备工作"></a>2.2 解压并进行准备工作</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar zxvf gcc-4.8.4.tar.gz</div></pre></td></tr></table></figure>
+<h4 id="2-3-下载供编译需求的依赖项"><a href="#2-3-下载供编译需求的依赖项" class="headerlink" title="2.3 下载供编译需求的依赖项"></a>2.3 下载供编译需求的依赖项</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/src/gcc-4.8.4/contrib/download_prerequisites</div></pre></td></tr></table></figure>
+<h3 id="3-开始安装"><a href="#3-开始安装" class="headerlink" title="3. 开始安装"></a>3. 开始安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/src/gcc-4.8.4</div><div class="line">   mkdir gcc-build</div><div class="line">   cd gcc-build</div><div class="line">   ../configure -enable-checking=release -enable-languages=c,c++ -disable-multilib</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make -j4</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo make install</div></pre></td></tr></table></figure>
+<h3 id="4-配置环境"><a href="#4-配置环境" class="headerlink" title="4. 配置环境"></a>4. 配置环境</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cp /usr/local/lib64/libstdc++* /usr/lib64/</div><div class="line">   ln -s /usr/lib64/libstdc++.so /usr/lib64/libstdc++.so.6.0.19</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;作者 : daodaoliang@yeah.net&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;日期 : 2017-04-20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;版本 : 0.0.1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="环境搭建" scheme="http://daodaoliang.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>CentOS6.8下安装Maven</title>
     <link href="http://daodaoliang.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2017/04/14/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-2017-04-14-CentOS6-8%E4%B8%8B%E5%AE%89%E8%A3%85Maven/"/>
     <id>http://daodaoliang.com/环境搭建/2017/04/14/环境搭建-2017-04-14-CentOS6-8下安装Maven/</id>
     <published>2017-04-13T16:00:00.000Z</published>
-    <updated>2017-07-29T06:20:02.565Z</updated>
+    <updated>2017-07-30T08:04:52.897Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">作者 : daodaoliang@yeah.net</div><div class="line">日期 : 2017-04-13</div><div class="line">版本 : 0.0.4</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -402,7 +404,7 @@
     <link href="http://daodaoliang.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2017/04/13/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-2014-10-17-Ubuntu14-04%E4%B8%8B%E9%85%8D%E7%BD%AEGitLab7/"/>
     <id>http://daodaoliang.com/环境搭建/2017/04/13/环境搭建-2014-10-17-Ubuntu14-04下配置GitLab7/</id>
     <published>2017-04-12T16:00:00.000Z</published>
-    <updated>2017-07-29T06:20:02.561Z</updated>
+    <updated>2017-07-30T08:04:52.896Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">作者 : daodaoliang@yeah.net</div><div class="line">日期 : 2017-04-13</div><div class="line">版本 : 0.0.4</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -483,7 +485,7 @@
     <link href="http://daodaoliang.com/windows%E5%AD%A6%E4%B9%A0/2017/04/12/windows%E5%AD%A6%E4%B9%A0-2017-04-12-windowsUAC/"/>
     <id>http://daodaoliang.com/windows学习/2017/04/12/windows学习-2017-04-12-windowsUAC/</id>
     <published>2017-04-11T16:00:00.000Z</published>
-    <updated>2017-07-29T06:20:02.561Z</updated>
+    <updated>2017-07-30T08:04:52.894Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">auther  =  <span class="string">'daodaoliang'</span></div><div class="line">version =  <span class="string">'V 0.0.1'</span></div><div class="line">date    =  <span class="string">'2017年04月12日'</span></div></pre></td></tr></table></figure>
@@ -510,7 +512,7 @@
     <link href="http://daodaoliang.com/uncategorized/2017/04/12/windows%E5%AD%A6%E4%B9%A0-2017-04-12-windows%E4%B8%8B%E9%9D%A2%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F%E7%9B%B8%E5%85%B3/"/>
     <id>http://daodaoliang.com/uncategorized/2017/04/12/windows学习-2017-04-12-windows下面服务程序相关/</id>
     <published>2017-04-11T16:00:00.000Z</published>
-    <updated>2017-07-29T06:20:02.561Z</updated>
+    <updated>2017-07-30T08:04:52.894Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <pre><code>作者: daodaoliang
@@ -573,7 +575,7 @@
     <link href="http://daodaoliang.com/c-%E5%AD%A6%E4%B9%A0/2017/03/08/c-%E5%AD%A6%E4%B9%A0-2017-03-08-HashAlgorithm/"/>
     <id>http://daodaoliang.com/c-学习/2017/03/08/c-学习-2017-03-08-HashAlgorithm/</id>
     <published>2017-03-07T16:00:00.000Z</published>
-    <updated>2017-07-29T06:20:02.561Z</updated>
+    <updated>2017-07-30T08:04:52.893Z</updated>
     
     <content type="html"><![CDATA[<pre><code>作者: daodaoliang
 版本: V 0.0.1
@@ -603,7 +605,7 @@
     <link href="http://daodaoliang.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2017/02/17/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-2017-02-17-CentOS%E4%B8%8B%E5%8D%87%E7%BA%A7NodeJs/"/>
     <id>http://daodaoliang.com/环境搭建/2017/02/17/环境搭建-2017-02-17-CentOS下升级NodeJs/</id>
     <published>2017-02-16T16:00:00.000Z</published>
-    <updated>2017-07-29T06:20:02.565Z</updated>
+    <updated>2017-07-30T08:04:52.897Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <pre><code>作者: daodaoliang
@@ -674,7 +676,7 @@
     <link href="http://daodaoliang.com/linux%E5%AD%A6%E4%B9%A0/2017/02/06/linux%E5%AD%A6%E4%B9%A0-2017-02-06-linux%E5%86%85%E6%A0%B8%E6%BC%AB%E7%94%BB/"/>
     <id>http://daodaoliang.com/linux学习/2017/02/06/linux学习-2017-02-06-linux内核漫画/</id>
     <published>2017-02-05T16:00:00.000Z</published>
-    <updated>2017-07-29T06:20:02.561Z</updated>
+    <updated>2017-07-30T08:04:52.894Z</updated>
     
     <content type="html"><![CDATA[<pre><code>作者: daodaoliang
 版本: V 0.0.1
@@ -703,7 +705,7 @@
     <link href="http://daodaoliang.com/linux%E5%AD%A6%E4%B9%A0/2017/02/01/c-%E5%AD%A6%E4%B9%A0-2017-02-14-linux%E4%B8%8BC-%E7%9A%84%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/"/>
     <id>http://daodaoliang.com/linux学习/2017/02/01/c-学习-2017-02-14-linux下C-的编译过程/</id>
     <published>2017-01-31T16:00:00.000Z</published>
-    <updated>2017-07-29T06:20:02.561Z</updated>
+    <updated>2017-07-30T08:04:52.892Z</updated>
     
     <content type="html"><![CDATA[<pre><code>作者: daodaoliang
 版本: V 0.0.1
@@ -760,7 +762,7 @@
     <link href="http://daodaoliang.com/linux%E5%AD%A6%E4%B9%A0/2016/12/29/linux%E5%AD%A6%E4%B9%A0-2016-12-29-ssh%E8%B6%85%E6%97%B6%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE/"/>
     <id>http://daodaoliang.com/linux学习/2016/12/29/linux学习-2016-12-29-ssh超时时间设置/</id>
     <published>2016-12-28T16:00:00.000Z</published>
-    <updated>2017-07-29T06:20:02.561Z</updated>
+    <updated>2017-07-30T08:04:52.894Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <pre><code>作者: daodaoliang
@@ -808,7 +810,7 @@
     <link href="http://daodaoliang.com/windows%E5%AD%A6%E4%B9%A0/2016/11/25/windows%E5%AD%A6%E4%B9%A0-2016-11-25-windows%E4%B8%8B%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AFVBS%E8%84%9A%E6%9C%AC/"/>
     <id>http://daodaoliang.com/windows学习/2016/11/25/windows学习-2016-11-25-windows下获取系统信息VBS脚本/</id>
     <published>2016-11-24T16:00:00.000Z</published>
-    <updated>2017-07-29T06:20:02.561Z</updated>
+    <updated>2017-07-30T08:04:52.894Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <pre><code>作者: daodaoliang
@@ -839,7 +841,7 @@
     <link href="http://daodaoliang.com/linux%E5%AD%A6%E4%B9%A0/2016/11/11/linux%E5%AD%A6%E4%B9%A0-2016-11-11-%E6%B8%85%E7%90%86%E7%99%BB%E5%BD%95%E5%92%8C%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/"/>
     <id>http://daodaoliang.com/linux学习/2016/11/11/linux学习-2016-11-11-清理登录和操作记录/</id>
     <published>2016-11-10T16:00:00.000Z</published>
-    <updated>2017-07-29T06:20:02.561Z</updated>
+    <updated>2017-07-30T08:04:52.894Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <pre><code>作者: daodaoliang
@@ -874,7 +876,7 @@
     <link href="http://daodaoliang.com/%E7%A7%81%E4%BA%BA%E5%B7%A5%E5%85%B7%E9%A1%B9%E7%9B%AE/2016/11/04/QDaoDaoLiang-2016-11-04-Qt%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E/"/>
     <id>http://daodaoliang.com/私人工具项目/2016/11/04/QDaoDaoLiang-2016-11-04-Qt开源项目说明/</id>
     <published>2016-11-03T16:00:00.000Z</published>
-    <updated>2017-07-29T06:20:02.561Z</updated>
+    <updated>2017-07-30T08:04:52.892Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <pre><code>作者: daodaoliang
@@ -944,7 +946,7 @@
     <link href="http://daodaoliang.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2016/11/02/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-2016-11-02-Supervisor%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
     <id>http://daodaoliang.com/环境搭建/2016/11/02/环境搭建-2016-11-02-Supervisor安装与配置/</id>
     <published>2016-11-01T16:00:00.000Z</published>
-    <updated>2017-07-29T06:20:02.565Z</updated>
+    <updated>2017-07-30T08:04:52.897Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <pre><code>作者: daodaoliang
@@ -1014,7 +1016,7 @@
     <link href="http://daodaoliang.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2016/10/28/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-2016-10-28-nginx%E9%85%8D%E7%BD%AEhttps%E5%B9%B6%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6/"/>
     <id>http://daodaoliang.com/环境搭建/2016/10/28/环境搭建-2016-10-28-nginx配置https并自签名证书/</id>
     <published>2016-10-27T16:00:00.000Z</published>
-    <updated>2017-07-29T06:20:02.565Z</updated>
+    <updated>2017-07-30T08:04:52.897Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <pre><code>作者: daodaoliang
@@ -1084,7 +1086,7 @@
     <link href="http://daodaoliang.com/%E8%BD%AC%E8%BD%BD/2016/09/28/%E8%BD%AC%E8%BD%BD-2016-09-28-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     <id>http://daodaoliang.com/转载/2016/09/28/转载-2016-09-28-常用的正则表达式/</id>
     <published>2016-09-27T16:00:00.000Z</published>
-    <updated>2017-07-29T06:20:02.565Z</updated>
+    <updated>2017-07-30T08:04:52.898Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <pre><code>原文出处: (http://www.jianshu.com/p/e7bb97218946)

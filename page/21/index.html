@@ -120,7 +120,6 @@
 <meta property="og:url" content="http://daodaoliang.com/page/21/index.html">
 <meta property="og:site_name" content="刀刀亮的博客">
 <meta property="og:description" content="日日当精进 但求无愧">
-<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="刀刀亮的博客">
 <meta name="twitter:description" content="日日当精进 但求无愧">
@@ -132,7 +131,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":true,"scrollpercent":true},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":true,"scrollpercent":true},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -355,12 +354,12 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/数据库学习/2015/01/22/数据库学习-mysql专题-2015-01-22-mysql三种插入语句的区别/">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/数据库学习/2015/01/22/数据库学习-mysql专题-2015-01-22-Mysql-TIMESTAMPDIFF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daodaoliang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://47.93.54.27/res/img/avatar.png">
+      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -377,8 +376,8 @@
             
               
                 
-                <a class="post-title-link" href="/数据库学习/2015/01/22/数据库学习-mysql专题-2015-01-22-mysql三种插入语句的区别/" itemprop="url">
-                  mysql insert into和replace into以及insert ignore的区别
+                <a class="post-title-link" href="/数据库学习/2015/01/22/数据库学习-mysql专题-2015-01-22-Mysql-TIMESTAMPDIFF/" itemprop="url">
+                  mysql TIMESTAMPDIFF
                 </a>
               
             
@@ -410,8 +409,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-29T14:20:02+08:00">
-                2017-07-29
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-30T16:04:52+08:00">
+                2017-07-30
               </time>
             
           </span>
@@ -460,7 +459,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  336
+                  143
                 </span>
               
 
@@ -497,8 +496,51 @@
         
           
             <a id="more"></a>
-<p><strong><em>insert into</em></strong></p>
-<figure class="highlight plain"><figcaption><span>into``` 表示插入数据，数据会检查主键(PrimaryKey),如果出现重复会报错；</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">***replace into***</div><div class="line"></div><div class="line">```replace into``` 表示插入替换数据，需求表中有```PrimaryKey```,或者```Unique```索引的话，如果数据库已经存在数据，则用新数据替换，如果没有数据效果跟```insert into```一样，```replace```语句会返回一个数，来指示受影响的行的数目，该数目时被删除和被插入的行数的和，如果对应一个单行```replace```该数为１，则一行被插入，同时没有行被删除，如果该数大于１，则在新行被插入前，有一个或者多个旧行被删除，如果表包含多个唯一索引，并且新行复制了在不同的唯一索引中的不同旧行的值，则有可能是一个单一行替换了多个旧行；</div><div class="line"></div><div class="line">***insert ignore into***</div><div class="line"></div><div class="line">```indert ignore```表示，如果中已经存在相同的记录，则忽略当前新数据；</div><div class="line"></div><div class="line">示例：</div><div class="line"></div><div class="line">```mysql</div><div class="line">	create table test_table (</div><div class="line">	id int not null primary key,</div><div class="line">	name varchar(20),</div><div class="line">	age int</div><div class="line">	)</div><div class="line"></div><div class="line">	insert into test_table (id,name,age) values (1,&quot;111&quot;,111);</div><div class="line"></div><div class="line">	select * from test_table;</div><div class="line"></div><div class="line">	insert ignore into test_table (id,name,age) values (1,&quot;222&quot;,11);</div><div class="line"></div><div class="line">	select * from test_table; //因为id是主键，出现主键重复但使用了ignore则错误被忽略</div><div class="line"></div><div class="line">	replace into test_table (id,name,age) values (1,&quot;222&quot;,12);</div><div class="line"></div><div class="line">	select * from test_table; //数据变成 1,&quot;222&quot;,12</div></pre></td></tr></table></figure>
+<h2 id="TIMESTAMPDIFF"><a href="#TIMESTAMPDIFF" class="headerlink" title="TIMESTAMPDIFF"></a><strong>TIMESTAMPDIFF</strong></h2><p><strong><em>语法:</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">TIMESTAMPDIFF(interval,datetime_expr1,datetime_expr2)</div></pre></td></tr></table></figure>
+<p>说明:</p>
+<p>返回日期或者日期时间的表达式datetime_expr1和datetime_expr2之间的整数差,期结果的单位由interval参数给出,该参数必须时以下值的其中一个:</p>
+<ul>
+<li><ol>
+<li>FRAC_SECOND 毫秒</li>
+</ol>
+</li>
+<li><ol>
+<li>SECOND 秒</li>
+</ol>
+</li>
+<li><ol>
+<li>MINUTE 分钟</li>
+</ol>
+</li>
+<li><ol>
+<li>HOUR 小时</li>
+</ol>
+</li>
+<li><ol>
+<li>DAY 天</li>
+</ol>
+</li>
+<li><ol>
+<li>WEEK 星期</li>
+</ol>
+</li>
+<li><ol>
+<li>MONTH 月</li>
+</ol>
+</li>
+<li><ol>
+<li>QUARTER 季度</li>
+</ol>
+</li>
+<li><ol>
+<li>YEAR 年</li>
+</ol>
+</li>
+</ul>
+<h2 id="TIMESTAMPADD"><a href="#TIMESTAMPADD" class="headerlink" title="TIMESTAMPADD"></a><strong>TIMESTAMPADD</strong></h2><p><strong><em>语法：</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">TIMESTAMPADD(interval,int_expr,datetime_expr)</div></pre></td></tr></table></figure>
+<p>说明：<br>将整型表达式inter_expr天价到日期或者日期时间表达式datetime＿expr中，式中的interval和上下文中列举的取值时一样的结果</p>
 
           
         
@@ -553,7 +595,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daodaoliang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://47.93.54.27/res/img/avatar.png">
+      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -603,8 +645,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-29T14:20:02+08:00">
-                2017-07-29
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-30T16:04:52+08:00">
+                2017-07-30
               </time>
             
           </span>
@@ -786,7 +828,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daodaoliang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://47.93.54.27/res/img/avatar.png">
+      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -836,8 +878,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-29T14:20:02+08:00">
-                2017-07-29
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-30T16:04:52+08:00">
+                2017-07-30
               </time>
             
           </span>
@@ -1047,7 +1089,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daodaoliang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://47.93.54.27/res/img/avatar.png">
+      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1097,8 +1139,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-29T14:20:02+08:00">
-                2017-07-29
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-30T16:04:52+08:00">
+                2017-07-30
               </time>
             
           </span>
@@ -1239,7 +1281,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daodaoliang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://47.93.54.27/res/img/avatar.png">
+      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1289,8 +1331,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-29T14:20:02+08:00">
-                2017-07-29
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-30T16:04:52+08:00">
+                2017-07-30
               </time>
             
           </span>
@@ -1500,7 +1542,7 @@
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="http://47.93.54.27/res/img/avatar.png"
+               src="https://source.unsplash.com/random/100x100"
                alt="daodaoliang" />
           <p class="site-author-name" itemprop="name">daodaoliang</p>
            
