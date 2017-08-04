@@ -123,17 +123,17 @@
 
 
 
-<meta name="description" content="1234作者: daodaoliang日期: 2017-08-02版本: 0.0.1邮箱: daodaoliang@yeah.net 1. 安装前准备 系统环境说明     环境 版本     CentOS 7.2.1511     安装开发工具包  1yum groupinstall &quot;Development Tools&quot;  安装 (libX11-devel、libXext-devel、libX">
+<meta name="description" content="1234作者: daodaoliang日期: 2017-08-02版本: 0.0.1邮箱: daodaoliang@yeah.net">
 <meta name="keywords" content="Qt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS下面编译Qt4.8.6">
 <meta property="og:url" content="http://daodaoliang.com/Qt学习/2017/08/02/Qt学习-2017-8-2-CentOS下面编译Qt4-8-6/index.html">
 <meta property="og:site_name" content="刀刀亮的博客">
-<meta property="og:description" content="1234作者: daodaoliang日期: 2017-08-02版本: 0.0.1邮箱: daodaoliang@yeah.net 1. 安装前准备 系统环境说明     环境 版本     CentOS 7.2.1511     安装开发工具包  1yum groupinstall &quot;Development Tools&quot;  安装 (libX11-devel、libXext-devel、libX">
-<meta property="og:updated_time" content="2017-08-04T01:07:18.123Z">
+<meta property="og:description" content="1234作者: daodaoliang日期: 2017-08-02版本: 0.0.1邮箱: daodaoliang@yeah.net">
+<meta property="og:updated_time" content="2017-08-04T01:44:18.441Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS下面编译Qt4.8.6">
-<meta name="twitter:description" content="1234作者: daodaoliang日期: 2017-08-02版本: 0.0.1邮箱: daodaoliang@yeah.net 1. 安装前准备 系统环境说明     环境 版本     CentOS 7.2.1511     安装开发工具包  1yum groupinstall &quot;Development Tools&quot;  安装 (libX11-devel、libXext-devel、libX">
+<meta name="twitter:description" content="1234作者: daodaoliang日期: 2017-08-02版本: 0.0.1邮箱: daodaoliang@yeah.net">
 
 
 
@@ -415,7 +415,7 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-08-04T09:07:18+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-04T09:44:18+08:00">
                 2017-08-04
               </time>
             
@@ -480,7 +480,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  312
+                  309
                 </span>
               
 
@@ -515,6 +515,7 @@
 
       
         <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">作者: daodaoliang</div><div class="line">日期: 2017-08-02</div><div class="line">版本: 0.0.1</div><div class="line">邮箱: daodaoliang@yeah.net</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h4 id="1-安装前准备"><a href="#1-安装前准备" class="headerlink" title="1. 安装前准备"></a>1. 安装前准备</h4><ul>
 <li>系统环境说明</li>
 </ul>
@@ -541,12 +542,9 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">yum install libX11-devel</div><div class="line">yum install libXext-devel</div><div class="line">yum install libXtst-devel</div></pre></td></tr></table></figure>
 <p><strong>PS：</strong> 如果不安装以上的包在进行 <code>configure</code> 时会出现以下错误</p>
-<p>-</p>
-{% note warning %}
-  You might need to modify the include and library search paths by editing
-  QMAKE_INCDIR_X11 and QMAKE_LIBDIR_X11 in /home/zhu/Qt/qt-x11-opensource-src-4.8.6/mkspecs/Linux-g++
-{% endnote %}
-<p>-</p>
+<blockquote>
+<p>You might need to modify the include and library search paths by editing<br>QMAKE_INCDIR_X11 and QMAKE_LIBDIR_X11 in /home/zhu/Qt/qt-x11-opensource-src-4.8.6/mkspecs/Linux-g++</p>
+</blockquote>
 <h4 id="2-编译安装"><a href="#2-编译安装" class="headerlink" title="2. 编译安装"></a>2. 编译安装</h4><ul>
 <li>下载源码包</li>
 </ul>
