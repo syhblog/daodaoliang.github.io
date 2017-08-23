@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://daodaoliang.com/"/>
-  <updated>2017-08-23T07:06:24.850Z</updated>
+  <updated>2017-08-23T08:42:56.516Z</updated>
   <id>http://daodaoliang.com/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="http://daodaoliang.com/%E5%BF%83%E4%B8%96%E7%95%8C/2099/04/14/%E6%96%B0%E4%B8%96%E7%95%8C-2015-04-14-%E6%A2%A6%E6%83%B3%E6%B8%85%E5%8D%95/"/>
     <id>http://daodaoliang.com/心世界/2099/04/14/新世界-2015-04-14-梦想清单/</id>
     <published>2099-04-13T16:00:00.000Z</published>
-    <updated>2017-08-23T07:06:24.850Z</updated>
+    <updated>2017-08-23T08:42:56.516Z</updated>
     
-    <content type="html"><![CDATA[<blockquote class="blockquote-center"><p><img src="https://source.unsplash.com/random/800x300"></p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=2&id=5267808&auto=1&height=32"></iframe>
+    <content type="html"><![CDATA[<p><img src="https://source.unsplash.com/random/800x300" class="full-image"></p>
+<blockquote class="blockquote-center"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=2&id=5267808&auto=1&height=32"></iframe>
 </blockquote>
 <a id="more"></a>
 <div class="note info"><p>target = ‘日日当精进 但求无愧’<br>target = ‘just do it’</p></div>
@@ -39,8 +39,8 @@
     
     <summary type="html">
     
-      &lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;&lt;img src=&quot;https://source.unsplash.com/random/800x300&quot;&gt;&lt;/p&gt;
-&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;298&quot; height=&quot;52&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=5267808&amp;auto=1&amp;height=32&quot;&gt;&lt;/iframe&gt;
+      &lt;p&gt;&lt;img src=&quot;https://source.unsplash.com/random/800x300&quot; class=&quot;full-image&quot;&gt;&lt;/p&gt;
+&lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;298&quot; height=&quot;52&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=5267808&amp;auto=1&amp;height=32&quot;&gt;&lt;/iframe&gt;
 &lt;/blockquote&gt;
     
     </summary>
