@@ -1,26 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
-<script>
-    (function(){
-        if(''){
-            if (prompt('请输入文章密码') !== ''){
-                alert('密码错误！');
-                history.back();
-            }
-        }
-    })();
-</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-circle.min.css?v=1.0.2" rel="stylesheet">
+
+
+
 
   
   
@@ -64,35 +66,17 @@
   
 
   
-    
-      
-    
 
-    
+  
+
   
 
   
 
   
     
-      
     
-
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -102,7 +86,7 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="刀刀亮, 极客, daodaoliang" />
@@ -116,7 +100,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
 
 
 
@@ -129,6 +113,7 @@
 <meta property="og:url" content="http://daodaoliang.com/page/21/index.html">
 <meta property="og:site_name" content="刀刀亮的博客">
 <meta property="og:description" content="日日当精进 但求无愧">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="刀刀亮的博客">
 <meta name="twitter:description" content="日日当精进 但求无愧">
@@ -139,9 +124,11 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":true,"scrollpercent":true},
+    scheme: 'Gemini',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":true,"scrollpercent":false,"onmobile":true},
     fancybox: true,
+    tabs: true,
     motion: true,
     duoshuo: {
       userId: '0',
@@ -151,8 +138,8 @@
       applicationID: '',
       apiKey: '',
       indexName: '',
-      hits: "",
-      labels: ""
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
@@ -164,15 +151,8 @@
 
 
 
-<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
-
 
   <title>刀刀亮的博客 - 一切源于内心</title>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
   
 
 
@@ -182,11 +162,9 @@
 
 
 
+</head>
 
-
-
-
-
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -197,7 +175,7 @@
    page-home 
  ">
     <div class="headband"></div>
-<a href="https://github.com/daodaoliang"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
+
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
@@ -276,7 +254,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-telegram"></i> <br />
             
-            生活
+            life
           </a>
         </li>
       
@@ -319,22 +297,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -362,7 +344,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/数据库学习/2015/01/22/数据库学习-mysql专题-2015-01-22-Mysql-TIMESTAMPDIFF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -381,16 +367,8 @@
         
         
           <h2 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/数据库学习/2015/01/22/数据库学习-mysql专题-2015-01-22-Mysql-TIMESTAMPDIFF/" itemprop="url">
-                  mysql TIMESTAMPDIFF
-                </a>
-              
-            
-          </h2>
+                <a class="post-title-link" href="/数据库学习/2015/01/22/数据库学习-mysql专题-2015-01-22-Mysql-TIMESTAMPDIFF/" itemprop="url">mysql TIMESTAMPDIFF</a></h2>
         
 
         <div class="post-meta">
@@ -416,10 +394,10 @@
                 <i class="fa fa-calendar-check-o"></i>
               </span>
               
-                <span class="post-meta-item-text">更新于</span>
+                <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-30T16:04:52+08:00">
-                2017-07-30
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:03+08:00">
+                2017-08-23
               </time>
             
           </span>
@@ -460,12 +438,12 @@
           
             <div class="post-wordcount">
               
-                <span class="post-meta-divider">|</span>
+                
                 <span class="post-meta-item-icon">
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计</span>
+                  <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
                   143
@@ -481,7 +459,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长</span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
                   1
@@ -496,6 +474,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body han-init-context" itemprop="articleBody">
 
       
@@ -555,25 +536,16 @@
         
       
     </div>
+    
+    
+    
 
-	<div>
-      
-	</div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
-	<div>
-	  
-	</div>
     <footer class="post-footer">
       
 
@@ -586,6 +558,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -598,8 +574,12 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/linux学习/2015/01/22/linux学习-2015-01-22-linux定时任务/">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/数据库学习/2015/01/22/数据库学习-mysql专题-2015-01-22-mysql三种插入语句的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daodaoliang">
@@ -617,16 +597,8 @@
         
         
           <h2 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/linux学习/2015/01/22/linux学习-2015-01-22-linux定时任务/" itemprop="url">
-                  linux下定时任务
-                </a>
-              
-            
-          </h2>
+                <a class="post-title-link" href="/数据库学习/2015/01/22/数据库学习-mysql专题-2015-01-22-mysql三种插入语句的区别/" itemprop="url">mysql insert into和replace into以及insert ignore的区别</a></h2>
         
 
         <div class="post-meta">
@@ -652,10 +624,197 @@
                 <i class="fa fa-calendar-check-o"></i>
               </span>
               
-                <span class="post-meta-item-text">更新于</span>
+                <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-30T16:04:52+08:00">
-                2017-07-30
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:03+08:00">
+                2017-08-23
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库学习/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  336
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<p><strong><em>insert into</em></strong></p>
+<figure class="highlight plain"><figcaption><span>into``` 表示插入数据，数据会检查主键(PrimaryKey),如果出现重复会报错；</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">***replace into***</div><div class="line"></div><div class="line">```replace into``` 表示插入替换数据，需求表中有```PrimaryKey```,或者```Unique```索引的话，如果数据库已经存在数据，则用新数据替换，如果没有数据效果跟```insert into```一样，```replace```语句会返回一个数，来指示受影响的行的数目，该数目时被删除和被插入的行数的和，如果对应一个单行```replace```该数为１，则一行被插入，同时没有行被删除，如果该数大于１，则在新行被插入前，有一个或者多个旧行被删除，如果表包含多个唯一索引，并且新行复制了在不同的唯一索引中的不同旧行的值，则有可能是一个单一行替换了多个旧行；</div><div class="line"></div><div class="line">***insert ignore into***</div><div class="line"></div><div class="line">```indert ignore```表示，如果中已经存在相同的记录，则忽略当前新数据；</div><div class="line"></div><div class="line">示例：</div><div class="line"></div><div class="line">```mysql</div><div class="line">	create table test_table (</div><div class="line">	id int not null primary key,</div><div class="line">	name varchar(20),</div><div class="line">	age int</div><div class="line">	)</div><div class="line"></div><div class="line">	insert into test_table (id,name,age) values (1,&quot;111&quot;,111);</div><div class="line"></div><div class="line">	select * from test_table;</div><div class="line"></div><div class="line">	insert ignore into test_table (id,name,age) values (1,&quot;222&quot;,11);</div><div class="line"></div><div class="line">	select * from test_table; //因为id是主键，出现主键重复但使用了ignore则错误被忽略</div><div class="line"></div><div class="line">	replace into test_table (id,name,age) values (1,&quot;222&quot;,12);</div><div class="line"></div><div class="line">	select * from test_table; //数据变成 1,&quot;222&quot;,12</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/linux学习/2015/01/22/linux学习-2015-01-22-linux定时任务/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="daodaoliang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="刀刀亮的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/linux学习/2015/01/22/linux学习-2015-01-22-linux定时任务/" itemprop="url">linux下定时任务</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-01-22T00:00:00+08:00">
+                2015-01-22
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:02+08:00">
+                2017-08-23
               </time>
             
           </span>
@@ -696,12 +855,12 @@
           
             <div class="post-wordcount">
               
-                <span class="post-meta-divider">|</span>
+                
                 <span class="post-meta-item-icon">
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计</span>
+                  <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
                   526
@@ -717,7 +876,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长</span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
                   2
@@ -732,6 +891,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body han-init-context" itemprop="articleBody">
 
       
@@ -742,7 +904,7 @@
           
             <a id="more"></a>
 <p><strong><em>crontab 定时任务命令</em></strong></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">crontab命令选项</div><div class="line">	 -U指定一个用户</div><div class="line">	 <span class="_">-l</span>列出某个用户的任务计划</div><div class="line">	 -r删除某个用户的计划</div><div class="line">	 <span class="_">-e</span>编辑某个用户的任务(/var/)</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">crontab命令选项</div><div class="line">	 -U指定一个用户</div><div class="line">	 -l列出某个用户的任务计划</div><div class="line">	 -r删除某个用户的计划</div><div class="line">	 -e编辑某个用户的任务(/var/)</div></pre></td></tr></table></figure>
 <p><strong><em>cron文件语法</em></strong></p>
 <table>
 <thead>
@@ -828,25 +990,16 @@
         
       
     </div>
+    
+    
+    
 
-	<div>
-      
-	</div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
-	<div>
-	  
-	</div>
     <footer class="post-footer">
       
 
@@ -859,6 +1012,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -871,7 +1028,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/20/PHP学习-2015-01-20-PHP-Mysql数据库处理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -890,16 +1051,8 @@
         
         
           <h2 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/PHP学习/2015/01/20/PHP学习-2015-01-20-PHP-Mysql数据库处理/" itemprop="url">
-                  php mysql数据库处理
-                </a>
-              
-            
-          </h2>
+                <a class="post-title-link" href="/PHP学习/2015/01/20/PHP学习-2015-01-20-PHP-Mysql数据库处理/" itemprop="url">php mysql数据库处理</a></h2>
         
 
         <div class="post-meta">
@@ -925,10 +1078,10 @@
                 <i class="fa fa-calendar-check-o"></i>
               </span>
               
-                <span class="post-meta-item-text">更新于</span>
+                <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-30T16:04:52+08:00">
-                2017-07-30
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:02+08:00">
+                2017-08-23
               </time>
             
           </span>
@@ -969,12 +1122,12 @@
           
             <div class="post-wordcount">
               
-                <span class="post-meta-divider">|</span>
+                
                 <span class="post-meta-item-icon">
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计</span>
+                  <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
                   261
@@ -990,7 +1143,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长</span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
                   1
@@ -1005,6 +1158,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body han-init-context" itemprop="articleBody">
 
       
@@ -1052,34 +1208,25 @@
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$con=mysql_connect(<span class="string">"localhost"</span>,<span class="string">"daodaoliang"</span>,<span class="string">"123"</span>);</div><div class="line"><span class="keyword">if</span> (!$con)&#123;</div><div class="line">	<span class="keyword">die</span>(<span class="string">"coould not connect:"</span>.mysql_error());</div><div class="line">&#125;</div><div class="line">mysql_close($con);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 <p><strong>创建数据库和创建表</strong></p>
 <p>示例:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	$con = mysql_connect(<span class="string">"localhost"</span>,<span class="string">"daodaoliang"</span>,<span class="string">"123"</span>);</div><div class="line">	<span class="keyword">if</span> (!$con)&#123;</div><div class="line">		<span class="keyword">die</span>(<span class="string">"could not connect"</span>.mysql_error());</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> (mysql_query(<span class="string">"create database my_db"</span>,$con)) &#123;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"database created"</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"error creating database:"</span>.mysql_error();</div><div class="line">	&#125;</div><div class="line">	mysql_select_db(<span class="string">"my_db"</span>,$con);</div><div class="line">	$sql = <span class="string">"create table test (</span></div><div class="line">	column varchar(10) not null auto_increment,</div><div class="line">	column2 int(11),</div><div class="line">	primary key(column)</div><div class="line">	)";</div><div class="line">	mysql_query($sql,$con);</div><div class="line">	mysql_close($con);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	$con = mysql_connect(<span class="string">"localhost"</span>,<span class="string">"daodaoliang"</span>,<span class="string">"123"</span>);</div><div class="line">	<span class="keyword">if</span> (!$con)&#123;</div><div class="line">		<span class="keyword">die</span>(<span class="string">"could not connect"</span>.mysql_error());</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> (mysql_query(<span class="string">"create database my_db"</span>,$con)) &#123;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"database created"</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"error creating database:"</span>.mysql_error();</div><div class="line">	&#125;</div><div class="line">	mysql_select_db(<span class="string">"my_db"</span>,$con);</div><div class="line">	$sql = <span class="string">"create table test (</span></div><div class="line"><span class="string">	column varchar(10) not null auto_increment,</span></div><div class="line"><span class="string">	column2 int(11),</span></div><div class="line"><span class="string">	primary key(column)</span></div><div class="line"><span class="string">	)"</span>;</div><div class="line">	mysql_query($sql,$con);</div><div class="line">	mysql_close($con);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 <p><strong>从数据库中获取数据</strong></p>
 <p>示例:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	$con = mysql_connect(<span class="string">"localhost"</span>,<span class="string">"daodaoliang"</span>,<span class="string">"123"</span>);</div><div class="line">	<span class="keyword">if</span> (!$con) &#123;</div><div class="line">		<span class="keyword">die</span>(<span class="string">"could not connect :"</span>.mysql_error());</div><div class="line">	&#125;</div><div class="line">	mysql_select_db(<span class="string">"my_db"</span>,$con);</div><div class="line">	$result = mysql_query(<span class="string">"select * from test_table"</span>);</div><div class="line">	<span class="keyword">echo</span> <span class="string">"&lt;table border = '1'&gt;</span></div><div class="line">	&lt;tr&gt;</div><div class="line">	&lt;th&gt;column&lt;/th&gt;</div><div class="line">	&lt;th&gt;eloumn2&lt;/th&gt;</div><div class="line">	&lt;/th&gt;</div><div class="line">	";</div><div class="line">	<span class="keyword">while</span> ($row = mysql_fetch_array($result))&#123;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"&lt;tr&gt;"</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"&lt;td&gt;"</span>.$row[<span class="string">'column'</span>].<span class="string">"&lt;/td&gt;"</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"&lt;td&gt;"</span>.$row[<span class="string">'column2'</span>].<span class="string">"&lt;/td&gt;"</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"&lt;/tr&gt;"</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"&lt;/table&gt;"</span>;</div><div class="line">	mysql_close($con);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	$con = mysql_connect(<span class="string">"localhost"</span>,<span class="string">"daodaoliang"</span>,<span class="string">"123"</span>);</div><div class="line">	<span class="keyword">if</span> (!$con) &#123;</div><div class="line">		<span class="keyword">die</span>(<span class="string">"could not connect :"</span>.mysql_error());</div><div class="line">	&#125;</div><div class="line">	mysql_select_db(<span class="string">"my_db"</span>,$con);</div><div class="line">	$result = mysql_query(<span class="string">"select * from test_table"</span>);</div><div class="line">	<span class="keyword">echo</span> <span class="string">"&lt;table border = '1'&gt;</span></div><div class="line"><span class="string">	&lt;tr&gt;</span></div><div class="line"><span class="string">	&lt;th&gt;column&lt;/th&gt;</span></div><div class="line"><span class="string">	&lt;th&gt;eloumn2&lt;/th&gt;</span></div><div class="line"><span class="string">	&lt;/th&gt;</span></div><div class="line"><span class="string">	"</span>;</div><div class="line">	<span class="keyword">while</span> ($row = mysql_fetch_array($result))&#123;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"&lt;tr&gt;"</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"&lt;td&gt;"</span>.$row[<span class="string">'column'</span>].<span class="string">"&lt;/td&gt;"</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"&lt;td&gt;"</span>.$row[<span class="string">'column2'</span>].<span class="string">"&lt;/td&gt;"</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"&lt;/tr&gt;"</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"&lt;/table&gt;"</span>;</div><div class="line">	mysql_close($con);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 
           
         
       
     </div>
+    
+    
+    
 
-	<div>
-      
-	</div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
-	<div>
-	  
-	</div>
     <footer class="post-footer">
       
 
@@ -1092,6 +1239,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1104,7 +1255,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/19/PHP学习-2015-01-19-PHP异常处理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1123,16 +1278,8 @@
         
         
           <h2 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/PHP学习/2015/01/19/PHP学习-2015-01-19-PHP异常处理/" itemprop="url">
-                  php异常
-                </a>
-              
-            
-          </h2>
+                <a class="post-title-link" href="/PHP学习/2015/01/19/PHP学习-2015-01-19-PHP异常处理/" itemprop="url">php异常</a></h2>
         
 
         <div class="post-meta">
@@ -1158,10 +1305,10 @@
                 <i class="fa fa-calendar-check-o"></i>
               </span>
               
-                <span class="post-meta-item-text">更新于</span>
+                <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-30T16:04:52+08:00">
-                2017-07-30
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:02+08:00">
+                2017-08-23
               </time>
             
           </span>
@@ -1202,12 +1349,12 @@
           
             <div class="post-wordcount">
               
-                <span class="post-meta-divider">|</span>
+                
                 <span class="post-meta-item-icon">
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计</span>
+                  <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
                   29
@@ -1223,7 +1370,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长</span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
                   1
@@ -1238,6 +1385,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body han-init-context" itemprop="articleBody">
 
       
@@ -1253,25 +1403,16 @@
         
       
     </div>
+    
+    
+    
 
-	<div>
-      
-	</div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
-	<div>
-	  
-	</div>
     <footer class="post-footer">
       
 
@@ -1284,267 +1425,10 @@
         <div class="post-eof"></div>
       
     </footer>
-  </article>
-
-
-    
-      
-
-  
-
+  </div>
   
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/19/PHP学习-2015-01-19-PHP文件操作/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="daodaoliang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="刀刀亮的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/PHP学习/2015/01/19/PHP学习-2015-01-19-PHP文件操作/" itemprop="url">
-                  php文件处理
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-01-19T00:00:00+08:00">
-                2015-01-19
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-30T16:04:52+08:00">
-                2017-07-30
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP学习/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  773
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <a id="more"></a>
-<h2 id="PHP-文件处理"><a href="#PHP-文件处理" class="headerlink" title="PHP 文件处理"></a>PHP 文件处理</h2><p><strong>PHP Open File —- fopen()</strong></p>
-<p>说明：</p>
-<p><strong><em>fopen</em></strong> 的第一个参数包含被打开的文件名，第二个参数规定打开文件的模式，如果fopen()没能打开指定文件，下面的例子回升呈一段消息：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$myfile = fopen(<span class="string">"daodaoliang.txt"</span>,<span class="string">'r'</span>)  <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"Unable to open file"</span>);</div><div class="line">fclose($myfile);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p>文件打开模式如下：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">模式</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">r</td>
-<td style="text-align:center">打开文件为只读,文件指针在文件的开头开始</td>
-</tr>
-<tr>
-<td style="text-align:center">w</td>
-<td style="text-align:center">打开文件为只写,删除文件的内容或创建一个新的文件，如果他不存在．文件指针在文件的开头开始</td>
-</tr>
-<tr>
-<td style="text-align:center">a</td>
-<td style="text-align:center">打开文件为只写，文件中的现有数据会被保留，文件指针在文件结尾开始，创建新的文件，如果文件不存在</td>
-</tr>
-<tr>
-<td style="text-align:center">x</td>
-<td style="text-align:center">创建新文件为只写，返回false和错误，如果文件已存在</td>
-</tr>
-<tr>
-<td style="text-align:center">r+</td>
-<td style="text-align:center">打开文件为读写方式，文件指针在文件开头开始</td>
-</tr>
-<tr>
-<td style="text-align:center">w+</td>
-<td style="text-align:center">打开文件为读写，删除文件内容或创建新文件，如果它不存在，文件指针在文件开头开始</td>
-</tr>
-<tr>
-<td style="text-align:center">a+</td>
-<td style="text-align:center">打开文件为读写，文件中已有的数据会被保留，文件指针在文件结尾开始，创建新文件，如果他不存在</td>
-</tr>
-<tr>
-<td style="text-align:center">x+</td>
-<td style="text-align:center">创建新文件为读写，返回false和错误．如果文件已存在</td>
-</tr>
-</tbody>
-</table>
-<p><strong>PHP fread()</strong></p>
-<p><strong><em>fread()</em></strong> 函数读取打开的文件</p>
-<p>fread()的第一个参数包含待读取文件的文件名．第二个参数规定待读取的最大字节数．</p>
-<p>示例：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	fread($myfile,filesize(<span class="string">"daodoaliang.txt"</span>));</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>PHP 检查文件结尾</strong></p>
-<p><strong><em>feof()</em></strong> 函数检查是否已达到”end-of-file”(EOF)</p>
-<p>feof()对于遍历未知长度的数据很有用</p>
-<p>示例：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$myfile=fopen(<span class="string">"daodaoliang.txt"</span>,<span class="string">"r"</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"Unable to open file!"</span>);</div><div class="line"><span class="keyword">while</span>(!feof($myfile))　&#123;</div><div class="line">	<span class="keyword">echo</span> fgets($myfile).<span class="string">"&lt;br&gt;"</span>;</div><div class="line">&#125;</div><div class="line">fclose($myfile);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>PHP 文件上传</strong></p>
-<p>通过PHP的全局数组 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">第一个参数是表单的 input name,第二个下标可以是&quot;name&quot;,&quot;type&quot;,&quot;size&quot;,&quot;tmp_name&quot;,&quot;error&quot;:</div><div class="line"></div><div class="line">* $_FILES[&quot;file&quot;][&quot;name&quot;]-被上传文件的名称；</div><div class="line">* $_FILES[&quot;file&quot;][&quot;type&quot;]-被上传文件的类型；</div><div class="line">* $_FILES[&quot;file&quot;][&quot;size&quot;]-被上传文件的大小．以字节计；</div><div class="line">* $_FILES[&quot;file&quot;][&quot;tmp＿name&quot;]-存储在服务器的文件的临时副本名称</div><div class="line">* $_FILES[&quot;file&quot;][&quot;error&quot;]-由文件上传导致的错误代码</div><div class="line"></div><div class="line">示例：</div><div class="line"></div><div class="line">```html</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;form action=&quot;upload_file.php&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</div><div class="line">			&lt;label for=&quot;file&quot;&gt;Filename&lt;/label&gt;</div><div class="line">			&lt;input type=&quot;file&quot; name=&quot;file&quot; id=&quot;file&quot; /&gt;</div><div class="line">			&lt;br /&gt;</div><div class="line">			&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Submit&quot; /&gt;</div><div class="line">		&lt;/form&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">if</span> ((($_FILES[<span class="string">"file"</span>][<span class="string">"type"</span>] == <span class="string">"image/gif"</span>)</div><div class="line">	|| ($_FILES[<span class="string">"files"</span>][<span class="string">"type"</span>] == <span class="string">"image/jpeg"</span>)</div><div class="line">	|| ($_FILES[<span class="string">"file"</span>][<span class="string">"type"</span>] == <span class="string">"image/pjpeg"</span>))</div><div class="line">	&amp;&amp; ($_FILES[<span class="string">"file"</span>][<span class="string">"size"</span>] &lt; <span class="number">20000</span>))</div><div class="line">&#123;</div><div class="line">	<span class="keyword">if</span> ($_FILES[<span class="string">"file"</span>][<span class="string">"error"</span>] &gt; <span class="number">0</span>)&#123;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"Return Code:"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"error"</span>].<span class="string">"&lt;br/&gt;"</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"Upload:"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>].<span class="string">"&lt;br/&gt;"</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"Type:"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>].<span class="string">"&lt;br/&gt;"</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"Size:"</span>.($_FILES[<span class="string">"file"</span>][<span class="string">"size"</span>] / <span class="number">1024</span>).<span class="string">"&lt;br/&gt;"</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"Temp file:"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"temp_name"</span>].<span class="string">"&lt;br/&gt;"</span>;</div><div class="line">		<span class="keyword">if</span> (file_exists(<span class="string">"upload/"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>]))&#123;</div><div class="line">			<span class="keyword">echo</span> $_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>].<span class="string">"already exists."</span>;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			move_upload_file($_FILES[<span class="string">"file"</span>][<span class="string">"tmp_name"</span>],<span class="string">"upload/"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>]);</div><div class="line">			<span class="keyword">echo</span> <span class="string">"Store in: "</span>.<span class="string">"upload/"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"Invalid file"</span>;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>PHP 文件引用</strong></p>
-<p><strong><em>include</em></strong> 和　<strong><em>require</em></strong></p>
-<ul>
-<li>include 语句引用某个文件并且PHP无法找到它时，脚本会继续执行；</li>
-<li>require 语句引用某个文件并且PHP无法找到它时，脚本会终止运行；</li>
-</ul>
-<p>示例：</p>
-<p>test.php</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$daodaoliang = <span class="string">"xiaobai"</span>;</div><div class="line">$wangxiaowei = <span class="string">"wangxiaowei"</span>;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">include</span> <span class="string">"test.php"</span>;</div><div class="line"><span class="keyword">echo</span> <span class="string">"daodaoliang:"</span>.$daodaoliang.<span class="string">"wangxiaowei:"</span>.$wangxiaowei;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-	<div>
-      
-	</div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-	<div>
-	  
-	</div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </article>
 
 
@@ -1577,6 +1461,9 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
     <div class="sidebar-inner">
 
       
@@ -1597,8 +1484,10 @@
 
           
             <div class="site-state-item site-state-posts">
+            
               <a href="/archives">
-                <span class="site-state-item-count">132</span>
+            
+                <span class="site-state-item-count">133</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1609,7 +1498,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1634,158 +1523,6 @@
               <i class="fa fa-rss"></i>
               RSS
             </a>
-	     <a title="收藏到书签，偶尔High一下^_^" rel="alternate" class="mw-harlem_shake_slow wobble shake" href='javascript:(function() {
-    function c() {
-        var e = document.createElement("link");
-        e.setAttribute("type", "text/css");
-        e.setAttribute("rel", "stylesheet");
-        e.setAttribute("href", f);
-        e.setAttribute("class", l);
-        document.body.appendChild(e)
-    }
- 
-    function h() {
-        var e = document.getElementsByClassName(l);
-        for (var t = 0; t < e.length; t++) {
-            document.body.removeChild(e[t])
-        }
-    }
- 
-    function p() {
-        var e = document.createElement("div");
-        e.setAttribute("class", a);
-        document.body.appendChild(e);
-        setTimeout(function() {
-            document.body.removeChild(e)
-        }, 100)
-    }
- 
-    function d(e) {
-        return {
-            height : e.offsetHeight,
-            width : e.offsetWidth
-        }
-    }
- 
-    function v(i) {
-        var s = d(i);
-        return s.height > e && s.height < n && s.width > t && s.width < r
-    }
- 
-    function m(e) {
-        var t = e;
-        var n = 0;
-        while (!!t) {
-            n += t.offsetTop;
-            t = t.offsetParent
-        }
-        return n
-    }
- 
-    function g() {
-        var e = document.documentElement;
-        if (!!window.innerWidth) {
-            return window.innerHeight
-        } else if (e && !isNaN(e.clientHeight)) {
-            return e.clientHeight
-        }
-        return 0
-    }
- 
-    function y() {
-        if (window.pageYOffset) {
-            return window.pageYOffset
-        }
-        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
-    }
- 
-    function E(e) {
-        var t = m(e);
-        return t >= w && t <= b + w
-    }
- 
-    function S() {
-        var e = document.createElement("audio");
-        e.setAttribute("class", l);
-        e.src = i;
-        e.loop = false;
-        e.addEventListener("canplay", function() {
-            setTimeout(function() {
-                x(k)
-            }, 500);
-            setTimeout(function() {
-                N();
-                p();
-                for (var e = 0; e < O.length; e++) {
-                    T(O[e])
-                }
-            }, 15500)
-        }, true);
-        e.addEventListener("ended", function() {
-            N();
-            h()
-        }, true);
-        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
-        document.body.appendChild(e);
-        e.play()
-    }
- 
-    function x(e) {
-        e.className += " " + s + " " + o
-    }
- 
-    function T(e) {
-        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
-    }
- 
-    function N() {
-        var e = document.getElementsByClassName(s);
-        var t = new RegExp("\\b" + s + "\\b");
-        for (var n = 0; n < e.length; ) {
-            e[n].className = e[n].className.replace(t, "")
-        }
-    }
- 
-    var e = 30;
-    var t = 30;
-    var n = 350;
-    var r = 350;
-    var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
-    var s = "mw-harlem_shake_me";
-    var o = "im_first";
-    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
-    var a = "mw-strobe_light";
-    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
-    var l = "mw_added_css";
-    var b = g();
-    var w = y();
-    var C = document.getElementsByTagName("*");
-    var k = null;
-    for (var L = 0; L < C.length; L++) {
-        var A = C[L];
-        if (v(A)) {
-            if (E(A)) {
-                k = A;
-                break
-            }
-        }
-    }
-    if (A === null) {
-        console.warn("Could not find a node of the right size. Please try a different page.");
-        return
-    }
-    c();
-    S();
-    var O = [];
-    for (var L = 0; L < C.length; L++) {
-        var A = C[L];
-        if (v(A)) {
-            O.push(A)
-        }
-    }
-})()'><i class="fa fa-music"></i> High</a>
-
-
           </div>
         
 
@@ -1797,7 +1534,9 @@
                   
                     <i class="fa fa-fw fa-github"></i>
                   
-                  GitHub
+                    
+                      GitHub
+                    
                 </a>
               </span>
             
@@ -1806,7 +1545,9 @@
                   
                     <i class="fa fa-fw fa-globe"></i>
                   
-                  网易云音乐
+                    
+                      网易云音乐
+                    
                 </a>
               </span>
             
@@ -1844,8 +1585,6 @@
         <div class="back-to-top">
           <i class="fa fa-arrow-up"></i>
           
-            <span id="scrollpercent"><span>0</span>%</span>
-          
         </div>
       
 
@@ -1861,12 +1600,25 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy;  2012 - 
+  &copy;  2012 &mdash; 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">daodaoliang</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">
+      120.7k
+    </span>
+  
 </div>
 
 
@@ -1891,6 +1643,12 @@
     </span>
   
 </div>
+
+
+
+
+
+
 
 
         
@@ -1957,21 +1715,32 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
 
 
 
   
-  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
   
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
 
 
 
@@ -1990,19 +1759,12 @@
 
 
   
-    
-    <script>
-      var cloudTieConfig = {
-        url: document.location.href, 
-        sourceId: "",
-        productKey: "997752e1c04e423cb7427a28b0d9a10a",
-        target: "cloud-tie-wrapper"
-      };
-    </script>
-    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+
+
+
+
+
   
-
-
 
 
 
@@ -2013,324 +1775,20 @@
 
   
 
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (search_path.endsWith("json")) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === '') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
 
 
 
@@ -2359,7 +1817,9 @@
 
   
 
+  
+  <script type="text/javascript" src="/js/src/exturl.js?v=5.1.2"></script>
+
+
 </body>
 </html>
-<!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/love.js"></script>

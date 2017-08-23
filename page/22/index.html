@@ -1,26 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
-<script>
-    (function(){
-        if(''){
-            if (prompt('请输入文章密码') !== ''){
-                alert('密码错误！');
-                history.back();
-            }
-        }
-    })();
-</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-circle.min.css?v=1.0.2" rel="stylesheet">
+
+
+
 
   
   
@@ -64,35 +66,17 @@
   
 
   
-    
-      
-    
 
-    
+  
+
   
 
   
 
   
     
-      
     
-
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -102,7 +86,7 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="刀刀亮, 极客, daodaoliang" />
@@ -116,7 +100,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
 
 
 
@@ -129,6 +113,7 @@
 <meta property="og:url" content="http://daodaoliang.com/page/22/index.html">
 <meta property="og:site_name" content="刀刀亮的博客">
 <meta property="og:description" content="日日当精进 但求无愧">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="刀刀亮的博客">
 <meta name="twitter:description" content="日日当精进 但求无愧">
@@ -139,9 +124,11 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":true,"scrollpercent":true},
+    scheme: 'Gemini',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":true,"scrollpercent":false,"onmobile":true},
     fancybox: true,
+    tabs: true,
     motion: true,
     duoshuo: {
       userId: '0',
@@ -151,8 +138,8 @@
       applicationID: '',
       apiKey: '',
       indexName: '',
-      hits: "",
-      labels: ""
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
@@ -164,15 +151,8 @@
 
 
 
-<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
-
 
   <title>刀刀亮的博客 - 一切源于内心</title>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
   
 
 
@@ -182,11 +162,9 @@
 
 
 
+</head>
 
-
-
-
-
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -197,7 +175,7 @@
    page-home 
  ">
     <div class="headband"></div>
-<a href="https://github.com/daodaoliang"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
+
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
@@ -276,7 +254,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-telegram"></i> <br />
             
-            生活
+            life
           </a>
         </li>
       
@@ -319,22 +297,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -362,8 +344,12 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/17/PHP学习-2015-01-17-PHP日期函数/">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/19/PHP学习-2015-01-19-PHP文件操作/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daodaoliang">
@@ -381,16 +367,8 @@
         
         
           <h2 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/PHP学习/2015/01/17/PHP学习-2015-01-17-PHP日期函数/" itemprop="url">
-                  php时间处理
-                </a>
-              
-            
-          </h2>
+                <a class="post-title-link" href="/PHP学习/2015/01/19/PHP学习-2015-01-19-PHP文件操作/" itemprop="url">php文件处理</a></h2>
         
 
         <div class="post-meta">
@@ -402,8 +380,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-01-17T00:00:00+08:00">
-                2015-01-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-01-19T00:00:00+08:00">
+                2015-01-19
               </time>
             
 
@@ -416,10 +394,10 @@
                 <i class="fa fa-calendar-check-o"></i>
               </span>
               
-                <span class="post-meta-item-text">更新于</span>
+                <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-30T16:04:52+08:00">
-                2017-07-30
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:02+08:00">
+                2017-08-23
               </time>
             
           </span>
@@ -460,12 +438,267 @@
           
             <div class="post-wordcount">
               
-                <span class="post-meta-divider">|</span>
+                
                 <span class="post-meta-item-icon">
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计</span>
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  773
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<h2 id="PHP-文件处理"><a href="#PHP-文件处理" class="headerlink" title="PHP 文件处理"></a>PHP 文件处理</h2><p><strong>PHP Open File —- fopen()</strong></p>
+<p>说明：</p>
+<p><strong><em>fopen</em></strong> 的第一个参数包含被打开的文件名，第二个参数规定打开文件的模式，如果fopen()没能打开指定文件，下面的例子回升呈一段消息：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$myfile = fopen(<span class="string">"daodaoliang.txt"</span>,<span class="string">'r'</span>)  <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"Unable to open file"</span>);</div><div class="line">fclose($myfile);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>文件打开模式如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">模式</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">r</td>
+<td style="text-align:center">打开文件为只读,文件指针在文件的开头开始</td>
+</tr>
+<tr>
+<td style="text-align:center">w</td>
+<td style="text-align:center">打开文件为只写,删除文件的内容或创建一个新的文件，如果他不存在．文件指针在文件的开头开始</td>
+</tr>
+<tr>
+<td style="text-align:center">a</td>
+<td style="text-align:center">打开文件为只写，文件中的现有数据会被保留，文件指针在文件结尾开始，创建新的文件，如果文件不存在</td>
+</tr>
+<tr>
+<td style="text-align:center">x</td>
+<td style="text-align:center">创建新文件为只写，返回false和错误，如果文件已存在</td>
+</tr>
+<tr>
+<td style="text-align:center">r+</td>
+<td style="text-align:center">打开文件为读写方式，文件指针在文件开头开始</td>
+</tr>
+<tr>
+<td style="text-align:center">w+</td>
+<td style="text-align:center">打开文件为读写，删除文件内容或创建新文件，如果它不存在，文件指针在文件开头开始</td>
+</tr>
+<tr>
+<td style="text-align:center">a+</td>
+<td style="text-align:center">打开文件为读写，文件中已有的数据会被保留，文件指针在文件结尾开始，创建新文件，如果他不存在</td>
+</tr>
+<tr>
+<td style="text-align:center">x+</td>
+<td style="text-align:center">创建新文件为读写，返回false和错误．如果文件已存在</td>
+</tr>
+</tbody>
+</table>
+<p><strong>PHP fread()</strong></p>
+<p><strong><em>fread()</em></strong> 函数读取打开的文件</p>
+<p>fread()的第一个参数包含待读取文件的文件名．第二个参数规定待读取的最大字节数．</p>
+<p>示例：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	fread($myfile,filesize(<span class="string">"daodoaliang.txt"</span>));</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>PHP 检查文件结尾</strong></p>
+<p><strong><em>feof()</em></strong> 函数检查是否已达到”end-of-file”(EOF)</p>
+<p>feof()对于遍历未知长度的数据很有用</p>
+<p>示例：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$myfile=fopen(<span class="string">"daodaoliang.txt"</span>,<span class="string">"r"</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"Unable to open file!"</span>);</div><div class="line"><span class="keyword">while</span>(!feof($myfile))　&#123;</div><div class="line">	<span class="keyword">echo</span> fgets($myfile).<span class="string">"&lt;br&gt;"</span>;</div><div class="line">&#125;</div><div class="line">fclose($myfile);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>PHP 文件上传</strong></p>
+<p>通过PHP的全局数组 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">第一个参数是表单的 input name,第二个下标可以是&quot;name&quot;,&quot;type&quot;,&quot;size&quot;,&quot;tmp_name&quot;,&quot;error&quot;:</div><div class="line"></div><div class="line">* $_FILES[&quot;file&quot;][&quot;name&quot;]-被上传文件的名称；</div><div class="line">* $_FILES[&quot;file&quot;][&quot;type&quot;]-被上传文件的类型；</div><div class="line">* $_FILES[&quot;file&quot;][&quot;size&quot;]-被上传文件的大小．以字节计；</div><div class="line">* $_FILES[&quot;file&quot;][&quot;tmp＿name&quot;]-存储在服务器的文件的临时副本名称</div><div class="line">* $_FILES[&quot;file&quot;][&quot;error&quot;]-由文件上传导致的错误代码</div><div class="line"></div><div class="line">示例：</div><div class="line"></div><div class="line">```html</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;form action=&quot;upload_file.php&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</div><div class="line">			&lt;label for=&quot;file&quot;&gt;Filename&lt;/label&gt;</div><div class="line">			&lt;input type=&quot;file&quot; name=&quot;file&quot; id=&quot;file&quot; /&gt;</div><div class="line">			&lt;br /&gt;</div><div class="line">			&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Submit&quot; /&gt;</div><div class="line">		&lt;/form&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">if</span> ((($_FILES[<span class="string">"file"</span>][<span class="string">"type"</span>] == <span class="string">"image/gif"</span>)</div><div class="line">	|| ($_FILES[<span class="string">"files"</span>][<span class="string">"type"</span>] == <span class="string">"image/jpeg"</span>)</div><div class="line">	|| ($_FILES[<span class="string">"file"</span>][<span class="string">"type"</span>] == <span class="string">"image/pjpeg"</span>))</div><div class="line">	&amp;&amp; ($_FILES[<span class="string">"file"</span>][<span class="string">"size"</span>] &lt; <span class="number">20000</span>))</div><div class="line">&#123;</div><div class="line">	<span class="keyword">if</span> ($_FILES[<span class="string">"file"</span>][<span class="string">"error"</span>] &gt; <span class="number">0</span>)&#123;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"Return Code:"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"error"</span>].<span class="string">"&lt;br/&gt;"</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"Upload:"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>].<span class="string">"&lt;br/&gt;"</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"Type:"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>].<span class="string">"&lt;br/&gt;"</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"Size:"</span>.($_FILES[<span class="string">"file"</span>][<span class="string">"size"</span>] / <span class="number">1024</span>).<span class="string">"&lt;br/&gt;"</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"Temp file:"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"temp_name"</span>].<span class="string">"&lt;br/&gt;"</span>;</div><div class="line">		<span class="keyword">if</span> (file_exists(<span class="string">"upload/"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>]))&#123;</div><div class="line">			<span class="keyword">echo</span> $_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>].<span class="string">"already exists."</span>;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			move_upload_file($_FILES[<span class="string">"file"</span>][<span class="string">"tmp_name"</span>],<span class="string">"upload/"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>]);</div><div class="line">			<span class="keyword">echo</span> <span class="string">"Store in: "</span>.<span class="string">"upload/"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"Invalid file"</span>;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>PHP 文件引用</strong></p>
+<p><strong><em>include</em></strong> 和　<strong><em>require</em></strong></p>
+<ul>
+<li>include 语句引用某个文件并且PHP无法找到它时，脚本会继续执行；</li>
+<li>require 语句引用某个文件并且PHP无法找到它时，脚本会终止运行；</li>
+</ul>
+<p>示例：</p>
+<p>test.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$daodaoliang = <span class="string">"xiaobai"</span>;</div><div class="line">$wangxiaowei = <span class="string">"wangxiaowei"</span>;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">include</span> <span class="string">"test.php"</span>;</div><div class="line"><span class="keyword">echo</span> <span class="string">"daodaoliang:"</span>.$daodaoliang.<span class="string">"wangxiaowei:"</span>.$wangxiaowei;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/17/PHP学习-2015-01-17-PHP日期函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="daodaoliang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="刀刀亮的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/PHP学习/2015/01/17/PHP学习-2015-01-17-PHP日期函数/" itemprop="url">php时间处理</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-01-17T00:00:00+08:00">
+                2015-01-17
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:02+08:00">
+                2017-08-23
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP学习/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
                   381
@@ -481,7 +714,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长</span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
                   2
@@ -496,6 +729,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body han-init-context" itemprop="articleBody">
 
       
@@ -557,25 +793,16 @@
         
       
     </div>
+    
+    
+    
 
-	<div>
-      
-	</div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
-	<div>
-	  
-	</div>
     <footer class="post-footer">
       
 
@@ -588,6 +815,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -600,7 +831,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP超全局变量/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -619,16 +854,8 @@
         
         
           <h2 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP超全局变量/" itemprop="url">
-                  php超全局变量
-                </a>
-              
-            
-          </h2>
+                <a class="post-title-link" href="/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP超全局变量/" itemprop="url">php超全局变量</a></h2>
         
 
         <div class="post-meta">
@@ -654,10 +881,10 @@
                 <i class="fa fa-calendar-check-o"></i>
               </span>
               
-                <span class="post-meta-item-text">更新于</span>
+                <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-30T16:04:52+08:00">
-                2017-07-30
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:02+08:00">
+                2017-08-23
               </time>
             
           </span>
@@ -698,12 +925,12 @@
           
             <div class="post-wordcount">
               
-                <span class="post-meta-divider">|</span>
+                
                 <span class="post-meta-item-icon">
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计</span>
+                  <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
                   678
@@ -719,7 +946,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长</span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
                   3
@@ -734,6 +961,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body han-init-context" itemprop="articleBody">
 
       
@@ -867,31 +1097,22 @@
 <p><strong>_REQUEST</strong></p>
 <p>PHP $＿REQUEST　用于收集HTML 表单提交的数据</p>
 <p>示例：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">action</span>=<span class="string">"&lt;?php echo $_SERVER[PHP_SELF];?&gt;"</span>&gt;</span></div><div class="line">Name:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"fname"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="php"><span class="meta">&lt;?php</span></span></div><div class="line">$name = $_REQUEST[<span class="string">'fname'</span>];</div><div class="line"><span class="keyword">echo</span> $name</div><div class="line"><span class="meta">?&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">action</span>=<span class="string">"&lt;?php echo $_SERVER[PHP_SELF];?&gt;"</span>&gt;</span></div><div class="line">Name:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"fname"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="php"><span class="meta">&lt;?php</span></span></div><div class="line"><span class="php">$name = $_REQUEST[<span class="string">'fname'</span>];</span></div><div class="line"><span class="php"><span class="keyword">echo</span> $name</span></div><div class="line"><span class="php"><span class="meta">?&gt;</span></span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 
           
         
       
     </div>
+    
+    
+    
 
-	<div>
-      
-	</div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
-	<div>
-	  
-	</div>
     <footer class="post-footer">
       
 
@@ -904,6 +1125,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -916,7 +1141,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP表单处理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -935,16 +1164,8 @@
         
         
           <h2 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP表单处理/" itemprop="url">
-                  php表单处理
-                </a>
-              
-            
-          </h2>
+                <a class="post-title-link" href="/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP表单处理/" itemprop="url">php表单处理</a></h2>
         
 
         <div class="post-meta">
@@ -970,10 +1191,10 @@
                 <i class="fa fa-calendar-check-o"></i>
               </span>
               
-                <span class="post-meta-item-text">更新于</span>
+                <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-30T16:04:52+08:00">
-                2017-07-30
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:02+08:00">
+                2017-08-23
               </time>
             
           </span>
@@ -1014,12 +1235,12 @@
           
             <div class="post-wordcount">
               
-                <span class="post-meta-divider">|</span>
+                
                 <span class="post-meta-item-icon">
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计</span>
+                  <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
                   602
@@ -1035,7 +1256,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长</span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
                   3
@@ -1050,6 +1271,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body han-init-context" itemprop="articleBody">
 
       
@@ -1072,7 +1296,7 @@
 </ul>
 <p><strong>带有验证的表单</strong></p>
 <p>示例：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;style&gt;</div><div class="line">			.error &#123;color:#FF0000;&#125;</div><div class="line">		&lt;/style&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;?php</div><div class="line">			$nameErr = $emailErr = $genderErr = $websiteErr = "";</div><div class="line">			$name = $email = $gender = $comment = $website = "";</div><div class="line"></div><div class="line">			if ($_SERVER[REQUEST_METHOD] == "POST") &#123;</div><div class="line">				if (empty($_POST['name']))&#123;</div><div class="line">					$nameErr = "姓名时必填的";</div><div class="line">				&#125; else &#123;</div><div class="line">					$name = test_input($_POST['name']);</div><div class="line">				&#125;</div><div class="line">				if (empty($_POST['email'])) &#123;</div><div class="line">					$emailErr = "电邮是必填的";</div><div class="line">				&#125;　else &#123;</div><div class="line">					$email = test_input($_POST['email']);</div><div class="line">				&#125;</div><div class="line">				if (empty($_POST['website'])) &#123;</div><div class="line">					$website = "";</div><div class="line">				&#125; else &#123;</div><div class="line">					$website = test_input($_POST['website']);</div><div class="line">				&#125;</div><div class="line">				if (empty($_post['comment'])) &#123;</div><div class="line">					$comment = "";</div><div class="line">				&#125; else &#123;</div><div class="line">					$commment = test_input($_POST['comment']);</div><div class="line">				&#125;</div><div class="line">				if (empty($_POST['gender'])) &#123;</div><div class="line">					$genderErr = "性别是必须的"；</div><div class="line">				&#125; else &#123;</div><div class="line">					$gender = test_input($_POST['gender']);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">			function test_input($data) &#123;</div><div class="line">				$data = trim($data);</div><div class="line">				$data = stripslashes($data);</div><div class="line">				$data = htmlspecoalchars($data);</div><div class="line">				return $data;</div><div class="line">			&#125;</div><div class="line">		?&gt;</div><div class="line">		&lt;h2PHP 测试例子&lt;/h2&gt;</div><div class="line">		&lt;p&gt;&lt;span class="error"&gt; * 必需字段&lt;/span&gt;&lt;/p&gt;</div><div class="line">		&lt;form method = "post" action = "&lt;?php echo htmlspecialchars($_SERVER[PHP_SELF]);?&gt;"&gt;</div><div class="line">			姓名：&lt;input type = "text" name = "name"&gt;</div><div class="line">			&lt;span class = "error"&gt; * &lt;?php echo $nameErr;?&gt; &lt;/span&gt;</div><div class="line">			&lt;br&gt;&lt;br&gt;</div><div class="line">			电邮：&lt;input type = "text" name = "email"&gt;</div><div class="line">			&lt;span class = "error"&gt;* &lt;?php echo $emailErr;?&gt; &lt;/span&gt;</div><div class="line">			&lt;br&gt;&lt;br&gt;</div><div class="line">			网址：&lt;input type = "text" name = "website"&gt;</div><div class="line">			&lt;span class = "error"&gt;&lt;?php echo $websiteErr;?&gt;&lt;/span&gt;</div><div class="line">			&lt;br&gt;&lt;br&gt;</div><div class="line">			评论：&lt;testarea name = "comment" rows = "5" cols = "40"&gt;&lt;/textarea&gt;</div><div class="line">			&lt;br&gt;&lt;br&gt; </div><div class="line">			性别：</div><div class="line">			&lt;input type = "radio" name="gender" value="female"&gt;女性</div><div class="line">			&lt;input type = "radio" name="gender" value="male"&gt;男性</div><div class="line">			&lt;span class="error"&gt;* &lt;?php echo $genderErr;?&gt;&lt;/span&gt;</div><div class="line">			&lt;br&gt;&lt;br&gt;</div><div class="line">			&lt;input type = "submit" name = "submit" value = "提交"&gt;</div><div class="line">		&lt;/form&gt;</div><div class="line">		</div><div class="line">		&lt;?php</div><div class="line">			echo "&lt;h2&gt;您的输入：&lt;/h2&gt;";</div><div class="line">			echo $name;</div><div class="line">			echo "&lt;br&gt;";</div><div class="line">			echo $email;</div><div class="line">			echo "&lt;br&gt;";</div><div class="line">			echo $website;</div><div class="line">			echo "&lt;br&gt;";</div><div class="line">			echo $comment;</div><div class="line">			echo "&lt;br&gt;";</div><div class="line">			echo $gender;</div><div class="line">		?&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;style&gt;</div><div class="line">			.error &#123;color:<span class="comment">#FF0000;&#125;</span></div><div class="line">		&lt;/style&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		<span class="meta">&lt;?php</span></div><div class="line">			$nameErr = $emailErr = $genderErr = $websiteErr = <span class="string">""</span>;</div><div class="line">			$name = $email = $gender = $comment = $website = <span class="string">""</span>;</div><div class="line"></div><div class="line">			<span class="keyword">if</span> ($_SERVER[REQUEST_METHOD] == <span class="string">"POST"</span>) &#123;</div><div class="line">				<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'name'</span>]))&#123;</div><div class="line">					$nameErr = <span class="string">"姓名时必填的"</span>;</div><div class="line">				&#125; <span class="keyword">else</span> &#123;</div><div class="line">					$name = test_input($_POST[<span class="string">'name'</span>]);</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'email'</span>])) &#123;</div><div class="line">					$emailErr = <span class="string">"电邮是必填的"</span>;</div><div class="line">				&#125;　<span class="keyword">else</span> &#123;</div><div class="line">					$email = test_input($_POST[<span class="string">'email'</span>]);</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'website'</span>])) &#123;</div><div class="line">					$website = <span class="string">""</span>;</div><div class="line">				&#125; <span class="keyword">else</span> &#123;</div><div class="line">					$website = test_input($_POST[<span class="string">'website'</span>]);</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">if</span> (<span class="keyword">empty</span>($_post[<span class="string">'comment'</span>])) &#123;</div><div class="line">					$comment = <span class="string">""</span>;</div><div class="line">				&#125; <span class="keyword">else</span> &#123;</div><div class="line">					$commment = test_input($_POST[<span class="string">'comment'</span>]);</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'gender'</span>])) &#123;</div><div class="line">					$genderErr = <span class="string">"性别是必须的"</span>；</div><div class="line">				&#125; <span class="keyword">else</span> &#123;</div><div class="line">					$gender = test_input($_POST[<span class="string">'gender'</span>]);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">			<span class="function"><span class="keyword">function</span> <span class="title">test_input</span><span class="params">($data)</span> </span>&#123;</div><div class="line">				$data = trim($data);</div><div class="line">				$data = stripslashes($data);</div><div class="line">				$data = htmlspecoalchars($data);</div><div class="line">				<span class="keyword">return</span> $data;</div><div class="line">			&#125;</div><div class="line">		<span class="meta">?&gt;</span></div><div class="line">		&lt;h2PHP 测试例子&lt;/h2&gt;</div><div class="line">		&lt;p&gt;&lt;span class="error"&gt; * 必需字段&lt;/span&gt;&lt;/p&gt;</div><div class="line">		&lt;form method = <span class="string">"post"</span> action = <span class="string">"&lt;?php echo htmlspecialchars($_SERVER[PHP_SELF]);?&gt;"</span>&gt;</div><div class="line">			姓名：&lt;input type = <span class="string">"text"</span> name = <span class="string">"name"</span>&gt;</div><div class="line">			&lt;span class = "error"&gt; * &lt;?php echo $nameErr;?&gt; &lt;/span&gt;</div><div class="line">			&lt;br&gt;&lt;br&gt;</div><div class="line">			电邮：&lt;input type = <span class="string">"text"</span> name = <span class="string">"email"</span>&gt;</div><div class="line">			&lt;span class = "error"&gt;* &lt;?php echo $emailErr;?&gt; &lt;/span&gt;</div><div class="line">			&lt;br&gt;&lt;br&gt;</div><div class="line">			网址：&lt;input type = <span class="string">"text"</span> name = <span class="string">"website"</span>&gt;</div><div class="line">			&lt;span class = "error"&gt;&lt;?php echo $websiteErr;?&gt;&lt;/span&gt;</div><div class="line">			&lt;br&gt;&lt;br&gt;</div><div class="line">			评论：&lt;testarea name = <span class="string">"comment"</span> rows = <span class="string">"5"</span> cols = <span class="string">"40"</span>&gt;&lt;/textarea&gt;</div><div class="line">			&lt;br&gt;&lt;br&gt; </div><div class="line">			性别：</div><div class="line">			&lt;input type = <span class="string">"radio"</span> name=<span class="string">"gender"</span> value=<span class="string">"female"</span>&gt;女性</div><div class="line">			&lt;input type = <span class="string">"radio"</span> name=<span class="string">"gender"</span> value=<span class="string">"male"</span>&gt;男性</div><div class="line">			&lt;span class="error"&gt;* &lt;?php echo $genderErr;?&gt;&lt;/span&gt;</div><div class="line">			&lt;br&gt;&lt;br&gt;</div><div class="line">			&lt;input type = <span class="string">"submit"</span> name = <span class="string">"submit"</span> value = <span class="string">"提交"</span>&gt;</div><div class="line">		&lt;/form&gt;</div><div class="line">		</div><div class="line">		<span class="meta">&lt;?php</span></div><div class="line">			<span class="keyword">echo</span> <span class="string">"&lt;h2&gt;您的输入：&lt;/h2&gt;"</span>;</div><div class="line">			<span class="keyword">echo</span> $name;</div><div class="line">			<span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</div><div class="line">			<span class="keyword">echo</span> $email;</div><div class="line">			<span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</div><div class="line">			<span class="keyword">echo</span> $website;</div><div class="line">			<span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</div><div class="line">			<span class="keyword">echo</span> $comment;</div><div class="line">			<span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</div><div class="line">			<span class="keyword">echo</span> $gender;</div><div class="line">		<span class="meta">?&gt;</span></div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
 <p><strong>PHP - 验证　Name,E-mail,以及URL</strong> </p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$nameErr = $emailErr = $genderErr = $websiteErr = <span class="string">""</span>;</div><div class="line">$name = $email = $gender = $comment = $website = <span class="string">""</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span> ($_SERVER[<span class="string">"REQUEST_METHOD"</span>] == <span class="string">"POST"</span>)&#123;</div><div class="line">	<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'name'</span>]))&#123;</div><div class="line">		$nameErr = <span class="string">"name is required"</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		$name = test_input($_POST[<span class="string">'name'</span>]);</div><div class="line">		<span class="keyword">if</span> (!preg_match(<span class="string">"/^[a-zA-Z ]*$/"</span>,$name)) &#123;</div><div class="line">			$nameErr = <span class="string">"Only letters and white space allowed"</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'email'</span>]))&#123;</div><div class="line">		$emailErr = <span class="string">"Email is required"</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="comment">#email = test_input($_POST['email']);</span></div><div class="line">		<span class="keyword">if</span> (!preg_match(<span class="string">"/([\w\-]+\@[\w\-]+\.[\w\-]+)/"</span>,$email)) &#123;</div><div class="line">			$emailErr = <span class="string">"Invaild email format"</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'website'</span>]))&#123;</div><div class="line">		$website = <span class="string">""</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		$website = test_input($_POST[<span class="string">'website'</span>]);</div><div class="line">		<span class="keyword">if</span> (!preg_match(<span class="string">"/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&amp;@#\/%?=~_|!:,.;]*[-a-z0-9+&amp;@#\/%=~_|]/i"</span>,$website)) &#123;</div><div class="line">			$websiteErr ＝<span class="string">"Invaild URL"</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'comment'</span>])) &#123;</div><div class="line">		$comment = <span class="string">""</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		$comment = test_input($_POST[<span class="string">'comment'</span>]);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'gender'</span>])) &#123;</div><div class="line">		$genderErr = <span class="string">"Gender is required"</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		$gender = test_input($_POST[<span class="string">'gender'</span>]);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 
@@ -1080,25 +1304,16 @@
         
       
     </div>
+    
+    
+    
 
-	<div>
-      
-	</div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
-	<div>
-	  
-	</div>
     <footer class="post-footer">
       
 
@@ -1111,6 +1326,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1123,228 +1342,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP运算逻辑说明/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="daodaoliang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="刀刀亮的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP运算逻辑说明/" itemprop="url">
-                  php运算逻辑说明
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-01-16T00:00:00+08:00">
-                2015-01-16
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-30T16:04:52+08:00">
-                2017-07-30
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP学习/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  357
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <a id="more"></a>
-<h2 id="PHP-运算逻辑说明"><a href="#PHP-运算逻辑说明" class="headerlink" title="PHP 运算逻辑说明"></a>PHP 运算逻辑说明</h2><p><strong>PHP if…elseif…else 语句</strong></p>
-<p>示例说明:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">if</span>(condition_001)&#123;</div><div class="line">	语句;</div><div class="line">&#125; <span class="keyword">elseif</span> (condition_002)&#123;</div><div class="line">	语句;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	语句;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>PHP Switch语句</strong></p>
-<p>示例说明:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">switch</span> (expression)</div><div class="line">&#123;</div><div class="line"><span class="keyword">case</span> label1:</div><div class="line">	code to be executed <span class="keyword">if</span> expression = label1;</div><div class="line">	<span class="keyword">break</span>;</div><div class="line"><span class="keyword">case</span> label2:</div><div class="line">	code to be executed of expression = label2;</div><div class="line">	<span class="keyword">break</span>;</div><div class="line"><span class="keyword">default</span>:</div><div class="line">	code to be executed</div><div class="line">	<span class="keyword">if</span> expression is different</div><div class="line">	from both label1 <span class="keyword">and</span> label2;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>注意</strong>这个匹配语句不仅仅匹配数值和逻辑符类型,还可以匹配字符串类型;</p>
-<p><strong>PHP while语句</strong></p>
-<p>示例: </p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">while</span> (条件为真)</div><div class="line">&#123;</div><div class="line">	要执行的代码;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>PHP for 语句</strong></p>
-<p>示例:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">for</span>(init counter; test counter; increment counter)&#123;</div><div class="line">	code to be executed;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>参数:</strong></p>
-<ul>
-<li>init counter:初始化循环计数器的值</li>
-<li>test counter: 评估每个循环迭代,如果值为TRUE.继续循环,如果它的值为FALSE,循环结束.</li>
-<li>increment counter : 增加循环计数器的值</li>
-</ul>
-<p><strong>PHP foreach 语句</strong></p>
-<p>foreach 循环只适用于数据,病用于便利数组中的每个键/值对;</p>
-<p>示例:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">foreach</span> ($arrary <span class="keyword">as</span> $value)&#123;</div><div class="line">	code to be executed;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>PHP 函数语句</strong></p>
-<p>在PHP中创建用于定义函数</p>
-<p>示例:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">functionName</span><span class="params">()</span></span>&#123;</div><div class="line">	要执行的代码;</div><div class="line">&#125;</div><div class="line"></div><div class="line">**注意**:</div><div class="line"></div><div class="line">* 定义函数的声明需要以<span class="string">"function"</span>开头;</div><div class="line">* 函数名能够以字母或者下划线(而非数字);</div><div class="line">* 函数名对大小写敏感(变量名字也是对大小写敏感的,PHP内建关键字不区分大小写)</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>PHP 函数参数</strong></p>
-<p>示例1:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setHeight</span><span class="params">($minHeight=<span class="number">50</span>)</span></span>&#123;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"The height is : $minHeight &lt;br&gt;"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">setHeight(<span class="number">350</span>);</div><div class="line">setHeight(); <span class="comment">//将使用默认参数50</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-	<div>
-      
-	</div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-	<div>
-	  
-	</div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP数组/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1363,16 +1365,8 @@
         
         
           <h2 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP数组/" itemprop="url">
-                  php数组
-                </a>
-              
-            
-          </h2>
+                <a class="post-title-link" href="/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP数组/" itemprop="url">php数组</a></h2>
         
 
         <div class="post-meta">
@@ -1398,10 +1392,10 @@
                 <i class="fa fa-calendar-check-o"></i>
               </span>
               
-                <span class="post-meta-item-text">更新于</span>
+                <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-30T16:04:52+08:00">
-                2017-07-30
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:02+08:00">
+                2017-08-23
               </time>
             
           </span>
@@ -1442,12 +1436,12 @@
           
             <div class="post-wordcount">
               
-                <span class="post-meta-divider">|</span>
+                
                 <span class="post-meta-item-icon">
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计</span>
+                  <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
                   264
@@ -1463,7 +1457,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长</span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
                   1
@@ -1478,6 +1472,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body han-init-context" itemprop="articleBody">
 
       
@@ -1519,25 +1516,16 @@
         
       
     </div>
+    
+    
+    
 
-	<div>
-      
-	</div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
-	<div>
-	  
-	</div>
     <footer class="post-footer">
       
 
@@ -1550,6 +1538,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1582,6 +1574,9 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
     <div class="sidebar-inner">
 
       
@@ -1602,8 +1597,10 @@
 
           
             <div class="site-state-item site-state-posts">
+            
               <a href="/archives">
-                <span class="site-state-item-count">132</span>
+            
+                <span class="site-state-item-count">133</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1614,7 +1611,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1639,158 +1636,6 @@
               <i class="fa fa-rss"></i>
               RSS
             </a>
-	     <a title="收藏到书签，偶尔High一下^_^" rel="alternate" class="mw-harlem_shake_slow wobble shake" href='javascript:(function() {
-    function c() {
-        var e = document.createElement("link");
-        e.setAttribute("type", "text/css");
-        e.setAttribute("rel", "stylesheet");
-        e.setAttribute("href", f);
-        e.setAttribute("class", l);
-        document.body.appendChild(e)
-    }
- 
-    function h() {
-        var e = document.getElementsByClassName(l);
-        for (var t = 0; t < e.length; t++) {
-            document.body.removeChild(e[t])
-        }
-    }
- 
-    function p() {
-        var e = document.createElement("div");
-        e.setAttribute("class", a);
-        document.body.appendChild(e);
-        setTimeout(function() {
-            document.body.removeChild(e)
-        }, 100)
-    }
- 
-    function d(e) {
-        return {
-            height : e.offsetHeight,
-            width : e.offsetWidth
-        }
-    }
- 
-    function v(i) {
-        var s = d(i);
-        return s.height > e && s.height < n && s.width > t && s.width < r
-    }
- 
-    function m(e) {
-        var t = e;
-        var n = 0;
-        while (!!t) {
-            n += t.offsetTop;
-            t = t.offsetParent
-        }
-        return n
-    }
- 
-    function g() {
-        var e = document.documentElement;
-        if (!!window.innerWidth) {
-            return window.innerHeight
-        } else if (e && !isNaN(e.clientHeight)) {
-            return e.clientHeight
-        }
-        return 0
-    }
- 
-    function y() {
-        if (window.pageYOffset) {
-            return window.pageYOffset
-        }
-        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
-    }
- 
-    function E(e) {
-        var t = m(e);
-        return t >= w && t <= b + w
-    }
- 
-    function S() {
-        var e = document.createElement("audio");
-        e.setAttribute("class", l);
-        e.src = i;
-        e.loop = false;
-        e.addEventListener("canplay", function() {
-            setTimeout(function() {
-                x(k)
-            }, 500);
-            setTimeout(function() {
-                N();
-                p();
-                for (var e = 0; e < O.length; e++) {
-                    T(O[e])
-                }
-            }, 15500)
-        }, true);
-        e.addEventListener("ended", function() {
-            N();
-            h()
-        }, true);
-        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
-        document.body.appendChild(e);
-        e.play()
-    }
- 
-    function x(e) {
-        e.className += " " + s + " " + o
-    }
- 
-    function T(e) {
-        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
-    }
- 
-    function N() {
-        var e = document.getElementsByClassName(s);
-        var t = new RegExp("\\b" + s + "\\b");
-        for (var n = 0; n < e.length; ) {
-            e[n].className = e[n].className.replace(t, "")
-        }
-    }
- 
-    var e = 30;
-    var t = 30;
-    var n = 350;
-    var r = 350;
-    var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
-    var s = "mw-harlem_shake_me";
-    var o = "im_first";
-    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
-    var a = "mw-strobe_light";
-    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
-    var l = "mw_added_css";
-    var b = g();
-    var w = y();
-    var C = document.getElementsByTagName("*");
-    var k = null;
-    for (var L = 0; L < C.length; L++) {
-        var A = C[L];
-        if (v(A)) {
-            if (E(A)) {
-                k = A;
-                break
-            }
-        }
-    }
-    if (A === null) {
-        console.warn("Could not find a node of the right size. Please try a different page.");
-        return
-    }
-    c();
-    S();
-    var O = [];
-    for (var L = 0; L < C.length; L++) {
-        var A = C[L];
-        if (v(A)) {
-            O.push(A)
-        }
-    }
-})()'><i class="fa fa-music"></i> High</a>
-
-
           </div>
         
 
@@ -1802,7 +1647,9 @@
                   
                     <i class="fa fa-fw fa-github"></i>
                   
-                  GitHub
+                    
+                      GitHub
+                    
                 </a>
               </span>
             
@@ -1811,7 +1658,9 @@
                   
                     <i class="fa fa-fw fa-globe"></i>
                   
-                  网易云音乐
+                    
+                      网易云音乐
+                    
                 </a>
               </span>
             
@@ -1849,8 +1698,6 @@
         <div class="back-to-top">
           <i class="fa fa-arrow-up"></i>
           
-            <span id="scrollpercent"><span>0</span>%</span>
-          
         </div>
       
 
@@ -1866,12 +1713,25 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy;  2012 - 
+  &copy;  2012 &mdash; 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">daodaoliang</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">
+      120.7k
+    </span>
+  
 </div>
 
 
@@ -1896,6 +1756,12 @@
     </span>
   
 </div>
+
+
+
+
+
+
 
 
         
@@ -1962,21 +1828,32 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
 
 
 
   
-  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
   
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
 
 
 
@@ -1995,19 +1872,12 @@
 
 
   
-    
-    <script>
-      var cloudTieConfig = {
-        url: document.location.href, 
-        sourceId: "",
-        productKey: "997752e1c04e423cb7427a28b0d9a10a",
-        target: "cloud-tie-wrapper"
-      };
-    </script>
-    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+
+
+
+
+
   
-
-
 
 
 
@@ -2018,324 +1888,20 @@
 
   
 
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (search_path.endsWith("json")) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === '') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
 
 
 
@@ -2364,7 +1930,9 @@
 
   
 
+  
+  <script type="text/javascript" src="/js/src/exturl.js?v=5.1.2"></script>
+
+
 </body>
 </html>
-<!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/love.js"></script>

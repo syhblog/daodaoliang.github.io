@@ -1,26 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
-<script>
-    (function(){
-        if(''){
-            if (prompt('请输入文章密码') !== ''){
-                alert('密码错误！');
-                history.back();
-            }
-        }
-    })();
-</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-circle.min.css?v=1.0.2" rel="stylesheet">
+
+
+
 
   
   
@@ -64,35 +66,17 @@
   
 
   
-    
-      
-    
 
-    
+  
+
   
 
   
 
   
     
-      
     
-
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -102,7 +86,7 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="刀刀亮, 极客, daodaoliang" />
@@ -111,10 +95,12 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="刀刀亮的博客" type="application/atom+xml" />
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
 
 
 
@@ -128,7 +114,7 @@
 <meta property="og:site_name" content="刀刀亮的博客">
 <meta property="og:description" content="作者: daodaoliang 版本: V1.0.1 邮箱： daodaoliang@yeah.net 这里是官方链接">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-30T08:04:52.897Z">
+<meta property="og:updated_time" content="2017-08-23T05:19:03.002Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="supervisor 安装与配置">
 <meta name="twitter:description" content="作者: daodaoliang 版本: V1.0.1 邮箱： daodaoliang@yeah.net 这里是官方链接">
@@ -139,9 +125,11 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":true,"scrollpercent":true},
+    scheme: 'Gemini',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":true,"scrollpercent":false,"onmobile":true},
     fancybox: true,
+    tabs: true,
     motion: true,
     duoshuo: {
       userId: '0',
@@ -151,8 +139,8 @@
       applicationID: '',
       apiKey: '',
       indexName: '',
-      hits: "",
-      labels: ""
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
@@ -164,15 +152,8 @@
 
 
 
-<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
-
 
   <title>supervisor 安装与配置 | 刀刀亮的博客</title>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
   
 
 
@@ -182,11 +163,9 @@
 
 
 
+</head>
 
-
-
-
-
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -195,7 +174,7 @@
 
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
-<a href="https://github.com/daodaoliang"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
+
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
@@ -274,7 +253,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-telegram"></i> <br />
             
-            生活
+            life
           </a>
         </li>
       
@@ -317,22 +296,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -360,7 +343,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/环境搭建/2016/11/02/环境搭建-2016-11-02-Supervisor安装与配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -378,14 +365,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                supervisor 安装与配置
-              
-            
-          </h2>
+          <h2 class="post-title" itemprop="name headline">supervisor 安装与配置</h2>
         
 
         <div class="post-meta">
@@ -411,10 +391,10 @@
                 <i class="fa fa-calendar-check-o"></i>
               </span>
               
-                <span class="post-meta-item-text">更新于</span>
+                <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-30T16:04:52+08:00">
-                2017-07-30
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:03+08:00">
+                2017-08-23
               </time>
             
           </span>
@@ -445,16 +425,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a class="cloud-tie-join-count" href="/环境搭建/2016/11/02/环境搭建-2016-11-02-Supervisor安装与配置/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -470,15 +440,15 @@
           
             <div class="post-wordcount">
               
-                <span class="post-meta-divider">|</span>
+                
                 <span class="post-meta-item-icon">
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计</span>
+                  <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  
+                  3,185
                 </span>
               
 
@@ -491,10 +461,10 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长</span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  
+                  13
                 </span>
               
             </div>
@@ -506,6 +476,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body han-init-context" itemprop="articleBody">
 
       
@@ -547,7 +520,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir /etc/supervisor</div><div class="line">   echo_supervisord_conf &gt; /etc/supervisor/supervisord.conf</div></pre></td></tr></table></figure>
 <p><strong>2. 配置项说明</strong></p>
 <p>supervisor的配置参数较多，下面介绍一下常用的参数配置，详细的配置及说明，请参考<a href="http://supervisord.org/configuration.html" target="_blank" rel="external">官方文档</a>介绍。分号（;）开头的配置表示注释</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[unix_http_server]</div><div class="line"></div><div class="line">;socket文件的路径，supervisorctl用XML_RPC和supervisord通信就是通过它进行的,不设置的话，默认为none。非必须设置。</div><div class="line">file=/tmp/supervisor.sock</div><div class="line"></div><div class="line">;修改file的权限必须为0700,非必须设置。</div><div class="line">chmod=0700</div><div class="line"></div><div class="line">;修改file的权限的所属组为nobody:nogroup,非必需设置。</div><div class="line">chown=nobody:nogroup</div><div class="line"></div><div class="line">;使用supervisorctl链接的时候,认证的用户,不设置的话默认不需要用户,非必需设置。</div><div class="line">username=user</div><div class="line"></div><div class="line">;和上面的用户名对应的密码，可以直接使用明码，也可以使用SHA加密如&#123;SHA&#125;82ab876d1387bfafe46cc1c8a2ef074eae50cb1d。</div><div class="line">password=123</div><div class="line"></div><div class="line">;侦听在TCP上的socket,Web Server和远程的supervisorctl都要用到他不设置的话，默认为不开启。非必须设置。</div><div class="line">[inet_http_server]</div><div class="line"></div><div class="line">;侦听的IP和端口，侦听所有IP用 :9001或*:9001或者0.0.0.0:9001.这个必须设置，只要上面的[inet_http_server]开启了，就必须设置它。</div><div class="line">port=127.0.0.1:9001</div><div class="line"></div><div class="line">;登录时的用户名。</div><div class="line">username=user</div><div class="line"></div><div class="line">;登录时的密码。</div><div class="line">password=123</div><div class="line"></div><div class="line">;定义supervisord这个服务端进程的一些参数的。</div><div class="line">[supervisord]</div><div class="line"></div><div class="line">;supervisord这个主进程的日志路径,默认路径$CWD/supervisord.log,$CWD是当前目录,非必需设置。</div><div class="line">logfile=/tmp/supervisord.log</div><div class="line"></div><div class="line">;这个是上面那个日志文件的最大的大小,当超过50M(默认值是50M)的时候,会生成一个新的日志文件。当设置为0时,表示不限制文件大小,非必须设置。</div><div class="line">logfile_maxbytes=50MB</div><div class="line"></div><div class="line">;日志文件保持的数量,supervisor在启动程序时,会自动创建10个buckup文件(默认10),用于log rotate当设置为0时,表示不限制文件的数量。</div><div class="line">logfile_backups=10</div><div class="line"></div><div class="line">;日志级别，有critical, error, warn, info, debug, trace, or blather等默认为info,非必须设置项。</div><div class="line">loglevel=info</div><div class="line"></div><div class="line">;supervisord的pid文件路径,默认为$CWD/supervisord.pid。</div><div class="line">pidfile=/tmp/supervisord.pid</div><div class="line"></div><div class="line">;如果是true,supervisord进程将在前台运行默认为false,也就是后台以守护进程运行。</div><div class="line">nodaemon=false</div><div class="line"></div><div class="line">;这个是最少系统空闲的文件描述符，低于这个值(默认值1024)supervisor将不会启动。系统的文件描述符在这里设置cat /proc/sys/fs/file-max。</div><div class="line">minfds=1024</div><div class="line"></div><div class="line">;最小可用的进程描述符,低于这个值(默认200)supervisor也将不会正常启动。ulimit  -u这个命令，可以查看linux下面用户的最大进程数。</div><div class="line">minprocs=200</div><div class="line"></div><div class="line">;进程创建文件的掩码,默认为022</div><div class="line">umask=022</div><div class="line"></div><div class="line">;这个参数可以设置一个非root用户，当我们以root用户启动supervisord之后。我这里面设置的这个用户，也可以对supervisord进行管理,默认不设置。</div><div class="line">user=daodaoliang</div><div class="line"></div><div class="line">;supervisord的标识符，主要是给XML_RPC用的。当你有多个supervisor的时候，而且想调用XML_RPC统一管理，就需要为每个supervisor设置不同的标识符了,默认sipervisor。</div><div class="line">identifier=supervisor</div><div class="line"></div><div class="line">;当supervisord作为守护进程运行的时候,设置这个参数的话,启动supervisord进程之前,会先切换到这个目录默认不设置。</div><div class="line">directory=/tmp</div><div class="line"></div><div class="line">;在supervisord进程启动的时候，把以前子进程产生的日志文件(路径为AUTO的情况下)清除掉,默认false,有调试需求的同学可以设置为true。</div><div class="line">nocleanup=true</div><div class="line"></div><div class="line">;当子进程日志路径为AUTO的时候，子进程日志文件的存放路径。默认路径是这个东西，执行下面的这个命令看看就OK了，处理的东西就默认路径</div><div class="line">;python -c "import tempfile;print tempfile.gettempdir()"</div><div class="line">childlogdir=/tmp</div><div class="line"></div><div class="line">;设置环境变量的，supervisord在linux中启动默认继承了linux的环境变量，在这里可以设置supervisord进程特有的其他环境变量。</div><div class="line">;supervisord启动子进程时，子进程会拷贝父进程的内存空间内容。 所以设置的这些环境变量也会被子进程继承。</div><div class="line">;小例子：environment=name="daodaoliang",age="26"</div><div class="line">environment=KEY="value"</div><div class="line"></div><div class="line">;如果设置为true，会清除子进程日志中的所有 ANSI 序列（\n,\t等）。</div><div class="line">strip_ansi=false</div><div class="line"></div><div class="line">[rpcinterface:supervisor]</div><div class="line"></div><div class="line">supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface</div><div class="line"></div><div class="line">;针对supervisorctl的一些配置</div><div class="line">[supervisorctl]</div><div class="line"></div><div class="line">;supervisorctl本地连接supervisord的时候，本地UNIX socket路径，注意这个是和前面的[unix_http_server]对应的默认值就是unix:///tmp/supervisor.sock</div><div class="line">serverurl=unix:///tmp/supervisor.sock</div><div class="line"></div><div class="line">;supervisorctl远程连接supervisord的时候，用到的TCP socket路径,注意这个和前面的[inet_http_server]对应默认就是http://127.0.0.1:9001</div><div class="line">serverurl=http://127.0.0.1:9001</div><div class="line"></div><div class="line">;用户名</div><div class="line">username=daodaoliang</div><div class="line"></div><div class="line">;密码</div><div class="line">password=123</div><div class="line"></div><div class="line">;输入用户名密码时候的提示符</div><div class="line">prompt=iamnami</div><div class="line"></div><div class="line">;这个参数和shell中的history类似，我们可以用上下键来查找前面执行过的命令默认是no file,所以我们想要有这种功能，必须指定一个文件</div><div class="line">history_file=~/.sc_history</div><div class="line"></div><div class="line">;要管理的子进程了,":"后面的是名字，最好别乱写和实际进程有点关联最好。这样的program我们可以设置一个或多个，一个program就是要被管理的一个进程</div><div class="line">[program:theprogramname]</div><div class="line"></div><div class="line">;要启动进程的命令路径了，可以带参数/home/test.py -a 'hehe'</div><div class="line">;需要注意的是，我们的command只能是那种在终端运行的进程，不能是守护进程。这个是个必须设置的项。</div><div class="line">command=/bin/cat</div><div class="line"></div><div class="line">;当numprocs为1时,process_name=%(program_name)s</div><div class="line">;当numprocs&gt;=2时,%(program_name)s_%(process_num)02d</div><div class="line">process_name=%(program_name)s</div><div class="line"></div><div class="line">;进程数量,当不为1时，就是进程池的概念</div><div class="line">numprocs=1</div><div class="line"></div><div class="line">;进程开始的数字</div><div class="line">numprocs_start=1</div><div class="line"></div><div class="line">;进程运行前，会前切换到这个目录</div><div class="line">directory=/tmp</div><div class="line"></div><div class="line">;进程掩码:--- -w- -w-, 转换后rwx r-x r-x</div><div class="line">umask=022</div><div class="line"></div><div class="line">;优先级,值越高,最后启动,最先被关闭,默认值999</div><div class="line">priority=999</div><div class="line"></div><div class="line">;如果为true则程序在supervisord启动后将会启动</div><div class="line">autostart=true</div><div class="line"></div><div class="line">;自动重启的情况</div><div class="line">;有三个选项，false,unexpected和true。</div><div class="line">;如果为false的时候，无论什么情况下，都不会被重新启动。</div><div class="line">;如果为unexpected，只有当进程的退出码不在下面的exitcodes里面定义的退出码的时候，才会被自动重启。</div><div class="line">;当为true的时候，只要子进程挂掉，将会被无条件的重启。</div><div class="line">autorestart=true</div><div class="line"></div><div class="line">;子进程气动阀多少秒后才把状态置为running</div><div class="line">startsecs=1</div><div class="line"></div><div class="line">;当进程启动失败后，最大尝试启动的次数。。当超过3次后，supervisor将把此进程的状态置为FAIL。</div><div class="line">startretries=3</div><div class="line"></div><div class="line">;和上面的的autorestart=unexpected对应。exitcodes里面的定义的退出码是expected的。</div><div class="line">exitcodes=0,2</div><div class="line"></div><div class="line">;进程停止信号，可以为TERM, HUP, INT, QUIT, KILL, USR1, or USR2等信号。当用设定的信号去干掉进程，退出码会被认为是expected。</div><div class="line">;中断:INT(类似于Ctrl+C)(kill -INT pid),退出后会将写文件或日志(推荐)</div><div class="line">;终止:TERM(kill -TERM pid)</div><div class="line">;挂起:HUP(kill -HUP pid),注意与Ctrl+Z/kill -stop pid不同</div><div class="line">;从容停止:QUIT(kill -QUIT pid) ;KILL, USR1, USR2其他见命令(kill -l),说明1</div><div class="line">;默认为TERM。</div><div class="line">stopsignal=TERM</div><div class="line"></div><div class="line">;当我们向子进程发送stopsignal信号后，到系统返回信息给supervisord，所等待的最大时间。 超过这个时间，supervisord会向该子进程发送一个强制kill的信号。</div><div class="line">;默认为10秒,非必须设置。</div><div class="line">stopwaitsecs=10</div><div class="line"></div><div class="line">;用于supervisord管理的子进程，这个子进程本身还有子进程。那么我们如果仅仅干掉supervisord的子进程的话，子进程的子进程有可能会变成孤儿进程.</div><div class="line">;所以可以设置可个选项，把整个该子进程的整个进程组都干掉。 设置为true的话，一般killasgroup也会被设置为true。</div><div class="line">;需要注意的是，该选项发送的是stop信号默认为false。</div><div class="line">;非必须设置。</div><div class="line">stopasgroup=false</div><div class="line"></div><div class="line">;这个和上面的stopasgroup类似，不过发送的是kill信号。</div><div class="line">;非必须设置</div><div class="line">killasgroup=false</div><div class="line"></div><div class="line">;如果supervisord是root启动，我们在这里设置这个非root用户，可以用来管理该program。</div><div class="line">;非必须设置项。</div><div class="line">user=daodaoliang</div><div class="line"></div><div class="line">;如果为true，则stderr的日志会被写入stdout日志文件中</div><div class="line">redirect_stderr=true</div><div class="line"></div><div class="line">;子进程的stdout的日志路径，可以指定路径，AUTO，none等三个选项</div><div class="line">;设置为none的话，将没有日志产生。</div><div class="line">;设置为AUTO的话，将随机找一个地方生成日志文件,而且当supervisord重新启动的时候,以前的日志文件会被清空。</div><div class="line">;当 redirect_stderr=true的时候，sterr也会写进这个日志文件。</div><div class="line">stdout_logfile=/a/path</div><div class="line"></div><div class="line">;日志文件最大大小，和[supervisord]中定义的一样。默认为50</div><div class="line">stdout_logfile_maxbytes=1MB</div><div class="line"></div><div class="line">;和[supervisord]定义的一样。默认10</div><div class="line">stdout_logfile_backups=10</div><div class="line"></div><div class="line">;这个东西是设定capture管道的大小，当值不为0的时候，子进程可以从stdout发送信息，而supervisor可以根据信息，发送相应的event。</div><div class="line">;默认为0，为0的时候表达关闭管道。</div><div class="line">;非必须项</div><div class="line">stdout_capture_maxbytes=1MB</div><div class="line"></div><div class="line">;当设置为ture的时候,当子进程由stdout向文件描述符中写日志的时候,将触发supervisord发送PROCESS_LOG_STDOUT类型的event.</div><div class="line">;默认为false</div><div class="line">;非必须设置</div><div class="line">stdout_events_enabled=false</div><div class="line"></div><div class="line">;这个东西是设置stderr写的日志路径，当redirect_stderr=true。这个就不用设置了，设置了也是白搭。因为它会被写入stdout_logfile的同一个文件中默认为AUTO。</div><div class="line">;也就是随便找个地存,supervisord重启被清空。</div><div class="line">;非必须设置</div><div class="line">stderr_logfile=/a/path</div><div class="line"></div><div class="line">;这个是该子进程的环境变量，和别的子进程是不共享的</div><div class="line">environment=A="1",B="2"</div><div class="line"></div><div class="line">serverurl=AUTO</div><div class="line"></div><div class="line">;当我们要管理的进程很多的时候，写在一个文件里面就有点大了。我们可以把配置信息写到多个文件中，然后include过来。</div><div class="line">[include]</div><div class="line"></div><div class="line">;例如/an/absolute/filename.conf /an/absolute/*.conf foo.conf config??.conf</div><div class="line">files = relative/directory/*.ini</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="section">[unix_http_server]</span></div><div class="line"></div><div class="line"><span class="comment">;socket文件的路径，supervisorctl用XML_RPC和supervisord通信就是通过它进行的,不设置的话，默认为none。非必须设置。</span></div><div class="line"><span class="attr">file</span>=/tmp/supervisor.sock</div><div class="line"></div><div class="line"><span class="comment">;修改file的权限必须为0700,非必须设置。</span></div><div class="line"><span class="attr">chmod</span>=<span class="number">0700</span></div><div class="line"></div><div class="line"><span class="comment">;修改file的权限的所属组为nobody:nogroup,非必需设置。</span></div><div class="line"><span class="attr">chown</span>=nobody:nogroup</div><div class="line"></div><div class="line"><span class="comment">;使用supervisorctl链接的时候,认证的用户,不设置的话默认不需要用户,非必需设置。</span></div><div class="line"><span class="attr">username</span>=user</div><div class="line"></div><div class="line"><span class="comment">;和上面的用户名对应的密码，可以直接使用明码，也可以使用SHA加密如&#123;SHA&#125;82ab876d1387bfafe46cc1c8a2ef074eae50cb1d。</span></div><div class="line"><span class="attr">password</span>=<span class="number">123</span></div><div class="line"></div><div class="line"><span class="comment">;侦听在TCP上的socket,Web Server和远程的supervisorctl都要用到他不设置的话，默认为不开启。非必须设置。</span></div><div class="line"><span class="section">[inet_http_server]</span></div><div class="line"></div><div class="line"><span class="comment">;侦听的IP和端口，侦听所有IP用 :9001或*:9001或者0.0.0.0:9001.这个必须设置，只要上面的[inet_http_server]开启了，就必须设置它。</span></div><div class="line"><span class="attr">port</span>=<span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">9001</span></div><div class="line"></div><div class="line"><span class="comment">;登录时的用户名。</span></div><div class="line"><span class="attr">username</span>=user</div><div class="line"></div><div class="line"><span class="comment">;登录时的密码。</span></div><div class="line"><span class="attr">password</span>=<span class="number">123</span></div><div class="line"></div><div class="line"><span class="comment">;定义supervisord这个服务端进程的一些参数的。</span></div><div class="line"><span class="section">[supervisord]</span></div><div class="line"></div><div class="line"><span class="comment">;supervisord这个主进程的日志路径,默认路径$CWD/supervisord.log,$CWD是当前目录,非必需设置。</span></div><div class="line"><span class="attr">logfile</span>=/tmp/supervisord.log</div><div class="line"></div><div class="line"><span class="comment">;这个是上面那个日志文件的最大的大小,当超过50M(默认值是50M)的时候,会生成一个新的日志文件。当设置为0时,表示不限制文件大小,非必须设置。</span></div><div class="line"><span class="attr">logfile_maxbytes</span>=<span class="number">50</span>MB</div><div class="line"></div><div class="line"><span class="comment">;日志文件保持的数量,supervisor在启动程序时,会自动创建10个buckup文件(默认10),用于log rotate当设置为0时,表示不限制文件的数量。</span></div><div class="line"><span class="attr">logfile_backups</span>=<span class="number">10</span></div><div class="line"></div><div class="line"><span class="comment">;日志级别，有critical, error, warn, info, debug, trace, or blather等默认为info,非必须设置项。</span></div><div class="line"><span class="attr">loglevel</span>=info</div><div class="line"></div><div class="line"><span class="comment">;supervisord的pid文件路径,默认为$CWD/supervisord.pid。</span></div><div class="line"><span class="attr">pidfile</span>=/tmp/supervisord.pid</div><div class="line"></div><div class="line"><span class="comment">;如果是true,supervisord进程将在前台运行默认为false,也就是后台以守护进程运行。</span></div><div class="line"><span class="attr">nodaemon</span>=<span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment">;这个是最少系统空闲的文件描述符，低于这个值(默认值1024)supervisor将不会启动。系统的文件描述符在这里设置cat /proc/sys/fs/file-max。</span></div><div class="line"><span class="attr">minfds</span>=<span class="number">1024</span></div><div class="line"></div><div class="line"><span class="comment">;最小可用的进程描述符,低于这个值(默认200)supervisor也将不会正常启动。ulimit  -u这个命令，可以查看linux下面用户的最大进程数。</span></div><div class="line"><span class="attr">minprocs</span>=<span class="number">200</span></div><div class="line"></div><div class="line"><span class="comment">;进程创建文件的掩码,默认为022</span></div><div class="line"><span class="attr">umask</span>=<span class="number">022</span></div><div class="line"></div><div class="line"><span class="comment">;这个参数可以设置一个非root用户，当我们以root用户启动supervisord之后。我这里面设置的这个用户，也可以对supervisord进行管理,默认不设置。</span></div><div class="line"><span class="attr">user</span>=daodaoliang</div><div class="line"></div><div class="line"><span class="comment">;supervisord的标识符，主要是给XML_RPC用的。当你有多个supervisor的时候，而且想调用XML_RPC统一管理，就需要为每个supervisor设置不同的标识符了,默认sipervisor。</span></div><div class="line"><span class="attr">identifier</span>=supervisor</div><div class="line"></div><div class="line"><span class="comment">;当supervisord作为守护进程运行的时候,设置这个参数的话,启动supervisord进程之前,会先切换到这个目录默认不设置。</span></div><div class="line"><span class="attr">directory</span>=/tmp</div><div class="line"></div><div class="line"><span class="comment">;在supervisord进程启动的时候，把以前子进程产生的日志文件(路径为AUTO的情况下)清除掉,默认false,有调试需求的同学可以设置为true。</span></div><div class="line"><span class="attr">nocleanup</span>=<span class="literal">true</span></div><div class="line"></div><div class="line"><span class="comment">;当子进程日志路径为AUTO的时候，子进程日志文件的存放路径。默认路径是这个东西，执行下面的这个命令看看就OK了，处理的东西就默认路径</span></div><div class="line"><span class="comment">;python -c "import tempfile;print tempfile.gettempdir()"</span></div><div class="line"><span class="attr">childlogdir</span>=/tmp</div><div class="line"></div><div class="line"><span class="comment">;设置环境变量的，supervisord在linux中启动默认继承了linux的环境变量，在这里可以设置supervisord进程特有的其他环境变量。</span></div><div class="line"><span class="comment">;supervisord启动子进程时，子进程会拷贝父进程的内存空间内容。 所以设置的这些环境变量也会被子进程继承。</span></div><div class="line"><span class="comment">;小例子：environment=name="daodaoliang",age="26"</span></div><div class="line"><span class="attr">environment</span>=KEY=<span class="string">"value"</span></div><div class="line"></div><div class="line"><span class="comment">;如果设置为true，会清除子进程日志中的所有 ANSI 序列（\n,\t等）。</span></div><div class="line"><span class="attr">strip_ansi</span>=<span class="literal">false</span></div><div class="line"></div><div class="line"><span class="section">[rpcinterface:supervisor]</span></div><div class="line"></div><div class="line">supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface</div><div class="line"></div><div class="line"><span class="comment">;针对supervisorctl的一些配置</span></div><div class="line"><span class="section">[supervisorctl]</span></div><div class="line"></div><div class="line"><span class="comment">;supervisorctl本地连接supervisord的时候，本地UNIX socket路径，注意这个是和前面的[unix_http_server]对应的默认值就是unix:///tmp/supervisor.sock</span></div><div class="line"><span class="attr">serverurl</span>=unix:///tmp/supervisor.sock</div><div class="line"></div><div class="line"><span class="comment">;supervisorctl远程连接supervisord的时候，用到的TCP socket路径,注意这个和前面的[inet_http_server]对应默认就是http://127.0.0.1:9001</span></div><div class="line"><span class="attr">serverurl</span>=http://<span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">9001</span></div><div class="line"></div><div class="line"><span class="comment">;用户名</span></div><div class="line"><span class="attr">username</span>=daodaoliang</div><div class="line"></div><div class="line"><span class="comment">;密码</span></div><div class="line"><span class="attr">password</span>=<span class="number">123</span></div><div class="line"></div><div class="line"><span class="comment">;输入用户名密码时候的提示符</span></div><div class="line"><span class="attr">prompt</span>=iamnami</div><div class="line"></div><div class="line"><span class="comment">;这个参数和shell中的history类似，我们可以用上下键来查找前面执行过的命令默认是no file,所以我们想要有这种功能，必须指定一个文件</span></div><div class="line"><span class="attr">history_file</span>=~/.sc_history</div><div class="line"></div><div class="line"><span class="comment">;要管理的子进程了,":"后面的是名字，最好别乱写和实际进程有点关联最好。这样的program我们可以设置一个或多个，一个program就是要被管理的一个进程</span></div><div class="line"><span class="section">[program:theprogramname]</span></div><div class="line"></div><div class="line"><span class="comment">;要启动进程的命令路径了，可以带参数/home/test.py -a 'hehe'</span></div><div class="line"><span class="comment">;需要注意的是，我们的command只能是那种在终端运行的进程，不能是守护进程。这个是个必须设置的项。</span></div><div class="line"><span class="attr">command</span>=/bin/cat</div><div class="line"></div><div class="line"><span class="comment">;当numprocs为1时,process_name=%(program_name)s</span></div><div class="line"><span class="comment">;当numprocs&gt;=2时,%(program_name)s_%(process_num)02d</span></div><div class="line"><span class="attr">process_name</span>=%(program_name)s</div><div class="line"></div><div class="line"><span class="comment">;进程数量,当不为1时，就是进程池的概念</span></div><div class="line"><span class="attr">numprocs</span>=<span class="number">1</span></div><div class="line"></div><div class="line"><span class="comment">;进程开始的数字</span></div><div class="line"><span class="attr">numprocs_start</span>=<span class="number">1</span></div><div class="line"></div><div class="line"><span class="comment">;进程运行前，会前切换到这个目录</span></div><div class="line"><span class="attr">directory</span>=/tmp</div><div class="line"></div><div class="line"><span class="comment">;进程掩码:--- -w- -w-, 转换后rwx r-x r-x</span></div><div class="line"><span class="attr">umask</span>=<span class="number">022</span></div><div class="line"></div><div class="line"><span class="comment">;优先级,值越高,最后启动,最先被关闭,默认值999</span></div><div class="line"><span class="attr">priority</span>=<span class="number">999</span></div><div class="line"></div><div class="line"><span class="comment">;如果为true则程序在supervisord启动后将会启动</span></div><div class="line"><span class="attr">autostart</span>=<span class="literal">true</span></div><div class="line"></div><div class="line"><span class="comment">;自动重启的情况</span></div><div class="line"><span class="comment">;有三个选项，false,unexpected和true。</span></div><div class="line"><span class="comment">;如果为false的时候，无论什么情况下，都不会被重新启动。</span></div><div class="line"><span class="comment">;如果为unexpected，只有当进程的退出码不在下面的exitcodes里面定义的退出码的时候，才会被自动重启。</span></div><div class="line"><span class="comment">;当为true的时候，只要子进程挂掉，将会被无条件的重启。</span></div><div class="line"><span class="attr">autorestart</span>=<span class="literal">true</span></div><div class="line"></div><div class="line"><span class="comment">;子进程气动阀多少秒后才把状态置为running</span></div><div class="line"><span class="attr">startsecs</span>=<span class="number">1</span></div><div class="line"></div><div class="line"><span class="comment">;当进程启动失败后，最大尝试启动的次数。。当超过3次后，supervisor将把此进程的状态置为FAIL。</span></div><div class="line"><span class="attr">startretries</span>=<span class="number">3</span></div><div class="line"></div><div class="line"><span class="comment">;和上面的的autorestart=unexpected对应。exitcodes里面的定义的退出码是expected的。</span></div><div class="line"><span class="attr">exitcodes</span>=<span class="number">0</span>,<span class="number">2</span></div><div class="line"></div><div class="line"><span class="comment">;进程停止信号，可以为TERM, HUP, INT, QUIT, KILL, USR1, or USR2等信号。当用设定的信号去干掉进程，退出码会被认为是expected。</span></div><div class="line"><span class="comment">;中断:INT(类似于Ctrl+C)(kill -INT pid),退出后会将写文件或日志(推荐)</span></div><div class="line"><span class="comment">;终止:TERM(kill -TERM pid)</span></div><div class="line"><span class="comment">;挂起:HUP(kill -HUP pid),注意与Ctrl+Z/kill -stop pid不同</span></div><div class="line"><span class="comment">;从容停止:QUIT(kill -QUIT pid) ;KILL, USR1, USR2其他见命令(kill -l),说明1</span></div><div class="line"><span class="comment">;默认为TERM。</span></div><div class="line"><span class="attr">stopsignal</span>=TERM</div><div class="line"></div><div class="line"><span class="comment">;当我们向子进程发送stopsignal信号后，到系统返回信息给supervisord，所等待的最大时间。 超过这个时间，supervisord会向该子进程发送一个强制kill的信号。</span></div><div class="line"><span class="comment">;默认为10秒,非必须设置。</span></div><div class="line"><span class="attr">stopwaitsecs</span>=<span class="number">10</span></div><div class="line"></div><div class="line"><span class="comment">;用于supervisord管理的子进程，这个子进程本身还有子进程。那么我们如果仅仅干掉supervisord的子进程的话，子进程的子进程有可能会变成孤儿进程.</span></div><div class="line"><span class="comment">;所以可以设置可个选项，把整个该子进程的整个进程组都干掉。 设置为true的话，一般killasgroup也会被设置为true。</span></div><div class="line"><span class="comment">;需要注意的是，该选项发送的是stop信号默认为false。</span></div><div class="line"><span class="comment">;非必须设置。</span></div><div class="line"><span class="attr">stopasgroup</span>=<span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment">;这个和上面的stopasgroup类似，不过发送的是kill信号。</span></div><div class="line"><span class="comment">;非必须设置</span></div><div class="line"><span class="attr">killasgroup</span>=<span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment">;如果supervisord是root启动，我们在这里设置这个非root用户，可以用来管理该program。</span></div><div class="line"><span class="comment">;非必须设置项。</span></div><div class="line"><span class="attr">user</span>=daodaoliang</div><div class="line"></div><div class="line"><span class="comment">;如果为true，则stderr的日志会被写入stdout日志文件中</span></div><div class="line"><span class="attr">redirect_stderr</span>=<span class="literal">true</span></div><div class="line"></div><div class="line"><span class="comment">;子进程的stdout的日志路径，可以指定路径，AUTO，none等三个选项</span></div><div class="line"><span class="comment">;设置为none的话，将没有日志产生。</span></div><div class="line"><span class="comment">;设置为AUTO的话，将随机找一个地方生成日志文件,而且当supervisord重新启动的时候,以前的日志文件会被清空。</span></div><div class="line"><span class="comment">;当 redirect_stderr=true的时候，sterr也会写进这个日志文件。</span></div><div class="line"><span class="attr">stdout_logfile</span>=/a/path</div><div class="line"></div><div class="line"><span class="comment">;日志文件最大大小，和[supervisord]中定义的一样。默认为50</span></div><div class="line"><span class="attr">stdout_logfile_maxbytes</span>=<span class="number">1</span>MB</div><div class="line"></div><div class="line"><span class="comment">;和[supervisord]定义的一样。默认10</span></div><div class="line"><span class="attr">stdout_logfile_backups</span>=<span class="number">10</span></div><div class="line"></div><div class="line"><span class="comment">;这个东西是设定capture管道的大小，当值不为0的时候，子进程可以从stdout发送信息，而supervisor可以根据信息，发送相应的event。</span></div><div class="line"><span class="comment">;默认为0，为0的时候表达关闭管道。</span></div><div class="line"><span class="comment">;非必须项</span></div><div class="line"><span class="attr">stdout_capture_maxbytes</span>=<span class="number">1</span>MB</div><div class="line"></div><div class="line"><span class="comment">;当设置为ture的时候,当子进程由stdout向文件描述符中写日志的时候,将触发supervisord发送PROCESS_LOG_STDOUT类型的event.</span></div><div class="line"><span class="comment">;默认为false</span></div><div class="line"><span class="comment">;非必须设置</span></div><div class="line"><span class="attr">stdout_events_enabled</span>=<span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment">;这个东西是设置stderr写的日志路径，当redirect_stderr=true。这个就不用设置了，设置了也是白搭。因为它会被写入stdout_logfile的同一个文件中默认为AUTO。</span></div><div class="line"><span class="comment">;也就是随便找个地存,supervisord重启被清空。</span></div><div class="line"><span class="comment">;非必须设置</span></div><div class="line"><span class="attr">stderr_logfile</span>=/a/path</div><div class="line"></div><div class="line"><span class="comment">;这个是该子进程的环境变量，和别的子进程是不共享的</span></div><div class="line"><span class="attr">environment</span>=A=<span class="string">"1"</span>,B=<span class="string">"2"</span></div><div class="line"></div><div class="line"><span class="attr">serverurl</span>=AUTO</div><div class="line"></div><div class="line"><span class="comment">;当我们要管理的进程很多的时候，写在一个文件里面就有点大了。我们可以把配置信息写到多个文件中，然后include过来。</span></div><div class="line"><span class="section">[include]</span></div><div class="line"></div><div class="line"><span class="comment">;例如/an/absolute/filename.conf /an/absolute/*.conf foo.conf config??.conf</span></div><div class="line"><span class="attr">files</span> = relative/directory/*.ini</div></pre></td></tr></table></figure>
 <p><strong>3.例子</strong></p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="section">[program:usercenter]</span></div><div class="line"><span class="comment">; 程序的启动目录</span></div><div class="line"><span class="attr">directory</span> = /home/leon/projects/usercenter</div><div class="line"><span class="comment">; 启动命令，可以看出与手动在命令行启动的命令是一样的</span></div><div class="line"><span class="attr">command</span> = gunicorn -c gunicorn.py --port=%(process_num)s wsgi:app</div><div class="line"><span class="comment">; 程序名字</span></div><div class="line"><span class="attr">process_name</span>=%(program_name)s_%(process_num)<span class="number">02</span>d</div><div class="line"><span class="comment">; 开始数字</span></div><div class="line"><span class="attr">numprocs_start</span>=<span class="number">8110</span></div><div class="line"><span class="comment">; 数量</span></div><div class="line"><span class="attr">numprocs</span>=<span class="number">4</span></div><div class="line"><span class="comment">; 在 supervisord 启动的时候也自动启动</span></div><div class="line"><span class="attr">autostart</span> = <span class="literal">true</span></div><div class="line"><span class="comment">; 启动 5 秒后没有异常退出，就当作已经正常启动了</span></div><div class="line"><span class="attr">startsecs</span> = <span class="number">5</span></div><div class="line"><span class="comment">; 程序异常退出后自动重启</span></div><div class="line"><span class="attr">autorestart</span> = <span class="literal">true</span></div><div class="line"><span class="comment">; 启动失败自动重试次数，默认是 3</span></div><div class="line"><span class="attr">startretries</span> = <span class="number">3</span></div><div class="line"><span class="comment">; 用哪个用户启动</span></div><div class="line"><span class="attr">user</span> = leon</div><div class="line"><span class="comment">; 把 stderr 重定向到 stdout，默认 false</span></div><div class="line"><span class="attr">redirect_stderr</span> = <span class="literal">true</span></div><div class="line"><span class="comment">; stdout 日志文件大小，默认 50MB</span></div><div class="line"><span class="attr">stdout_logfile_maxbytes</span> = <span class="number">20</span>MB</div><div class="line"><span class="comment">; stdout 日志文件备份数</span></div><div class="line"><span class="attr">stdout_logfile_backups</span> = <span class="number">20</span></div><div class="line"><span class="comment">; stdout 日志文件，需要注意当指定目录不存在时无法正常启动，所以需要手动创建目录（supervisord 会自动创建日志文件）</span></div><div class="line"><span class="attr">stdout_logfile</span> = /data/logs/usercenter_stdout.log</div></pre></td></tr></table></figure>
 <h2 id="0x03-supervisord-启动和维护"><a href="#0x03-supervisord-启动和维护" class="headerlink" title="0x03 supervisord 启动和维护"></a>0x03 supervisord 启动和维护</h2><p><strong>1.启动服务</strong></p>
@@ -561,51 +534,57 @@
 
       
     </div>
+    
+    
+    
 
-	<div>
-      
-        
-      
-	</div>
-
-    <div>
-      
-        
-<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
     <img id="wechat_subscriber_qcode" src="http://daodaoliang.com/res/img/daodaoliang.gif" alt="daodaoliang wechat" style="width: 200px; max-width: 100%;"/>
     <div>点击上面图片后用微信扫描，你就能认识一个有趣的灵魂了呀。</div>
 </div>
 
+      </div>
+    
 
-      
-    </div>
+    
 
-    <div>
-      
-        
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    daodaoliang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://daodaoliang.com/环境搭建/2016/11/02/环境搭建-2016-11-02-Supervisor安装与配置/" title="supervisor 安装与配置">http://daodaoliang.com/环境搭建/2016/11/02/环境搭建-2016-11-02-Supervisor安装与配置/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
 
-      
-    </div>
+      </div>
+    
 
-    <div>
-      
-        
-      
-    </div>
-	<div>
-	  
-		
-<div style="text-align:center;color: #ccc;font-size:14px;">
------- 本文结束 ------
-</div>
-
-	  
-	</div>
     <footer class="post-footer">
       
 
       
+      
+        <div class="post-widgets">
         
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
       
 
       
@@ -633,6 +612,10 @@
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -640,23 +623,34 @@
     <div class="post-spread">
       
         
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
   <script>
     window._bd_share_config = {
       "common": {
         "bdText": "",
-        "bdMini": "1",
+        "bdMini": "2",
         "bdMiniList": false,
         "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
       },
       "image": {
         "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
         "viewText": "分享到：",
         "viewSize": "16"
-      },
-      "slide": {
-        "bdImg": "5",
-        "bdPos": "left",
-        "bdTop": "100"
       }
     }
   </script>
@@ -677,8 +671,6 @@
           
   <div class="comments" id="comments">
     
-      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-    
   </div>
 
 
@@ -695,6 +687,9 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
     <div class="sidebar-inner">
 
       
@@ -724,8 +719,10 @@
 
           
             <div class="site-state-item site-state-posts">
+            
               <a href="/archives">
-                <span class="site-state-item-count">132</span>
+            
+                <span class="site-state-item-count">133</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -736,7 +733,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -756,6 +753,13 @@
         </nav>
 
         
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
 
         <div class="links-of-author motion-element">
           
@@ -765,7 +769,9 @@
                   
                     <i class="fa fa-fw fa-github"></i>
                   
-                  GitHub
+                    
+                      GitHub
+                    
                 </a>
               </span>
             
@@ -774,7 +780,9 @@
                   
                     <i class="fa fa-fw fa-globe"></i>
                   
-                  网易云音乐
+                    
+                      网易云音乐
+                    
                 </a>
               </span>
             
@@ -828,8 +836,6 @@
         <div class="back-to-top">
           <i class="fa fa-arrow-up"></i>
           
-            <span id="scrollpercent"><span>0</span>%</span>
-          
         </div>
       
 
@@ -845,12 +851,25 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy;  2012 - 
+  &copy;  2012 &mdash; 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">daodaoliang</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">
+      120.7k
+    </span>
+  
 </div>
 
 
@@ -875,6 +894,12 @@
     </span>
   
 </div>
+
+
+
+
+
+
 
 
         
@@ -941,25 +966,32 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
 
 
 
   
+  
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
 
 
 
@@ -978,19 +1010,12 @@
 
 
   
-    
-    <script>
-      var cloudTieConfig = {
-        url: document.location.href, 
-        sourceId: "",
-        productKey: "997752e1c04e423cb7427a28b0d9a10a",
-        target: "cloud-tie-wrapper"
-      };
-    </script>
-    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+
+
+
+
+
   
-
-
 
 
 
@@ -1001,324 +1026,20 @@
 
   
 
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (search_path.endsWith("json")) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === '') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
 
 
 
@@ -1342,12 +1063,31 @@
 
 
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 079103eb8dc9e7eab092ee241c1435c9a5529647d58e5f3e58e00dbe1207e8ef,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
 
   
+
+  
+  <script type="text/javascript" src="/js/src/exturl.js?v=5.1.2"></script>
+
 
 </body>
 </html>
-<!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/love.js"></script>

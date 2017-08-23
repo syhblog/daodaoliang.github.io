@@ -1,26 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
-<script>
-    (function(){
-        if(''){
-            if (prompt('请输入文章密码') !== ''){
-                alert('密码错误！');
-                history.back();
-            }
-        }
-    })();
-</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-circle.min.css?v=1.0.2" rel="stylesheet">
+
+
+
 
   
   
@@ -64,35 +66,17 @@
   
 
   
-    
-      
-    
 
-    
+  
+
   
 
   
 
   
     
-      
     
-
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -102,7 +86,7 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="刀刀亮, 极客, daodaoliang" />
@@ -111,10 +95,12 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="刀刀亮的博客" type="application/atom+xml" />
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
 
 
 
@@ -130,7 +116,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://daodaoliang.com/res/img/blog/开源框架学习/2015-11-05-001.png">
 <meta property="og:image" content="http://daodaoliang.com/res/img/blog/开源框架学习/2015-11-05-002.png">
-<meta property="og:updated_time" content="2017-07-30T08:04:52.895Z">
+<meta property="og:updated_time" content="2017-08-23T05:19:03.002Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="以正确的方式开源 Python 项目(转载)">
 <meta name="twitter:description" content="重要的事情要加黑: 原文地址">
@@ -142,9 +128,11 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":true,"scrollpercent":true},
+    scheme: 'Gemini',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":true,"scrollpercent":false,"onmobile":true},
     fancybox: true,
+    tabs: true,
     motion: true,
     duoshuo: {
       userId: '0',
@@ -154,8 +142,8 @@
       applicationID: '',
       apiKey: '',
       indexName: '',
-      hits: "",
-      labels: ""
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
@@ -167,15 +155,8 @@
 
 
 
-<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
-
 
   <title>以正确的方式开源 Python 项目(转载) | 刀刀亮的博客</title>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
   
 
 
@@ -185,11 +166,9 @@
 
 
 
+</head>
 
-
-
-
-
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -198,7 +177,7 @@
 
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
-<a href="https://github.com/daodaoliang"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
+
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
@@ -277,7 +256,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-telegram"></i> <br />
             
-            生活
+            life
           </a>
         </li>
       
@@ -320,22 +299,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -363,7 +346,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/开源框架学习/2015/11/04/开源框架学习-2015-11-04-以正确的方式开源Python项目/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -381,14 +368,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                以正确的方式开源 Python 项目(转载)
-              
-            
-          </h2>
+          <h2 class="post-title" itemprop="name headline">以正确的方式开源 Python 项目(转载)</h2>
         
 
         <div class="post-meta">
@@ -414,10 +394,10 @@
                 <i class="fa fa-calendar-check-o"></i>
               </span>
               
-                <span class="post-meta-item-text">更新于</span>
+                <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-30T16:04:52+08:00">
-                2017-07-30
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:03+08:00">
+                2017-08-23
               </time>
             
           </span>
@@ -448,16 +428,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a class="cloud-tie-join-count" href="/开源框架学习/2015/11/04/开源框架学习-2015-11-04-以正确的方式开源Python项目/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -473,15 +443,15 @@
           
             <div class="post-wordcount">
               
-                <span class="post-meta-divider">|</span>
+                
                 <span class="post-meta-item-icon">
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计</span>
+                  <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  
+                  9,240
                 </span>
               
 
@@ -494,10 +464,10 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长</span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  
+                  35
                 </span>
               
             </div>
@@ -509,6 +479,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body han-init-context" itemprop="articleBody">
 
       
@@ -611,7 +584,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git flow hotfix finish &lt;release number&gt;</div></pre></td></tr></table></figure>
 <p>  这好像一个release分支（因为它本质上就是一种release分支），会在master和develop分支上提交修改。我猜想它们很少使用的原因是因为已经存在一种可以给已发布的代码做出修改的机制：提交到一个未完成的release分支。当然，可能一开始，团队使用git flow release finish .. 太早了，然后第二天又发现需要快速修改。随着时间的推移，他们就会为一个release 分支多留一些时间，所以，不会再需要hotfix分支。另一种需要hotfix分支情况就是如果你立即需要在产品中加入新的特性，等不及在develop分支中加入改变。不过（期望）这些都是小概率事件。</p>
 <h3 id="1-5-virtualenv和virtualenvwrapper"><a href="#1-5-virtualenv和virtualenvwrapper" class="headerlink" title="1.5 virtualenv和virtualenvwrapper"></a>1.5 virtualenv和virtualenvwrapper</h3><p>  an Bicking的virtualenv工具事实上已经成为了隔离Python环境的标准途径了。它的目标很简单：如果你的一台机子中有很多Python项目，每个都有不同的依赖（可能相同的包，但是依赖不同的版本），仅仅在一个Python安装环境中管理这些依赖几乎是不可能的。virtualenv创建了一个“虚拟的”Python安装环境，每个环境都是相互隔离的，都有自己的site-packages, distribute和 使用pip安装包到虚拟环境而不是系统Python安装环境。 而且在你的虚拟环境中来回切换只是一个命令的事。Doug Hellmann的virtualenvwrapper使创建和管理多个虚拟环境更容易的隔离工具。让我们继续前进，马上安装这两个工具：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ pip install `virtualenvwrapper`</div><div class="line">...</div><div class="line">Successfully installed `virtualenvwrapper` `virtualenv` `virtualenv`-clone stevedore</div><div class="line">Cleaning up...</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ pip install `virtualenvwrapper`</div><div class="line">...</div><div class="line">Successfully installed `virtualenvwrapper` `virtualenv` `virtualenv`-<span class="built_in">clone</span> stevedore</div><div class="line">Cleaning up...</div></pre></td></tr></table></figure>
 <p>  如你所见，后者依赖于前者，所以简单的安装virtualenvwrapper就足够了。注意，如果你使用的是Python3，PEP-405通过venv包和pyvenv命令提供了Python原生虚拟环境的支持，在python3.3中已实现。你应该使用这个而不是前面提到的工具。一旦你安装了virtualenvwrapper，你需要添加一行内容到你的.zhsrc文件(对bash用户来说是.bashrc文件)：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> <span class="string">"source /usr/local/bin/virtualenvwrapper.sh"</span> &gt;&gt; ~/.zshrc</div></pre></td></tr></table></figure>
 <p>  这样在你的shell中增加了一些有用的命令（记得第一次使用时source一下你的.zshrc文件以使它生效）。虽然你可以使用mkvirtualenv命令直接创建一个virtualenv，但使用mkproject [OPTIONS] DEST_DIR创建一个“项目”将更有用。因为我们已经有一个现有的项目了，所有我们只需为我们的项目创建一个新的virtualenv，下附命令可以达到这效果：</p>
@@ -664,7 +637,7 @@
 <h3 id="1-8-Sphinx文档生成器"><a href="#1-8-Sphinx文档生成器" class="headerlink" title="1.8 Sphinx文档生成器"></a>1.8 Sphinx文档生成器</h3><p><a href="http://sphinx-doc.org/" target="_blank" rel="external">Sphinx</a>是由pocoo团队开发的工具[@Lesus 注：pocoo团队开发了很多优秀的产品：如Flask, Jinja2等等]。它已经用来生成Python官方文档和大多数流行的Python包的文档。它以更容易的方式从Python代码中自动产生Python文档。</p>
 <p><strong>使用它完成工作</strong></p>
 <p>  Sphinx不用了解Python程序以及怎样从它们中提取出来。它只能翻译reStructuredText文件，也就意味着你的代码文档的reStructuredText译文需要让Sphinx知道才能工作，但是管理维护所有的.py文件[至少是函数和类的部分]的reStructuredText译文显然是不可行的。<br>  幸运的是，Sphinx有一个类似javadoc的扩展，叫做autodoc,可以用来从你的代码文档中萃取出reStructuredText。为了能够充分利用Sphinx和autodoc的能力，你需要已一种特别的方式格式化你的文档。特别是，你需要使用Sphinx的Python指令时。这里就是使用reStructuredText指令来为一个函数生成文档，使输出结果的HTML文档更漂亮：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">_validate</span><span class="params">(cls, method, resource=None)</span>:</span></div><div class="line"><span class="string">"""Return ``True`` if the the given *cls* supports the HTTP *method* found</span></div><div class="line">on the incoming HTTP request.</div><div class="line">:param cls: class associated with the request's endpoint</div><div class="line">:type cls: :class:`sandman.model.Model` instance</div><div class="line">:param string method: HTTP method of incoming request</div><div class="line">:param resource: *cls* instance associated with the request</div><div class="line">:type resource: :class:`sandman.model.Model` or None</div><div class="line">:rtype: bool</div><div class="line">"""</div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="keyword">not</span> method <span class="keyword">in</span> cls.__methods__:</div><div class="line">    <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line"> </div><div class="line">class_validator_name = <span class="string">'validate_'</span> + method</div><div class="line"> </div><div class="line"><span class="keyword">if</span> hasattr(cls, class_validator_name):</div><div class="line">    class_validator = getattr(cls, class_validator_name)</div><div class="line">    <span class="keyword">return</span> class_validator(resource)</div><div class="line"><span class="keyword">return</span> <span class="keyword">True</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">_validate</span><span class="params">(cls, method, resource=None)</span>:</span></div><div class="line"><span class="string">"""Return ``True`` if the the given *cls* supports the HTTP *method* found</span></div><div class="line"><span class="string">on the incoming HTTP request.</span></div><div class="line"><span class="string">:param cls: class associated with the request's endpoint</span></div><div class="line"><span class="string">:type cls: :class:`sandman.model.Model` instance</span></div><div class="line"><span class="string">:param string method: HTTP method of incoming request</span></div><div class="line"><span class="string">:param resource: *cls* instance associated with the request</span></div><div class="line"><span class="string">:type resource: :class:`sandman.model.Model` or None</span></div><div class="line"><span class="string">:rtype: bool</span></div><div class="line"><span class="string">"""</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="keyword">not</span> method <span class="keyword">in</span> cls.__methods__:</div><div class="line">    <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line"> </div><div class="line">class_validator_name = <span class="string">'validate_'</span> + method</div><div class="line"> </div><div class="line"><span class="keyword">if</span> hasattr(cls, class_validator_name):</div><div class="line">    class_validator = getattr(cls, class_validator_name)</div><div class="line">    <span class="keyword">return</span> class_validator(resource)</div><div class="line"><span class="keyword">return</span> <span class="keyword">True</span></div></pre></td></tr></table></figure>
 <p>文档需要花费一点功夫，但是为了你的使用者，这个付出是值得的。好吧，好的文档使一个可用的项目去其糟粕。Sphinx的autodoc扩展让我们可以使用很多指令，而这些指令可以自动的从你文档中生成文档。</p>
 <p><strong>安装</strong></p>
 <p>  确认将Sphinx安装在你的virtualenv内，因为文档在项目里也是按版本来的。Sphinx不同的版本可能会产生不同的HTML输出。通过将其安装在你的virtualenv内，你可以以受控的方式升级你的文档。我们要保持我们的文档在docs文件夹，将文档生成到docs/generated文件夹。在项目的根目录运行以下命令将根据你的文档字符自动重构文本文档：</p>
@@ -735,59 +708,65 @@
 
       
     </div>
+    
+    
+    
 
-	<div>
-      
-        
-      
-	</div>
-
-    <div>
-      
-        
-<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
     <img id="wechat_subscriber_qcode" src="http://daodaoliang.com/res/img/daodaoliang.gif" alt="daodaoliang wechat" style="width: 200px; max-width: 100%;"/>
     <div>点击上面图片后用微信扫描，你就能认识一个有趣的灵魂了呀。</div>
 </div>
 
+      </div>
+    
 
-      
-    </div>
+    
 
-    <div>
-      
-        
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    daodaoliang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://daodaoliang.com/开源框架学习/2015/11/04/开源框架学习-2015-11-04-以正确的方式开源Python项目/" title="以正确的方式开源 Python 项目(转载)">http://daodaoliang.com/开源框架学习/2015/11/04/开源框架学习-2015-11-04-以正确的方式开源Python项目/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
 
-      
-    </div>
+      </div>
+    
 
-    <div>
-      
-        
-      
-    </div>
-	<div>
-	  
-		
-<div style="text-align:center;color: #ccc;font-size:14px;">
------- 本文结束 ------
-</div>
-
-	  
-	</div>
     <footer class="post-footer">
       
 
       
+      
+        <div class="post-widgets">
         
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
       
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/环境搭建/2015/10/10/环境搭建-2015-10-10-CentOS6-5搭建FTP服务器/" rel="next" title="centos 6.5 搭建ftp 服务器">
-                <i class="fa fa-chevron-left"></i> centos 6.5 搭建ftp 服务器
+              <a href="/开源框架学习/2015/11/04/开源框架学习-2015-11-04-深入研究tornado框架-tornado入门篇/" rel="next" title="深入研究tornado框架---tornado入门">
+                <i class="fa fa-chevron-left"></i> 深入研究tornado框架---tornado入门
               </a>
             
           </div>
@@ -796,8 +775,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/开源框架学习/2015/11/04/开源框架学习-2015-11-04-深入研究tornado框架-tornado入门篇/" rel="prev" title="深入研究tornado框架---tornado入门">
-                深入研究tornado框架---tornado入门 <i class="fa fa-chevron-right"></i>
+              <a href="/项目工程管理/2015/11/05/项目工程管理-2015-11-05-gitflow分支管理模型/" rel="prev" title="gitflow分支管理模型(转载)">
+                gitflow分支管理模型(转载) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -807,6 +786,10 @@
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -814,23 +797,34 @@
     <div class="post-spread">
       
         
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
   <script>
     window._bd_share_config = {
       "common": {
         "bdText": "",
-        "bdMini": "1",
+        "bdMini": "2",
         "bdMiniList": false,
         "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
       },
       "image": {
         "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
         "viewText": "分享到：",
         "viewSize": "16"
-      },
-      "slide": {
-        "bdImg": "5",
-        "bdPos": "left",
-        "bdTop": "100"
       }
     }
   </script>
@@ -851,8 +845,6 @@
           
   <div class="comments" id="comments">
     
-      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-    
   </div>
 
 
@@ -869,6 +861,9 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
     <div class="sidebar-inner">
 
       
@@ -898,8 +893,10 @@
 
           
             <div class="site-state-item site-state-posts">
+            
               <a href="/archives">
-                <span class="site-state-item-count">132</span>
+            
+                <span class="site-state-item-count">133</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -910,7 +907,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -930,6 +927,13 @@
         </nav>
 
         
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
 
         <div class="links-of-author motion-element">
           
@@ -939,7 +943,9 @@
                   
                     <i class="fa fa-fw fa-github"></i>
                   
-                  GitHub
+                    
+                      GitHub
+                    
                 </a>
               </span>
             
@@ -948,7 +954,9 @@
                   
                     <i class="fa fa-fw fa-globe"></i>
                   
-                  网易云音乐
+                    
+                      网易云音乐
+                    
                 </a>
               </span>
             
@@ -1002,8 +1010,6 @@
         <div class="back-to-top">
           <i class="fa fa-arrow-up"></i>
           
-            <span id="scrollpercent"><span>0</span>%</span>
-          
         </div>
       
 
@@ -1019,12 +1025,25 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy;  2012 - 
+  &copy;  2012 &mdash; 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">daodaoliang</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">
+      120.7k
+    </span>
+  
 </div>
 
 
@@ -1049,6 +1068,12 @@
     </span>
   
 </div>
+
+
+
+
+
+
 
 
         
@@ -1115,25 +1140,32 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
 
 
 
   
+  
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
 
 
 
@@ -1152,19 +1184,12 @@
 
 
   
-    
-    <script>
-      var cloudTieConfig = {
-        url: document.location.href, 
-        sourceId: "",
-        productKey: "997752e1c04e423cb7427a28b0d9a10a",
-        target: "cloud-tie-wrapper"
-      };
-    </script>
-    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+
+
+
+
+
   
-
-
 
 
 
@@ -1175,324 +1200,20 @@
 
   
 
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (search_path.endsWith("json")) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === '') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
 
 
 
@@ -1516,12 +1237,31 @@
 
 
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 079103eb8dc9e7eab092ee241c1435c9a5529647d58e5f3e58e00dbe1207e8ef,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
 
   
+
+  
+  <script type="text/javascript" src="/js/src/exturl.js?v=5.1.2"></script>
+
 
 </body>
 </html>
-<!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/love.js"></script>

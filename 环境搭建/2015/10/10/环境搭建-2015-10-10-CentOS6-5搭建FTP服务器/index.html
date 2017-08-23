@@ -1,26 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
-<script>
-    (function(){
-        if(''){
-            if (prompt('请输入文章密码') !== ''){
-                alert('密码错误！');
-                history.back();
-            }
-        }
-    })();
-</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-circle.min.css?v=1.0.2" rel="stylesheet">
+
+
+
 
   
   
@@ -64,35 +66,17 @@
   
 
   
-    
-      
-    
 
-    
+  
+
   
 
   
 
   
     
-      
     
-
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -102,7 +86,7 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="刀刀亮, 极客, daodaoliang" />
@@ -111,10 +95,12 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="刀刀亮的博客" type="application/atom+xml" />
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
 
 
 
@@ -126,7 +112,7 @@
 <meta property="og:url" content="http://daodaoliang.com/环境搭建/2015/10/10/环境搭建-2015-10-10-CentOS6-5搭建FTP服务器/index.html">
 <meta property="og:site_name" content="刀刀亮的博客">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-30T08:04:52.897Z">
+<meta property="og:updated_time" content="2017-08-23T05:19:03.002Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos 6.5 搭建ftp 服务器">
 
@@ -136,9 +122,11 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":true,"scrollpercent":true},
+    scheme: 'Gemini',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":true,"scrollpercent":false,"onmobile":true},
     fancybox: true,
+    tabs: true,
     motion: true,
     duoshuo: {
       userId: '0',
@@ -148,8 +136,8 @@
       applicationID: '',
       apiKey: '',
       indexName: '',
-      hits: "",
-      labels: ""
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
@@ -161,15 +149,8 @@
 
 
 
-<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
-
 
   <title>centos 6.5 搭建ftp 服务器 | 刀刀亮的博客</title>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
   
 
 
@@ -179,11 +160,9 @@
 
 
 
+</head>
 
-
-
-
-
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -192,7 +171,7 @@
 
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
-<a href="https://github.com/daodaoliang"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
+
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
@@ -271,7 +250,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-telegram"></i> <br />
             
-            生活
+            life
           </a>
         </li>
       
@@ -314,22 +293,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -357,7 +340,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/环境搭建/2015/10/10/环境搭建-2015-10-10-CentOS6-5搭建FTP服务器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -375,14 +362,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                centos 6.5 搭建ftp 服务器
-              
-            
-          </h2>
+          <h2 class="post-title" itemprop="name headline">centos 6.5 搭建ftp 服务器</h2>
         
 
         <div class="post-meta">
@@ -408,10 +388,10 @@
                 <i class="fa fa-calendar-check-o"></i>
               </span>
               
-                <span class="post-meta-item-text">更新于</span>
+                <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-30T16:04:52+08:00">
-                2017-07-30
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:03+08:00">
+                2017-08-23
               </time>
             
           </span>
@@ -442,16 +422,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a class="cloud-tie-join-count" href="/环境搭建/2015/10/10/环境搭建-2015-10-10-CentOS6-5搭建FTP服务器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -467,15 +437,15 @@
           
             <div class="post-wordcount">
               
-                <span class="post-meta-divider">|</span>
+                
                 <span class="post-meta-item-icon">
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计</span>
+                  <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  
+                  2,587
                 </span>
               
 
@@ -488,10 +458,10 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长</span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  
+                  10
                 </span>
               
             </div>
@@ -503,6 +473,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body han-init-context" itemprop="articleBody">
 
       
@@ -584,55 +557,61 @@
 </tbody>
 </table>
 <p><strong>主配置文件说明</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div></pre></td><td class="code"><pre><div class="line">   # 是否允许匿名登录FTP服务器，默认设置为YES允许</div><div class="line">   # 用户可使用用户名ftp或anonymous进行ftp登录，口令为用户的E-mail地址。</div><div class="line">   # 如不允许匿名访问则设置为NO</div><div class="line">   anonymous_enable=YES</div><div class="line"></div><div class="line">   # 是否允许本地用户(即linux系统中的用户帐号)登录FTP服务器，默认设置为YES允许</div><div class="line">   # 本地用户登录后会进入用户主目录，而匿名用户登录后进入匿名用户的下载目录/var/ftp/pub</div><div class="line">   # 若只允许匿名用户访问，前面加上#注释掉即可阻止本地用户访问FTP服务器</div><div class="line">   local_enable=YES</div><div class="line"></div><div class="line"># 是否允许本地用户对FTP服务器文件具有写权限，默认设置为YES允许</div><div class="line">   write_enable=YES</div><div class="line"></div><div class="line">   # 掩码，本地用户默认掩码为077</div><div class="line">   # 你可以设置本地用户的文件掩码为缺省022，也可根据个人喜好将其设置为其他值</div><div class="line">   #local_umask=022</div><div class="line"></div><div class="line"># 是否允许匿名用户上传文件，须将全局的write_enable=YES。默认为YES</div><div class="line">   #anon_upload_enable=YES</div><div class="line"></div><div class="line">   # 是否允许匿名用户创建新文件夹</div><div class="line">   #anon_mkdir_write_enable=YES</div><div class="line"></div><div class="line"># 是否激活目录欢迎信息功能</div><div class="line">   # 当用户用CMD模式首次访问服务器上某个目录时，FTP服务器将显示欢迎信息</div><div class="line">   # 默认情况下，欢迎信息是通过该目录下的.message文件获得的</div><div class="line">   # 此文件保存自定义的欢迎信息，由用户自己建立</div><div class="line">   #dirmessage_enable=YES</div><div class="line"></div><div class="line">   # 是否让系统自动维护上传和下载的日志文件</div><div class="line">   # 默认情况该日志文件为/var/log/vsftpd.log,也可以通过下面的xferlog_file选项对其进行设定</div><div class="line">   # 默认值为NO</div><div class="line">   xferlog_enable=YES</div><div class="line"></div><div class="line"># Make sure PORT transfer connections originate from port 20 (ftp-data).</div><div class="line">   # 是否设定FTP服务器将启用FTP数据端口的连接请求</div><div class="line">   # ftp-data数据传输，21为连接控制端口</div><div class="line">   connect_from_port_20=YES</div><div class="line"></div><div class="line">   # 设定是否允许改变上传文件的属主，与下面一个设定项配合使用</div><div class="line">   # 注意，不推荐使用root用户上传文件</div><div class="line">   #chown_uploads=YES</div><div class="line"></div><div class="line"># 设置想要改变的上传文件的属主，如果需要，则输入一个系统用户名</div><div class="line">   # 可以把上传的文件都改成root属主。whoever：任何人</div><div class="line">   #chown_username=whoever</div><div class="line"></div><div class="line">   # 设定系统维护记录FTP服务器上传和下载情况的日志文件</div><div class="line">   # /var/log/vsftpd.log是默认的，也可以另设其它</div><div class="line">   #xferlog_file=/var/log/vsftpd.log</div><div class="line"></div><div class="line"># 是否以标准xferlog的格式书写传输日志文件</div><div class="line">   # 默认为/var/log/xferlog，也可以通过xferlog_file选项对其进行设定</div><div class="line">   # 默认值为NO</div><div class="line">   #xferlog_std_format=YES</div><div class="line"></div><div class="line">   # 以下是附加配置，添加相应的选项将启用相应的设置</div><div class="line">   # 是否生成两个相似的日志文件</div><div class="line">   # 默认在/var/log/xferlog和/var/log/vsftpd.log目录下</div><div class="line">   # 前者是wu_ftpd类型的传输日志，可以利用标准日志工具对其进行分析；后者是vsftpd类型的日志</div><div class="line">   #dual_log_enable</div><div class="line"></div><div class="line"># 是否将原本输出到/var/log/vsftpd.log中的日志，输出到系统日志</div><div class="line">   #syslog_enable</div><div class="line"></div><div class="line">   # 设置数据传输中断间隔时间，此语句表示空闲的用户会话中断时间为600秒</div><div class="line">   # 即当数据传输结束后，用户连接FTP服务器的时间不应超过600秒。可以根据实际情况对该值进行修改</div><div class="line">   #idle_session_timeout=600</div><div class="line"></div><div class="line"># 设置数据连接超时时间，该语句表示数据连接超时时间为120秒，可根据实际情况对其个修改</div><div class="line">   #data_connection_timeout=120</div><div class="line"></div><div class="line">   # 运行vsftpd需要的非特权系统用户，缺省是nobody</div><div class="line">   #nopriv_user=ftpsecure</div><div class="line"></div><div class="line"># 是否识别异步ABOR请求。</div><div class="line">   # 如果FTP client会下达“async ABOR”这个指令时，这个设定才需要启用</div><div class="line">   # 而一般此设定并不安全，所以通常将其取消</div><div class="line">   #async_abor_enable=YES</div><div class="line"></div><div class="line">   # 是否以ASCII方式传输数据。默认情况下，服务器会忽略ASCII方式的请求。</div><div class="line">   # 启用此选项将允许服务器以ASCII方式传输数据</div><div class="line">   # 不过，这样可能会导致由"SIZE /big/file"方式引起的DoS攻击</div><div class="line">   #ascii_upload_enable=YES</div><div class="line">   #ascii_download_enable=YES</div><div class="line"></div><div class="line"># 登录FTP服务器时显示的欢迎信息</div><div class="line">   # 如有需要，可在更改目录欢迎信息的目录下创建名为.message的文件，并写入欢迎信息保存后</div><div class="line">   #ftpd_banner=Welcome to blah FTP service.</div><div class="line"></div><div class="line">   # 黑名单设置。如果很讨厌某些email address，就可以使用此设定来取消他的登录权限</div><div class="line">   # 可以将某些特殊的email address抵挡住。</div><div class="line">   #deny_email_enable=YES</div><div class="line"></div><div class="line"># 当上面的deny_email_enable=YES时，可以利用这个设定项来规定哪些邮件地址不可登录vsftpd服务器</div><div class="line">   # 此文件需用户自己创建，一行一个email address即可</div><div class="line">   #banned_email_file=/etc/vsftpd/banned_emails</div><div class="line"></div><div class="line">   # 用户登录FTP服务器后是否具有访问自己目录以外的其他文件的权限</div><div class="line">   # 设置为YES时，用户被锁定在自己的home目录中，vsftpd将在下面chroot_list_file选项值的位置寻找chroot_list文件</div><div class="line">   # 必须与下面的设置项配合</div><div class="line">   #chroot_list_enable=YES</div><div class="line"></div><div class="line"># 被列入此文件的用户，在登录后将不能切换到自己目录以外的其他目录</div><div class="line">   # 从而有利于FTP服务器的安全管理和隐私保护。此文件需自己建立</div><div class="line">   #chroot_list_file=/etc/vsftpd/chroot_list</div><div class="line"></div><div class="line">   # 是否允许递归查询。默认为关闭，以防止远程用户造成过量的I/O</div><div class="line">   #ls_recurse_enable=YES</div><div class="line"></div><div class="line"># 是否允许监听。</div><div class="line">   # 如果设置为YES，则vsftpd将以独立模式运行，由vsftpd自己监听和处理IPv4端口的连接请求</div><div class="line">   listen=YES</div><div class="line"></div><div class="line">   # 设定是否支持IPV6。如要同时监听IPv4和IPv6端口，</div><div class="line">   # 则必须运行两套vsftpd，采用两套配置文件</div><div class="line">   # 同时确保其中有一个监听选项是被注释掉的</div><div class="line">   #listen_ipv6=YES</div><div class="line"></div><div class="line"># 设置PAM外挂模块提供的认证服务所使用的配置文件名，即/etc/pam.d/vsftpd文件</div><div class="line">   # 此文件中file=/etc/vsftpd/ftpusers字段，说明了PAM模块能抵挡的帐号内容来自文件/etc/vsftpd/ftpusers中</div><div class="line">   #pam_service_name=vsftpd</div><div class="line"></div><div class="line">   # 是否允许ftpusers文件中的用户登录FTP服务器，默认为NO</div><div class="line">   # 若此项设为YES，则user_list文件中的用户允许登录FTP服务器</div><div class="line">   # 而如果同时设置了userlist_deny=YES，则user_list文件中的用户将不允许登录FTP服务器，甚至连输入密码提示信息都没有</div><div class="line">   #userlist_enable=YES/NO</div><div class="line"></div><div class="line">   # 设置是否阻扯user_list文件中的用户登录FTP服务器，默认为YES</div><div class="line">   #userlist_deny=YES/NO</div><div class="line"></div><div class="line"># 是否使用tcp_wrappers作为主机访问控制方式。</div><div class="line">   # tcp_wrappers可以实现linux系统中网络服务的基于主机地址的访问控制</div><div class="line">   # 在/etc目录中的hosts.allow和hosts.deny两个文件用于设置tcp_wrappers的访问控制</div><div class="line">   # 前者设置允许访问记录，后者设置拒绝访问记录。</div><div class="line">   # 如想限制某些主机对FTP服务器192.168.57.2的匿名访问，编缉/etc/hosts.allow文件，如在下面增加两行命令：</div><div class="line">   # vsftpd:192.168.57.1:DENY 和vsftpd:192.168.57.9:DENY</div><div class="line">   # 表明限制IP为192.168.57.1/192.168.57.9主机访问IP为192.168.57.2的FTP服务器</div><div class="line">   # 此时FTP服务器虽可以PING通，但无法连接</div><div class="line">   tcp_wrappers=YES</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div></pre></td><td class="code"><pre><div class="line">   <span class="comment"># 是否允许匿名登录FTP服务器，默认设置为YES允许</span></div><div class="line">   <span class="comment"># 用户可使用用户名ftp或anonymous进行ftp登录，口令为用户的E-mail地址。</span></div><div class="line">   <span class="comment"># 如不允许匿名访问则设置为NO</span></div><div class="line">   anonymous_enable=YES</div><div class="line"></div><div class="line">   <span class="comment"># 是否允许本地用户(即linux系统中的用户帐号)登录FTP服务器，默认设置为YES允许</span></div><div class="line">   <span class="comment"># 本地用户登录后会进入用户主目录，而匿名用户登录后进入匿名用户的下载目录/var/ftp/pub</span></div><div class="line">   <span class="comment"># 若只允许匿名用户访问，前面加上#注释掉即可阻止本地用户访问FTP服务器</span></div><div class="line">   local_enable=YES</div><div class="line"></div><div class="line"><span class="comment"># 是否允许本地用户对FTP服务器文件具有写权限，默认设置为YES允许</span></div><div class="line">   write_enable=YES</div><div class="line"></div><div class="line">   <span class="comment"># 掩码，本地用户默认掩码为077</span></div><div class="line">   <span class="comment"># 你可以设置本地用户的文件掩码为缺省022，也可根据个人喜好将其设置为其他值</span></div><div class="line">   <span class="comment">#local_umask=022</span></div><div class="line"></div><div class="line"><span class="comment"># 是否允许匿名用户上传文件，须将全局的write_enable=YES。默认为YES</span></div><div class="line">   <span class="comment">#anon_upload_enable=YES</span></div><div class="line"></div><div class="line">   <span class="comment"># 是否允许匿名用户创建新文件夹</span></div><div class="line">   <span class="comment">#anon_mkdir_write_enable=YES</span></div><div class="line"></div><div class="line"><span class="comment"># 是否激活目录欢迎信息功能</span></div><div class="line">   <span class="comment"># 当用户用CMD模式首次访问服务器上某个目录时，FTP服务器将显示欢迎信息</span></div><div class="line">   <span class="comment"># 默认情况下，欢迎信息是通过该目录下的.message文件获得的</span></div><div class="line">   <span class="comment"># 此文件保存自定义的欢迎信息，由用户自己建立</span></div><div class="line">   <span class="comment">#dirmessage_enable=YES</span></div><div class="line"></div><div class="line">   <span class="comment"># 是否让系统自动维护上传和下载的日志文件</span></div><div class="line">   <span class="comment"># 默认情况该日志文件为/var/log/vsftpd.log,也可以通过下面的xferlog_file选项对其进行设定</span></div><div class="line">   <span class="comment"># 默认值为NO</span></div><div class="line">   xferlog_enable=YES</div><div class="line"></div><div class="line"><span class="comment"># Make sure PORT transfer connections originate from port 20 (ftp-data).</span></div><div class="line">   <span class="comment"># 是否设定FTP服务器将启用FTP数据端口的连接请求</span></div><div class="line">   <span class="comment"># ftp-data数据传输，21为连接控制端口</span></div><div class="line">   connect_from_port_20=YES</div><div class="line"></div><div class="line">   <span class="comment"># 设定是否允许改变上传文件的属主，与下面一个设定项配合使用</span></div><div class="line">   <span class="comment"># 注意，不推荐使用root用户上传文件</span></div><div class="line">   <span class="comment">#chown_uploads=YES</span></div><div class="line"></div><div class="line"><span class="comment"># 设置想要改变的上传文件的属主，如果需要，则输入一个系统用户名</span></div><div class="line">   <span class="comment"># 可以把上传的文件都改成root属主。whoever：任何人</span></div><div class="line">   <span class="comment">#chown_username=whoever</span></div><div class="line"></div><div class="line">   <span class="comment"># 设定系统维护记录FTP服务器上传和下载情况的日志文件</span></div><div class="line">   <span class="comment"># /var/log/vsftpd.log是默认的，也可以另设其它</span></div><div class="line">   <span class="comment">#xferlog_file=/var/log/vsftpd.log</span></div><div class="line"></div><div class="line"><span class="comment"># 是否以标准xferlog的格式书写传输日志文件</span></div><div class="line">   <span class="comment"># 默认为/var/log/xferlog，也可以通过xferlog_file选项对其进行设定</span></div><div class="line">   <span class="comment"># 默认值为NO</span></div><div class="line">   <span class="comment">#xferlog_std_format=YES</span></div><div class="line"></div><div class="line">   <span class="comment"># 以下是附加配置，添加相应的选项将启用相应的设置</span></div><div class="line">   <span class="comment"># 是否生成两个相似的日志文件</span></div><div class="line">   <span class="comment"># 默认在/var/log/xferlog和/var/log/vsftpd.log目录下</span></div><div class="line">   <span class="comment"># 前者是wu_ftpd类型的传输日志，可以利用标准日志工具对其进行分析；后者是vsftpd类型的日志</span></div><div class="line">   <span class="comment">#dual_log_enable</span></div><div class="line"></div><div class="line"><span class="comment"># 是否将原本输出到/var/log/vsftpd.log中的日志，输出到系统日志</span></div><div class="line">   <span class="comment">#syslog_enable</span></div><div class="line"></div><div class="line">   <span class="comment"># 设置数据传输中断间隔时间，此语句表示空闲的用户会话中断时间为600秒</span></div><div class="line">   <span class="comment"># 即当数据传输结束后，用户连接FTP服务器的时间不应超过600秒。可以根据实际情况对该值进行修改</span></div><div class="line">   <span class="comment">#idle_session_timeout=600</span></div><div class="line"></div><div class="line"><span class="comment"># 设置数据连接超时时间，该语句表示数据连接超时时间为120秒，可根据实际情况对其个修改</span></div><div class="line">   <span class="comment">#data_connection_timeout=120</span></div><div class="line"></div><div class="line">   <span class="comment"># 运行vsftpd需要的非特权系统用户，缺省是nobody</span></div><div class="line">   <span class="comment">#nopriv_user=ftpsecure</span></div><div class="line"></div><div class="line"><span class="comment"># 是否识别异步ABOR请求。</span></div><div class="line">   <span class="comment"># 如果FTP client会下达“async ABOR”这个指令时，这个设定才需要启用</span></div><div class="line">   <span class="comment"># 而一般此设定并不安全，所以通常将其取消</span></div><div class="line">   <span class="comment">#async_abor_enable=YES</span></div><div class="line"></div><div class="line">   <span class="comment"># 是否以ASCII方式传输数据。默认情况下，服务器会忽略ASCII方式的请求。</span></div><div class="line">   <span class="comment"># 启用此选项将允许服务器以ASCII方式传输数据</span></div><div class="line">   <span class="comment"># 不过，这样可能会导致由"SIZE /big/file"方式引起的DoS攻击</span></div><div class="line">   <span class="comment">#ascii_upload_enable=YES</span></div><div class="line">   <span class="comment">#ascii_download_enable=YES</span></div><div class="line"></div><div class="line"><span class="comment"># 登录FTP服务器时显示的欢迎信息</span></div><div class="line">   <span class="comment"># 如有需要，可在更改目录欢迎信息的目录下创建名为.message的文件，并写入欢迎信息保存后</span></div><div class="line">   <span class="comment">#ftpd_banner=Welcome to blah FTP service.</span></div><div class="line"></div><div class="line">   <span class="comment"># 黑名单设置。如果很讨厌某些email address，就可以使用此设定来取消他的登录权限</span></div><div class="line">   <span class="comment"># 可以将某些特殊的email address抵挡住。</span></div><div class="line">   <span class="comment">#deny_email_enable=YES</span></div><div class="line"></div><div class="line"><span class="comment"># 当上面的deny_email_enable=YES时，可以利用这个设定项来规定哪些邮件地址不可登录vsftpd服务器</span></div><div class="line">   <span class="comment"># 此文件需用户自己创建，一行一个email address即可</span></div><div class="line">   <span class="comment">#banned_email_file=/etc/vsftpd/banned_emails</span></div><div class="line"></div><div class="line">   <span class="comment"># 用户登录FTP服务器后是否具有访问自己目录以外的其他文件的权限</span></div><div class="line">   <span class="comment"># 设置为YES时，用户被锁定在自己的home目录中，vsftpd将在下面chroot_list_file选项值的位置寻找chroot_list文件</span></div><div class="line">   <span class="comment"># 必须与下面的设置项配合</span></div><div class="line">   <span class="comment">#chroot_list_enable=YES</span></div><div class="line"></div><div class="line"><span class="comment"># 被列入此文件的用户，在登录后将不能切换到自己目录以外的其他目录</span></div><div class="line">   <span class="comment"># 从而有利于FTP服务器的安全管理和隐私保护。此文件需自己建立</span></div><div class="line">   <span class="comment">#chroot_list_file=/etc/vsftpd/chroot_list</span></div><div class="line"></div><div class="line">   <span class="comment"># 是否允许递归查询。默认为关闭，以防止远程用户造成过量的I/O</span></div><div class="line">   <span class="comment">#ls_recurse_enable=YES</span></div><div class="line"></div><div class="line"><span class="comment"># 是否允许监听。</span></div><div class="line">   <span class="comment"># 如果设置为YES，则vsftpd将以独立模式运行，由vsftpd自己监听和处理IPv4端口的连接请求</span></div><div class="line">   listen=YES</div><div class="line"></div><div class="line">   <span class="comment"># 设定是否支持IPV6。如要同时监听IPv4和IPv6端口，</span></div><div class="line">   <span class="comment"># 则必须运行两套vsftpd，采用两套配置文件</span></div><div class="line">   <span class="comment"># 同时确保其中有一个监听选项是被注释掉的</span></div><div class="line">   <span class="comment">#listen_ipv6=YES</span></div><div class="line"></div><div class="line"><span class="comment"># 设置PAM外挂模块提供的认证服务所使用的配置文件名，即/etc/pam.d/vsftpd文件</span></div><div class="line">   <span class="comment"># 此文件中file=/etc/vsftpd/ftpusers字段，说明了PAM模块能抵挡的帐号内容来自文件/etc/vsftpd/ftpusers中</span></div><div class="line">   <span class="comment">#pam_service_name=vsftpd</span></div><div class="line"></div><div class="line">   <span class="comment"># 是否允许ftpusers文件中的用户登录FTP服务器，默认为NO</span></div><div class="line">   <span class="comment"># 若此项设为YES，则user_list文件中的用户允许登录FTP服务器</span></div><div class="line">   <span class="comment"># 而如果同时设置了userlist_deny=YES，则user_list文件中的用户将不允许登录FTP服务器，甚至连输入密码提示信息都没有</span></div><div class="line">   <span class="comment">#userlist_enable=YES/NO</span></div><div class="line"></div><div class="line">   <span class="comment"># 设置是否阻扯user_list文件中的用户登录FTP服务器，默认为YES</span></div><div class="line">   <span class="comment">#userlist_deny=YES/NO</span></div><div class="line"></div><div class="line"><span class="comment"># 是否使用tcp_wrappers作为主机访问控制方式。</span></div><div class="line">   <span class="comment"># tcp_wrappers可以实现linux系统中网络服务的基于主机地址的访问控制</span></div><div class="line">   <span class="comment"># 在/etc目录中的hosts.allow和hosts.deny两个文件用于设置tcp_wrappers的访问控制</span></div><div class="line">   <span class="comment"># 前者设置允许访问记录，后者设置拒绝访问记录。</span></div><div class="line">   <span class="comment"># 如想限制某些主机对FTP服务器192.168.57.2的匿名访问，编缉/etc/hosts.allow文件，如在下面增加两行命令：</span></div><div class="line">   <span class="comment"># vsftpd:192.168.57.1:DENY 和vsftpd:192.168.57.9:DENY</span></div><div class="line">   <span class="comment"># 表明限制IP为192.168.57.1/192.168.57.9主机访问IP为192.168.57.2的FTP服务器</span></div><div class="line">   <span class="comment"># 此时FTP服务器虽可以PING通，但无法连接</span></div><div class="line">   tcp_wrappers=YES</div></pre></td></tr></table></figure>
 
       
     </div>
+    
+    
+    
 
-	<div>
-      
-        
-      
-	</div>
-
-    <div>
-      
-        
-<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
     <img id="wechat_subscriber_qcode" src="http://daodaoliang.com/res/img/daodaoliang.gif" alt="daodaoliang wechat" style="width: 200px; max-width: 100%;"/>
     <div>点击上面图片后用微信扫描，你就能认识一个有趣的灵魂了呀。</div>
 </div>
 
+      </div>
+    
 
-      
-    </div>
+    
 
-    <div>
-      
-        
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    daodaoliang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://daodaoliang.com/环境搭建/2015/10/10/环境搭建-2015-10-10-CentOS6-5搭建FTP服务器/" title="centos 6.5 搭建ftp 服务器">http://daodaoliang.com/环境搭建/2015/10/10/环境搭建-2015-10-10-CentOS6-5搭建FTP服务器/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
 
-      
-    </div>
+      </div>
+    
 
-    <div>
-      
-        
-      
-    </div>
-	<div>
-	  
-		
-<div style="text-align:center;color: #ccc;font-size:14px;">
------- 本文结束 ------
-</div>
-
-	  
-	</div>
     <footer class="post-footer">
       
 
       
+      
+        <div class="post-widgets">
         
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
       
 
       
@@ -649,8 +628,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/开源框架学习/2015/11/04/开源框架学习-2015-11-04-以正确的方式开源Python项目/" rel="prev" title="以正确的方式开源 Python 项目(转载)">
-                以正确的方式开源 Python 项目(转载) <i class="fa fa-chevron-right"></i>
+              <a href="/开源框架学习/2015/11/04/开源框架学习-2015-11-04-深入研究tornado框架-tornado入门篇/" rel="prev" title="深入研究tornado框架---tornado入门">
+                深入研究tornado框架---tornado入门 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -660,6 +639,10 @@
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -667,23 +650,34 @@
     <div class="post-spread">
       
         
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
   <script>
     window._bd_share_config = {
       "common": {
         "bdText": "",
-        "bdMini": "1",
+        "bdMini": "2",
         "bdMiniList": false,
         "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
       },
       "image": {
         "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
         "viewText": "分享到：",
         "viewSize": "16"
-      },
-      "slide": {
-        "bdImg": "5",
-        "bdPos": "left",
-        "bdTop": "100"
       }
     }
   </script>
@@ -704,8 +698,6 @@
           
   <div class="comments" id="comments">
     
-      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-    
   </div>
 
 
@@ -722,6 +714,9 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
     <div class="sidebar-inner">
 
       
@@ -751,8 +746,10 @@
 
           
             <div class="site-state-item site-state-posts">
+            
               <a href="/archives">
-                <span class="site-state-item-count">132</span>
+            
+                <span class="site-state-item-count">133</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -763,7 +760,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -783,6 +780,13 @@
         </nav>
 
         
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
 
         <div class="links-of-author motion-element">
           
@@ -792,7 +796,9 @@
                   
                     <i class="fa fa-fw fa-github"></i>
                   
-                  GitHub
+                    
+                      GitHub
+                    
                 </a>
               </span>
             
@@ -801,7 +807,9 @@
                   
                     <i class="fa fa-fw fa-globe"></i>
                   
-                  网易云音乐
+                    
+                      网易云音乐
+                    
                 </a>
               </span>
             
@@ -855,8 +863,6 @@
         <div class="back-to-top">
           <i class="fa fa-arrow-up"></i>
           
-            <span id="scrollpercent"><span>0</span>%</span>
-          
         </div>
       
 
@@ -872,12 +878,25 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy;  2012 - 
+  &copy;  2012 &mdash; 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">daodaoliang</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">
+      120.7k
+    </span>
+  
 </div>
 
 
@@ -902,6 +921,12 @@
     </span>
   
 </div>
+
+
+
+
+
+
 
 
         
@@ -968,25 +993,32 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
 
 
 
   
+  
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
 
 
 
@@ -1005,19 +1037,12 @@
 
 
   
-    
-    <script>
-      var cloudTieConfig = {
-        url: document.location.href, 
-        sourceId: "",
-        productKey: "997752e1c04e423cb7427a28b0d9a10a",
-        target: "cloud-tie-wrapper"
-      };
-    </script>
-    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+
+
+
+
+
   
-
-
 
 
 
@@ -1028,324 +1053,20 @@
 
   
 
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (search_path.endsWith("json")) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === '') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
 
 
 
@@ -1369,12 +1090,31 @@
 
 
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 079103eb8dc9e7eab092ee241c1435c9a5529647d58e5f3e58e00dbe1207e8ef,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
 
   
+
+  
+  <script type="text/javascript" src="/js/src/exturl.js?v=5.1.2"></script>
+
 
 </body>
 </html>
-<!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/love.js"></script>
