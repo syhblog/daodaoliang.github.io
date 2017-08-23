@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next gemini" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -124,12 +122,12 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Gemini',
     version: '5.1.2',
     sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":true,"scrollpercent":false,"onmobile":true},
     fancybox: true,
     tabs: true,
-    motion: true,
+    motion: false,
     duoshuo: {
       userId: 'undefined',
       author: '博主'
@@ -396,7 +394,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:02+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T15:06:24+08:00">
                 2017-08-23
               </time>
             
@@ -582,7 +580,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:02+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T15:06:24+08:00">
                 2017-08-23
               </time>
             
@@ -767,7 +765,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP数组/">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP运算逻辑说明/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daodaoliang">
@@ -786,7 +784,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP数组/" itemprop="url">php数组</a></h2>
+                <a class="post-title-link" href="/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP运算逻辑说明/" itemprop="url">php运算逻辑说明</a></h2>
         
 
         <div class="post-meta">
@@ -814,7 +812,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:02+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T15:06:24+08:00">
                 2017-08-23
               </time>
             
@@ -864,7 +862,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  264
+                  357
                 </span>
               
 
@@ -880,7 +878,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -904,33 +902,36 @@
         
           
             <a id="more"></a>
-<h3 id="在PHP-中创建数组"><a href="#在PHP-中创建数组" class="headerlink" title="在PHP 中创建数组"></a>在PHP 中创建数组</h3><p>在 PHP 中,array()函数用于创建数组:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">array</span>();</div></pre></td></tr></table></figure>
-<p>在 PHP 中,有三种数组类型:</p>
+<h2 id="PHP-运算逻辑说明"><a href="#PHP-运算逻辑说明" class="headerlink" title="PHP 运算逻辑说明"></a>PHP 运算逻辑说明</h2><p><strong>PHP if…elseif…else 语句</strong></p>
+<p>示例说明:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">if</span>(condition_001)&#123;</div><div class="line">	语句;</div><div class="line">&#125; <span class="keyword">elseif</span> (condition_002)&#123;</div><div class="line">	语句;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	语句;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>PHP Switch语句</strong></p>
+<p>示例说明:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">switch</span> (expression)</div><div class="line">&#123;</div><div class="line"><span class="keyword">case</span> label1:</div><div class="line">	code to be executed <span class="keyword">if</span> expression = label1;</div><div class="line">	<span class="keyword">break</span>;</div><div class="line"><span class="keyword">case</span> label2:</div><div class="line">	code to be executed of expression = label2;</div><div class="line">	<span class="keyword">break</span>;</div><div class="line"><span class="keyword">default</span>:</div><div class="line">	code to be executed</div><div class="line">	<span class="keyword">if</span> expression is different</div><div class="line">	from both label1 <span class="keyword">and</span> label2;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>注意</strong>这个匹配语句不仅仅匹配数值和逻辑符类型,还可以匹配字符串类型;</p>
+<p><strong>PHP while语句</strong></p>
+<p>示例: </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">while</span> (条件为真)</div><div class="line">&#123;</div><div class="line">	要执行的代码;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>PHP for 语句</strong></p>
+<p>示例:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">for</span>(init counter; test counter; increment counter)&#123;</div><div class="line">	code to be executed;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>参数:</strong></p>
 <ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">* ```关联数组```-带有指定键的是数组</div><div class="line">* ```多维数组```-包含一个或多个数组的数组</div><div class="line"></div><div class="line">索引数组示例:</div><div class="line"></div><div class="line">```php</div><div class="line">&lt;?php</div><div class="line">$cars=array(&quot;volvo&quot;,&quot;BMW&quot;,&quot;SAAB&quot;);</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
-</li>
+<li>init counter:初始化循环计数器的值</li>
+<li>test counter: 评估每个循环迭代,如果值为TRUE.继续循环,如果它的值为FALSE,循环结束.</li>
+<li>increment counter : 增加循环计数器的值</li>
 </ul>
-<p>或者</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$car[<span class="number">0</span>]=<span class="string">"volov"</span>;</div><div class="line">$car[<span class="number">2</span>]=<span class="string">"BMW"</span>;</div><div class="line">$car[<span class="number">3</span>]=<span class="string">"SAAB"</span>;</div></pre></td></tr></table></figure>
-<p>关联数组示例:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$age=<span class="keyword">array</span>(<span class="string">"daodaolang"</span>=&gt;<span class="string">"10"</span>,<span class="string">"wangxiaowei"</span>=&gt;<span class="string">"12"</span>);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$age[<span class="string">"daodaoliang"</span>] = <span class="string">"23"</span>;</div><div class="line">$age[<span class="string">"wangxiaowei"</span>] = <span class="number">22</span>;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="遍历数组"><a href="#遍历数组" class="headerlink" title="遍历数组"></a>遍历数组</h3><p><strong>遍历索引数组</strong></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$test_array = <span class="keyword">array</span>(<span class="string">"daodaoliang"</span>,<span class="string">"test"</span>,<span class="string">"test2"</span>);</div><div class="line"><span class="keyword">foreach</span>($test_array <span class="keyword">as</span> $value)&#123;</div><div class="line"><span class="keyword">echo</span> $value;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p>或</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$test_array = <span class="keyword">array</span>(<span class="string">"test1"</span>,<span class="string">"test2"</span>,<span class="string">"test3"</span>);</div><div class="line"><span class="keyword">for</span>($index=<span class="number">0</span>;$index &lt; count($test_array);++$index)&#123;</div><div class="line">	<span class="keyword">echo</span> $test_array[$index];</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>遍历索引数组</strong></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$age=<span class="keyword">array</span>(<span class="string">"daodaoliang"</span>=&gt;<span class="number">23</span>,<span class="string">"wangxiaowei"</span>=&gt;<span class="number">34</span>);</div><div class="line"><span class="keyword">foreach</span>($age <span class="keyword">as</span> $key =&gt; $value)&#123;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"key="</span>.$x.<span class="string">"value="</span>.$value;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="PHP-数据排序"><a href="#PHP-数据排序" class="headerlink" title="PHP 数据排序"></a>PHP 数据排序</h3><ul>
-<li>sort() 以剩下对数组进行排序</li>
-<li>rsprt() 以降序对数组排序</li>
-<li>asort() 根据值,以升序对关联数组进行排序</li>
-<li>ksort() 根据健,以升序对关联数组进行排序</li>
-<li>arosrt() 根据值,以降序对关联书序进行排序</li>
-<li>krsort() 根据健,以降序对关联数组进行排序</li>
-</ul>
+<p><strong>PHP foreach 语句</strong></p>
+<p>foreach 循环只适用于数据,病用于便利数组中的每个键/值对;</p>
+<p>示例:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">foreach</span> ($arrary <span class="keyword">as</span> $value)&#123;</div><div class="line">	code to be executed;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>PHP 函数语句</strong></p>
+<p>在PHP中创建用于定义函数</p>
+<p>示例:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">functionName</span><span class="params">()</span></span>&#123;</div><div class="line">	要执行的代码;</div><div class="line">&#125;</div><div class="line"></div><div class="line">**注意**:</div><div class="line"></div><div class="line">* 定义函数的声明需要以<span class="string">"function"</span>开头;</div><div class="line">* 函数名能够以字母或者下划线(而非数字);</div><div class="line">* 函数名对大小写敏感(变量名字也是对大小写敏感的,PHP内建关键字不区分大小写)</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>PHP 函数参数</strong></p>
+<p>示例1:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setHeight</span><span class="params">($minHeight=<span class="number">50</span>)</span></span>&#123;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"The height is : $minHeight &lt;br&gt;"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">setHeight(<span class="number">350</span>);</div><div class="line">setHeight(); <span class="comment">//将使用默认参数50</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 
           
         
@@ -1026,7 +1027,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:02+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T15:06:24+08:00">
                 2017-08-23
               </time>
             
@@ -1289,7 +1290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP运算逻辑说明/">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP数组/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daodaoliang">
@@ -1308,7 +1309,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP运算逻辑说明/" itemprop="url">php运算逻辑说明</a></h2>
+                <a class="post-title-link" href="/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP数组/" itemprop="url">php数组</a></h2>
         
 
         <div class="post-meta">
@@ -1336,7 +1337,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:02+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T15:06:24+08:00">
                 2017-08-23
               </time>
             
@@ -1386,7 +1387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  357
+                  264
                 </span>
               
 
@@ -1402,7 +1403,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -1426,36 +1427,33 @@
         
           
             <a id="more"></a>
-<h2 id="PHP-运算逻辑说明"><a href="#PHP-运算逻辑说明" class="headerlink" title="PHP 运算逻辑说明"></a>PHP 运算逻辑说明</h2><p><strong>PHP if…elseif…else 语句</strong></p>
-<p>示例说明:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">if</span>(condition_001)&#123;</div><div class="line">	语句;</div><div class="line">&#125; <span class="keyword">elseif</span> (condition_002)&#123;</div><div class="line">	语句;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	语句;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>PHP Switch语句</strong></p>
-<p>示例说明:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">switch</span> (expression)</div><div class="line">&#123;</div><div class="line"><span class="keyword">case</span> label1:</div><div class="line">	code to be executed <span class="keyword">if</span> expression = label1;</div><div class="line">	<span class="keyword">break</span>;</div><div class="line"><span class="keyword">case</span> label2:</div><div class="line">	code to be executed of expression = label2;</div><div class="line">	<span class="keyword">break</span>;</div><div class="line"><span class="keyword">default</span>:</div><div class="line">	code to be executed</div><div class="line">	<span class="keyword">if</span> expression is different</div><div class="line">	from both label1 <span class="keyword">and</span> label2;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>注意</strong>这个匹配语句不仅仅匹配数值和逻辑符类型,还可以匹配字符串类型;</p>
-<p><strong>PHP while语句</strong></p>
-<p>示例: </p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">while</span> (条件为真)</div><div class="line">&#123;</div><div class="line">	要执行的代码;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>PHP for 语句</strong></p>
-<p>示例:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">for</span>(init counter; test counter; increment counter)&#123;</div><div class="line">	code to be executed;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>参数:</strong></p>
+<h3 id="在PHP-中创建数组"><a href="#在PHP-中创建数组" class="headerlink" title="在PHP 中创建数组"></a>在PHP 中创建数组</h3><p>在 PHP 中,array()函数用于创建数组:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">array</span>();</div></pre></td></tr></table></figure>
+<p>在 PHP 中,有三种数组类型:</p>
 <ul>
-<li>init counter:初始化循环计数器的值</li>
-<li>test counter: 评估每个循环迭代,如果值为TRUE.继续循环,如果它的值为FALSE,循环结束.</li>
-<li>increment counter : 增加循环计数器的值</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">* ```关联数组```-带有指定键的是数组</div><div class="line">* ```多维数组```-包含一个或多个数组的数组</div><div class="line"></div><div class="line">索引数组示例:</div><div class="line"></div><div class="line">```php</div><div class="line">&lt;?php</div><div class="line">$cars=array(&quot;volvo&quot;,&quot;BMW&quot;,&quot;SAAB&quot;);</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<p><strong>PHP foreach 语句</strong></p>
-<p>foreach 循环只适用于数据,病用于便利数组中的每个键/值对;</p>
-<p>示例:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">foreach</span> ($arrary <span class="keyword">as</span> $value)&#123;</div><div class="line">	code to be executed;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>PHP 函数语句</strong></p>
-<p>在PHP中创建用于定义函数</p>
-<p>示例:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">functionName</span><span class="params">()</span></span>&#123;</div><div class="line">	要执行的代码;</div><div class="line">&#125;</div><div class="line"></div><div class="line">**注意**:</div><div class="line"></div><div class="line">* 定义函数的声明需要以<span class="string">"function"</span>开头;</div><div class="line">* 函数名能够以字母或者下划线(而非数字);</div><div class="line">* 函数名对大小写敏感(变量名字也是对大小写敏感的,PHP内建关键字不区分大小写)</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>PHP 函数参数</strong></p>
-<p>示例1:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setHeight</span><span class="params">($minHeight=<span class="number">50</span>)</span></span>&#123;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"The height is : $minHeight &lt;br&gt;"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">setHeight(<span class="number">350</span>);</div><div class="line">setHeight(); <span class="comment">//将使用默认参数50</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$car[<span class="number">0</span>]=<span class="string">"volov"</span>;</div><div class="line">$car[<span class="number">2</span>]=<span class="string">"BMW"</span>;</div><div class="line">$car[<span class="number">3</span>]=<span class="string">"SAAB"</span>;</div></pre></td></tr></table></figure>
+<p>关联数组示例:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$age=<span class="keyword">array</span>(<span class="string">"daodaolang"</span>=&gt;<span class="string">"10"</span>,<span class="string">"wangxiaowei"</span>=&gt;<span class="string">"12"</span>);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$age[<span class="string">"daodaoliang"</span>] = <span class="string">"23"</span>;</div><div class="line">$age[<span class="string">"wangxiaowei"</span>] = <span class="number">22</span>;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="遍历数组"><a href="#遍历数组" class="headerlink" title="遍历数组"></a>遍历数组</h3><p><strong>遍历索引数组</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$test_array = <span class="keyword">array</span>(<span class="string">"daodaoliang"</span>,<span class="string">"test"</span>,<span class="string">"test2"</span>);</div><div class="line"><span class="keyword">foreach</span>($test_array <span class="keyword">as</span> $value)&#123;</div><div class="line"><span class="keyword">echo</span> $value;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$test_array = <span class="keyword">array</span>(<span class="string">"test1"</span>,<span class="string">"test2"</span>,<span class="string">"test3"</span>);</div><div class="line"><span class="keyword">for</span>($index=<span class="number">0</span>;$index &lt; count($test_array);++$index)&#123;</div><div class="line">	<span class="keyword">echo</span> $test_array[$index];</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>遍历索引数组</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$age=<span class="keyword">array</span>(<span class="string">"daodaoliang"</span>=&gt;<span class="number">23</span>,<span class="string">"wangxiaowei"</span>=&gt;<span class="number">34</span>);</div><div class="line"><span class="keyword">foreach</span>($age <span class="keyword">as</span> $key =&gt; $value)&#123;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"key="</span>.$x.<span class="string">"value="</span>.$value;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="PHP-数据排序"><a href="#PHP-数据排序" class="headerlink" title="PHP 数据排序"></a>PHP 数据排序</h3><ul>
+<li>sort() 以剩下对数组进行排序</li>
+<li>rsprt() 以降序对数组排序</li>
+<li>asort() 根据值,以升序对关联数组进行排序</li>
+<li>ksort() 根据健,以升序对关联数组进行排序</li>
+<li>arosrt() 根据值,以降序对关联书序进行排序</li>
+<li>krsort() 根据健,以降序对关联数组进行排序</li>
+</ul>
 
           
         
@@ -1781,6 +1779,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
 
   
     <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
