@@ -349,7 +349,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP表单处理/">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP超全局变量/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daodaoliang">
@@ -368,7 +368,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP表单处理/" itemprop="url">php表单处理</a></h2>
+                <a class="post-title-link" href="/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP超全局变量/" itemprop="url">php超全局变量</a></h2>
         
 
         <div class="post-meta">
@@ -446,7 +446,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  602
+                  678
                 </span>
               
 
@@ -486,22 +486,131 @@
         
           
             <a id="more"></a>
-<h2 id="表单处理"><a href="#表单处理" class="headerlink" title="表单处理"></a>表单处理</h2><p><strong>一个简单的表单</strong></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;form action=<span class="string">"welcome.php"</span> method=<span class="string">"post"</span>&gt;</div><div class="line">			Name: &lt;input type=<span class="string">"text"</span> name=<span class="string">"name"</span>&gt;&lt;br&gt;</div><div class="line">			E-mail: &lt;input type=<span class="string">"text"</span> name=<span class="string">"email"</span>&gt;&lt;br&gt;</div><div class="line">			&lt;input type=<span class="string">"submit"</span>&gt;</div><div class="line">		&lt;/form&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p><strong>welcome.php脚本源码</strong></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		Welcom <span class="meta">&lt;?php</span> <span class="keyword">echo</span> $_POST[<span class="string">'name'</span>];<span class="meta">?&gt;</span>&lt;br&gt;</div><div class="line">		Your email address is:<span class="meta">&lt;?php</span> <span class="keyword">echo</span> $_POST[<span class="string">'email'</span>];<span class="meta">?&gt;</span></div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p><strong>GET vs POST</strong></p>
-<p>GET 和 POST 都创建数组(例如，array(key=&gt;balue,key2=&gt;value2,key3=&gt;value3,…)).次数组包含键/值对，其中的键时表单控件的名称，而值时来自用户输入的数据．</p>
-<p>GET 和　POST 被视作$_GET 和　$_POST.它们是超全局变量，这意味着对他们的访问无需考虑作用域，无需特殊代码，能够从任何函数,类，或者文件访问它们；</p>
+<h3 id="PHP-全局变量-超全局变量"><a href="#PHP-全局变量-超全局变量" class="headerlink" title="PHP 全局变量-超全局变量"></a>PHP 全局变量-超全局变量</h3><p>PHP 中的许多预定义变量都是”超全局的”,这意味着他们在一个脚本的全部作用域都可用.在函数或方法中无需执行 <figure class="highlight plain"><figcaption><span>$variable```,就可以访问他们.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">这些超全局变量是:</div><div class="line"></div><div class="line">* ```$GLOBALS</div></pre></td></tr></table></figure></p>
 <ul>
-<li>$_GET是通过URl参数传递到当前脚本的变量数组；</li>
-<li>$_POST是通过HTTP POST　传递到当前脚本的变量数组；</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* ```$_REQUEST</div></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* ```$_GET</div></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* ```$_ENV</div></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* ```$_SESSION</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<p><strong>带有验证的表单</strong></p>
+<p><strong>$GLOBAL</strong> —引用全局作用域中可用的全部变量</p>
+<figure class="highlight plain"><figcaption><span>这种全局变量用于在PHP脚本中的任意未知访问全局变量(从函数或方法中均可).PHP在名为$GLOBAL[index]的数组中存储了所有的全局变量,变量的名字就是数组的键.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">示例:</div><div class="line"></div><div class="line">```php</div><div class="line">&lt;?php</div><div class="line">$x = 75;</div><div class="line">$y = 25;</div><div class="line"></div><div class="line">function addition()&#123;</div><div class="line">	$GLOBALS[&apos;z&apos;] = $GLOBALS[&apos;x&apos;] + $GLOBALS[&apos;y&apos;];</div><div class="line">&#125;</div><div class="line"></div><div class="line">addition();</div><div class="line">echo $z;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<p><strong>$_SERVER</strong></p>
+<p>$_SERVER 这种超全局变量保存关于报头,路径和脚本位置的信息.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">元素/代码</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$_SERVER[‘PHP_SELF’]</td>
+<td style="text-align:center">返回当前执行脚本的文件名</td>
+</tr>
+<tr>
+<td style="text-align:center">$_SERVER[‘GATWAY_INTERFACE’]</td>
+<td style="text-align:center">返回服务器使用的CGI规范的版本</td>
+</tr>
+<tr>
+<td style="text-align:center">$_SERVER[‘SERVER_ADDR’]</td>
+<td style="text-align:center">返回当前运行脚本所在服务器的IP地址</td>
+</tr>
+<tr>
+<td style="text-align:center">$_SERVER[‘SERVER_NAME’]</td>
+<td style="text-align:center">返回当前运行脚本所在服务器的主机名（比如　daodaoliang.github.io）</td>
+</tr>
+<tr>
+<td style="text-align:center">$_SERVER[‘SERVER_SOFTWARE’]</td>
+<td style="text-align:center">返回服务器标识字符串(比如Apache/2.2.24)</td>
+</tr>
+<tr>
+<td style="text-align:center">$_SERVER[‘SERVER_PROTOCOL’]</td>
+<td style="text-align:center">返回当前通信协议的名称和版本(例如：”HTTP/1.0”)</td>
+</tr>
+<tr>
+<td style="text-align:center">$SERVER[‘REQUEST_METHOD’]</td>
+<td style="text-align:center">返回访问页面使用的请求方法(例如POST)</td>
+</tr>
+<tr>
+<td style="text-align:center">$SERVER[‘REQUEST_TIME’]</td>
+<td style="text-align:center">返回请求开始时间戳例如1575457898</td>
+</tr>
+<tr>
+<td style="text-align:center">$SERVER[‘QUERY_STRING’]</td>
+<td style="text-align:center">返回查询字符串，如果时通过查询字符串访问此页面</td>
+</tr>
+<tr>
+<td style="text-align:center">$SERVER[‘HTTP_ACCEPT’]</td>
+<td style="text-align:center">返回来自当前请求的请求头</td>
+</tr>
+<tr>
+<td style="text-align:center">$SERVER[‘HTTP_ACCEPT_CHARSET’]</td>
+<td style="text-align:center">返回来自当前请求的accept＿charset头(例如 utf-8,ISO-8859-1)</td>
+</tr>
+<tr>
+<td style="text-align:center">$SERVER[‘HTTP_HOST’]</td>
+<td style="text-align:center">返回当前请求的Host头</td>
+</tr>
+<tr>
+<td style="text-align:center">$SERVER[‘HTTP_REFERER’]</td>
+<td style="text-align:center">放回当前页面完整的ＵＲＬ(不可靠，因为不是所有用户代理都支持)</td>
+</tr>
+<tr>
+<td style="text-align:center">$SERVER[‘HTTPS’]</td>
+<td style="text-align:center">是否通过安全HTTP协议查询脚本</td>
+</tr>
+<tr>
+<td style="text-align:center">$SERVER[‘REMOVE_ADDR’]</td>
+<td style="text-align:center">返回浏览当前页面的用户的IP地址</td>
+</tr>
+<tr>
+<td style="text-align:center">$SERVER[‘REMOVE_HOST’]</td>
+<td style="text-align:center">返回当前页面的用户的主机名</td>
+</tr>
+<tr>
+<td style="text-align:center">$SERVER[‘REMOVE_PORT’]</td>
+<td style="text-align:center">返回用户级其上链接到ＷＥＢ服务器所使用的端口号</td>
+</tr>
+<tr>
+<td style="text-align:center">$SERVER[‘SCRIPT_FILENAME’]</td>
+<td style="text-align:center">当前当前执行脚本的绝对路径</td>
+</tr>
+<tr>
+<td style="text-align:center">$SERVER[‘SERVER_ADMIN’]</td>
+<td style="text-align:center">该值致命了Apache服务器配置文件中的SERVR_ADMIN参数</td>
+</tr>
+<tr>
+<td style="text-align:center">$SERVER[‘SERVER_PORT’]</td>
+<td style="text-align:center">返回服务器使用的端口，默认时’80’</td>
+</tr>
+<tr>
+<td style="text-align:center">$SERVER[‘SERVER_SIGNATURE’]</td>
+<td style="text-align:center">返回服务器版本和虚拟主机名</td>
+</tr>
+<tr>
+<td style="text-align:center">$SERVER[‘PATH_TRANSLATED’]</td>
+<td style="text-align:center">当前脚本所在文件系统(非文档根目录)的基本路径</td>
+</tr>
+<tr>
+<td style="text-align:center">$SERVER[‘SCRIPT_NAME’]</td>
+<td style="text-align:center">返回当前脚本的路径</td>
+</tr>
+<tr>
+<td style="text-align:center">$SERVER[‘SCRIPT_URL’]</td>
+<td style="text-align:center">返回当前页面的URL</td>
+</tr>
+</tbody>
+</table>
+<p><strong>_REQUEST</strong></p>
+<p>PHP $＿REQUEST　用于收集HTML 表单提交的数据</p>
 <p>示例：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;style&gt;</div><div class="line">			.error &#123;color:<span class="comment">#FF0000;&#125;</span></div><div class="line">		&lt;/style&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		<span class="meta">&lt;?php</span></div><div class="line">			$nameErr = $emailErr = $genderErr = $websiteErr = <span class="string">""</span>;</div><div class="line">			$name = $email = $gender = $comment = $website = <span class="string">""</span>;</div><div class="line"></div><div class="line">			<span class="keyword">if</span> ($_SERVER[REQUEST_METHOD] == <span class="string">"POST"</span>) &#123;</div><div class="line">				<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'name'</span>]))&#123;</div><div class="line">					$nameErr = <span class="string">"姓名时必填的"</span>;</div><div class="line">				&#125; <span class="keyword">else</span> &#123;</div><div class="line">					$name = test_input($_POST[<span class="string">'name'</span>]);</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'email'</span>])) &#123;</div><div class="line">					$emailErr = <span class="string">"电邮是必填的"</span>;</div><div class="line">				&#125;　<span class="keyword">else</span> &#123;</div><div class="line">					$email = test_input($_POST[<span class="string">'email'</span>]);</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'website'</span>])) &#123;</div><div class="line">					$website = <span class="string">""</span>;</div><div class="line">				&#125; <span class="keyword">else</span> &#123;</div><div class="line">					$website = test_input($_POST[<span class="string">'website'</span>]);</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">if</span> (<span class="keyword">empty</span>($_post[<span class="string">'comment'</span>])) &#123;</div><div class="line">					$comment = <span class="string">""</span>;</div><div class="line">				&#125; <span class="keyword">else</span> &#123;</div><div class="line">					$commment = test_input($_POST[<span class="string">'comment'</span>]);</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'gender'</span>])) &#123;</div><div class="line">					$genderErr = <span class="string">"性别是必须的"</span>；</div><div class="line">				&#125; <span class="keyword">else</span> &#123;</div><div class="line">					$gender = test_input($_POST[<span class="string">'gender'</span>]);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">			<span class="function"><span class="keyword">function</span> <span class="title">test_input</span><span class="params">($data)</span> </span>&#123;</div><div class="line">				$data = trim($data);</div><div class="line">				$data = stripslashes($data);</div><div class="line">				$data = htmlspecoalchars($data);</div><div class="line">				<span class="keyword">return</span> $data;</div><div class="line">			&#125;</div><div class="line">		<span class="meta">?&gt;</span></div><div class="line">		&lt;h2PHP 测试例子&lt;/h2&gt;</div><div class="line">		&lt;p&gt;&lt;span class="error"&gt; * 必需字段&lt;/span&gt;&lt;/p&gt;</div><div class="line">		&lt;form method = <span class="string">"post"</span> action = <span class="string">"&lt;?php echo htmlspecialchars($_SERVER[PHP_SELF]);?&gt;"</span>&gt;</div><div class="line">			姓名：&lt;input type = <span class="string">"text"</span> name = <span class="string">"name"</span>&gt;</div><div class="line">			&lt;span class = "error"&gt; * &lt;?php echo $nameErr;?&gt; &lt;/span&gt;</div><div class="line">			&lt;br&gt;&lt;br&gt;</div><div class="line">			电邮：&lt;input type = <span class="string">"text"</span> name = <span class="string">"email"</span>&gt;</div><div class="line">			&lt;span class = "error"&gt;* &lt;?php echo $emailErr;?&gt; &lt;/span&gt;</div><div class="line">			&lt;br&gt;&lt;br&gt;</div><div class="line">			网址：&lt;input type = <span class="string">"text"</span> name = <span class="string">"website"</span>&gt;</div><div class="line">			&lt;span class = "error"&gt;&lt;?php echo $websiteErr;?&gt;&lt;/span&gt;</div><div class="line">			&lt;br&gt;&lt;br&gt;</div><div class="line">			评论：&lt;testarea name = <span class="string">"comment"</span> rows = <span class="string">"5"</span> cols = <span class="string">"40"</span>&gt;&lt;/textarea&gt;</div><div class="line">			&lt;br&gt;&lt;br&gt; </div><div class="line">			性别：</div><div class="line">			&lt;input type = <span class="string">"radio"</span> name=<span class="string">"gender"</span> value=<span class="string">"female"</span>&gt;女性</div><div class="line">			&lt;input type = <span class="string">"radio"</span> name=<span class="string">"gender"</span> value=<span class="string">"male"</span>&gt;男性</div><div class="line">			&lt;span class="error"&gt;* &lt;?php echo $genderErr;?&gt;&lt;/span&gt;</div><div class="line">			&lt;br&gt;&lt;br&gt;</div><div class="line">			&lt;input type = <span class="string">"submit"</span> name = <span class="string">"submit"</span> value = <span class="string">"提交"</span>&gt;</div><div class="line">		&lt;/form&gt;</div><div class="line">		</div><div class="line">		<span class="meta">&lt;?php</span></div><div class="line">			<span class="keyword">echo</span> <span class="string">"&lt;h2&gt;您的输入：&lt;/h2&gt;"</span>;</div><div class="line">			<span class="keyword">echo</span> $name;</div><div class="line">			<span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</div><div class="line">			<span class="keyword">echo</span> $email;</div><div class="line">			<span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</div><div class="line">			<span class="keyword">echo</span> $website;</div><div class="line">			<span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</div><div class="line">			<span class="keyword">echo</span> $comment;</div><div class="line">			<span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</div><div class="line">			<span class="keyword">echo</span> $gender;</div><div class="line">		<span class="meta">?&gt;</span></div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p><strong>PHP - 验证　Name,E-mail,以及URL</strong> </p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$nameErr = $emailErr = $genderErr = $websiteErr = <span class="string">""</span>;</div><div class="line">$name = $email = $gender = $comment = $website = <span class="string">""</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span> ($_SERVER[<span class="string">"REQUEST_METHOD"</span>] == <span class="string">"POST"</span>)&#123;</div><div class="line">	<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'name'</span>]))&#123;</div><div class="line">		$nameErr = <span class="string">"name is required"</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		$name = test_input($_POST[<span class="string">'name'</span>]);</div><div class="line">		<span class="keyword">if</span> (!preg_match(<span class="string">"/^[a-zA-Z ]*$/"</span>,$name)) &#123;</div><div class="line">			$nameErr = <span class="string">"Only letters and white space allowed"</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'email'</span>]))&#123;</div><div class="line">		$emailErr = <span class="string">"Email is required"</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="comment">#email = test_input($_POST['email']);</span></div><div class="line">		<span class="keyword">if</span> (!preg_match(<span class="string">"/([\w\-]+\@[\w\-]+\.[\w\-]+)/"</span>,$email)) &#123;</div><div class="line">			$emailErr = <span class="string">"Invaild email format"</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'website'</span>]))&#123;</div><div class="line">		$website = <span class="string">""</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		$website = test_input($_POST[<span class="string">'website'</span>]);</div><div class="line">		<span class="keyword">if</span> (!preg_match(<span class="string">"/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&amp;@#\/%?=~_|!:,.;]*[-a-z0-9+&amp;@#\/%=~_|]/i"</span>,$website)) &#123;</div><div class="line">			$websiteErr ＝<span class="string">"Invaild URL"</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'comment'</span>])) &#123;</div><div class="line">		$comment = <span class="string">""</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		$comment = test_input($_POST[<span class="string">'comment'</span>]);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'gender'</span>])) &#123;</div><div class="line">		$genderErr = <span class="string">"Gender is required"</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		$gender = test_input($_POST[<span class="string">'gender'</span>]);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">action</span>=<span class="string">"&lt;?php echo $_SERVER[PHP_SELF];?&gt;"</span>&gt;</span></div><div class="line">Name:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"fname"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="php"><span class="meta">&lt;?php</span></span></div><div class="line"><span class="php">$name = $_REQUEST[<span class="string">'fname'</span>];</span></div><div class="line"><span class="php"><span class="keyword">echo</span> $name</span></div><div class="line"><span class="php"><span class="meta">?&gt;</span></span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 
           
         

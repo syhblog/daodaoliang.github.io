@@ -349,7 +349,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/数据库学习/2015/04/02/数据库学习-redis专题-2015-04-02-redis常用命令/">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/数据库学习/2015/04/02/数据库学习-mysql专题-2015-04-02-mysql远程表链接/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daodaoliang">
@@ -368,7 +368,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/数据库学习/2015/04/02/数据库学习-redis专题-2015-04-02-redis常用命令/" itemprop="url">redis常用命令总结</a></h2>
+                <a class="post-title-link" href="/数据库学习/2015/04/02/数据库学习-mysql专题-2015-04-02-mysql远程表链接/" itemprop="url">mysql远程表链接</a></h2>
         
 
         <div class="post-meta">
@@ -446,279 +446,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,054
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <a id="more"></a>
-<h3 id="系统类命令："><a href="#系统类命令：" class="headerlink" title="系统类命令："></a><strong><em>系统类命令：</em></strong></h3><ul>
-<li><code>quit</code>：关闭连接（connection）</li>
-<li><code>auth</code>：简单密码认证</li>
-<li><code>save</code>：将数据同步保存到磁盘</li>
-<li><code>bgsave</code>：将数据异步保存到磁盘</li>
-<li><code>lastsave</code>：返回上次成功将数据保存到磁盘的Unix时戳</li>
-<li><code>shundown</code>：将数据同步保存到磁盘，然后关闭服务</li>
-<li><code>info</code>：提供服务器的信息和统计</li>
-<li><code>monitor</code>：实时转储收到的请求</li>
-<li><code>slaveof</code>：改变复制策略设置</li>
-<li><code>config</code>：在运行时配置Redis服务器</li>
-</ul>
-<h3 id="对key操作的命令："><a href="#对key操作的命令：" class="headerlink" title="对key操作的命令："></a><strong><em>对key操作的命令：</em></strong></h3><ul>
-<li><code>exists(key)</code>：确认一个key是否存在</li>
-<li><code>del(key)</code>：删除一个key</li>
-<li><code>type(key)</code>：返回值的类型</li>
-<li><code>keys(pattern)</code>：返回满足给定pattern的所有key</li>
-<li><code>randomkey</code>：随机返回key空间的一个</li>
-<li><code>keyrename(oldname, newname)</code>：重命名key</li>
-<li><code>dbsize</code>：返回当前数据库中key的数目</li>
-<li><code>expire</code>：设定一个key的活动时间（s）</li>
-<li><code>ttl</code>：获得一个key的活动时间</li>
-<li><code>select(index)</code>：按索引查询</li>
-<li><code>move(key, dbindex)</code>：移动当前数据库中的key到dbindex数据库</li>
-<li><code>flushdb</code>：删除当前选择数据库中的所有key</li>
-<li><code>flushall</code>：删除所有数据库中的所有key</li>
-</ul>
-<h3 id="对string操作的命令："><a href="#对string操作的命令：" class="headerlink" title="对string操作的命令："></a><strong><em>对string操作的命令：</em></strong></h3><ul>
-<li><code>set(key, value)</code>：给数据库中名称为key的string赋予值value</li>
-<li><code>get(key)</code>：返回数据库中名称为key的string的value</li>
-<li><code>getset(key, value)</code>：给名称为key的string赋予上一次的value</li>
-<li><code>mget(key1, key2,…, key N)</code>：返回库中多个string的value</li>
-<li><code>setnx(key, value)</code>：添加string，名称为key，值为value</li>
-<li><code>setex(key, time, value)</code>：向库中添加string，设定过期时间time</li>
-<li><code>mset(key N, value N)</code>：批量设置多个string的值</li>
-<li><code>msetnx(key N, value N)</code>：如果所有名称为key i的string都不存在</li>
-<li><code>incr(key)</code>：名称为key的string增1操作</li>
-<li><code>incrby(key, integer)</code>：名称为key的string增加integer</li>
-<li><code>decr(key)</code>：名称为key的string减1操作</li>
-<li><code>decrby(key, integer)</code>：名称为key的string减少integer</li>
-<li><code>append(key, value)</code>：名称为key的string的值附加value</li>
-<li><code>substr(key, start, end)</code>：返回名称为key的string的value的子串</li>
-</ul>
-<h3 id="对List操作的命令："><a href="#对List操作的命令：" class="headerlink" title="对List操作的命令："></a><strong><em>对List操作的命令：</em></strong></h3><ul>
-<li><code>rpush(key, value)</code>：在名称为key的list尾添加一个值为value的元素</li>
-<li><code>lpush(key, value)</code>：在名称为key的list头添加一个值为value的 元素</li>
-<li><code>llen(key)</code>：返回名称为key的list的长度</li>
-<li><code>lrange(key, start, end)</code>：返回名称为key的list中start至end之间的元素</li>
-<li><code>ltrim(key, start, end)</code>：截取名称为key的list</li>
-<li><code>lindex(key, index)</code>：返回名称为key的list中index位置的元素</li>
-<li><code>lset(key, index, value)</code>：给名称为key的list中index位置的元素赋值</li>
-<li><code>lrem(key, count, value)</code>：删除count个key的list中值为value的元素</li>
-<li><code>lpop(key)</code>：返回并删除名称为key的list中的首元素</li>
-<li><code>rpop(key)</code>：返回并删除名称为key的list中的尾元素</li>
-<li><code>blpop(key1, key2,… key N, timeout)</code>：lpop命令的block版本。</li>
-<li><code>brpop(key1, key2,… key N, timeout)</code>：rpop的block版本。</li>
-<li><code>rpoplpush(srckey, dstkey)</code>：返回并删除名称为srckey的list的尾元素，并将该元素添加到名称为dstkey的list的头部</li>
-</ul>
-<h3 id="对Set操作的命令："><a href="#对Set操作的命令：" class="headerlink" title="对Set操作的命令："></a><strong><em>对Set操作的命令：</em></strong></h3><ul>
-<li><code>sadd(key, member)</code>：向名称为key的set中添加元素member</li>
-<li><code>srem(key, member)</code> ：删除名称为key的set中的元素member</li>
-<li><code>spop(key)</code> ：随机返回并删除名称为key的set中一个元素</li>
-<li><code>smove(srckey, dstkey, member)</code> ：移到集合元素</li>
-<li><code>scard(key)</code> ：返回名称为key的set的基数</li>
-<li><code>sismember(key, member)</code> ：member是否是名称为key的set的元素</li>
-<li><code>sinter(key1, key2,…key N)</code> ：求交集</li>
-<li><code>sinterstore(dstkey, (keys))</code> ：求交集并将交集保存到dstkey的集合</li>
-<li><code>sunion(key1, (keys))</code> ：求并集</li>
-<li><code>sunionstore(dstkey, (keys))</code> ：求并集并将并集保存到dstkey的集合</li>
-<li><code>sdiff(key1, (keys))</code>：求差集</li>
-<li><code>sdiffstore(dstkey, (keys))</code> ：求差集并将差集保存到dstkey的集合</li>
-<li><code>smembers(key)</code> ：返回名称为key的set的所有元素</li>
-<li><code>srandmember(key)</code> ：随机返回名称为key的set的一个元素</li>
-</ul>
-<h3 id="对Hash操作的命令："><a href="#对Hash操作的命令：" class="headerlink" title="对Hash操作的命令："></a><strong><em>对Hash操作的命令：</em></strong></h3><ul>
-<li><code>hset(key, field, value)</code>：向名称为key的hash中添加元素field</li>
-<li><code>hget(key, field)</code>：返回名称为key的hash中field对应的value</li>
-<li><code>hmget(key, (fields))</code>：返回名称为key的hash中field i对应的value</li>
-<li><code>hmset(key, (fields))</code>：向名称为key的hash中添加元素field </li>
-<li><code>hincrby(key, field, integer)</code>：将名称为key的hash中field的value增加integer</li>
-<li><code>hexists(key, field)</code>：名称为key的hash中是否存在键为field的域</li>
-<li><code>hdel(key, field)</code>：删除名称为key的hash中键为field的域</li>
-<li><code>hlen(key)</code>：返回名称为key的hash中元素个数</li>
-<li><code>hkeys(key)</code>：返回名称为key的hash中所有键</li>
-<li><code>hvals(key)</code>：返回名称为key的hash中所有键对应的value</li>
-<li><code>hgetall(key)</code>：返回名称为key的hash中所有的键（field）及其对应的value</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/数据库学习/2015/03/24/数据库学习-mysql专题-2015-03-24-linux下定时备份mysql数据库/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="daodaoliang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="刀刀亮的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/数据库学习/2015/03/24/数据库学习-mysql专题-2015-03-24-linux下定时备份mysql数据库/" itemprop="url">linux下mysql定时备份</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-03-24T00:00:00+08:00">
-                2015-03-24
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T15:06:24+08:00">
-                2017-08-23
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据库学习/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  127
+                  315
                 </span>
               
 
@@ -756,17 +484,14 @@
 
       
         
-          
-            <a id="more"></a>
-<h3 id="1-在服务器上建立备份文件的存放文件夹"><a href="#1-在服务器上建立备份文件的存放文件夹" class="headerlink" title="1. 在服务器上建立备份文件的存放文件夹"></a>1. 在服务器上建立备份文件的存放文件夹</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo mkdir /usr/local/dbbackup</div></pre></td></tr></table></figure>
-<h3 id="2-编写备份脚本"><a href="#2-编写备份脚本" class="headerlink" title="2. 编写备份脚本"></a>2. 编写备份脚本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi dbbackup.sh</div></pre></td></tr></table></figure>
-<p>在里面编写如下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mysqldump -uroot -p1W8a6N0g1Y3i3F1a1N99 cusflo | gzip &gt; /usr/local/cusflo-dbback/cusflo`date +%Y-%m-%d_%H%M%S`.sql.gz</div><div class="line"></div><div class="line">cd  /usr/local/cusflo-dbback/</div><div class="line"></div><div class="line">rm -rf `find . -name &apos;*.sql.gz&apos; -mtime 30`</div></pre></td></tr></table></figure>
-<h3 id="3-更改备份脚本权限"><a href="#3-更改备份脚本权限" class="headerlink" title="3.更改备份脚本权限"></a>3.更改备份脚本权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chmod +x dbbackup.sh</div></pre></td></tr></table></figure>
-<h3 id="4-修改crontab定时执行脚本"><a href="#4-修改crontab定时执行脚本" class="headerlink" title="4.修改crontab定时执行脚本"></a>4.修改crontab定时执行脚本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">crontab -e</div></pre></td></tr></table></figure>
-<h4 id="若每天晚上23点30备份，添加如下代码"><a href="#若每天晚上23点30备份，添加如下代码" class="headerlink" title="若每天晚上23点30备份，添加如下代码:"></a>若每天晚上23点30备份，添加如下代码:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">30 23 * * * /usr/local/dbbackscripts/dbbackup.sh</div></pre></td></tr></table></figure>
-
-          
+          <h3 id="FEDERATED简介"><a href="#FEDERATED简介" class="headerlink" title="FEDERATED简介"></a>FEDERATED简介</h3><p>FEDERATED存储引擎是访问远程数据库中的表，在平时开发中可以用此特性来访问远程库中的参数表之类的，还是非常方便的。使用时直接在本地构建一个federated表来链接远程数据表，配置好之后本地数据库可以直接和远程数据表进行同步，实际上这个数据库并不是真实存放数据，所需要的数据都是存放在远程服务器上。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/数据库学习/2015/04/02/数据库学习-mysql专题-2015-04-02-mysql远程表链接/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -977,6 +702,198 @@
 <h3 id="6-设置启动脚本"><a href="#6-设置启动脚本" class="headerlink" title="6. 设置启动脚本"></a><strong><em>6. 设置启动脚本</em></strong></h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/sbin/chkconfig --add redis_6379 &amp;&amp; /sbin/chkconfig redis_6379 on</div></pre></td></tr></table></figure>
 <h3 id="7-启动redis"><a href="#7-启动redis" class="headerlink" title="7. 启动redis"></a><strong><em>7. 启动redis</em></strong></h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /etc/init.d/redis_6379 start</div></pre></td></tr></table></figure>
 <h3 id="8-开启防火墙的6379端口"><a href="#8-开启防火墙的6379端口" class="headerlink" title="8. 开启防火墙的6379端口"></a><strong><em>8. 开启防火墙的6379端口</em></strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">这里就不在赘述了，前面的博客有写的～～</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/数据库学习/2015/03/24/数据库学习-mysql专题-2015-03-24-linux下定时备份mysql数据库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="daodaoliang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="刀刀亮的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/数据库学习/2015/03/24/数据库学习-mysql专题-2015-03-24-linux下定时备份mysql数据库/" itemprop="url">linux下mysql定时备份</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-03-24T00:00:00+08:00">
+                2015-03-24
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T15:06:24+08:00">
+                2017-08-23
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库学习/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  127
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<h3 id="1-在服务器上建立备份文件的存放文件夹"><a href="#1-在服务器上建立备份文件的存放文件夹" class="headerlink" title="1. 在服务器上建立备份文件的存放文件夹"></a>1. 在服务器上建立备份文件的存放文件夹</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo mkdir /usr/local/dbbackup</div></pre></td></tr></table></figure>
+<h3 id="2-编写备份脚本"><a href="#2-编写备份脚本" class="headerlink" title="2. 编写备份脚本"></a>2. 编写备份脚本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi dbbackup.sh</div></pre></td></tr></table></figure>
+<p>在里面编写如下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mysqldump -uroot -p1W8a6N0g1Y3i3F1a1N99 cusflo | gzip &gt; /usr/local/cusflo-dbback/cusflo`date +%Y-%m-%d_%H%M%S`.sql.gz</div><div class="line"></div><div class="line">cd  /usr/local/cusflo-dbback/</div><div class="line"></div><div class="line">rm -rf `find . -name &apos;*.sql.gz&apos; -mtime 30`</div></pre></td></tr></table></figure>
+<h3 id="3-更改备份脚本权限"><a href="#3-更改备份脚本权限" class="headerlink" title="3.更改备份脚本权限"></a>3.更改备份脚本权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chmod +x dbbackup.sh</div></pre></td></tr></table></figure>
+<h3 id="4-修改crontab定时执行脚本"><a href="#4-修改crontab定时执行脚本" class="headerlink" title="4.修改crontab定时执行脚本"></a>4.修改crontab定时执行脚本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">crontab -e</div></pre></td></tr></table></figure>
+<h4 id="若每天晚上23点30备份，添加如下代码"><a href="#若每天晚上23点30备份，添加如下代码" class="headerlink" title="若每天晚上23点30备份，添加如下代码:"></a>若每天晚上23点30备份，添加如下代码:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">30 23 * * * /usr/local/dbbackscripts/dbbackup.sh</div></pre></td></tr></table></figure>
 
           
         
