@@ -349,6 +349,208 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/环境搭建/2015/02/03/环境搭建-2015-02-03-Linux下ffmpeg配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="daodaoliang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="刀刀亮的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/环境搭建/2015/02/03/环境搭建-2015-02-03-Linux下ffmpeg配置/" itemprop="url">Linux下ffmpeg安装与开发配置</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-02-03T00:00:00+08:00">
+                2015-02-03
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:03+08:00">
+                2017-08-23
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/环境搭建/" itemprop="url" rel="index">
+                    <span itemprop="name">环境搭建</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  250
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<hr>
+<h3 id="ffmpeg安装"><a href="#ffmpeg安装" class="headerlink" title="ffmpeg安装"></a><strong><em>ffmpeg安装</em></strong></h3><p><strong><em>删除已安装的文件，避免冲突</em></strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get remove ffmpeg x264</div><div class="line">sudo apt-get autoremove</div></pre></td></tr></table></figure>
+<p><strong><em>安装需要的支持</em></strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install make automake g++ bzip2 python unzip patch subversion ruby build-essential git-core checkinstall yasm texi2html libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libsdl1.2-dev libtheora-dev libvdpau-dev libvorbis-dev libvpx-dev libx11-dev libxfixes-dev libxvidcore-dev zlib1g-dev</div></pre></td></tr></table></figure>
+<p><strong><em>安装 x264 （自己选择是否安装）</em></strong></p>
+<p>x264 依赖于yasm，而且版本较高。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">sudo git <span class="built_in">clone</span> git://git.videolan.org/x264.git</div><div class="line"><span class="built_in">cd</span> x264</div><div class="line">sudo ./configure --<span class="built_in">enable</span>-shared --prefix=/usr/<span class="built_in">local</span></div><div class="line">sudo make</div><div class="line">sudo make install</div><div class="line"><span class="built_in">cd</span> ..</div></pre></td></tr></table></figure>
+<p><strong><em>安装FFMPEG</em></strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo wget http://ffmpeg.org/releases/ffmpeg-2.5.3.tar.bz2</div><div class="line">sudo tar xvjf ffmpeg-2.5.3.tar.bz2</div><div class="line"><span class="built_in">cd</span> ffmpeg-2.5.3</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./configure --<span class="built_in">enable</span>-gpl --<span class="built_in">enable</span>-version3 --<span class="built_in">enable</span>-nonfree --<span class="built_in">enable</span>-postproc --<span class="built_in">enable</span>-libfaac --<span class="built_in">enable</span>-libmp3lame --<span class="built_in">enable</span>-libopencore-amrnb --<span class="built_in">enable</span>-libopencore-amrwb --<span class="built_in">enable</span>-libtheora --<span class="built_in">enable</span>-libvorbis --<span class="built_in">enable</span>-libvpx --<span class="built_in">enable</span>-libx264 --<span class="built_in">enable</span>-libxvid --<span class="built_in">enable</span>-shared --prefix=/usr/<span class="built_in">local</span></div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo make</div><div class="line">sudo make install</div><div class="line"><span class="built_in">cd</span> ..</div></pre></td></tr></table></figure>
+<p>configure过程根据自己的情况开启某部分功能。</p>
+<p><strong><em>常见错误</em></strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ffmpeg: error <span class="keyword">while</span> loading shared libraries: libavdevice.so.53: cannot open shared object file: No such file or directory</div></pre></td></tr></table></figure>
+<p>解决办法：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">vi /etc/ld.so.conf</div><div class="line">加入：/usr/<span class="built_in">local</span>/lib</div><div class="line">执行ldconfig</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/环境搭建/2015/02/03/环境搭建-2015-02-02-SRS系统搭建/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -575,208 +777,6 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">width</span>=<span class="string">"640"</span> <span class="attr">height</span>=<span class="string">"360"</span></span></div><div class="line"><span class="tag">	<span class="attr">autoplay</span> <span class="attr">controls</span> <span class="attr">autobuffer</span> </span></div><div class="line"><span class="tag">	<span class="attr">src</span>=<span class="string">"http://127.0.0.1/live/livestream.m3u8"</span></span></div><div class="line"><span class="tag">	<span class="attr">type</span>=<span class="string">"application/vnd.apple.mpegurl"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><strong><em>10.2 IOS</em></strong></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://127.0.0.1/live/livestream.m3u8</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/环境搭建/2015/02/03/环境搭建-2015-02-03-Linux下ffmpeg配置/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="daodaoliang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="刀刀亮的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/环境搭建/2015/02/03/环境搭建-2015-02-03-Linux下ffmpeg配置/" itemprop="url">Linux下ffmpeg安装与开发配置</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-02-03T00:00:00+08:00">
-                2015-02-03
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:03+08:00">
-                2017-08-23
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/环境搭建/" itemprop="url" rel="index">
-                    <span itemprop="name">环境搭建</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  250
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <a id="more"></a>
-<hr>
-<h3 id="ffmpeg安装"><a href="#ffmpeg安装" class="headerlink" title="ffmpeg安装"></a><strong><em>ffmpeg安装</em></strong></h3><p><strong><em>删除已安装的文件，避免冲突</em></strong></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get remove ffmpeg x264</div><div class="line">sudo apt-get autoremove</div></pre></td></tr></table></figure>
-<p><strong><em>安装需要的支持</em></strong></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install make automake g++ bzip2 python unzip patch subversion ruby build-essential git-core checkinstall yasm texi2html libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libsdl1.2-dev libtheora-dev libvdpau-dev libvorbis-dev libvpx-dev libx11-dev libxfixes-dev libxvidcore-dev zlib1g-dev</div></pre></td></tr></table></figure>
-<p><strong><em>安装 x264 （自己选择是否安装）</em></strong></p>
-<p>x264 依赖于yasm，而且版本较高。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">sudo git <span class="built_in">clone</span> git://git.videolan.org/x264.git</div><div class="line"><span class="built_in">cd</span> x264</div><div class="line">sudo ./configure --<span class="built_in">enable</span>-shared --prefix=/usr/<span class="built_in">local</span></div><div class="line">sudo make</div><div class="line">sudo make install</div><div class="line"><span class="built_in">cd</span> ..</div></pre></td></tr></table></figure>
-<p><strong><em>安装FFMPEG</em></strong></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo wget http://ffmpeg.org/releases/ffmpeg-2.5.3.tar.bz2</div><div class="line">sudo tar xvjf ffmpeg-2.5.3.tar.bz2</div><div class="line"><span class="built_in">cd</span> ffmpeg-2.5.3</div></pre></td></tr></table></figure>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./configure --<span class="built_in">enable</span>-gpl --<span class="built_in">enable</span>-version3 --<span class="built_in">enable</span>-nonfree --<span class="built_in">enable</span>-postproc --<span class="built_in">enable</span>-libfaac --<span class="built_in">enable</span>-libmp3lame --<span class="built_in">enable</span>-libopencore-amrnb --<span class="built_in">enable</span>-libopencore-amrwb --<span class="built_in">enable</span>-libtheora --<span class="built_in">enable</span>-libvorbis --<span class="built_in">enable</span>-libvpx --<span class="built_in">enable</span>-libx264 --<span class="built_in">enable</span>-libxvid --<span class="built_in">enable</span>-shared --prefix=/usr/<span class="built_in">local</span></div></pre></td></tr></table></figure>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo make</div><div class="line">sudo make install</div><div class="line"><span class="built_in">cd</span> ..</div></pre></td></tr></table></figure>
-<p>configure过程根据自己的情况开启某部分功能。</p>
-<p><strong><em>常见错误</em></strong></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ffmpeg: error <span class="keyword">while</span> loading shared libraries: libavdevice.so.53: cannot open shared object file: No such file or directory</div></pre></td></tr></table></figure>
-<p>解决办法：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">vi /etc/ld.so.conf</div><div class="line">加入：/usr/<span class="built_in">local</span>/lib</div><div class="line">执行ldconfig</div></pre></td></tr></table></figure>
 
           
         
@@ -1535,7 +1535,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/Python学习/2015/01/28/Python学习-2015-01-30-python-CRC32/">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/环境搭建/2015/01/28/环境搭建-2015-01-28-CentOS6-5安装crtmpserver搭建RTMP流媒体服务/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daodaoliang">
@@ -1554,7 +1554,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Python学习/2015/01/28/Python学习-2015-01-30-python-CRC32/" itemprop="url">python CRC32</a></h2>
+                <a class="post-title-link" href="/环境搭建/2015/01/28/环境搭建-2015-01-28-CentOS6-5安装crtmpserver搭建RTMP流媒体服务/" itemprop="url">CentOS6.5安装crtmpserver搭建RTMP流媒体服务器</a></h2>
         
 
         <div class="post-meta">
@@ -1582,7 +1582,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:02+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:03+08:00">
                 2017-08-23
               </time>
             
@@ -1601,8 +1601,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python学习/" itemprop="url" rel="index">
-                    <span itemprop="name">Python学习</span>
+                  <a href="/categories/环境搭建/" itemprop="url" rel="index">
+                    <span itemprop="name">环境搭建</span>
                   </a>
                 </span>
 
@@ -1632,7 +1632,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  34
+                  467
                 </span>
               
 
@@ -1648,7 +1648,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -1672,7 +1672,31 @@
         
           
             <a id="more"></a>
-<h2 id="python-CRC32方法"><a href="#python-CRC32方法" class="headerlink" title="python CRC32方法"></a><strong>python CRC32方法</strong></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">_crc32</span><span class="params">(self, v)</span>:</span> </div><div class="line">   <span class="string">""" </span></div><div class="line"><span class="string">   Generates the crc32 hash of the v. </span></div><div class="line"><span class="string">   @return: str, the str value for the crc32 of the v </span></div><div class="line"><span class="string">   """</span> </div><div class="line">   <span class="keyword">return</span> <span class="string">'0x%x'</span> % (binascii.crc32(v) &amp; <span class="number">0xffffffff</span>)</div></pre></td></tr></table></figure>
+<h2 id="1-crtmpserver简介"><a href="#1-crtmpserver简介" class="headerlink" title="1. crtmpserver简介"></a><strong><em>1. crtmpserver简介</em></strong></h2><ul>
+<li>支持推送给rtmp流的接受与播放器请求的分发；</li>
+<li>rtmp流媒体服务器树状网络集群的构建；</li>
+<li>支持 <figure class="highlight plain"><figcaption><span>和　```android```;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">PS:[官网应用介绍](http://www.rtmpd.com/)</div><div class="line"></div><div class="line">## ***2. crtmpserver流媒体服务器的搭建(centOS6.5)***</div><div class="line"></div><div class="line">### ***2.1 cmake的安装***</div><div class="line"></div><div class="line">下载最新的cmake</div><div class="line"></div><div class="line">```sh</div><div class="line">	yum install cmake</div></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="2-2-openssl的安装"><a href="#2-2-openssl的安装" class="headerlink" title="2.2 openssl的安装"></a><strong><em>2.2 openssl的安装</em></strong></h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">wget -o openssl-0.9.8t.tar.gz http://www.openssl.org/<span class="built_in">source</span>/openssl-0.9.8ze.tar.gz</div><div class="line"><span class="built_in">cd</span> openssl-0.9.8t</div><div class="line">./config</div><div class="line">make .</div><div class="line">make install</div></pre></td></tr></table></figure>
+<h3 id="2-3-crtmpserver的编译与安装"><a href="#2-3-crtmpserver的编译与安装" class="headerlink" title="2.3 crtmpserver的编译与安装"></a><strong><em>2.3 crtmpserver的编译与安装</em></strong></h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">svn co --username anonymous --password <span class="string">""</span> https://svn.rtmpd.com/crtmpserver/branches/1.0 crtmpserver</div><div class="line"><span class="built_in">cd</span> crtmpserver</div><div class="line">sh ./cleanup.sh</div><div class="line"><span class="built_in">cd</span> builders/cmake</div><div class="line">cmake .</div><div class="line">make</div><div class="line">./crtmpserver/crtmpserver ./crtmpserver/crtmpserver.lua</div></pre></td></tr></table></figure>
+<p><strong><em>PS:</em></strong> </p>
+<ul>
+<li>最后一行命令“”#./crtmpserver/crtmpserver ./crtmpserver/crtmpserver.lua”意思是：使用“./crtmpserver/crtmpserver.lua”为配置脚本，启动“crtmpserver”服务;</li>
+<li>最后一行命令的目录是在”builders/cmake”下;</li>
+</ul>
+<h2 id="3-脚本的自启动和静默运行"><a href="#3-脚本的自启动和静默运行" class="headerlink" title="3. 脚本的自启动和静默运行"></a><strong><em>3. 脚本的自启动和静默运行</em></strong></h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nohup ./crtmpserver/crtmpserver ./crtmpserver/crtmpserver.lua &amp;</div></pre></td></tr></table></figure>
+<h3 id="4-JWPlayer直播方案搭建"><a href="#4-JWPlayer直播方案搭建" class="headerlink" title="4. JWPlayer直播方案搭建"></a><strong><em>4. JWPlayer直播方案搭建</em></strong></h3><h3 id="4-1-搭建http-server"><a href="#4-1-搭建http-server" class="headerlink" title="4.1 搭建http server"></a><strong><em>4.1 搭建http server</em></strong></h3><p>略</p>
+<h3 id="4-2-下载JWPlayer并部署到http-server上"><a href="#4-2-下载JWPlayer并部署到http-server上" class="headerlink" title="4.2 下载JWPlayer并部署到http server上"></a><strong><em>4.2 下载JWPlayer并部署到http server上</em></strong></h3><p><a href="http://www.longtailvideo.com/" target="_blank" rel="external">JWPlayer官网</a><br><a href="http://www.longtailvideo.com/jw-player/download/" target="_blank" rel="external">JWPlayer下载页面</a><br>以上链接不能用的话我自己网盘里面有ｏ（╯□╰）ｏ<br>下载解压后，将jwplayer整个文件夹内容放到网站指定目录下<br>如根目录下的jwplayer文件夹;</p>
+<h3 id="4-3-新建播放器的html页面"><a href="#4-3-新建播放器的html页面" class="headerlink" title="4.3 新建播放器的html页面"></a><strong><em>4.3 新建播放器的html页面</em></strong></h3><p><strong><em>test.html</em></strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/jwplayer/jwplayer.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">'my-video'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span> </div><div class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">'text/javascript'</span>&gt;</span><span class="undefined">    </span></div><div class="line"><span class="undefined"> 			jwplayer('my-video').setup(&#123;file:'rtmp://127.0.0.1/live/livestream',width: '640', height: '480'&#125;); </span></div><div class="line"><span class="undefined">		</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="4-4-使用Flash-Media-Live-Encoder推送直播源"><a href="#4-4-使用Flash-Media-Live-Encoder推送直播源" class="headerlink" title="4.4 使用Flash Media Live Encoder推送直播源"></a><strong><em>4.4 使用Flash Media Live Encoder推送直播源</em></strong></h3><p><img src="/res/img/blog/环境搭建/crtspserver.jpg" alt="Flash Media Live Encoder"></p>
+<p>设置好后，点start即可</p>
+<h3 id="4-5-浏览器中查看"><a href="#4-5-浏览器中查看" class="headerlink" title="4.5 浏览器中查看"></a><strong><em>4.5 浏览器中查看</em></strong></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://127.0.0.1/jwplayer/test.html</div></pre></td></tr></table></figure>
+<h3 id="4-6-使用ffmpeg做为直播源"><a href="#4-6-使用ffmpeg做为直播源" class="headerlink" title="4.6 使用ffmpeg做为直播源"></a><strong><em>4.6 使用ffmpeg做为直播源</em></strong></h3><ul>
+<li>不能直接使用ffmpeg的rtmp模块进行流推送需要使用librtmp才能进行正常的流推送和观看；</li>
+<li>原始的lua可以不用做修改,示例命令如下：</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./ffmpeg -re -i c1.flv -acodec copy -vcodec copy -f flv rtmp://127.0.0.1/live/livestream</div></pre></td></tr></table></figure>
 
           
         

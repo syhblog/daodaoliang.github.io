@@ -349,7 +349,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/19/PHP学习-2015-01-19-PHP文件操作/">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/19/PHP学习-2015-01-19-PHP异常处理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daodaoliang">
@@ -368,7 +368,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/PHP学习/2015/01/19/PHP学习-2015-01-19-PHP文件操作/" itemprop="url">php文件处理</a></h2>
+                <a class="post-title-link" href="/PHP学习/2015/01/19/PHP学习-2015-01-19-PHP异常处理/" itemprop="url">php异常</a></h2>
         
 
         <div class="post-meta">
@@ -446,7 +446,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  773
+                  29
                 </span>
               
 
@@ -462,7 +462,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  1
                 </span>
               
             </div>
@@ -486,76 +486,7 @@
         
           
             <a id="more"></a>
-<h2 id="PHP-文件处理"><a href="#PHP-文件处理" class="headerlink" title="PHP 文件处理"></a>PHP 文件处理</h2><p><strong>PHP Open File —- fopen()</strong></p>
-<p>说明：</p>
-<p><strong><em>fopen</em></strong> 的第一个参数包含被打开的文件名，第二个参数规定打开文件的模式，如果fopen()没能打开指定文件，下面的例子回升呈一段消息：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$myfile = fopen(<span class="string">"daodaoliang.txt"</span>,<span class="string">'r'</span>)  <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"Unable to open file"</span>);</div><div class="line">fclose($myfile);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p>文件打开模式如下：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">模式</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">r</td>
-<td style="text-align:center">打开文件为只读,文件指针在文件的开头开始</td>
-</tr>
-<tr>
-<td style="text-align:center">w</td>
-<td style="text-align:center">打开文件为只写,删除文件的内容或创建一个新的文件，如果他不存在．文件指针在文件的开头开始</td>
-</tr>
-<tr>
-<td style="text-align:center">a</td>
-<td style="text-align:center">打开文件为只写，文件中的现有数据会被保留，文件指针在文件结尾开始，创建新的文件，如果文件不存在</td>
-</tr>
-<tr>
-<td style="text-align:center">x</td>
-<td style="text-align:center">创建新文件为只写，返回false和错误，如果文件已存在</td>
-</tr>
-<tr>
-<td style="text-align:center">r+</td>
-<td style="text-align:center">打开文件为读写方式，文件指针在文件开头开始</td>
-</tr>
-<tr>
-<td style="text-align:center">w+</td>
-<td style="text-align:center">打开文件为读写，删除文件内容或创建新文件，如果它不存在，文件指针在文件开头开始</td>
-</tr>
-<tr>
-<td style="text-align:center">a+</td>
-<td style="text-align:center">打开文件为读写，文件中已有的数据会被保留，文件指针在文件结尾开始，创建新文件，如果他不存在</td>
-</tr>
-<tr>
-<td style="text-align:center">x+</td>
-<td style="text-align:center">创建新文件为读写，返回false和错误．如果文件已存在</td>
-</tr>
-</tbody>
-</table>
-<p><strong>PHP fread()</strong></p>
-<p><strong><em>fread()</em></strong> 函数读取打开的文件</p>
-<p>fread()的第一个参数包含待读取文件的文件名．第二个参数规定待读取的最大字节数．</p>
-<p>示例：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	fread($myfile,filesize(<span class="string">"daodoaliang.txt"</span>));</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>PHP 检查文件结尾</strong></p>
-<p><strong><em>feof()</em></strong> 函数检查是否已达到”end-of-file”(EOF)</p>
-<p>feof()对于遍历未知长度的数据很有用</p>
-<p>示例：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$myfile=fopen(<span class="string">"daodaoliang.txt"</span>,<span class="string">"r"</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"Unable to open file!"</span>);</div><div class="line"><span class="keyword">while</span>(!feof($myfile))　&#123;</div><div class="line">	<span class="keyword">echo</span> fgets($myfile).<span class="string">"&lt;br&gt;"</span>;</div><div class="line">&#125;</div><div class="line">fclose($myfile);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>PHP 文件上传</strong></p>
-<p>通过PHP的全局数组 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">第一个参数是表单的 input name,第二个下标可以是&quot;name&quot;,&quot;type&quot;,&quot;size&quot;,&quot;tmp_name&quot;,&quot;error&quot;:</div><div class="line"></div><div class="line">* $_FILES[&quot;file&quot;][&quot;name&quot;]-被上传文件的名称；</div><div class="line">* $_FILES[&quot;file&quot;][&quot;type&quot;]-被上传文件的类型；</div><div class="line">* $_FILES[&quot;file&quot;][&quot;size&quot;]-被上传文件的大小．以字节计；</div><div class="line">* $_FILES[&quot;file&quot;][&quot;tmp＿name&quot;]-存储在服务器的文件的临时副本名称</div><div class="line">* $_FILES[&quot;file&quot;][&quot;error&quot;]-由文件上传导致的错误代码</div><div class="line"></div><div class="line">示例：</div><div class="line"></div><div class="line">```html</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;form action=&quot;upload_file.php&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</div><div class="line">			&lt;label for=&quot;file&quot;&gt;Filename&lt;/label&gt;</div><div class="line">			&lt;input type=&quot;file&quot; name=&quot;file&quot; id=&quot;file&quot; /&gt;</div><div class="line">			&lt;br /&gt;</div><div class="line">			&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Submit&quot; /&gt;</div><div class="line">		&lt;/form&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">if</span> ((($_FILES[<span class="string">"file"</span>][<span class="string">"type"</span>] == <span class="string">"image/gif"</span>)</div><div class="line">	|| ($_FILES[<span class="string">"files"</span>][<span class="string">"type"</span>] == <span class="string">"image/jpeg"</span>)</div><div class="line">	|| ($_FILES[<span class="string">"file"</span>][<span class="string">"type"</span>] == <span class="string">"image/pjpeg"</span>))</div><div class="line">	&amp;&amp; ($_FILES[<span class="string">"file"</span>][<span class="string">"size"</span>] &lt; <span class="number">20000</span>))</div><div class="line">&#123;</div><div class="line">	<span class="keyword">if</span> ($_FILES[<span class="string">"file"</span>][<span class="string">"error"</span>] &gt; <span class="number">0</span>)&#123;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"Return Code:"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"error"</span>].<span class="string">"&lt;br/&gt;"</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"Upload:"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>].<span class="string">"&lt;br/&gt;"</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"Type:"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>].<span class="string">"&lt;br/&gt;"</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"Size:"</span>.($_FILES[<span class="string">"file"</span>][<span class="string">"size"</span>] / <span class="number">1024</span>).<span class="string">"&lt;br/&gt;"</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"Temp file:"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"temp_name"</span>].<span class="string">"&lt;br/&gt;"</span>;</div><div class="line">		<span class="keyword">if</span> (file_exists(<span class="string">"upload/"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>]))&#123;</div><div class="line">			<span class="keyword">echo</span> $_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>].<span class="string">"already exists."</span>;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			move_upload_file($_FILES[<span class="string">"file"</span>][<span class="string">"tmp_name"</span>],<span class="string">"upload/"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>]);</div><div class="line">			<span class="keyword">echo</span> <span class="string">"Store in: "</span>.<span class="string">"upload/"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"Invalid file"</span>;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>PHP 文件引用</strong></p>
-<p><strong><em>include</em></strong> 和　<strong><em>require</em></strong></p>
-<ul>
-<li>include 语句引用某个文件并且PHP无法找到它时，脚本会继续执行；</li>
-<li>require 语句引用某个文件并且PHP无法找到它时，脚本会终止运行；</li>
-</ul>
-<p>示例：</p>
-<p>test.php</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$daodaoliang = <span class="string">"xiaobai"</span>;</div><div class="line">$wangxiaowei = <span class="string">"wangxiaowei"</span>;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">include</span> <span class="string">"test.php"</span>;</div><div class="line"><span class="keyword">echo</span> <span class="string">"daodaoliang:"</span>.$daodaoliang.<span class="string">"wangxiaowei:"</span>.$wangxiaowei;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="PHP-异常处理"><a href="#PHP-异常处理" class="headerlink" title="PHP 异常处理"></a>PHP 异常处理</h2><p>暂时没有用到,先不用更新了o(╯□╰)o(就是这么任性,你咬我啊~)</p>
 
           
         
@@ -788,6 +719,218 @@
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">strtotime(time,now);</div></pre></td></tr></table></figure>
 <p>实例：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	$d=strtotime(<span class="string">"10:38pm April 15 2015"</span>);</div><div class="line">	<span class="keyword">echo</span> <span class="string">"创建的日期是："</span>.date(<span class="string">"y-m-d h:i:s"</span>,$d);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP数组/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="daodaoliang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="刀刀亮的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP数组/" itemprop="url">php数组</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-01-16T00:00:00+08:00">
+                2015-01-16
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:02+08:00">
+                2017-08-23
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP学习/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  264
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<h3 id="在PHP-中创建数组"><a href="#在PHP-中创建数组" class="headerlink" title="在PHP 中创建数组"></a>在PHP 中创建数组</h3><p>在 PHP 中,array()函数用于创建数组:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">array</span>();</div></pre></td></tr></table></figure>
+<p>在 PHP 中,有三种数组类型:</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">* ```关联数组```-带有指定键的是数组</div><div class="line">* ```多维数组```-包含一个或多个数组的数组</div><div class="line"></div><div class="line">索引数组示例:</div><div class="line"></div><div class="line">```php</div><div class="line">&lt;?php</div><div class="line">$cars=array(&quot;volvo&quot;,&quot;BMW&quot;,&quot;SAAB&quot;);</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>或者</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$car[<span class="number">0</span>]=<span class="string">"volov"</span>;</div><div class="line">$car[<span class="number">2</span>]=<span class="string">"BMW"</span>;</div><div class="line">$car[<span class="number">3</span>]=<span class="string">"SAAB"</span>;</div></pre></td></tr></table></figure>
+<p>关联数组示例:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$age=<span class="keyword">array</span>(<span class="string">"daodaolang"</span>=&gt;<span class="string">"10"</span>,<span class="string">"wangxiaowei"</span>=&gt;<span class="string">"12"</span>);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$age[<span class="string">"daodaoliang"</span>] = <span class="string">"23"</span>;</div><div class="line">$age[<span class="string">"wangxiaowei"</span>] = <span class="number">22</span>;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="遍历数组"><a href="#遍历数组" class="headerlink" title="遍历数组"></a>遍历数组</h3><p><strong>遍历索引数组</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$test_array = <span class="keyword">array</span>(<span class="string">"daodaoliang"</span>,<span class="string">"test"</span>,<span class="string">"test2"</span>);</div><div class="line"><span class="keyword">foreach</span>($test_array <span class="keyword">as</span> $value)&#123;</div><div class="line"><span class="keyword">echo</span> $value;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$test_array = <span class="keyword">array</span>(<span class="string">"test1"</span>,<span class="string">"test2"</span>,<span class="string">"test3"</span>);</div><div class="line"><span class="keyword">for</span>($index=<span class="number">0</span>;$index &lt; count($test_array);++$index)&#123;</div><div class="line">	<span class="keyword">echo</span> $test_array[$index];</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>遍历索引数组</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$age=<span class="keyword">array</span>(<span class="string">"daodaoliang"</span>=&gt;<span class="number">23</span>,<span class="string">"wangxiaowei"</span>=&gt;<span class="number">34</span>);</div><div class="line"><span class="keyword">foreach</span>($age <span class="keyword">as</span> $key =&gt; $value)&#123;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"key="</span>.$x.<span class="string">"value="</span>.$value;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="PHP-数据排序"><a href="#PHP-数据排序" class="headerlink" title="PHP 数据排序"></a>PHP 数据排序</h3><ul>
+<li>sort() 以剩下对数组进行排序</li>
+<li>rsprt() 以降序对数组排序</li>
+<li>asort() 根据值,以升序对关联数组进行排序</li>
+<li>ksort() 根据健,以升序对关联数组进行排序</li>
+<li>arosrt() 根据值,以降序对关联书序进行排序</li>
+<li>krsort() 根据健,以降序对关联数组进行排序</li>
+</ul>
 
           
         
@@ -1146,7 +1289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP表单处理/">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP运算逻辑说明/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daodaoliang">
@@ -1165,7 +1308,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP表单处理/" itemprop="url">php表单处理</a></h2>
+                <a class="post-title-link" href="/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP运算逻辑说明/" itemprop="url">php运算逻辑说明</a></h2>
         
 
         <div class="post-meta">
@@ -1243,7 +1386,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  602
+                  357
                 </span>
               
 
@@ -1259,7 +1402,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  2
                 </span>
               
             </div>
@@ -1283,234 +1426,36 @@
         
           
             <a id="more"></a>
-<h2 id="表单处理"><a href="#表单处理" class="headerlink" title="表单处理"></a>表单处理</h2><p><strong>一个简单的表单</strong></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;form action=<span class="string">"welcome.php"</span> method=<span class="string">"post"</span>&gt;</div><div class="line">			Name: &lt;input type=<span class="string">"text"</span> name=<span class="string">"name"</span>&gt;&lt;br&gt;</div><div class="line">			E-mail: &lt;input type=<span class="string">"text"</span> name=<span class="string">"email"</span>&gt;&lt;br&gt;</div><div class="line">			&lt;input type=<span class="string">"submit"</span>&gt;</div><div class="line">		&lt;/form&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p><strong>welcome.php脚本源码</strong></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		Welcom <span class="meta">&lt;?php</span> <span class="keyword">echo</span> $_POST[<span class="string">'name'</span>];<span class="meta">?&gt;</span>&lt;br&gt;</div><div class="line">		Your email address is:<span class="meta">&lt;?php</span> <span class="keyword">echo</span> $_POST[<span class="string">'email'</span>];<span class="meta">?&gt;</span></div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p><strong>GET vs POST</strong></p>
-<p>GET 和 POST 都创建数组(例如，array(key=&gt;balue,key2=&gt;value2,key3=&gt;value3,…)).次数组包含键/值对，其中的键时表单控件的名称，而值时来自用户输入的数据．</p>
-<p>GET 和　POST 被视作$_GET 和　$_POST.它们是超全局变量，这意味着对他们的访问无需考虑作用域，无需特殊代码，能够从任何函数,类，或者文件访问它们；</p>
+<h2 id="PHP-运算逻辑说明"><a href="#PHP-运算逻辑说明" class="headerlink" title="PHP 运算逻辑说明"></a>PHP 运算逻辑说明</h2><p><strong>PHP if…elseif…else 语句</strong></p>
+<p>示例说明:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">if</span>(condition_001)&#123;</div><div class="line">	语句;</div><div class="line">&#125; <span class="keyword">elseif</span> (condition_002)&#123;</div><div class="line">	语句;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	语句;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>PHP Switch语句</strong></p>
+<p>示例说明:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">switch</span> (expression)</div><div class="line">&#123;</div><div class="line"><span class="keyword">case</span> label1:</div><div class="line">	code to be executed <span class="keyword">if</span> expression = label1;</div><div class="line">	<span class="keyword">break</span>;</div><div class="line"><span class="keyword">case</span> label2:</div><div class="line">	code to be executed of expression = label2;</div><div class="line">	<span class="keyword">break</span>;</div><div class="line"><span class="keyword">default</span>:</div><div class="line">	code to be executed</div><div class="line">	<span class="keyword">if</span> expression is different</div><div class="line">	from both label1 <span class="keyword">and</span> label2;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>注意</strong>这个匹配语句不仅仅匹配数值和逻辑符类型,还可以匹配字符串类型;</p>
+<p><strong>PHP while语句</strong></p>
+<p>示例: </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">while</span> (条件为真)</div><div class="line">&#123;</div><div class="line">	要执行的代码;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>PHP for 语句</strong></p>
+<p>示例:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">for</span>(init counter; test counter; increment counter)&#123;</div><div class="line">	code to be executed;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>参数:</strong></p>
 <ul>
-<li>$_GET是通过URl参数传递到当前脚本的变量数组；</li>
-<li>$_POST是通过HTTP POST　传递到当前脚本的变量数组；</li>
+<li>init counter:初始化循环计数器的值</li>
+<li>test counter: 评估每个循环迭代,如果值为TRUE.继续循环,如果它的值为FALSE,循环结束.</li>
+<li>increment counter : 增加循环计数器的值</li>
 </ul>
-<p><strong>带有验证的表单</strong></p>
-<p>示例：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;style&gt;</div><div class="line">			.error &#123;color:<span class="comment">#FF0000;&#125;</span></div><div class="line">		&lt;/style&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		<span class="meta">&lt;?php</span></div><div class="line">			$nameErr = $emailErr = $genderErr = $websiteErr = <span class="string">""</span>;</div><div class="line">			$name = $email = $gender = $comment = $website = <span class="string">""</span>;</div><div class="line"></div><div class="line">			<span class="keyword">if</span> ($_SERVER[REQUEST_METHOD] == <span class="string">"POST"</span>) &#123;</div><div class="line">				<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'name'</span>]))&#123;</div><div class="line">					$nameErr = <span class="string">"姓名时必填的"</span>;</div><div class="line">				&#125; <span class="keyword">else</span> &#123;</div><div class="line">					$name = test_input($_POST[<span class="string">'name'</span>]);</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'email'</span>])) &#123;</div><div class="line">					$emailErr = <span class="string">"电邮是必填的"</span>;</div><div class="line">				&#125;　<span class="keyword">else</span> &#123;</div><div class="line">					$email = test_input($_POST[<span class="string">'email'</span>]);</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'website'</span>])) &#123;</div><div class="line">					$website = <span class="string">""</span>;</div><div class="line">				&#125; <span class="keyword">else</span> &#123;</div><div class="line">					$website = test_input($_POST[<span class="string">'website'</span>]);</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">if</span> (<span class="keyword">empty</span>($_post[<span class="string">'comment'</span>])) &#123;</div><div class="line">					$comment = <span class="string">""</span>;</div><div class="line">				&#125; <span class="keyword">else</span> &#123;</div><div class="line">					$commment = test_input($_POST[<span class="string">'comment'</span>]);</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'gender'</span>])) &#123;</div><div class="line">					$genderErr = <span class="string">"性别是必须的"</span>；</div><div class="line">				&#125; <span class="keyword">else</span> &#123;</div><div class="line">					$gender = test_input($_POST[<span class="string">'gender'</span>]);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">			<span class="function"><span class="keyword">function</span> <span class="title">test_input</span><span class="params">($data)</span> </span>&#123;</div><div class="line">				$data = trim($data);</div><div class="line">				$data = stripslashes($data);</div><div class="line">				$data = htmlspecoalchars($data);</div><div class="line">				<span class="keyword">return</span> $data;</div><div class="line">			&#125;</div><div class="line">		<span class="meta">?&gt;</span></div><div class="line">		&lt;h2PHP 测试例子&lt;/h2&gt;</div><div class="line">		&lt;p&gt;&lt;span class="error"&gt; * 必需字段&lt;/span&gt;&lt;/p&gt;</div><div class="line">		&lt;form method = <span class="string">"post"</span> action = <span class="string">"&lt;?php echo htmlspecialchars($_SERVER[PHP_SELF]);?&gt;"</span>&gt;</div><div class="line">			姓名：&lt;input type = <span class="string">"text"</span> name = <span class="string">"name"</span>&gt;</div><div class="line">			&lt;span class = "error"&gt; * &lt;?php echo $nameErr;?&gt; &lt;/span&gt;</div><div class="line">			&lt;br&gt;&lt;br&gt;</div><div class="line">			电邮：&lt;input type = <span class="string">"text"</span> name = <span class="string">"email"</span>&gt;</div><div class="line">			&lt;span class = "error"&gt;* &lt;?php echo $emailErr;?&gt; &lt;/span&gt;</div><div class="line">			&lt;br&gt;&lt;br&gt;</div><div class="line">			网址：&lt;input type = <span class="string">"text"</span> name = <span class="string">"website"</span>&gt;</div><div class="line">			&lt;span class = "error"&gt;&lt;?php echo $websiteErr;?&gt;&lt;/span&gt;</div><div class="line">			&lt;br&gt;&lt;br&gt;</div><div class="line">			评论：&lt;testarea name = <span class="string">"comment"</span> rows = <span class="string">"5"</span> cols = <span class="string">"40"</span>&gt;&lt;/textarea&gt;</div><div class="line">			&lt;br&gt;&lt;br&gt; </div><div class="line">			性别：</div><div class="line">			&lt;input type = <span class="string">"radio"</span> name=<span class="string">"gender"</span> value=<span class="string">"female"</span>&gt;女性</div><div class="line">			&lt;input type = <span class="string">"radio"</span> name=<span class="string">"gender"</span> value=<span class="string">"male"</span>&gt;男性</div><div class="line">			&lt;span class="error"&gt;* &lt;?php echo $genderErr;?&gt;&lt;/span&gt;</div><div class="line">			&lt;br&gt;&lt;br&gt;</div><div class="line">			&lt;input type = <span class="string">"submit"</span> name = <span class="string">"submit"</span> value = <span class="string">"提交"</span>&gt;</div><div class="line">		&lt;/form&gt;</div><div class="line">		</div><div class="line">		<span class="meta">&lt;?php</span></div><div class="line">			<span class="keyword">echo</span> <span class="string">"&lt;h2&gt;您的输入：&lt;/h2&gt;"</span>;</div><div class="line">			<span class="keyword">echo</span> $name;</div><div class="line">			<span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</div><div class="line">			<span class="keyword">echo</span> $email;</div><div class="line">			<span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</div><div class="line">			<span class="keyword">echo</span> $website;</div><div class="line">			<span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</div><div class="line">			<span class="keyword">echo</span> $comment;</div><div class="line">			<span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</div><div class="line">			<span class="keyword">echo</span> $gender;</div><div class="line">		<span class="meta">?&gt;</span></div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p><strong>PHP - 验证　Name,E-mail,以及URL</strong> </p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$nameErr = $emailErr = $genderErr = $websiteErr = <span class="string">""</span>;</div><div class="line">$name = $email = $gender = $comment = $website = <span class="string">""</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span> ($_SERVER[<span class="string">"REQUEST_METHOD"</span>] == <span class="string">"POST"</span>)&#123;</div><div class="line">	<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'name'</span>]))&#123;</div><div class="line">		$nameErr = <span class="string">"name is required"</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		$name = test_input($_POST[<span class="string">'name'</span>]);</div><div class="line">		<span class="keyword">if</span> (!preg_match(<span class="string">"/^[a-zA-Z ]*$/"</span>,$name)) &#123;</div><div class="line">			$nameErr = <span class="string">"Only letters and white space allowed"</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'email'</span>]))&#123;</div><div class="line">		$emailErr = <span class="string">"Email is required"</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="comment">#email = test_input($_POST['email']);</span></div><div class="line">		<span class="keyword">if</span> (!preg_match(<span class="string">"/([\w\-]+\@[\w\-]+\.[\w\-]+)/"</span>,$email)) &#123;</div><div class="line">			$emailErr = <span class="string">"Invaild email format"</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'website'</span>]))&#123;</div><div class="line">		$website = <span class="string">""</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		$website = test_input($_POST[<span class="string">'website'</span>]);</div><div class="line">		<span class="keyword">if</span> (!preg_match(<span class="string">"/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&amp;@#\/%?=~_|!:,.;]*[-a-z0-9+&amp;@#\/%=~_|]/i"</span>,$website)) &#123;</div><div class="line">			$websiteErr ＝<span class="string">"Invaild URL"</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'comment'</span>])) &#123;</div><div class="line">		$comment = <span class="string">""</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		$comment = test_input($_POST[<span class="string">'comment'</span>]);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">'gender'</span>])) &#123;</div><div class="line">		$genderErr = <span class="string">"Gender is required"</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		$gender = test_input($_POST[<span class="string">'gender'</span>]);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP数组/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="daodaoliang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="刀刀亮的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP数组/" itemprop="url">php数组</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-01-16T00:00:00+08:00">
-                2015-01-16
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T13:19:02+08:00">
-                2017-08-23
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP学习/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  264
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <a id="more"></a>
-<h3 id="在PHP-中创建数组"><a href="#在PHP-中创建数组" class="headerlink" title="在PHP 中创建数组"></a>在PHP 中创建数组</h3><p>在 PHP 中,array()函数用于创建数组:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">array</span>();</div></pre></td></tr></table></figure>
-<p>在 PHP 中,有三种数组类型:</p>
-<ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">* ```关联数组```-带有指定键的是数组</div><div class="line">* ```多维数组```-包含一个或多个数组的数组</div><div class="line"></div><div class="line">索引数组示例:</div><div class="line"></div><div class="line">```php</div><div class="line">&lt;?php</div><div class="line">$cars=array(&quot;volvo&quot;,&quot;BMW&quot;,&quot;SAAB&quot;);</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>或者</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$car[<span class="number">0</span>]=<span class="string">"volov"</span>;</div><div class="line">$car[<span class="number">2</span>]=<span class="string">"BMW"</span>;</div><div class="line">$car[<span class="number">3</span>]=<span class="string">"SAAB"</span>;</div></pre></td></tr></table></figure>
-<p>关联数组示例:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$age=<span class="keyword">array</span>(<span class="string">"daodaolang"</span>=&gt;<span class="string">"10"</span>,<span class="string">"wangxiaowei"</span>=&gt;<span class="string">"12"</span>);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$age[<span class="string">"daodaoliang"</span>] = <span class="string">"23"</span>;</div><div class="line">$age[<span class="string">"wangxiaowei"</span>] = <span class="number">22</span>;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="遍历数组"><a href="#遍历数组" class="headerlink" title="遍历数组"></a>遍历数组</h3><p><strong>遍历索引数组</strong></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$test_array = <span class="keyword">array</span>(<span class="string">"daodaoliang"</span>,<span class="string">"test"</span>,<span class="string">"test2"</span>);</div><div class="line"><span class="keyword">foreach</span>($test_array <span class="keyword">as</span> $value)&#123;</div><div class="line"><span class="keyword">echo</span> $value;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p>或</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$test_array = <span class="keyword">array</span>(<span class="string">"test1"</span>,<span class="string">"test2"</span>,<span class="string">"test3"</span>);</div><div class="line"><span class="keyword">for</span>($index=<span class="number">0</span>;$index &lt; count($test_array);++$index)&#123;</div><div class="line">	<span class="keyword">echo</span> $test_array[$index];</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>遍历索引数组</strong></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$age=<span class="keyword">array</span>(<span class="string">"daodaoliang"</span>=&gt;<span class="number">23</span>,<span class="string">"wangxiaowei"</span>=&gt;<span class="number">34</span>);</div><div class="line"><span class="keyword">foreach</span>($age <span class="keyword">as</span> $key =&gt; $value)&#123;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"key="</span>.$x.<span class="string">"value="</span>.$value;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="PHP-数据排序"><a href="#PHP-数据排序" class="headerlink" title="PHP 数据排序"></a>PHP 数据排序</h3><ul>
-<li>sort() 以剩下对数组进行排序</li>
-<li>rsprt() 以降序对数组排序</li>
-<li>asort() 根据值,以升序对关联数组进行排序</li>
-<li>ksort() 根据健,以升序对关联数组进行排序</li>
-<li>arosrt() 根据值,以降序对关联书序进行排序</li>
-<li>krsort() 根据健,以降序对关联数组进行排序</li>
-</ul>
+<p><strong>PHP foreach 语句</strong></p>
+<p>foreach 循环只适用于数据,病用于便利数组中的每个键/值对;</p>
+<p>示例:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">foreach</span> ($arrary <span class="keyword">as</span> $value)&#123;</div><div class="line">	code to be executed;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>PHP 函数语句</strong></p>
+<p>在PHP中创建用于定义函数</p>
+<p>示例:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">functionName</span><span class="params">()</span></span>&#123;</div><div class="line">	要执行的代码;</div><div class="line">&#125;</div><div class="line"></div><div class="line">**注意**:</div><div class="line"></div><div class="line">* 定义函数的声明需要以<span class="string">"function"</span>开头;</div><div class="line">* 函数名能够以字母或者下划线(而非数字);</div><div class="line">* 函数名对大小写敏感(变量名字也是对大小写敏感的,PHP内建关键字不区分大小写)</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>PHP 函数参数</strong></p>
+<p>示例1:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setHeight</span><span class="params">($minHeight=<span class="number">50</span>)</span></span>&#123;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"The height is : $minHeight &lt;br&gt;"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">setHeight(<span class="number">350</span>);</div><div class="line">setHeight(); <span class="comment">//将使用默认参数50</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 
           
         
