@@ -349,193 +349,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/数据库学习/2015/01/22/数据库学习-mysql专题-2015-01-22-mysql三种插入语句的区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="daodaoliang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="刀刀亮的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/数据库学习/2015/01/22/数据库学习-mysql专题-2015-01-22-mysql三种插入语句的区别/" itemprop="url">mysql insert into和replace into以及insert ignore的区别</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-01-22T00:00:00+08:00">
-                2015-01-22
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T15:06:24+08:00">
-                2017-08-23
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据库学习/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  336
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <a id="more"></a>
-<p><strong><em>insert into</em></strong></p>
-<figure class="highlight plain"><figcaption><span>into``` 表示插入数据，数据会检查主键(PrimaryKey),如果出现重复会报错；</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">***replace into***</div><div class="line"></div><div class="line">```replace into``` 表示插入替换数据，需求表中有```PrimaryKey```,或者```Unique```索引的话，如果数据库已经存在数据，则用新数据替换，如果没有数据效果跟```insert into```一样，```replace```语句会返回一个数，来指示受影响的行的数目，该数目时被删除和被插入的行数的和，如果对应一个单行```replace```该数为１，则一行被插入，同时没有行被删除，如果该数大于１，则在新行被插入前，有一个或者多个旧行被删除，如果表包含多个唯一索引，并且新行复制了在不同的唯一索引中的不同旧行的值，则有可能是一个单一行替换了多个旧行；</div><div class="line"></div><div class="line">***insert ignore into***</div><div class="line"></div><div class="line">```indert ignore```表示，如果中已经存在相同的记录，则忽略当前新数据；</div><div class="line"></div><div class="line">示例：</div><div class="line"></div><div class="line">```mysql</div><div class="line">	create table test_table (</div><div class="line">	id int not null primary key,</div><div class="line">	name varchar(20),</div><div class="line">	age int</div><div class="line">	)</div><div class="line"></div><div class="line">	insert into test_table (id,name,age) values (1,&quot;111&quot;,111);</div><div class="line"></div><div class="line">	select * from test_table;</div><div class="line"></div><div class="line">	insert ignore into test_table (id,name,age) values (1,&quot;222&quot;,11);</div><div class="line"></div><div class="line">	select * from test_table; //因为id是主键，出现主键重复但使用了ignore则错误被忽略</div><div class="line"></div><div class="line">	replace into test_table (id,name,age) values (1,&quot;222&quot;,12);</div><div class="line"></div><div class="line">	select * from test_table; //数据变成 1,&quot;222&quot;,12</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/linux学习/2015/01/22/linux学习-2015-01-22-linux定时任务/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -755,6 +568,193 @@
 <ul>
 <li>crontab -r //删除所有任务调度工作</li>
 </ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/数据库学习/2015/01/22/数据库学习-mysql专题-2015-01-22-mysql三种插入语句的区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="daodaoliang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="刀刀亮的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/数据库学习/2015/01/22/数据库学习-mysql专题-2015-01-22-mysql三种插入语句的区别/" itemprop="url">mysql insert into和replace into以及insert ignore的区别</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-01-22T00:00:00+08:00">
+                2015-01-22
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T15:06:24+08:00">
+                2017-08-23
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库学习/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  336
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<p><strong><em>insert into</em></strong></p>
+<figure class="highlight plain"><figcaption><span>into``` 表示插入数据，数据会检查主键(PrimaryKey),如果出现重复会报错；</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">***replace into***</div><div class="line"></div><div class="line">```replace into``` 表示插入替换数据，需求表中有```PrimaryKey```,或者```Unique```索引的话，如果数据库已经存在数据，则用新数据替换，如果没有数据效果跟```insert into```一样，```replace```语句会返回一个数，来指示受影响的行的数目，该数目时被删除和被插入的行数的和，如果对应一个单行```replace```该数为１，则一行被插入，同时没有行被删除，如果该数大于１，则在新行被插入前，有一个或者多个旧行被删除，如果表包含多个唯一索引，并且新行复制了在不同的唯一索引中的不同旧行的值，则有可能是一个单一行替换了多个旧行；</div><div class="line"></div><div class="line">***insert ignore into***</div><div class="line"></div><div class="line">```indert ignore```表示，如果中已经存在相同的记录，则忽略当前新数据；</div><div class="line"></div><div class="line">示例：</div><div class="line"></div><div class="line">```mysql</div><div class="line">	create table test_table (</div><div class="line">	id int not null primary key,</div><div class="line">	name varchar(20),</div><div class="line">	age int</div><div class="line">	)</div><div class="line"></div><div class="line">	insert into test_table (id,name,age) values (1,&quot;111&quot;,111);</div><div class="line"></div><div class="line">	select * from test_table;</div><div class="line"></div><div class="line">	insert ignore into test_table (id,name,age) values (1,&quot;222&quot;,11);</div><div class="line"></div><div class="line">	select * from test_table; //因为id是主键，出现主键重复但使用了ignore则错误被忽略</div><div class="line"></div><div class="line">	replace into test_table (id,name,age) values (1,&quot;222&quot;,12);</div><div class="line"></div><div class="line">	select * from test_table; //数据变成 1,&quot;222&quot;,12</div></pre></td></tr></table></figure>
 
           
         
@@ -1260,7 +1260,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/19/PHP学习-2015-01-19-PHP文件操作/">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/19/PHP学习-2015-01-19-PHP异常处理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daodaoliang">
@@ -1279,7 +1279,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/PHP学习/2015/01/19/PHP学习-2015-01-19-PHP文件操作/" itemprop="url">php文件处理</a></h2>
+                <a class="post-title-link" href="/PHP学习/2015/01/19/PHP学习-2015-01-19-PHP异常处理/" itemprop="url">php异常</a></h2>
         
 
         <div class="post-meta">
@@ -1357,7 +1357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  773
+                  29
                 </span>
               
 
@@ -1373,7 +1373,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  1
                 </span>
               
             </div>
@@ -1397,76 +1397,7 @@
         
           
             <a id="more"></a>
-<h2 id="PHP-文件处理"><a href="#PHP-文件处理" class="headerlink" title="PHP 文件处理"></a>PHP 文件处理</h2><p><strong>PHP Open File —- fopen()</strong></p>
-<p>说明：</p>
-<p><strong><em>fopen</em></strong> 的第一个参数包含被打开的文件名，第二个参数规定打开文件的模式，如果fopen()没能打开指定文件，下面的例子回升呈一段消息：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$myfile = fopen(<span class="string">"daodaoliang.txt"</span>,<span class="string">'r'</span>)  <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"Unable to open file"</span>);</div><div class="line">fclose($myfile);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p>文件打开模式如下：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">模式</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">r</td>
-<td style="text-align:center">打开文件为只读,文件指针在文件的开头开始</td>
-</tr>
-<tr>
-<td style="text-align:center">w</td>
-<td style="text-align:center">打开文件为只写,删除文件的内容或创建一个新的文件，如果他不存在．文件指针在文件的开头开始</td>
-</tr>
-<tr>
-<td style="text-align:center">a</td>
-<td style="text-align:center">打开文件为只写，文件中的现有数据会被保留，文件指针在文件结尾开始，创建新的文件，如果文件不存在</td>
-</tr>
-<tr>
-<td style="text-align:center">x</td>
-<td style="text-align:center">创建新文件为只写，返回false和错误，如果文件已存在</td>
-</tr>
-<tr>
-<td style="text-align:center">r+</td>
-<td style="text-align:center">打开文件为读写方式，文件指针在文件开头开始</td>
-</tr>
-<tr>
-<td style="text-align:center">w+</td>
-<td style="text-align:center">打开文件为读写，删除文件内容或创建新文件，如果它不存在，文件指针在文件开头开始</td>
-</tr>
-<tr>
-<td style="text-align:center">a+</td>
-<td style="text-align:center">打开文件为读写，文件中已有的数据会被保留，文件指针在文件结尾开始，创建新文件，如果他不存在</td>
-</tr>
-<tr>
-<td style="text-align:center">x+</td>
-<td style="text-align:center">创建新文件为读写，返回false和错误．如果文件已存在</td>
-</tr>
-</tbody>
-</table>
-<p><strong>PHP fread()</strong></p>
-<p><strong><em>fread()</em></strong> 函数读取打开的文件</p>
-<p>fread()的第一个参数包含待读取文件的文件名．第二个参数规定待读取的最大字节数．</p>
-<p>示例：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	fread($myfile,filesize(<span class="string">"daodoaliang.txt"</span>));</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>PHP 检查文件结尾</strong></p>
-<p><strong><em>feof()</em></strong> 函数检查是否已达到”end-of-file”(EOF)</p>
-<p>feof()对于遍历未知长度的数据很有用</p>
-<p>示例：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$myfile=fopen(<span class="string">"daodaoliang.txt"</span>,<span class="string">"r"</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"Unable to open file!"</span>);</div><div class="line"><span class="keyword">while</span>(!feof($myfile))　&#123;</div><div class="line">	<span class="keyword">echo</span> fgets($myfile).<span class="string">"&lt;br&gt;"</span>;</div><div class="line">&#125;</div><div class="line">fclose($myfile);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>PHP 文件上传</strong></p>
-<p>通过PHP的全局数组 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">第一个参数是表单的 input name,第二个下标可以是&quot;name&quot;,&quot;type&quot;,&quot;size&quot;,&quot;tmp_name&quot;,&quot;error&quot;:</div><div class="line"></div><div class="line">* $_FILES[&quot;file&quot;][&quot;name&quot;]-被上传文件的名称；</div><div class="line">* $_FILES[&quot;file&quot;][&quot;type&quot;]-被上传文件的类型；</div><div class="line">* $_FILES[&quot;file&quot;][&quot;size&quot;]-被上传文件的大小．以字节计；</div><div class="line">* $_FILES[&quot;file&quot;][&quot;tmp＿name&quot;]-存储在服务器的文件的临时副本名称</div><div class="line">* $_FILES[&quot;file&quot;][&quot;error&quot;]-由文件上传导致的错误代码</div><div class="line"></div><div class="line">示例：</div><div class="line"></div><div class="line">```html</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;form action=&quot;upload_file.php&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</div><div class="line">			&lt;label for=&quot;file&quot;&gt;Filename&lt;/label&gt;</div><div class="line">			&lt;input type=&quot;file&quot; name=&quot;file&quot; id=&quot;file&quot; /&gt;</div><div class="line">			&lt;br /&gt;</div><div class="line">			&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Submit&quot; /&gt;</div><div class="line">		&lt;/form&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">if</span> ((($_FILES[<span class="string">"file"</span>][<span class="string">"type"</span>] == <span class="string">"image/gif"</span>)</div><div class="line">	|| ($_FILES[<span class="string">"files"</span>][<span class="string">"type"</span>] == <span class="string">"image/jpeg"</span>)</div><div class="line">	|| ($_FILES[<span class="string">"file"</span>][<span class="string">"type"</span>] == <span class="string">"image/pjpeg"</span>))</div><div class="line">	&amp;&amp; ($_FILES[<span class="string">"file"</span>][<span class="string">"size"</span>] &lt; <span class="number">20000</span>))</div><div class="line">&#123;</div><div class="line">	<span class="keyword">if</span> ($_FILES[<span class="string">"file"</span>][<span class="string">"error"</span>] &gt; <span class="number">0</span>)&#123;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"Return Code:"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"error"</span>].<span class="string">"&lt;br/&gt;"</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"Upload:"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>].<span class="string">"&lt;br/&gt;"</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"Type:"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>].<span class="string">"&lt;br/&gt;"</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"Size:"</span>.($_FILES[<span class="string">"file"</span>][<span class="string">"size"</span>] / <span class="number">1024</span>).<span class="string">"&lt;br/&gt;"</span>;</div><div class="line">		<span class="keyword">echo</span> <span class="string">"Temp file:"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"temp_name"</span>].<span class="string">"&lt;br/&gt;"</span>;</div><div class="line">		<span class="keyword">if</span> (file_exists(<span class="string">"upload/"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>]))&#123;</div><div class="line">			<span class="keyword">echo</span> $_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>].<span class="string">"already exists."</span>;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			move_upload_file($_FILES[<span class="string">"file"</span>][<span class="string">"tmp_name"</span>],<span class="string">"upload/"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>]);</div><div class="line">			<span class="keyword">echo</span> <span class="string">"Store in: "</span>.<span class="string">"upload/"</span>.$_FILES[<span class="string">"file"</span>][<span class="string">"name"</span>];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"Invalid file"</span>;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>PHP 文件引用</strong></p>
-<p><strong><em>include</em></strong> 和　<strong><em>require</em></strong></p>
-<ul>
-<li>include 语句引用某个文件并且PHP无法找到它时，脚本会继续执行；</li>
-<li>require 语句引用某个文件并且PHP无法找到它时，脚本会终止运行；</li>
-</ul>
-<p>示例：</p>
-<p>test.php</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$daodaoliang = <span class="string">"xiaobai"</span>;</div><div class="line">$wangxiaowei = <span class="string">"wangxiaowei"</span>;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">include</span> <span class="string">"test.php"</span>;</div><div class="line"><span class="keyword">echo</span> <span class="string">"daodaoliang:"</span>.$daodaoliang.<span class="string">"wangxiaowei:"</span>.$wangxiaowei;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="PHP-异常处理"><a href="#PHP-异常处理" class="headerlink" title="PHP 异常处理"></a>PHP 异常处理</h2><p>暂时没有用到,先不用更新了o(╯□╰)o(就是这么任性,你咬我啊~)</p>
 
           
         

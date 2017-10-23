@@ -349,7 +349,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP超全局变量/">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP数组/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daodaoliang">
@@ -368,7 +368,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP超全局变量/" itemprop="url">php超全局变量</a></h2>
+                <a class="post-title-link" href="/PHP学习/2015/01/16/PHP学习-2015-01-16-PHP数组/" itemprop="url">php数组</a></h2>
         
 
         <div class="post-meta">
@@ -446,7 +446,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  678
+                  264
                 </span>
               
 
@@ -462,7 +462,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  1
                 </span>
               
             </div>
@@ -486,131 +486,33 @@
         
           
             <a id="more"></a>
-<h3 id="PHP-全局变量-超全局变量"><a href="#PHP-全局变量-超全局变量" class="headerlink" title="PHP 全局变量-超全局变量"></a>PHP 全局变量-超全局变量</h3><p>PHP 中的许多预定义变量都是”超全局的”,这意味着他们在一个脚本的全部作用域都可用.在函数或方法中无需执行 <figure class="highlight plain"><figcaption><span>$variable```,就可以访问他们.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">这些超全局变量是:</div><div class="line"></div><div class="line">* ```$GLOBALS</div></pre></td></tr></table></figure></p>
+<h3 id="在PHP-中创建数组"><a href="#在PHP-中创建数组" class="headerlink" title="在PHP 中创建数组"></a>在PHP 中创建数组</h3><p>在 PHP 中,array()函数用于创建数组:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">array</span>();</div></pre></td></tr></table></figure>
+<p>在 PHP 中,有三种数组类型:</p>
 <ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* ```$_REQUEST</div></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* ```$_GET</div></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* ```$_ENV</div></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* ```$_SESSION</div></pre></td></tr></table></figure>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">* ```关联数组```-带有指定键的是数组</div><div class="line">* ```多维数组```-包含一个或多个数组的数组</div><div class="line"></div><div class="line">索引数组示例:</div><div class="line"></div><div class="line">```php</div><div class="line">&lt;?php</div><div class="line">$cars=array(&quot;volvo&quot;,&quot;BMW&quot;,&quot;SAAB&quot;);</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><strong>$GLOBAL</strong> —引用全局作用域中可用的全部变量</p>
-<figure class="highlight plain"><figcaption><span>这种全局变量用于在PHP脚本中的任意未知访问全局变量(从函数或方法中均可).PHP在名为$GLOBAL[index]的数组中存储了所有的全局变量,变量的名字就是数组的键.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">示例:</div><div class="line"></div><div class="line">```php</div><div class="line">&lt;?php</div><div class="line">$x = 75;</div><div class="line">$y = 25;</div><div class="line"></div><div class="line">function addition()&#123;</div><div class="line">	$GLOBALS[&apos;z&apos;] = $GLOBALS[&apos;x&apos;] + $GLOBALS[&apos;y&apos;];</div><div class="line">&#125;</div><div class="line"></div><div class="line">addition();</div><div class="line">echo $z;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
-<p><strong>$_SERVER</strong></p>
-<p>$_SERVER 这种超全局变量保存关于报头,路径和脚本位置的信息.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">元素/代码</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">$_SERVER[‘PHP_SELF’]</td>
-<td style="text-align:center">返回当前执行脚本的文件名</td>
-</tr>
-<tr>
-<td style="text-align:center">$_SERVER[‘GATWAY_INTERFACE’]</td>
-<td style="text-align:center">返回服务器使用的CGI规范的版本</td>
-</tr>
-<tr>
-<td style="text-align:center">$_SERVER[‘SERVER_ADDR’]</td>
-<td style="text-align:center">返回当前运行脚本所在服务器的IP地址</td>
-</tr>
-<tr>
-<td style="text-align:center">$_SERVER[‘SERVER_NAME’]</td>
-<td style="text-align:center">返回当前运行脚本所在服务器的主机名（比如　daodaoliang.github.io）</td>
-</tr>
-<tr>
-<td style="text-align:center">$_SERVER[‘SERVER_SOFTWARE’]</td>
-<td style="text-align:center">返回服务器标识字符串(比如Apache/2.2.24)</td>
-</tr>
-<tr>
-<td style="text-align:center">$_SERVER[‘SERVER_PROTOCOL’]</td>
-<td style="text-align:center">返回当前通信协议的名称和版本(例如：”HTTP/1.0”)</td>
-</tr>
-<tr>
-<td style="text-align:center">$SERVER[‘REQUEST_METHOD’]</td>
-<td style="text-align:center">返回访问页面使用的请求方法(例如POST)</td>
-</tr>
-<tr>
-<td style="text-align:center">$SERVER[‘REQUEST_TIME’]</td>
-<td style="text-align:center">返回请求开始时间戳例如1575457898</td>
-</tr>
-<tr>
-<td style="text-align:center">$SERVER[‘QUERY_STRING’]</td>
-<td style="text-align:center">返回查询字符串，如果时通过查询字符串访问此页面</td>
-</tr>
-<tr>
-<td style="text-align:center">$SERVER[‘HTTP_ACCEPT’]</td>
-<td style="text-align:center">返回来自当前请求的请求头</td>
-</tr>
-<tr>
-<td style="text-align:center">$SERVER[‘HTTP_ACCEPT_CHARSET’]</td>
-<td style="text-align:center">返回来自当前请求的accept＿charset头(例如 utf-8,ISO-8859-1)</td>
-</tr>
-<tr>
-<td style="text-align:center">$SERVER[‘HTTP_HOST’]</td>
-<td style="text-align:center">返回当前请求的Host头</td>
-</tr>
-<tr>
-<td style="text-align:center">$SERVER[‘HTTP_REFERER’]</td>
-<td style="text-align:center">放回当前页面完整的ＵＲＬ(不可靠，因为不是所有用户代理都支持)</td>
-</tr>
-<tr>
-<td style="text-align:center">$SERVER[‘HTTPS’]</td>
-<td style="text-align:center">是否通过安全HTTP协议查询脚本</td>
-</tr>
-<tr>
-<td style="text-align:center">$SERVER[‘REMOVE_ADDR’]</td>
-<td style="text-align:center">返回浏览当前页面的用户的IP地址</td>
-</tr>
-<tr>
-<td style="text-align:center">$SERVER[‘REMOVE_HOST’]</td>
-<td style="text-align:center">返回当前页面的用户的主机名</td>
-</tr>
-<tr>
-<td style="text-align:center">$SERVER[‘REMOVE_PORT’]</td>
-<td style="text-align:center">返回用户级其上链接到ＷＥＢ服务器所使用的端口号</td>
-</tr>
-<tr>
-<td style="text-align:center">$SERVER[‘SCRIPT_FILENAME’]</td>
-<td style="text-align:center">当前当前执行脚本的绝对路径</td>
-</tr>
-<tr>
-<td style="text-align:center">$SERVER[‘SERVER_ADMIN’]</td>
-<td style="text-align:center">该值致命了Apache服务器配置文件中的SERVR_ADMIN参数</td>
-</tr>
-<tr>
-<td style="text-align:center">$SERVER[‘SERVER_PORT’]</td>
-<td style="text-align:center">返回服务器使用的端口，默认时’80’</td>
-</tr>
-<tr>
-<td style="text-align:center">$SERVER[‘SERVER_SIGNATURE’]</td>
-<td style="text-align:center">返回服务器版本和虚拟主机名</td>
-</tr>
-<tr>
-<td style="text-align:center">$SERVER[‘PATH_TRANSLATED’]</td>
-<td style="text-align:center">当前脚本所在文件系统(非文档根目录)的基本路径</td>
-</tr>
-<tr>
-<td style="text-align:center">$SERVER[‘SCRIPT_NAME’]</td>
-<td style="text-align:center">返回当前脚本的路径</td>
-</tr>
-<tr>
-<td style="text-align:center">$SERVER[‘SCRIPT_URL’]</td>
-<td style="text-align:center">返回当前页面的URL</td>
-</tr>
-</tbody>
-</table>
-<p><strong>_REQUEST</strong></p>
-<p>PHP $＿REQUEST　用于收集HTML 表单提交的数据</p>
-<p>示例：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">action</span>=<span class="string">"&lt;?php echo $_SERVER[PHP_SELF];?&gt;"</span>&gt;</span></div><div class="line">Name:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"fname"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="php"><span class="meta">&lt;?php</span></span></div><div class="line"><span class="php">$name = $_REQUEST[<span class="string">'fname'</span>];</span></div><div class="line"><span class="php"><span class="keyword">echo</span> $name</span></div><div class="line"><span class="php"><span class="meta">?&gt;</span></span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$car[<span class="number">0</span>]=<span class="string">"volov"</span>;</div><div class="line">$car[<span class="number">2</span>]=<span class="string">"BMW"</span>;</div><div class="line">$car[<span class="number">3</span>]=<span class="string">"SAAB"</span>;</div></pre></td></tr></table></figure>
+<p>关联数组示例:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$age=<span class="keyword">array</span>(<span class="string">"daodaolang"</span>=&gt;<span class="string">"10"</span>,<span class="string">"wangxiaowei"</span>=&gt;<span class="string">"12"</span>);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$age[<span class="string">"daodaoliang"</span>] = <span class="string">"23"</span>;</div><div class="line">$age[<span class="string">"wangxiaowei"</span>] = <span class="number">22</span>;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="遍历数组"><a href="#遍历数组" class="headerlink" title="遍历数组"></a>遍历数组</h3><p><strong>遍历索引数组</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$test_array = <span class="keyword">array</span>(<span class="string">"daodaoliang"</span>,<span class="string">"test"</span>,<span class="string">"test2"</span>);</div><div class="line"><span class="keyword">foreach</span>($test_array <span class="keyword">as</span> $value)&#123;</div><div class="line"><span class="keyword">echo</span> $value;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$test_array = <span class="keyword">array</span>(<span class="string">"test1"</span>,<span class="string">"test2"</span>,<span class="string">"test3"</span>);</div><div class="line"><span class="keyword">for</span>($index=<span class="number">0</span>;$index &lt; count($test_array);++$index)&#123;</div><div class="line">	<span class="keyword">echo</span> $test_array[$index];</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>遍历索引数组</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$age=<span class="keyword">array</span>(<span class="string">"daodaoliang"</span>=&gt;<span class="number">23</span>,<span class="string">"wangxiaowei"</span>=&gt;<span class="number">34</span>);</div><div class="line"><span class="keyword">foreach</span>($age <span class="keyword">as</span> $key =&gt; $value)&#123;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"key="</span>.$x.<span class="string">"value="</span>.$value;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="PHP-数据排序"><a href="#PHP-数据排序" class="headerlink" title="PHP 数据排序"></a>PHP 数据排序</h3><ul>
+<li>sort() 以剩下对数组进行排序</li>
+<li>rsprt() 以降序对数组排序</li>
+<li>asort() 根据值,以升序对关联数组进行排序</li>
+<li>ksort() 根据健,以升序对关联数组进行排序</li>
+<li>arosrt() 根据值,以降序对关联书序进行排序</li>
+<li>krsort() 根据健,以降序对关联数组进行排序</li>
+</ul>
 
           
         
