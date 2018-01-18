@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -120,7 +120,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '6.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
     fancybox: true,
@@ -258,7 +258,8 @@
         
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />分类</a>
+            <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />分类<span class="badge">18</span>
+              </a>
         </li>
       
         
@@ -270,7 +271,8 @@
         
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />归档</a>
+            <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />归档<span class="badge">133</span>
+              </a>
         </li>
       
         
@@ -282,13 +284,8 @@
         
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />标签</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />公益404</a>
+            <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />标签<span class="badge">6</span>
+              </a>
         </li>
       
 
@@ -353,6 +350,158 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/数据库学习/2015/01/22/数据库学习-mysql专题-2015-01-22-mysql三种插入语句的区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="daodaoliang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="刀刀亮的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/数据库学习/2015/01/22/数据库学习-mysql专题-2015-01-22-mysql三种插入语句的区别/" itemprop="url">mysql insert into和replace into以及insert ignore的区别</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-01-22T00:00:00+08:00">2015-01-22</time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T15:06:24+08:00">2017-08-23</time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据库学习/" itemprop="url" rel="index"><span itemprop="name">数据库学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<p><strong><em>insert into</em></strong></p>
+<figure class="highlight plain"><figcaption><span>into``` 表示插入数据，数据会检查主键(PrimaryKey),如果出现重复会报错；</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">***replace into***</div><div class="line"></div><div class="line">```replace into``` 表示插入替换数据，需求表中有```PrimaryKey```,或者```Unique```索引的话，如果数据库已经存在数据，则用新数据替换，如果没有数据效果跟```insert into```一样，```replace```语句会返回一个数，来指示受影响的行的数目，该数目时被删除和被插入的行数的和，如果对应一个单行```replace```该数为１，则一行被插入，同时没有行被删除，如果该数大于１，则在新行被插入前，有一个或者多个旧行被删除，如果表包含多个唯一索引，并且新行复制了在不同的唯一索引中的不同旧行的值，则有可能是一个单一行替换了多个旧行；</div><div class="line"></div><div class="line">***insert ignore into***</div><div class="line"></div><div class="line">```indert ignore```表示，如果中已经存在相同的记录，则忽略当前新数据；</div><div class="line"></div><div class="line">示例：</div><div class="line"></div><div class="line">```mysql</div><div class="line">	create table test_table (</div><div class="line">	id int not null primary key,</div><div class="line">	name varchar(20),</div><div class="line">	age int</div><div class="line">	)</div><div class="line"></div><div class="line">	insert into test_table (id,name,age) values (1,&quot;111&quot;,111);</div><div class="line"></div><div class="line">	select * from test_table;</div><div class="line"></div><div class="line">	insert ignore into test_table (id,name,age) values (1,&quot;222&quot;,11);</div><div class="line"></div><div class="line">	select * from test_table; //因为id是主键，出现主键重复但使用了ignore则错误被忽略</div><div class="line"></div><div class="line">	replace into test_table (id,name,age) values (1,&quot;222&quot;,12);</div><div class="line"></div><div class="line">	select * from test_table; //数据变成 1,&quot;222&quot;,12</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -551,158 +700,6 @@
 <ul>
 <li>crontab -r //删除所有任务调度工作</li>
 </ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-    <div class="reading-progress-bar"></div>
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/数据库学习/2015/01/22/数据库学习-mysql专题-2015-01-22-mysql三种插入语句的区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="daodaoliang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="刀刀亮的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/数据库学习/2015/01/22/数据库学习-mysql专题-2015-01-22-mysql三种插入语句的区别/" itemprop="url">mysql insert into和replace into以及insert ignore的区别</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-01-22T00:00:00+08:00">2015-01-22</time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T15:06:24+08:00">2017-08-23</time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据库学习/" itemprop="url" rel="index"><span itemprop="name">数据库学习</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <a id="more"></a>
-<p><strong><em>insert into</em></strong></p>
-<figure class="highlight plain"><figcaption><span>into``` 表示插入数据，数据会检查主键(PrimaryKey),如果出现重复会报错；</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">***replace into***</div><div class="line"></div><div class="line">```replace into``` 表示插入替换数据，需求表中有```PrimaryKey```,或者```Unique```索引的话，如果数据库已经存在数据，则用新数据替换，如果没有数据效果跟```insert into```一样，```replace```语句会返回一个数，来指示受影响的行的数目，该数目时被删除和被插入的行数的和，如果对应一个单行```replace```该数为１，则一行被插入，同时没有行被删除，如果该数大于１，则在新行被插入前，有一个或者多个旧行被删除，如果表包含多个唯一索引，并且新行复制了在不同的唯一索引中的不同旧行的值，则有可能是一个单一行替换了多个旧行；</div><div class="line"></div><div class="line">***insert ignore into***</div><div class="line"></div><div class="line">```indert ignore```表示，如果中已经存在相同的记录，则忽略当前新数据；</div><div class="line"></div><div class="line">示例：</div><div class="line"></div><div class="line">```mysql</div><div class="line">	create table test_table (</div><div class="line">	id int not null primary key,</div><div class="line">	name varchar(20),</div><div class="line">	age int</div><div class="line">	)</div><div class="line"></div><div class="line">	insert into test_table (id,name,age) values (1,&quot;111&quot;,111);</div><div class="line"></div><div class="line">	select * from test_table;</div><div class="line"></div><div class="line">	insert ignore into test_table (id,name,age) values (1,&quot;222&quot;,11);</div><div class="line"></div><div class="line">	select * from test_table; //因为id是主键，出现主键重复但使用了ignore则错误被忽略</div><div class="line"></div><div class="line">	replace into test_table (id,name,age) values (1,&quot;222&quot;,12);</div><div class="line"></div><div class="line">	select * from test_table; //数据变成 1,&quot;222&quot;,12</div></pre></td></tr></table></figure>
 
           
         
@@ -1672,6 +1669,10 @@
 
 
 
+  
+    
+
+    
   
 
 

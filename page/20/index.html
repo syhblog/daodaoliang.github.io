@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -120,7 +120,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '6.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
     fancybox: true,
@@ -258,7 +258,8 @@
         
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />分类</a>
+            <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />分类<span class="badge">18</span>
+              </a>
         </li>
       
         
@@ -270,7 +271,8 @@
         
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />归档</a>
+            <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />归档<span class="badge">133</span>
+              </a>
         </li>
       
         
@@ -282,13 +284,8 @@
         
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />标签</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />公益404</a>
+            <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />标签<span class="badge">6</span>
+              </a>
         </li>
       
 
@@ -353,6 +350,157 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/Python学习/2015/01/28/Python学习-2015-01-30-python-CRC32/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="daodaoliang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="刀刀亮的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Python学习/2015/01/28/Python学习-2015-01-30-python-CRC32/" itemprop="url">python CRC32</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-01-28T00:00:00+08:00">2015-01-28</time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T15:06:24+08:00">2017-08-23</time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python学习/" itemprop="url" rel="index"><span itemprop="name">Python学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<h2 id="python-CRC32方法"><a href="#python-CRC32方法" class="headerlink" title="python CRC32方法"></a><strong>python CRC32方法</strong></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">_crc32</span><span class="params">(self, v)</span>:</span> </div><div class="line">   <span class="string">""" </span></div><div class="line"><span class="string">   Generates the crc32 hash of the v. </span></div><div class="line"><span class="string">   @return: str, the str value for the crc32 of the v </span></div><div class="line"><span class="string">   """</span> </div><div class="line">   <span class="keyword">return</span> <span class="string">'0x%x'</span> % (binascii.crc32(v) &amp; <span class="number">0xffffffff</span>)</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -522,7 +670,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/linux学习/2015/01/28/linux学习-2015-01-28-shell输出重定向详解/">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/环境搭建/2015/01/28/环境搭建-2015-01-28-CentOS6-5安装crtmpserver搭建RTMP流媒体服务/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="daodaoliang">
@@ -541,175 +689,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/linux学习/2015/01/28/linux学习-2015-01-28-shell输出重定向详解/" itemprop="url">2>&1详解</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-01-28T00:00:00+08:00">2015-01-28</time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T15:06:24+08:00">2017-08-23</time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/linux学习/" itemprop="url" rel="index"><span itemprop="name">linux学习</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <a id="more"></a>
-<hr>
-<h3 id="Shell-dev-null-2-gt-amp-1详解"><a href="#Shell-dev-null-2-gt-amp-1详解" class="headerlink" title="Shell: /dev/null 2&gt;&amp;1详解"></a><strong><em>Shell: /dev/null 2&gt;&amp;1详解</em></strong></h3><p>可以将/dev/null看作”黑洞”. 它非常等价于一个只写文件. 所有写入它的内容都会永远丢失. 而尝试从它那儿读取内容则什么也读不到. 然而, /dev/null对命令行和脚本都非常的有用. </p>
-<p>用处: </p>
-<ul>
-<li>禁止标准输出.    1 cat $filename &gt;/dev/null   # 文件内容丢失，而不会输出到标准输出. </li>
-<li>禁止标准错误.    2&gt;/dev/null 这样错误信息[标准错误]就被丢到太平洋去了. </li>
-</ul>
-<p><code>&gt;</code> 代表重定向到哪里，例如：echo “123” &gt; /home/123.txt </p>
-<ul>
-<li>1 表示stdout标准输出，系统默认值是1，所以”&gt;/dev/null”等同于”1&gt;/dev/null” </li>
-<li>2 表示stderr标准错误 </li>
-<li>&amp; 表示等同于的意思，2&gt;&amp;1，表示2的输出重定向等同于1 </li>
-</ul>
-<p>那么本文标题的语句： </p>
-<ul>
-<li>1&gt;/dev/null 首先表示标准输出重定向到空设备文件，也就是不输出任何信息到终端，说白了就是不显示任何信息。 </li>
-<li>2&gt;&amp;1 接着，标准错误输出重定向等同于 标准输出，因为之前标准输出已经重定向到了空设备文件，所以标准错误输出也重定向到空设备文件。</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-    <div class="reading-progress-bar"></div>
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/环境搭建/2015/01/28/环境搭建-2015-01-28-crtmpserver配置文件说明/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="daodaoliang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="刀刀亮的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/环境搭建/2015/01/28/环境搭建-2015-01-28-crtmpserver配置文件说明/" itemprop="url">crtmpserver配置文件说明</a></h2>
+                <a class="post-title-link" href="/环境搭建/2015/01/28/环境搭建-2015-01-28-CentOS6-5安装crtmpserver搭建RTMP流媒体服务/" itemprop="url">CentOS6.5安装crtmpserver搭建RTMP流媒体服务器</a></h2>
         
 
         <div class="post-meta">
@@ -788,302 +768,201 @@
         
           
             <a id="more"></a>
-<h2 id="配置文件说明"><a href="#配置文件说明" class="headerlink" title="配置文件说明"></a><strong><em>配置文件说明</em></strong></h2><p>配置文件实际上是一个Lua脚本，它包含至少一个configuration的对象，从而为程序提供灵活的扩展和定制功能。除了configuration对象外，还可以有函数，Lua库等。</p>
-<h3 id="主结构"><a href="#主结构" class="headerlink" title="主结构"></a><strong><em>主结构</em></strong></h3><figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">configuration=</div><div class="line">&#123;</div><div class="line">  daemon=<span class="literal">false</span>,</div><div class="line">  pathSeparator=<span class="string">"/"</span>,</div><div class="line">  logAppenders=</div><div class="line">  &#123;</div><div class="line">    <span class="comment">-- content removed for clarity</span></div><div class="line">  &#125;,</div><div class="line">  applications=</div><div class="line">  &#123;</div><div class="line">    <span class="comment">-- content removed for clarity</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">key</th>
-<th style="text-align:center">type</th>
-<th style="text-align:center">mandatory</th>
-<th style="text-align:center">description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">daemon</td>
-<td style="text-align:center">boolean</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">true  表示 服务以后台方式启动;false 表示 服务以控制台模式启动(以用于开发);</td>
-</tr>
-<tr>
-<td style="text-align:center">pathSeparator</td>
-<td style="text-align:center">string(1)</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">用来分隔路径; 例如，在UNIX-like是 /, Windows是\;</td>
-</tr>
-<tr>
-<td style="text-align:center">logAppenders</td>
-<td style="text-align:center">object</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">配置日志追加的容器</td>
-</tr>
-<tr>
-<td style="text-align:center">applications</td>
-<td style="text-align:center">object</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">配置加载各种应用的容器</td>
-</tr>
-</tbody>
-</table>
-<p><strong><em>服务启动时，将按顺序执行下列操作:</em></strong></p>
-<ul>
-<li>配置文件加载后，首先做的就是对配置文件进行校验，如果配置文件有错误，将会有错误提示并停止启动，可进行修改后再启动;</li>
-<li>读取 daemon 值，判断服务是以后台方式启动还是以控制台方式启动;</li>
-<li>读取日志追加器，用来配置日志记录并启动到运行状态，依据日志追加器，可以看到更多的日志信息;</li>
-<li>最后的应用加载，只到这一步完成后，服务和应用才在线，并准备就绪;</li>
+<h2 id="1-crtmpserver简介"><a href="#1-crtmpserver简介" class="headerlink" title="1. crtmpserver简介"></a><strong><em>1. crtmpserver简介</em></strong></h2><ul>
+<li>支持推送给rtmp流的接受与播放器请求的分发；</li>
+<li>rtmp流媒体服务器树状网络集群的构建；</li>
+<li>支持 <figure class="highlight plain"><figcaption><span>和　```android```;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">PS:[官网应用介绍](http://www.rtmpd.com/)</div><div class="line"></div><div class="line">## ***2. crtmpserver流媒体服务器的搭建(centOS6.5)***</div><div class="line"></div><div class="line">### ***2.1 cmake的安装***</div><div class="line"></div><div class="line">下载最新的cmake</div><div class="line"></div><div class="line">```sh</div><div class="line">	yum install cmake</div></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="日志追加器"><a href="#日志追加器" class="headerlink" title="日志追加器"></a><strong><em>日志追加器</em></strong></h3><p>这部分包含了一个日志追加器的列表。整个日志追加器的添加是在加载时配置，依据日志级别，追加器可以选择是否有日志消息输出到指定目的处；</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">logAppenders=</div><div class="line">&#123;</div><div class="line">  &#123;</div><div class="line">    name=<span class="string">"console appender"</span>,</div><div class="line">    <span class="built_in">type</span>=<span class="string">"coloredConsole"</span>,</div><div class="line">    level=<span class="number">6</span></div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    name=<span class="string">"file appender"</span>,</div><div class="line">    <span class="built_in">type</span>=<span class="string">"file"</span>,</div><div class="line">    level=<span class="number">6</span>,</div><div class="line">    fileName=<span class="string">"/tmp/crtmpserver.log"</span></div><div class="line">  &#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
-<p><strong><em>logAppenders structure</em></strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">key</th>
-<th style="text-align:center">type</th>
-<th style="text-align:center">mandatory</th>
-<th style="text-align:center">description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">name</td>
-<td style="text-align:center">string</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">追加器的名字.</td>
-</tr>
-<tr>
-<td style="text-align:center">type</td>
-<td style="text-align:center">string</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">追加器的类型可以是控制台，带颜色控制台或文件;控制台和带颜色控制台都会将日志消息输出到控制台，不同之处在于带颜色控制台会依据日志级别进行颜色标记；文件类型则会将所有消息输出到指定的文件；</td>
-</tr>
-<tr>
-<td style="text-align:center">level</td>
-<td style="text-align:center">number</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">日志的级别可见下表中的级别定义；\n只有小于或等于这个级别的日志消息会被记录，高于这个级别则都被丢弃；例如:级别为0时，只记录 FATAL 消息；级别为3时，只记录 FATAL, ERROR, WARNING, INFO 消息；</td>
-</tr>
-<tr>
-<td style="text-align:center">fileName</td>
-<td style="text-align:center">string</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">如果追加器类型为文件，则在此处指定日志文件和路径</td>
-</tr>
-</tbody>
-</table>
-<p><strong><em>Log levels</em></strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">name</th>
-<th style="text-align:center">value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">FATAL</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">ERROR</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">WARNING</td>
-</tr>
-<tr>
-<td style="text-align:center">3</td>
-<td style="text-align:center">INFO</td>
-</tr>
-<tr>
-<td style="text-align:center">4</td>
-<td style="text-align:center">DEBUG</td>
-</tr>
-<tr>
-<td style="text-align:center">5</td>
-<td style="text-align:center">FINE</td>
-</tr>
-<tr>
-<td style="text-align:center">6</td>
-<td style="text-align:center">FINEST</td>
-</tr>
-</tbody>
-</table>
-<p><strong><em>PS</em></strong>: 当使用后台模式时，所有的控制台追加消息将会被忽略。</p>
-<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a><strong><em>应用</em></strong></h3><p>这部分用来配置各种应用，并设置这些应用的属性；每个应用的属性都对应了这个应用的指定功能；</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">applications=</div><div class="line">&#123;</div><div class="line">  rootDirectory=<span class="string">"applications"</span>,</div><div class="line">  &#123;</div><div class="line">    <span class="comment">-- settings for application 1</span></div><div class="line">    <span class="comment">-- content removed for clarity</span></div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    <span class="comment">-- settings for application 2</span></div><div class="line">    <span class="comment">-- content removed for clarity</span></div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    <span class="comment">-- settings for application 3</span></div><div class="line">    <span class="comment">-- content removed for clarity</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong><em>applications structure</em></strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">key</th>
-<th style="text-align:center">type</th>
-<th style="text-align:center">mandatory</th>
-<th style="text-align:center">description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">rootDirectory</td>
-<td style="text-align:center">string</td>
-<td style="text-align:center">true</td>
-<td style="text-align:center">这个目录包含了应用的子目录；如果路径以 / 或 \ 开始， 则视其为绝对路径，否则视为启动服务时所在的相对路径；</td>
-</tr>
-</tbody>
-</table>
-<p>rootDirectory 之后，是应用的集合；每个应用都定义了一个有特定属性的对象；细节如下所示；</p>
-<p><strong><em>应用定义</em></strong></p>
-<p>这些目录用来定义应用.自从790版本后，添加了一新的功能：mediaStorage; 这个功能能使应用可以有多个mediaFolder，并且可以将.seek/.meta文件和媒体文件分开存储在不同的文件夹中；</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  name=<span class="string">"flvplayback"</span>,</div><div class="line">  protocol=<span class="string">"dynamiclinklibrary"</span>,</div><div class="line">  description=<span class="string">"FLV Playback Sample"</span>,</div><div class="line">  default=<span class="literal">false</span>,</div><div class="line">  validateHandshake=<span class="literal">true</span>,</div><div class="line">  enableCheckBandwidth=<span class="literal">true</span>,</div><div class="line">  <span class="comment">-- this settings are now part of mediaStorage setting</span></div><div class="line">  <span class="comment">-- keyframeSeek=true,</span></div><div class="line">  <span class="comment">-- seekGranularity=1.5,</span></div><div class="line">  <span class="comment">-- clientSideBuffer=12,</span></div><div class="line">  <span class="comment">-- generateMetaFiles=true,</span></div><div class="line">  <span class="comment">-- renameBadFiles=true,</span></div><div class="line">  aliases=</div><div class="line">  &#123;</div><div class="line">    <span class="string">"simpleLive"</span>,</div><div class="line">    <span class="string">"vod"</span>,</div><div class="line">    <span class="string">"live"</span>,</div><div class="line">    <span class="string">"WeeklyQuest"</span>,</div><div class="line">    <span class="string">"SOSample"</span>,</div><div class="line">    <span class="string">"oflaDemo"</span>,</div><div class="line">    <span class="string">"chat"</span>,</div><div class="line">  &#125;,</div><div class="line">  acceptors = </div><div class="line">  &#123;</div><div class="line">    &#123;</div><div class="line">      <span class="comment">-- acceptor 1</span></div><div class="line">      <span class="comment">-- content removed for clarity</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      <span class="comment">-- acceptor 2</span></div><div class="line">      <span class="comment">-- content removed for clarity</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      <span class="comment">-- acceptor n</span></div><div class="line">      <span class="comment">-- content removed for clarity</span></div><div class="line">    &#125;,</div><div class="line">  &#125;,</div><div class="line">  <span class="comment">-- new feature mediaStorage</span></div><div class="line">  mediaStorage = &#123;</div><div class="line">     namedStorage1=&#123;</div><div class="line">      description=<span class="string">"Main storage"</span>,</div><div class="line">      mediaFolder=<span class="string">"/usr/main_storage/media"</span>, <span class="comment">-- only this parameter IS MANDATORY</span></div><div class="line">      metaFolder=<span class="string">"/usr/main_storage/metadata"</span>, <span class="comment">-- if you have static large file to stream it is good to know that for a file around 500MB </span></div><div class="line">                                               <span class="comment">-- it's .seek file has around 16MB; so it would be preffer to designate metafolder into a system</span></div><div class="line">                                               <span class="comment">-- partition which has enough space... for no surprises... :)</span></div><div class="line">      statsFolder=<span class="string">"/usr/main_storage/statsFolder"</span>,</div><div class="line">      enableStats=<span class="literal">true</span>,</div><div class="line">      clientSideBuffer=<span class="number">16</span>,</div><div class="line">      keyframeSeek=<span class="literal">false</span>, <span class="comment">-- should crtmpdserver DO SEEK ONLY IN key-frame (true/false)? </span></div><div class="line">                          <span class="comment">-- very useful to know in situations like play/pause/resume (meaning pause/seek/play)</span></div><div class="line">      seekGranularity=<span class="number">1</span>,</div><div class="line">      generateMetaFiles=<span class="literal">false</span>,</div><div class="line">      renameBadFiles=<span class="literal">false</span>,</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">--[[&#123;</span></div><div class="line"><span class="comment">      -- here is another example of storage; it does not start with name=&#123;...&#125;</span></div><div class="line"><span class="comment">       description="Second storage of same application",</span></div><div class="line"><span class="comment">       mediaFolder="/usr/second_storage/media/flv",</span></div><div class="line"><span class="comment">       metaFolder="/usr/second_storage/metadata",</span></div><div class="line"><span class="comment">       statsFolder="/usr/second_storage/statsFolder",</span></div><div class="line"><span class="comment">    &#125;,]]</span><span class="comment">--</span></div><div class="line">  &#125;, </div><div class="line">  externalStreams = </div><div class="line">  &#123;</div><div class="line">    &#123;</div><div class="line">      <span class="comment">-- stream 1</span></div><div class="line">      <span class="comment">-- content removed for clarity</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      <span class="comment">-- stream 2</span></div><div class="line">      <span class="comment">-- content removed for clarity</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      <span class="comment">-- stream n</span></div><div class="line">      <span class="comment">-- content removed for clarity</span></div><div class="line">    &#125;,</div><div class="line">  &#125;,</div><div class="line">  authentication=</div><div class="line">  &#123;</div><div class="line">    <span class="comment">-- content removed for clarity</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong><em>application structure</em></strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">key</th>
-<th style="text-align:center">type</th>
-<th style="text-align:center">mandatory</th>
-<th style="text-align:center">description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">name</td>
-<td style="text-align:center">string</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">应用的名称</td>
-</tr>
-<tr>
-<td style="text-align:center">protocol</td>
-<td style="text-align:center">string</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">应用的类型值为 dynamiclinklibrary 意即 应用是一个共享库</td>
-</tr>
-<tr>
-<td style="text-align:center">description</td>
-<td style="text-align:center">string</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">应用的描述信息</td>
-</tr>
-<tr>
-<td style="text-align:center">default</td>
-<td style="text-align:center">string</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">这个标志指定了默认应用；默认应用负责分析连接请求并将连接分配到正确的应用</td>
-</tr>
-<tr>
-<td style="text-align:center">validateHandshake</td>
-<td style="text-align:center">boolean</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">通知服务器在进行下一步前要对客户端的握手进行验证；这是一个可选项，其默认值为真。如果这个值为真 且 握手失败，服务器就放弃这个连接;如果这个值为假，则不会进行强制的握手验证，所有的连接都会被接受；</td>
-</tr>
-<tr>
-<td style="text-align:center">keyframeSeek</td>
-<td style="text-align:center">boolean</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">这个属性指定了流生成器只在关键帧搜索，如果是直播流，则忽略这个值</td>
-</tr>
-<tr>
-<td style="text-align:center">seekGranularity</td>
-<td style="text-align:center">double</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">搜索的精细度，以秒为单位, 值域定义在 0.1 ~ 600; 例如：如果粒度定义为10秒，并期望定位到 t= 2:34; 则实际上是会定位到 t= 2:30. 60秒被认定为完整的电影长度，1秒为电影片断；</td>
-</tr>
-<tr>
-<td style="text-align:center">clientSideBuffer</td>
-<td style="text-align:center">double</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">每个连接在客户端的缓冲秒数，值定义在5 ~ 30 秒；</td>
-</tr>
-<tr>
-<td style="text-align:center">generateMetaFiles</td>
-<td style="text-align:center">boolean</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">在应用启动前生成 seek/meta文件</td>
-</tr>
-<tr>
-<td style="text-align:center">renameBadFiles</td>
-<td style="text-align:center">boolean</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">如果这上值为真且媒体文件是不能被解析的，则媒体文件被重命名为 *.bad，否则这样的文件将不做处理</td>
-</tr>
-<tr>
-<td style="text-align:center">aliases</td>
-<td style="text-align:center">object</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">应用的别名</td>
-</tr>
-<tr>
-<td style="text-align:center">acceptors</td>
-<td style="text-align:center">object</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">接受器保持这个服务并让服务器托管；应用可以有它自己的接受器，但这个是可选的；</td>
-</tr>
-<tr>
-<td style="text-align:center">externalStreams</td>
-<td style="text-align:center">object</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">authentication</td>
-<td style="text-align:center">object</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">mediaFolder</td>
-<td style="text-align:center">string</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">当定义了 mediaStorage时，这个域用来指定媒体文件的物理位置；</td>
-</tr>
-<tr>
-<td style="text-align:center">metaFolder</td>
-<td style="text-align:center">string</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">指定用来存放 .seek/.meta文件的位置；</td>
-</tr>
-<tr>
-<td style="text-align:center">statsFolder</td>
-<td style="text-align:center">string</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">服状态文件的位置</td>
-</tr>
-</tbody>
-</table>
-<p><strong><em>acceptor structure</em></strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">key</th>
-<th style="text-align:center">type</th>
-<th style="text-align:center">mandatory</th>
-<th style="text-align:center">description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">ip</td>
-<td style="text-align:center">string</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">服务所在的IP, 0.0.0.0表示所有接口和所有IP;</td>
-</tr>
-<tr>
-<td style="text-align:center">port</td>
-<td style="text-align:center">string</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">服务监听的端口号</td>
-</tr>
-<tr>
-<td style="text-align:center">protocol</td>
-<td style="text-align:center">string</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">对应 ip:port的服务的协议</td>
-</tr>
-</tbody>
-</table>
+<h3 id="2-2-openssl的安装"><a href="#2-2-openssl的安装" class="headerlink" title="2.2 openssl的安装"></a><strong><em>2.2 openssl的安装</em></strong></h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">wget -o openssl-0.9.8t.tar.gz http://www.openssl.org/<span class="built_in">source</span>/openssl-0.9.8ze.tar.gz</div><div class="line"><span class="built_in">cd</span> openssl-0.9.8t</div><div class="line">./config</div><div class="line">make .</div><div class="line">make install</div></pre></td></tr></table></figure>
+<h3 id="2-3-crtmpserver的编译与安装"><a href="#2-3-crtmpserver的编译与安装" class="headerlink" title="2.3 crtmpserver的编译与安装"></a><strong><em>2.3 crtmpserver的编译与安装</em></strong></h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">svn co --username anonymous --password <span class="string">""</span> https://svn.rtmpd.com/crtmpserver/branches/1.0 crtmpserver</div><div class="line"><span class="built_in">cd</span> crtmpserver</div><div class="line">sh ./cleanup.sh</div><div class="line"><span class="built_in">cd</span> builders/cmake</div><div class="line">cmake .</div><div class="line">make</div><div class="line">./crtmpserver/crtmpserver ./crtmpserver/crtmpserver.lua</div></pre></td></tr></table></figure>
+<p><strong><em>PS:</em></strong> </p>
+<ul>
+<li>最后一行命令“”#./crtmpserver/crtmpserver ./crtmpserver/crtmpserver.lua”意思是：使用“./crtmpserver/crtmpserver.lua”为配置脚本，启动“crtmpserver”服务;</li>
+<li>最后一行命令的目录是在”builders/cmake”下;</li>
+</ul>
+<h2 id="3-脚本的自启动和静默运行"><a href="#3-脚本的自启动和静默运行" class="headerlink" title="3. 脚本的自启动和静默运行"></a><strong><em>3. 脚本的自启动和静默运行</em></strong></h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nohup ./crtmpserver/crtmpserver ./crtmpserver/crtmpserver.lua &amp;</div></pre></td></tr></table></figure>
+<h3 id="4-JWPlayer直播方案搭建"><a href="#4-JWPlayer直播方案搭建" class="headerlink" title="4. JWPlayer直播方案搭建"></a><strong><em>4. JWPlayer直播方案搭建</em></strong></h3><h3 id="4-1-搭建http-server"><a href="#4-1-搭建http-server" class="headerlink" title="4.1 搭建http server"></a><strong><em>4.1 搭建http server</em></strong></h3><p>略</p>
+<h3 id="4-2-下载JWPlayer并部署到http-server上"><a href="#4-2-下载JWPlayer并部署到http-server上" class="headerlink" title="4.2 下载JWPlayer并部署到http server上"></a><strong><em>4.2 下载JWPlayer并部署到http server上</em></strong></h3><p><a href="http://www.longtailvideo.com/" target="_blank" rel="external">JWPlayer官网</a><br><a href="http://www.longtailvideo.com/jw-player/download/" target="_blank" rel="external">JWPlayer下载页面</a><br>以上链接不能用的话我自己网盘里面有ｏ（╯□╰）ｏ<br>下载解压后，将jwplayer整个文件夹内容放到网站指定目录下<br>如根目录下的jwplayer文件夹;</p>
+<h3 id="4-3-新建播放器的html页面"><a href="#4-3-新建播放器的html页面" class="headerlink" title="4.3 新建播放器的html页面"></a><strong><em>4.3 新建播放器的html页面</em></strong></h3><p><strong><em>test.html</em></strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/jwplayer/jwplayer.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">'my-video'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span> </div><div class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">'text/javascript'</span>&gt;</span><span class="undefined">    </span></div><div class="line"><span class="undefined"> 			jwplayer('my-video').setup(&#123;file:'rtmp://127.0.0.1/live/livestream',width: '640', height: '480'&#125;); </span></div><div class="line"><span class="undefined">		</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="4-4-使用Flash-Media-Live-Encoder推送直播源"><a href="#4-4-使用Flash-Media-Live-Encoder推送直播源" class="headerlink" title="4.4 使用Flash Media Live Encoder推送直播源"></a><strong><em>4.4 使用Flash Media Live Encoder推送直播源</em></strong></h3><p><img src="/res/img/blog/环境搭建/crtspserver.jpg" alt="Flash Media Live Encoder"></p>
+<p>设置好后，点start即可</p>
+<h3 id="4-5-浏览器中查看"><a href="#4-5-浏览器中查看" class="headerlink" title="4.5 浏览器中查看"></a><strong><em>4.5 浏览器中查看</em></strong></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://127.0.0.1/jwplayer/test.html</div></pre></td></tr></table></figure>
+<h3 id="4-6-使用ffmpeg做为直播源"><a href="#4-6-使用ffmpeg做为直播源" class="headerlink" title="4.6 使用ffmpeg做为直播源"></a><strong><em>4.6 使用ffmpeg做为直播源</em></strong></h3><ul>
+<li>不能直接使用ffmpeg的rtmp模块进行流推送需要使用librtmp才能进行正常的流推送和观看；</li>
+<li>原始的lua可以不用做修改,示例命令如下：</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./ffmpeg -re -i c1.flv -acodec copy -vcodec copy -f flv rtmp://127.0.0.1/live/livestream</div></pre></td></tr></table></figure>
 
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/linux学习/2015/01/27/linux学习-2015-01-27-netstat命令学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="daodaoliang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="刀刀亮的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/linux学习/2015/01/27/linux学习-2015-01-27-netstat命令学习/" itemprop="url">netstat命令学习</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-01-27T00:00:00+08:00">2015-01-27</time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T15:06:24+08:00">2017-08-23</time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/linux学习/" itemprop="url" rel="index"><span itemprop="name">linux学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<hr>
+<h2 id="netstat-命令简介"><a href="#netstat-命令简介" class="headerlink" title="netstat 命令简介"></a><strong><em>netstat</em></strong> 命令简介</h2><p>Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast Memberships) 等等。</p>
+<h2 id="参数解析"><a href="#参数解析" class="headerlink" title="参数解析"></a>参数解析</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">usage: netstat [-vWeenNcCF] [&lt;Af&gt;] -r         netstat &#123;-V|--version|-h|--<span class="built_in">help</span>&#125;</div><div class="line">       netstat [-vWnNcaeol] [&lt;Socket&gt; ...]</div><div class="line">       netstat &#123; [-vWeenNac] -i | [-cWnNe] -M | -s &#125;</div><div class="line"></div><div class="line">        -r, --route              显示路由表</div><div class="line">        -i, --interfaces         display interface table</div><div class="line">        -g, --groups             display multicast group memberships</div><div class="line">        -s, --statistics         display networking statistics (like SNMP)</div><div class="line">        -M, --masquerade         display masqueraded connections</div><div class="line"></div><div class="line">        -v, --verbose            显示详细信息</div><div class="line">        -W, --wide               don<span class="string">'t truncate IP addresses</span></div><div class="line"><span class="string">        -n, --numeric            不解析名称</span></div><div class="line"><span class="string">        --numeric-hosts          不解析主机名</span></div><div class="line"><span class="string">        --numeric-ports          忽略端口名称</span></div><div class="line"><span class="string">        --numeric-users          忽略用户名</span></div><div class="line"><span class="string">        -N, --symbolic           resolve hardware names</span></div><div class="line"><span class="string">        -e, --extend             显示更多信息</span></div><div class="line"><span class="string">        -p, --programs           display PID/Program name for sockets</span></div><div class="line"><span class="string">        -c, --continuous         continuous listing</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">        -l, --listening          display listening server sockets</span></div><div class="line"><span class="string">        -a, --all, --listening   display all sockets (default: connected)</span></div><div class="line"><span class="string">        -o, --timers             display timers</span></div><div class="line"><span class="string">        -F, --fib                display Forwarding Information Base (default)</span></div><div class="line"><span class="string">        -C, --cache              display routing cache instead of FIB</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">  &lt;Socket&gt;=&#123;-t|--tcp&#125; &#123;-u|--udp&#125; &#123;-w|--raw&#125; &#123;-x|--unix&#125; --ax25 --ipx --netrom</span></div><div class="line"><span class="string">  &lt;AF&gt;=Use '</span>-6|-4<span class="string">' or '</span>-A &lt;af&gt;<span class="string">' or '</span>--&lt;af&gt;<span class="string">'；默认： inet</span></div><div class="line"><span class="string">  列出所有支持的协议：</span></div><div class="line"><span class="string">    inet (DARPA Internet) inet6 (IPv6) ax25 (AMPR AX.25) </span></div><div class="line"><span class="string">    netrom (AMPR NET/ROM) ipx (Novell IPX) ddp (Appletalk DDP) </span></div><div class="line"><span class="string">    x25 (CCITT X.25)</span></div></pre></td></tr></table></figure>
+<ul>
+<li>-a (all)显示所有选项，默认不显示LISTEN相关</li>
+<li>-t (tcp)仅显示tcp相关选项</li>
+<li>-u (udp)仅显示udp相关选项</li>
+<li>-n 拒绝显示别名，能显示数字的全部转化成数字。</li>
+<li>-l 仅列出有在 Listen (监听) 的服務状态</li>
+<li>-p 显示建立相关链接的程序名</li>
+<li>-r 显示路由信息，路由表</li>
+<li>-e 显示扩展信息，例如uid等</li>
+<li>-s 按各个协议进行统计</li>
+<li>-c 每隔一个固定时间，执行该netstat命令。</li>
+</ul>
+<p>提示：LISTEN和LISTENING的状态只有用-a或者-l才能看到</p>
+<h2 id="列出所有端口-包括监听的没监听的"><a href="#列出所有端口-包括监听的没监听的" class="headerlink" title="列出所有端口(包括监听的没监听的)"></a>列出所有端口(包括监听的没监听的)</h2><p><strong><em>列出所有tcp端口 netstat -at</em></strong><br><strong><em>列出所有udp端口 netstat -au</em></strong></p>
+<h2 id="列出所有处于监听状态的Sockets"><a href="#列出所有处于监听状态的Sockets" class="headerlink" title="列出所有处于监听状态的Sockets"></a>列出所有处于监听状态的Sockets</h2><p><strong><em>只显示监听端口　netstat -l</em></strong><br><strong><em>只列出所有监听tcp端口　netstat -lt</em></strong><br><strong><em>只列出所有监听udp端口　netstat -lu</em></strong><br><strong><em>只列出所有监听unix端口　netstat -lx</em></strong></p>
+<h2 id="显示每个协议的统计信息"><a href="#显示每个协议的统计信息" class="headerlink" title="显示每个协议的统计信息"></a>显示每个协议的统计信息</h2><p><strong><em>显示所有端口的统计信息 netstat -s</em></strong><br><strong><em>显示TCP或者UDP端口的统计信息 netstat -st　或者　netstat -su</em></strong></p>
+<h2 id="在netstat输出中显示PID和进程名称-netstat-p"><a href="#在netstat输出中显示PID和进程名称-netstat-p" class="headerlink" title="在netstat输出中显示PID和进程名称 netstat -p"></a>在netstat输出中显示PID和进程名称 netstat -p</h2><h2 id="在netstat输出中不显示主机，端口和用户名-netstat-an"><a href="#在netstat输出中不显示主机，端口和用户名-netstat-an" class="headerlink" title="在netstat输出中不显示主机，端口和用户名 # netstat -an"></a>在netstat输出中不显示主机，端口和用户名 # netstat -an</h2><h2 id="持续输出netstat信息-netstat-c"><a href="#持续输出netstat信息-netstat-c" class="headerlink" title="持续输出netstat信息 netstat -c"></a>持续输出netstat信息 netstat -c</h2><h2 id="找出程序运行的端口-netstat-ap-grep-ssh"><a href="#找出程序运行的端口-netstat-ap-grep-ssh" class="headerlink" title="找出程序运行的端口 netstat -ap | grep ssh"></a>找出程序运行的端口 netstat -ap | grep ssh</h2><h2 id="显示网络接口列表-netstat-i"><a href="#显示网络接口列表-netstat-i" class="headerlink" title="显示网络接口列表 netstat -i"></a>显示网络接口列表 netstat -i</h2>
           
         
       
@@ -1294,175 +1173,6 @@
 <p><strong><em>查看流化后的信息：</em></strong></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">mp4info ./test.mp4 </div><div class="line">mp4info version 1.6</div><div class="line">./test.mp4:</div><div class="line">Track Type Info</div><div class="line">1 audio MPEG-4 AAC LC, 662.165 secs, 121 kbps, 48000 Hz</div><div class="line">2 video H264 Main@5.1, 662.562 secs, 1756 kbps, 640x368 @ 29.970025 fps</div><div class="line">3 hint Payload mpeg4-generic <span class="keyword">for</span> track 1</div><div class="line">4 hint Payload H264 <span class="keyword">for</span> track 2</div><div class="line">Tool: mp4creator 1.5.0.1</div></pre></td></tr></table></figure>
 
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-    <div class="reading-progress-bar"></div>
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://daodaoliang.com/linux学习/2015/01/27/linux学习-2015-01-27-netstat命令学习/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="daodaoliang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://source.unsplash.com/random/100x100">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="刀刀亮的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/linux学习/2015/01/27/linux学习-2015-01-27-netstat命令学习/" itemprop="url">netstat命令学习</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-01-27T00:00:00+08:00">2015-01-27</time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2017-08-23T15:06:24+08:00">2017-08-23</time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/linux学习/" itemprop="url" rel="index"><span itemprop="name">linux学习</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <a id="more"></a>
-<hr>
-<h2 id="netstat-命令简介"><a href="#netstat-命令简介" class="headerlink" title="netstat 命令简介"></a><strong><em>netstat</em></strong> 命令简介</h2><p>Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast Memberships) 等等。</p>
-<h2 id="参数解析"><a href="#参数解析" class="headerlink" title="参数解析"></a>参数解析</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">usage: netstat [-vWeenNcCF] [&lt;Af&gt;] -r         netstat &#123;-V|--version|-h|--<span class="built_in">help</span>&#125;</div><div class="line">       netstat [-vWnNcaeol] [&lt;Socket&gt; ...]</div><div class="line">       netstat &#123; [-vWeenNac] -i | [-cWnNe] -M | -s &#125;</div><div class="line"></div><div class="line">        -r, --route              显示路由表</div><div class="line">        -i, --interfaces         display interface table</div><div class="line">        -g, --groups             display multicast group memberships</div><div class="line">        -s, --statistics         display networking statistics (like SNMP)</div><div class="line">        -M, --masquerade         display masqueraded connections</div><div class="line"></div><div class="line">        -v, --verbose            显示详细信息</div><div class="line">        -W, --wide               don<span class="string">'t truncate IP addresses</span></div><div class="line"><span class="string">        -n, --numeric            不解析名称</span></div><div class="line"><span class="string">        --numeric-hosts          不解析主机名</span></div><div class="line"><span class="string">        --numeric-ports          忽略端口名称</span></div><div class="line"><span class="string">        --numeric-users          忽略用户名</span></div><div class="line"><span class="string">        -N, --symbolic           resolve hardware names</span></div><div class="line"><span class="string">        -e, --extend             显示更多信息</span></div><div class="line"><span class="string">        -p, --programs           display PID/Program name for sockets</span></div><div class="line"><span class="string">        -c, --continuous         continuous listing</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">        -l, --listening          display listening server sockets</span></div><div class="line"><span class="string">        -a, --all, --listening   display all sockets (default: connected)</span></div><div class="line"><span class="string">        -o, --timers             display timers</span></div><div class="line"><span class="string">        -F, --fib                display Forwarding Information Base (default)</span></div><div class="line"><span class="string">        -C, --cache              display routing cache instead of FIB</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">  &lt;Socket&gt;=&#123;-t|--tcp&#125; &#123;-u|--udp&#125; &#123;-w|--raw&#125; &#123;-x|--unix&#125; --ax25 --ipx --netrom</span></div><div class="line"><span class="string">  &lt;AF&gt;=Use '</span>-6|-4<span class="string">' or '</span>-A &lt;af&gt;<span class="string">' or '</span>--&lt;af&gt;<span class="string">'；默认： inet</span></div><div class="line"><span class="string">  列出所有支持的协议：</span></div><div class="line"><span class="string">    inet (DARPA Internet) inet6 (IPv6) ax25 (AMPR AX.25) </span></div><div class="line"><span class="string">    netrom (AMPR NET/ROM) ipx (Novell IPX) ddp (Appletalk DDP) </span></div><div class="line"><span class="string">    x25 (CCITT X.25)</span></div></pre></td></tr></table></figure>
-<ul>
-<li>-a (all)显示所有选项，默认不显示LISTEN相关</li>
-<li>-t (tcp)仅显示tcp相关选项</li>
-<li>-u (udp)仅显示udp相关选项</li>
-<li>-n 拒绝显示别名，能显示数字的全部转化成数字。</li>
-<li>-l 仅列出有在 Listen (监听) 的服務状态</li>
-<li>-p 显示建立相关链接的程序名</li>
-<li>-r 显示路由信息，路由表</li>
-<li>-e 显示扩展信息，例如uid等</li>
-<li>-s 按各个协议进行统计</li>
-<li>-c 每隔一个固定时间，执行该netstat命令。</li>
-</ul>
-<p>提示：LISTEN和LISTENING的状态只有用-a或者-l才能看到</p>
-<h2 id="列出所有端口-包括监听的没监听的"><a href="#列出所有端口-包括监听的没监听的" class="headerlink" title="列出所有端口(包括监听的没监听的)"></a>列出所有端口(包括监听的没监听的)</h2><p><strong><em>列出所有tcp端口 netstat -at</em></strong><br><strong><em>列出所有udp端口 netstat -au</em></strong></p>
-<h2 id="列出所有处于监听状态的Sockets"><a href="#列出所有处于监听状态的Sockets" class="headerlink" title="列出所有处于监听状态的Sockets"></a>列出所有处于监听状态的Sockets</h2><p><strong><em>只显示监听端口　netstat -l</em></strong><br><strong><em>只列出所有监听tcp端口　netstat -lt</em></strong><br><strong><em>只列出所有监听udp端口　netstat -lu</em></strong><br><strong><em>只列出所有监听unix端口　netstat -lx</em></strong></p>
-<h2 id="显示每个协议的统计信息"><a href="#显示每个协议的统计信息" class="headerlink" title="显示每个协议的统计信息"></a>显示每个协议的统计信息</h2><p><strong><em>显示所有端口的统计信息 netstat -s</em></strong><br><strong><em>显示TCP或者UDP端口的统计信息 netstat -st　或者　netstat -su</em></strong></p>
-<h2 id="在netstat输出中显示PID和进程名称-netstat-p"><a href="#在netstat输出中显示PID和进程名称-netstat-p" class="headerlink" title="在netstat输出中显示PID和进程名称 netstat -p"></a>在netstat输出中显示PID和进程名称 netstat -p</h2><h2 id="在netstat输出中不显示主机，端口和用户名-netstat-an"><a href="#在netstat输出中不显示主机，端口和用户名-netstat-an" class="headerlink" title="在netstat输出中不显示主机，端口和用户名 # netstat -an"></a>在netstat输出中不显示主机，端口和用户名 # netstat -an</h2><h2 id="持续输出netstat信息-netstat-c"><a href="#持续输出netstat信息-netstat-c" class="headerlink" title="持续输出netstat信息 netstat -c"></a>持续输出netstat信息 netstat -c</h2><h2 id="找出程序运行的端口-netstat-ap-grep-ssh"><a href="#找出程序运行的端口-netstat-ap-grep-ssh" class="headerlink" title="找出程序运行的端口 netstat -ap | grep ssh"></a>找出程序运行的端口 netstat -ap | grep ssh</h2><h2 id="显示网络接口列表-netstat-i"><a href="#显示网络接口列表-netstat-i" class="headerlink" title="显示网络接口列表 netstat -i"></a>显示网络接口列表 netstat -i</h2>
           
         
       
@@ -1824,6 +1534,10 @@
 
 
 
+  
+    
+
+    
   
 
 
