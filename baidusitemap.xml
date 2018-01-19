@@ -3,6 +3,24 @@
 
 
     
+  <url>
+    <loc>http://daodaoliang.com/linux%E9%A9%B1%E5%8A%A8%E5%AD%A6%E4%B9%A0/2017/08/08/linux%E9%A9%B1%E5%8A%A8%E5%AD%A6%E4%B9%A0-2017-08-08-linux%E9%A9%B1%E5%8A%A8%E5%AD%A6%E4%B9%A0%E5%BC%80%E7%AF%87/</loc>
+    <lastmod>2018-01-19T05:31:20.361Z</lastmod>
+    <data>
+        <display>
+        <title>linux驱动学习之HelloWorld</title>
+        <pubTime>2017-08-07T16:00:00.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="linux驱动学习" url="http://daodaoliang.com/categories/linux%E9%A9%B1%E5%8A%A8%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
     
   <url>
@@ -142,24 +160,6 @@
     
     
     
-    
-  <url>
-    <loc>http://daodaoliang.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2015/01/27/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-2015-01-27-CentOS6-5%E5%AE%89%E8%A3%85DSS%E6%90%AD%E5%BB%BARTSP%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1/</loc>
-    <lastmod>2017-08-23T07:06:24.850Z</lastmod>
-    <data>
-        <display>
-        <title>CentOS6.5安装DSS搭建RTSP流媒体服务器</title>
-        <pubTime>2015-01-26T16:00:00.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="环境搭建" url="http://daodaoliang.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://daodaoliang.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2015/01/28/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-2015-01-28-CentOS6-5%E5%AE%89%E8%A3%85crtmpserver%E6%90%AD%E5%BB%BARTMP%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1/</loc>
@@ -909,17 +909,35 @@
 
     
   <url>
-    <loc>http://daodaoliang.com/windows%E5%AD%A6%E4%B9%A0/2017/04/12/windows%E5%AD%A6%E4%B9%A0-2017-04-12-windows%E4%B8%8B%E9%9D%A2%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F%E7%9B%B8%E5%85%B3/</loc>
-    <lastmod>2017-08-23T07:06:24.846Z</lastmod>
+    <loc>http://daodaoliang.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2015/01/27/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-2015-01-27-CentOS6-5%E5%AE%89%E8%A3%85DSS%E6%90%AD%E5%BB%BARTSP%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1/</loc>
+    <lastmod>2017-08-23T07:06:24.850Z</lastmod>
     <data>
         <display>
-        <title>windows下服务程序相关</title>
-        <pubTime>2017-04-11T16:00:00.000Z</pubTime>
+        <title>CentOS6.5安装DSS搭建RTSP流媒体服务器</title>
+        <pubTime>2015-01-26T16:00:00.000Z</pubTime>
         
          
            
              
-              <breadCrumb title="windows学习" url="http://daodaoliang.com/categories/windows%E5%AD%A6%E4%B9%A0/"/>
+              <breadCrumb title="环境搭建" url="http://daodaoliang.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://daodaoliang.com/%E5%88%80%E5%88%80%E7%88%B1%E5%AD%A6%E4%B9%A0/2015/04/05/%E5%88%80%E5%88%80%E7%88%B1%E5%AD%A6%E4%B9%A0-2015-04-05-%E5%88%80%E5%88%80%E4%BA%AE%E7%9A%84%E4%B9%A6%E5%8D%95/</loc>
+    <lastmod>2017-08-23T07:06:24.846Z</lastmod>
+    <data>
+        <display>
+        <title>刀刀亮的书单</title>
+        <pubTime>2015-04-04T16:00:00.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="刀刀爱学习" url="http://daodaoliang.com/categories/%E5%88%80%E5%88%80%E7%88%B1%E5%AD%A6%E4%B9%A0/"/>
           
         </display>
     </data>
@@ -1271,24 +1289,6 @@
 
     
   <url>
-    <loc>http://daodaoliang.com/%E5%88%80%E5%88%80%E7%88%B1%E5%AD%A6%E4%B9%A0/2015/04/05/%E5%88%80%E5%88%80%E7%88%B1%E5%AD%A6%E4%B9%A0-2015-04-05-%E5%88%80%E5%88%80%E4%BA%AE%E7%9A%84%E4%B9%A6%E5%8D%95/</loc>
-    <lastmod>2017-08-23T07:06:24.846Z</lastmod>
-    <data>
-        <display>
-        <title>刀刀亮的书单</title>
-        <pubTime>2015-04-04T16:00:00.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="刀刀爱学习" url="http://daodaoliang.com/categories/%E5%88%80%E5%88%80%E7%88%B1%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://daodaoliang.com/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/2016/01/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0-mysql%E4%B8%93%E9%A2%98-2016-01-14-mysql%E5%85%A8%E6%96%87%E6%90%9C%E7%B4%A2%E7%AE%80%E4%BB%8B/</loc>
     <lastmod>2017-08-23T07:06:24.846Z</lastmod>
     <data>
@@ -1300,6 +1300,24 @@
            
              
               <breadCrumb title="数据库学习" url="http://daodaoliang.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://daodaoliang.com/windows%E5%AD%A6%E4%B9%A0/2017/04/12/windows%E5%AD%A6%E4%B9%A0-2017-04-12-windows%E4%B8%8B%E9%9D%A2%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F%E7%9B%B8%E5%85%B3/</loc>
+    <lastmod>2017-08-23T07:06:24.846Z</lastmod>
+    <data>
+        <display>
+        <title>windows下服务程序相关</title>
+        <pubTime>2017-04-11T16:00:00.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="windows学习" url="http://daodaoliang.com/categories/windows%E5%AD%A6%E4%B9%A0/"/>
           
         </display>
     </data>
@@ -1336,24 +1354,6 @@
            
              
               <breadCrumb title="windows学习" url="http://daodaoliang.com/categories/windows%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://daodaoliang.com/linux%E9%A9%B1%E5%8A%A8%E5%AD%A6%E4%B9%A0/2017/08/08/linux%E9%A9%B1%E5%8A%A8%E5%AD%A6%E4%B9%A0-2017-08-08-linux%E9%A9%B1%E5%8A%A8%E5%AD%A6%E4%B9%A0%E5%BC%80%E7%AF%87/</loc>
-    <lastmod>2017-08-23T07:06:24.846Z</lastmod>
-    <data>
-        <display>
-        <title>linux驱动学习之HelloWorld</title>
-        <pubTime>2017-08-07T16:00:00.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="linux驱动学习" url="http://daodaoliang.com/categories/linux%E9%A9%B1%E5%8A%A8%E5%AD%A6%E4%B9%A0/"/>
           
         </display>
     </data>

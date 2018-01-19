@@ -11,7 +11,7 @@
   <entry>
     <title><![CDATA[linux驱动学习之HelloWorld]]></title>
     <url>%2Flinux%E9%A9%B1%E5%8A%A8%E5%AD%A6%E4%B9%A0%2F2017%2F08%2F08%2Flinux%E9%A9%B1%E5%8A%A8%E5%AD%A6%E4%B9%A0-2017-08-08-linux%E9%A9%B1%E5%8A%A8%E5%AD%A6%E4%B9%A0%E5%BC%80%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[作者: daodaoliang@yeah.net 日期: 2017年8月8日10:46:59 版本: V 0.0.1 一切源于内心]]></content>
+    <content type="text"><![CDATA[作者: daodaoliang@yeah.net 日期: 2017年8月8日10:46:59 版本: V 0.0.1 0x00 背景描述 在linux系统下，系统内核分为三种类型，字符设备/块设备/网络设备 第一个驱动程序 hello world 将按照块设备进行 0x01 测试驱动代码123456789101112131415#include &amp;lt;linux/init.h&amp;gt;#include &amp;lt;linux/module.h&amp;gt;//内核2.6以上版本建议我们加上这个licenseMODULE_LICENSE("Dual BSD/GPL");static int hello_init(void)&#123; printk(KERN_ALERT "Hello, world\n"); return 0;&#125;static void hello_exit(void)&#123; printk(KERN_ALERT "Goodbye, cruel world\n");&#125;module_init(hello_init);module_exit(hello_exit); 0x02 MakeFile文件编写1234567obj-m:=hello.oKERNELDIR:=/lib/modules/4.4.0-98-generic/buildPWD:=$(shell pwd)modules:$(MAKE) -C $(KERNELDIR) M=$(PWD) modulesmodules_install:$(MAKE) -C $(KERNELDIR) M=$(PWD) modules_install 0x03 编译操作1make 0x04 安装驱动动态加载驱动模块: 1insmod hello.ko 查看已安装的模块: 1lsmod 查看打印输出: 12dmesg | tail#可以看到 helloworld。]]></content>
       <categories>
         <category>linux驱动学习</category>
       </categories>
