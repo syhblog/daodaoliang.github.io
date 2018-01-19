@@ -198,11 +198,11 @@
 
     
   <url>
-    <loc>http://daodaoliang.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2015/02/03/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-2015-02-03-Linux%E4%B8%8Bffmpeg%E9%85%8D%E7%BD%AE/</loc>
+    <loc>http://daodaoliang.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2015/02/03/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-2015-02-02-SRS%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2017-08-23T07:06:24.850Z</lastmod>
     <data>
         <display>
-        <title>Linux下ffmpeg安装与开发配置</title>
+        <title>Simple-RTMP-Server 服务器搭建</title>
         <pubTime>2015-02-02T16:00:00.000Z</pubTime>
         
          
@@ -216,11 +216,11 @@
 
     
   <url>
-    <loc>http://daodaoliang.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2015/02/03/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-2015-02-02-SRS%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/</loc>
+    <loc>http://daodaoliang.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2015/02/03/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-2015-02-03-Linux%E4%B8%8Bffmpeg%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2017-08-23T07:06:24.850Z</lastmod>
     <data>
         <display>
-        <title>Simple-RTMP-Server 服务器搭建</title>
+        <title>Linux下ffmpeg安装与开发配置</title>
         <pubTime>2015-02-02T16:00:00.000Z</pubTime>
         
          
@@ -1161,26 +1161,6 @@
 
     
   <url>
-    <loc>http://daodaoliang.com/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/2017/07/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0-mysql%E4%B8%93%E9%A2%98-2014-12-21-Mysql%E7%94%A8%E6%88%B7%E8%B4%A6%E5%8F%B7%E6%93%8D%E4%BD%9C/</loc>
-    <lastmod>2017-08-23T07:06:24.846Z</lastmod>
-    <data>
-        <display>
-        <title>mysql用户账号操作</title>
-        <pubTime>2017-07-09T16:00:00.000Z</pubTime>
-        
-        <tag>mysql</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据库学习" url="http://daodaoliang.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://daodaoliang.com/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/2014/11/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0-mysql%E4%B8%93%E9%A2%98-2014-11-07-Mysql%E7%BB%99%E7%94%A8%E6%88%B7%E8%B5%8B%E4%BA%88%E6%9C%80%E9%AB%98%E6%9D%83%E9%99%90/</loc>
     <lastmod>2017-08-23T07:06:24.846Z</lastmod>
     <data>
@@ -1199,17 +1179,19 @@
 
     
   <url>
-    <loc>http://daodaoliang.com/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/2015/11/04/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0-2015-11-04-%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6tornado%E6%A1%86%E6%9E%B6-tornado%E5%85%A5%E9%97%A8%E7%AF%87/</loc>
+    <loc>http://daodaoliang.com/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/2017/07/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0-mysql%E4%B8%93%E9%A2%98-2014-12-21-Mysql%E7%94%A8%E6%88%B7%E8%B4%A6%E5%8F%B7%E6%93%8D%E4%BD%9C/</loc>
     <lastmod>2017-08-23T07:06:24.846Z</lastmod>
     <data>
         <display>
-        <title>深入研究tornado框架---tornado入门</title>
-        <pubTime>2015-11-03T16:00:00.000Z</pubTime>
+        <title>mysql用户账号操作</title>
+        <pubTime>2017-07-09T16:00:00.000Z</pubTime>
         
+        <tag>mysql</tag>
+         
          
            
              
-              <breadCrumb title="开源框架学习" url="http://daodaoliang.com/categories/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/"/>
+              <breadCrumb title="数据库学习" url="http://daodaoliang.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/"/>
           
         </display>
     </data>
@@ -1235,11 +1217,29 @@
 
     
   <url>
-    <loc>http://daodaoliang.com/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/2016/09/18/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0-2016-09-28-10%E4%B8%AA%E5%80%BC%E5%BE%97%E5%89%8D%E7%AB%AF%E6%94%B6%E8%97%8F%E7%9A%84CSS3%E5%8A%A8%E6%95%88%E5%BA%93/</loc>
+    <loc>http://daodaoliang.com/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/2015/11/04/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0-2015-11-04-%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6tornado%E6%A1%86%E6%9E%B6-tornado%E5%85%A5%E9%97%A8%E7%AF%87/</loc>
     <lastmod>2017-08-23T07:06:24.846Z</lastmod>
     <data>
         <display>
-        <title>10个值得前端收藏的CSS3动效库</title>
+        <title>深入研究tornado框架---tornado入门</title>
+        <pubTime>2015-11-03T16:00:00.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="开源框架学习" url="http://daodaoliang.com/categories/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://daodaoliang.com/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/2016/09/18/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0-2016-09-18-github%E4%B8%8A%E5%89%8D%E7%AB%AF%E6%B6%89%E5%8F%8A%E7%9A%84%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/</loc>
+    <lastmod>2017-08-23T07:06:24.846Z</lastmod>
+    <data>
+        <display>
+        <title>github上前端涉及的知识体系</title>
         <pubTime>2016-09-17T16:00:00.000Z</pubTime>
         
          
@@ -1253,11 +1253,11 @@
 
     
   <url>
-    <loc>http://daodaoliang.com/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/2016/09/18/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0-2016-09-18-github%E4%B8%8A%E5%89%8D%E7%AB%AF%E6%B6%89%E5%8F%8A%E7%9A%84%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/</loc>
+    <loc>http://daodaoliang.com/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/2016/09/18/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0-2016-09-28-10%E4%B8%AA%E5%80%BC%E5%BE%97%E5%89%8D%E7%AB%AF%E6%94%B6%E8%97%8F%E7%9A%84CSS3%E5%8A%A8%E6%95%88%E5%BA%93/</loc>
     <lastmod>2017-08-23T07:06:24.846Z</lastmod>
     <data>
         <display>
-        <title>github上前端涉及的知识体系</title>
+        <title>10个值得前端收藏的CSS3动效库</title>
         <pubTime>2016-09-17T16:00:00.000Z</pubTime>
         
          
@@ -1649,12 +1649,30 @@
 
     
   <url>
-    <loc>http://daodaoliang.com/linux%E5%AD%A6%E4%B9%A0/2015/03/19/linux%E5%AD%A6%E4%B9%A0-2015-03-19-%E4%BD%BF%E7%94%A8SSH%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E9%99%86/</loc>
+    <loc>http://daodaoliang.com/linux%E5%AD%A6%E4%B9%A0/2015/03/23/linux%E5%AD%A6%E4%B9%A0-2015-03-23-gcc%E5%B8%B8%E8%A7%81%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc>
     <lastmod>2017-08-23T07:06:24.842Z</lastmod>
     <data>
         <display>
-        <title>SSH免密码登陆</title>
-        <pubTime>2015-03-18T16:00:00.000Z</pubTime>
+        <title>gcc常见编译错误以及解决方案</title>
+        <pubTime>2015-03-22T16:00:00.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="linux学习" url="http://daodaoliang.com/categories/linux%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://daodaoliang.com/linux%E5%AD%A6%E4%B9%A0/2014/12/19/linux%E5%AD%A6%E4%B9%A0-2014-12-19-linux%E8%BD%AF%E8%BF%9E%E6%8E%A5%E5%92%8C%E7%A1%AC%E9%93%BE%E6%8E%A5%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2017-08-23T07:06:24.842Z</lastmod>
+    <data>
+        <display>
+        <title>linux软连接和硬链接的学习</title>
+        <pubTime>2014-12-18T16:00:00.000Z</pubTime>
         
          
            
@@ -1703,17 +1721,17 @@
 
     
   <url>
-    <loc>http://daodaoliang.com/linux%E5%AD%A6%E4%B9%A0/2015/03/23/linux%E5%AD%A6%E4%B9%A0-2015-03-23-gcc%E5%B8%B8%E8%A7%81%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc>
+    <loc>http://daodaoliang.com/PHP%E5%AD%A6%E4%B9%A0/2015/01/15/PHP%E5%AD%A6%E4%B9%A0-2015-01-15-PHP%E5%8F%98%E9%87%8F%E8%AF%B4%E6%98%8E/</loc>
     <lastmod>2017-08-23T07:06:24.842Z</lastmod>
     <data>
         <display>
-        <title>gcc常见编译错误以及解决方案</title>
-        <pubTime>2015-03-22T16:00:00.000Z</pubTime>
+        <title>php变量类型说明</title>
+        <pubTime>2015-01-14T16:00:00.000Z</pubTime>
         
          
            
              
-              <breadCrumb title="linux学习" url="http://daodaoliang.com/categories/linux%E5%AD%A6%E4%B9%A0/"/>
+              <breadCrumb title="PHP学习" url="http://daodaoliang.com/categories/PHP%E5%AD%A6%E4%B9%A0/"/>
           
         </display>
     </data>
@@ -1721,17 +1739,17 @@
 
     
   <url>
-    <loc>http://daodaoliang.com/PHP%E5%AD%A6%E4%B9%A0/2015/01/15/PHP%E5%AD%A6%E4%B9%A0-2015-01-15-PHP%E8%BF%90%E7%AE%97%E9%80%BB%E8%BE%91%E7%AC%A6%E5%8F%B7%E8%AF%B4%E6%98%8E/</loc>
+    <loc>http://daodaoliang.com/linux%E5%AD%A6%E4%B9%A0/2015/03/19/linux%E5%AD%A6%E4%B9%A0-2015-03-19-%E4%BD%BF%E7%94%A8SSH%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E9%99%86/</loc>
     <lastmod>2017-08-23T07:06:24.842Z</lastmod>
     <data>
         <display>
-        <title>php运算符说明</title>
-        <pubTime>2015-01-14T16:00:00.000Z</pubTime>
+        <title>SSH免密码登陆</title>
+        <pubTime>2015-03-18T16:00:00.000Z</pubTime>
         
          
            
              
-              <breadCrumb title="PHP学习" url="http://daodaoliang.com/categories/PHP%E5%AD%A6%E4%B9%A0/"/>
+              <breadCrumb title="linux学习" url="http://daodaoliang.com/categories/linux%E5%AD%A6%E4%B9%A0/"/>
           
         </display>
     </data>
@@ -1853,24 +1871,6 @@
         <display>
         <title>linux下进程的结束</title>
         <pubTime>2014-12-20T16:00:00.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="linux学习" url="http://daodaoliang.com/categories/linux%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://daodaoliang.com/linux%E5%AD%A6%E4%B9%A0/2014/12/19/linux%E5%AD%A6%E4%B9%A0-2014-12-19-linux%E8%BD%AF%E8%BF%9E%E6%8E%A5%E5%92%8C%E7%A1%AC%E9%93%BE%E6%8E%A5%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2017-08-23T07:06:24.842Z</lastmod>
-    <data>
-        <display>
-        <title>linux软连接和硬链接的学习</title>
-        <pubTime>2014-12-18T16:00:00.000Z</pubTime>
         
          
            
@@ -2024,6 +2024,60 @@
            
              
               <breadCrumb title="Qt学习" url="http://daodaoliang.com/categories/Qt%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://daodaoliang.com/%E7%A7%81%E4%BA%BA%E5%B7%A5%E5%85%B7%E9%A1%B9%E7%9B%AE/2016/11/04/QDaoDaoLiang-2016-11-04-Qt%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E/</loc>
+    <lastmod>2017-08-23T07:06:24.842Z</lastmod>
+    <data>
+        <display>
+        <title>Qt开源项目说明</title>
+        <pubTime>2016-11-03T16:00:00.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="私人工具项目" url="http://daodaoliang.com/categories/%E7%A7%81%E4%BA%BA%E5%B7%A5%E5%85%B7%E9%A1%B9%E7%9B%AE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://daodaoliang.com/%E7%A7%81%E4%BA%BA%E5%B7%A5%E5%85%B7%E9%A1%B9%E7%9B%AE/2014/10/30/QDaoDaoLiang-2014-10-30-%E8%BD%AF%E4%BB%B6%E5%8A%A0%E5%AF%86%E6%A8%A1%E5%9D%97%E7%9A%84%E6%A6%82%E8%A6%81%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2017-08-23T07:06:24.842Z</lastmod>
+    <data>
+        <display>
+        <title>软件加密模块的需求和设计</title>
+        <pubTime>2014-10-29T16:00:00.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="私人工具项目" url="http://daodaoliang.com/categories/%E7%A7%81%E4%BA%BA%E5%B7%A5%E5%85%B7%E9%A1%B9%E7%9B%AE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://daodaoliang.com/%E7%A7%81%E4%BA%BA%E5%B7%A5%E5%85%B7%E9%A1%B9%E7%9B%AE/2014/10/29/QDaoDaoLiang-2014-10-29-%E5%88%80%E5%88%80%E4%BA%AE%E7%A7%81%E4%BA%BA%E5%B7%A5%E5%85%B7%E9%A1%B9%E7%9B%AE/</loc>
+    <lastmod>2017-08-23T07:06:24.842Z</lastmod>
+    <data>
+        <display>
+        <title>工具项目之QDaoDaoLiang向导</title>
+        <pubTime>2014-10-28T16:00:00.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="私人工具项目" url="http://daodaoliang.com/categories/%E7%A7%81%E4%BA%BA%E5%B7%A5%E5%85%B7%E9%A1%B9%E7%9B%AE/"/>
           
         </display>
     </data>
@@ -2319,60 +2373,6 @@
 
     
   <url>
-    <loc>http://daodaoliang.com/%E7%A7%81%E4%BA%BA%E5%B7%A5%E5%85%B7%E9%A1%B9%E7%9B%AE/2016/11/04/QDaoDaoLiang-2016-11-04-Qt%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E/</loc>
-    <lastmod>2017-08-23T07:06:24.842Z</lastmod>
-    <data>
-        <display>
-        <title>Qt开源项目说明</title>
-        <pubTime>2016-11-03T16:00:00.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="私人工具项目" url="http://daodaoliang.com/categories/%E7%A7%81%E4%BA%BA%E5%B7%A5%E5%85%B7%E9%A1%B9%E7%9B%AE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://daodaoliang.com/%E7%A7%81%E4%BA%BA%E5%B7%A5%E5%85%B7%E9%A1%B9%E7%9B%AE/2014/10/30/QDaoDaoLiang-2014-10-30-%E8%BD%AF%E4%BB%B6%E5%8A%A0%E5%AF%86%E6%A8%A1%E5%9D%97%E7%9A%84%E6%A6%82%E8%A6%81%E8%AE%BE%E8%AE%A1/</loc>
-    <lastmod>2017-08-23T07:06:24.842Z</lastmod>
-    <data>
-        <display>
-        <title>软件加密模块的需求和设计</title>
-        <pubTime>2014-10-29T16:00:00.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="私人工具项目" url="http://daodaoliang.com/categories/%E7%A7%81%E4%BA%BA%E5%B7%A5%E5%85%B7%E9%A1%B9%E7%9B%AE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://daodaoliang.com/%E7%A7%81%E4%BA%BA%E5%B7%A5%E5%85%B7%E9%A1%B9%E7%9B%AE/2014/10/29/QDaoDaoLiang-2014-10-29-%E5%88%80%E5%88%80%E4%BA%AE%E7%A7%81%E4%BA%BA%E5%B7%A5%E5%85%B7%E9%A1%B9%E7%9B%AE/</loc>
-    <lastmod>2017-08-23T07:06:24.842Z</lastmod>
-    <data>
-        <display>
-        <title>工具项目之QDaoDaoLiang向导</title>
-        <pubTime>2014-10-28T16:00:00.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="私人工具项目" url="http://daodaoliang.com/categories/%E7%A7%81%E4%BA%BA%E5%B7%A5%E5%85%B7%E9%A1%B9%E7%9B%AE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://daodaoliang.com/PHP%E5%AD%A6%E4%B9%A0/2015/01/20/PHP%E5%AD%A6%E4%B9%A0-2015-01-20-PHP-Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%84%E7%90%86/</loc>
     <lastmod>2017-08-23T07:06:24.842Z</lastmod>
     <data>
@@ -2517,11 +2517,11 @@
 
     
   <url>
-    <loc>http://daodaoliang.com/PHP%E5%AD%A6%E4%B9%A0/2015/01/15/PHP%E5%AD%A6%E4%B9%A0-2015-01-15-PHP%E5%8F%98%E9%87%8F%E8%AF%B4%E6%98%8E/</loc>
+    <loc>http://daodaoliang.com/PHP%E5%AD%A6%E4%B9%A0/2015/01/15/PHP%E5%AD%A6%E4%B9%A0-2015-01-15-PHP%E8%BF%90%E7%AE%97%E9%80%BB%E8%BE%91%E7%AC%A6%E5%8F%B7%E8%AF%B4%E6%98%8E/</loc>
     <lastmod>2017-08-23T07:06:24.842Z</lastmod>
     <data>
         <display>
-        <title>php变量类型说明</title>
+        <title>php运算符说明</title>
         <pubTime>2015-01-14T16:00:00.000Z</pubTime>
         
          
